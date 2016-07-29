@@ -112,6 +112,8 @@ th, td{
   padding-inline-start: 15px;
   padding-top: .5em;
   padding-bottom: .5em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 th {
     background-color: grey;

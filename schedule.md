@@ -12,6 +12,7 @@ width="600px">
 The official kick-off meeting is in August 2017,
 coinciding with the the [Building Simulation 2017 conference](http://buildingsimulation2017.org/).
 
+
 # Upcoming meetings and presentations
 
 <table>
@@ -19,8 +20,8 @@ coinciding with the the [Building Simulation 2017 conference](http://buildingsim
   {% if post.categories contains 'presentation' %}
   <tr valign="top">
   <td>
-<p>{{ post.date | date: '%B %d, %Y' }}</p>
-  <td>
+  <p>{{ post.date | date: '%B %d, %Y' }}</p>
+  </td>
   <td>
   {% if post.type == 'conference_presentation' %}
   <p>
