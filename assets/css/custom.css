@@ -72,6 +72,10 @@ body{
 }
 /* ---------------------------------- */
 
+/* Avoid images to be too large on small screens */
+img{
+  max-width: 100%;
+  }
 
 .navbar > .container-fluid .navbar-brand > img{
    position: absolute;
