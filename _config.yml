@@ -10,7 +10,7 @@ title: IBPSA Project 1
 email: MWetter@lbl.gov
 description: > # this means to ignore newlines until "baseurl:"
   BIM/GIS and Modelica framework for building and community energy system design and operation
-baseurl: "/project1" # the subpath of your site, e.g. /blog
+baseurl: /project1 # the subpath of your site, e.g. /blog
 url: "http://ibpsa.github.io/project1" # the base hostname & protocol for your site
 twitter_username:
 github_username:  ibpsa/project1
