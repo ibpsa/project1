@@ -125,7 +125,7 @@ district energy system models.
 </p>
 </div>
 <div class="col-md-6">
-<img src="{{ site.url }}/assets/img/twoRoomsWithStorage_T.png" alt="Network temperatures"
+<img src="{{ site.url }}/assets/img/TwoRoomsWithStorage_T.png" alt="Room temperatures"
 width="75%">
 </div>
 </div>
