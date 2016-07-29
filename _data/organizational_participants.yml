@@ -3,19 +3,21 @@
   contact_email: MWetter@lbl.gov
   institute:     Lawrence Berkeley National Laboratory
   country:       USA
+  role:          Co-operating agent
 
 - date_joined:   5/18/2016
   contact_name:  Christoph van Treeck
   contact_email: treeck@e3d.rwth-aachen.de
   institute:     RWTH Aachen University - E3D
   country:       Germany
+  role:          Co-operating agent
 
 - date_joined:   5/18/2016
   contact_name:  Marcus Fuchs
   contact_email: mfuchs@eonerc.rwth-aachen.de
   institute:     RWTH Aachen University - E.ON Energy Research Center, Inst. for Energy Efficient Buildings and Indoor Climate
   country:       Germany
-  
+
 - date_joined:   5/18/2016
   contact_name:  Alessandro Maccarini
   contact_email: alm@sbi.aau.dk
@@ -57,4 +59,3 @@
   contact_email: james.odonnell@ucd.ie
   institute:     University College Dublin
   country:       Ireland
-

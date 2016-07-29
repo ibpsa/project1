@@ -51,6 +51,10 @@ The operating agents can reassess the organizational membership annually and ter
   </td>
   <td>
   <a href="mailto:{{ participant.contact_email }}">{{ participant.contact_name }}</a>
+  {% if participant.role == "Co-operating agent" %}
+  <br/>
+  {{ participant.role }}
+  {% endif %}
   </td>  
 </tr>
 {% endfor %}
