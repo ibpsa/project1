@@ -1,0 +1,3 @@
+# This file contains development specific variables.
+# https://github.com/jekyll/jekyll/issues/1336
+url: http://127.0.0.1:4000/project1
