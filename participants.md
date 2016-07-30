@@ -4,7 +4,18 @@ title: Participants
 permalink: /participants
 ---
 
-<h1>Organizational Participants</h1>
+<h1>Participants</h1>
+
+There are three levels of participation,
+<em>organizational participants</em>,
+<em>individual participants</em> and
+<em>sponsoring participants</em>.
+
+For further information, see below and the
+[draft workplan]({{ site.url }}/downloads/ibpsa_project1_workplan_draft2.pdf).
+To register as a participant, visit the [registration form](https://docs.google.com/a/lbl.gov/forms/d/1tyu3Qb3ydPseACxBgtL_UTKIdQS75eKr4zX89v7T0EM/viewform).
+
+<h2>Organizational Participants</h2>
 
 <p>
 Organizational participants are organizations such as companies, research institutes or universities that commit to
@@ -70,31 +81,36 @@ The operating agents can reassess the individual participant membership annually
 </p>
 
 <table class="table_with_header">
-<colgroup>
-<col width="70%" />
-<col width="15%" />
-<col width="15%" />
-</colgroup>
 <thead valign="bottom">
 <tr>
-<th>Institute</th>
+<th>Name</th>
+<th>Affiliation</th>
 <th>Country</th>
-<th>Contact</th>
 </tr>
 </thead>
 <tbody valign="top">
 {% for participant in site.data.individual_participants %}
 <tr>
   <td>
-  {{ participant.institute }}
+    <a href="mailto:{{ participant.contact_email }}">{{ participant.contact_name }}</a>
+  </td>
+  <td>
+  {{ participant.affiliation }}
   </td>
   <td>
   {{ participant.country }}
-  </td>
-  <td>
-  <a href="mailto:{{ participant.contact_email }}">{{ participant.contact_name }}</a>
   </td>  
 </tr>
 {% endfor %}
 </tbody>
 </table>
+
+<h2>Sponsoring Participant</h2>
+
+There is also the opportunity to register as a sponsoring participants.
+Sponsoring participants are individuals or organizations that fund the project
+with cash contributions at US-$ 5,000 per year,
+which we intent to use to offset various costs
+that otherwise would need to be paid by the participants.
+
+This membership will be valid for one year, and can be renewed for multiple periods.

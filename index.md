@@ -10,7 +10,7 @@ permalink: index.html
     BIM/GIS and Modelica Framework for building and community energy system
     design and operation
   </p>
-  <img src="{{ site.url }}/assets/img/overview.jpg" alt="Overview" width="50%">
+  <img src="{{ site.url }}/assets/img/overview.jpg" alt="Overview" width="600px">
 </div>
 
 IBPSA Project 1 will create open-source software
@@ -28,6 +28,7 @@ All work is open-source and built on three standards:
 The project will be conducted from summer 2017 to summer 2022.
 We are currently in the planning phase and further refine the
 [draft workplan]({{ site.url }}/downloads/ibpsa_project1_workplan_draft2.pdf).
+
 To register, please visit the [registration form](https://docs.google.com/a/lbl.gov/forms/d/1tyu3Qb3ydPseACxBgtL_UTKIdQS75eKr4zX89v7T0EM/viewform).
 
 
