@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Project 1
+title: IBPSA Project 1
 permalink: index.html
 ---
 
