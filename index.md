@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Index
+title: Project 1
 permalink: index.html
 ---
 
