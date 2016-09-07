@@ -17,6 +17,7 @@ coinciding with the the [Building Simulation 2017 conference](http://buildingsim
 
 <table>
   {% for post in site.posts reversed %}
+  {% if post.date >= site.time %}
   {% if post.categories contains 'presentation' %}
   <tr valign="top">
   <td>
@@ -39,6 +40,39 @@ coinciding with the the [Building Simulation 2017 conference](http://buildingsim
                 Read more</a>
     </td>
     </tr>
+  {% endif %}
+  {% endif %}
+  {% endfor %}
+</table>
+
+# Past meetings and presentations
+
+<table>
+  {% for post in site.posts reversed %}
+  {% if post.date < site.time %}
+    {% if post.categories contains 'presentation' %}
+    <tr valign="top">
+    <td>
+    <p>{{ post.date | date: '%B %d, %Y' }}</p>
+    </td>
+    <td>
+    {% if post.type == 'conference_presentation' %}
+    <p>
+    {{ post.title }}
+    </p>
+    <p>
+    <a href="{{ post.link }}">Link to conference.</a>
+    </p>
+    {% endif %}
+    </td>
+      <td>
+      <a class="btn btn-primary btn"
+                style="color:white;text-decoration:none"
+                href="{{ site.baseurl }}{{ post.url }}">
+                Read more</a>
+    </td>
+    </tr>
+  {% endif %}
   {% endif %}
   {% endfor %}
 </table>
