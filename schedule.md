@@ -18,16 +18,16 @@ coinciding with the the [Building Simulation 2017 conference](http://buildingsim
 <table>
   {% for post in site.posts reversed %}
   {% if post.date >= site.time %}
-  {% if post.categories contains 'presentation' %}
+  {% if post.categories contains 'presentation' or 'meeting' %}
   <tr valign="top">
   <td>
   <p>{{ post.date | date: '%B %d, %Y' }}</p>
   </td>
   <td>
-  {% if post.type == 'conference_presentation' %}
   <p>
   {{ post.title }}
   </p>
+  {% if post.type == 'conference_presentation' %}
   <p>
   <a href="{{ post.link }}">Link to conference.</a>
   </p>
@@ -50,16 +50,16 @@ coinciding with the the [Building Simulation 2017 conference](http://buildingsim
 <table>
   {% for post in site.posts reversed %}
   {% if post.date < site.time %}
-    {% if post.categories contains 'presentation' %}
+    {% if post.categories contains 'presentation' or 'meeting' %}
     <tr valign="top">
     <td>
     <p>{{ post.date | date: '%B %d, %Y' }}</p>
     </td>
     <td>
-    {% if post.type == 'conference_presentation' %}
     <p>
     {{ post.title }}
     </p>
+    {% if post.type == 'conference_presentation' %}
     <p>
     <a href="{{ post.link }}">Link to conference.</a>
     </p>
