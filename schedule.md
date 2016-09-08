@@ -16,7 +16,7 @@ coinciding with the the [Building Simulation 2017 conference](http://buildingsim
 # Upcoming meetings and presentations
 
 <table>
-  {% for post in site.posts reversed %}
+  {% for post in site.posts %}
   {% if post.date >= site.time %}
   {% if post.categories contains 'presentation' or 'meeting' %}
   <tr valign="top">
@@ -48,7 +48,7 @@ coinciding with the the [Building Simulation 2017 conference](http://buildingsim
 # Past meetings and presentations
 
 <table>
-  {% for post in site.posts reversed %}
+  {% for post in site.posts %}
   {% if post.date < site.time %}
     {% if post.categories contains 'presentation' or 'meeting' %}
     <tr valign="top">
