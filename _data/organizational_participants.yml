@@ -67,7 +67,22 @@
   country:       Germany
 
 - date_joined:   9/22/2016
-  contact_name:  Raymond Sterling
-  contact_email: raymond.sterling@nuigalway.ie
+  contact_name:  Marcus Keane
+  contact_email: marcus.keane@nuigalway.ie
   institute:     National University of Ireland, Galway
   country:       Ireland
+
+- date_joined:   9/27/2016
+  contact_name:  Dimitrios Rovas
+  contact_email: d.rovas@ucl.ac.uk
+  institute:     University College London (UCL)/Technical University of Crete (TUC)
+  country:       England and Greece
+
+- date_joined:   10/6/2016
+  contact_name:  Christian Veje
+  contact_email: veje@mmmi.sdu.dk
+  institute:     Center for Energy Informatics, University of Southern Denmark
+  country:       Denmark
+
+		
+		
