@@ -23,7 +23,6 @@ permalink: /news
             </p>
           {% endif %}
 
-
   </td>
   </tr>
     {% endif %}
