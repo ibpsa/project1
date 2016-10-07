@@ -9,7 +9,7 @@ permalink: /schedule
 <img src="{{ site.url }}/assets/img/project_schedule.png" alt="Project schedule"
 width="600px">
 
-The official kick-off meeting is in August 2017,
+The kick-off meeting is in August 2017,
 coinciding with the the [Building Simulation 2017 conference](http://buildingsimulation2017.org/).
 
 
