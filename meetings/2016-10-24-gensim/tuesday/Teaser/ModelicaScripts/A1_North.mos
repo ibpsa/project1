@@ -1,0 +1,17 @@
+plotSetFilesToKeep(5);
+Evaluate:=true;
+experimentSetupOutput(events=false,equidistant=true);
+simulateModel("A1_North.A1_North1.A1_North1_Models.A1_North1_LivingRoom", stopTime=3.1536e+007, numberOfIntervals=0, outputInterval=3600, method="Radau", resultFile="A1_North1_LivingRoom");
+simulateModel("A1_North.A1_North1.A1_North1_Models.A1_North1_BedRoom", stopTime=3.1536e+007, numberOfIntervals=0, outputInterval=3600, method="Radau", resultFile="A1_North1_BedRoom");
+simulateModel("A1_North.A1_North1.A1_North1_Models.A1_North1_WCandsanitaryroomsinnonresidentialbuildings", stopTime=3.1536e+007, numberOfIntervals=0, outputInterval=3600, method="Radau", resultFile="A1_North1_WCandsanitaryroomsinnonresidentialbuildings");
+  createPlot(id = 3,
+    position = {55, 50, 697, 502},
+    x = "time",
+    y = {"thermalZoneTwoElements.TAir"},
+    autoscale = true,
+    autoerase = true,
+    autoreplot = true,
+    grid = true,
+    color = true,
+    leftTitleType = 1,
+    bottomTitleType = 1);
