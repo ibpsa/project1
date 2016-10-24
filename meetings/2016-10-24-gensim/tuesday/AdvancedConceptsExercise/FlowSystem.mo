@@ -457,8 +457,7 @@ equation
           textString="Cold")}),
     experiment(
       StopTime=10000,
-      __Dymola_NumberOfIntervals=20000,
-      __Dymola_fixedstepsize=15,
+      __Dymola_NumberOfIntervals=500,
       __Dymola_Algorithm="Lsodar"),
     Documentation(info="<html>
 <p>
