@@ -501,6 +501,8 @@ model A1Occupancy
     annotation (Placement(transformation(extent={{-120,174},{-140,194}})));
   Modelica.Blocks.Sources.Constant const8(k=273.15 + 20)
     annotation (Placement(transformation(extent={{-122,210},{-142,230}})));
+  Modelica.Blocks.Continuous.Integrator integrator(k=1/(3600*1000))
+    annotation (Placement(transformation(extent={{-230,208},{-210,228}})));
 equation
   connect(eqAirTemp.TEqAirWin,prescribedTemperature1. T)
     annotation (Line(
@@ -876,6 +878,9 @@ equation
   connect(switch3.y, conPI3.u_s) annotation (Line(points={{-183,200},{-192,200},
           {-192,180},{-154,180},{-154,166},{-80,166},{-80,214},{-58,214},{-58,
           198}}, color={0,0,127}));
+  connect(hea.Q_flow, integrator.u) annotation (Line(points={{-134.3,160.8},{
+          -124,160.8},{-124,164},{-160,164},{-160,176},{-232,176},{-232,218}},
+        color={0,0,127}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-240,-240},{240,
             240}})),
