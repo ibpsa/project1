@@ -1,6 +1,6 @@
 # Example for exporting and importing FMUs
 
-This example export an FMU for a controller
+This example exports an FMU for a controller
 and imports it in a system model.
 
 
