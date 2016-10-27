@@ -13,7 +13,12 @@ There are three levels of participation,
 
 For further information, see below and the
 [draft workplan]({{ site.url }}/downloads/ibpsa_project1_workplan_draft2.pdf).
+
 To register as a participant, visit the [registration form](https://docs.google.com/a/lbl.gov/forms/d/1tyu3Qb3ydPseACxBgtL_UTKIdQS75eKr4zX89v7T0EM/viewform).
+
+To receive announcements, [join the email announcement list](https://groups.google.com/forum/#!forum/ibpsa-project-1-announcements/join). You don't need to be an
+organizational, individual or sponsoring participant
+to join this email list.
 
 <h2>Organizational Participants</h2>
 
