@@ -39,7 +39,7 @@
 - date_joined:   6/26/2016
   contact_name:  Lieve Helsen
   contact_email: Lieve.Helsen@kuleuven.be
-  institute:     KU Leuven, Department of Mechanical Engineering
+  institute:     KU Leuven, Department of Mechanical Engineering / EnergyVille Thermal Systems
   country:       Belgium
 
 - date_joined:   6/13/2016
@@ -95,3 +95,9 @@
   contact_email: hubertus.tummescheit@modelon.com
   institute:     Modelon
   country:       Sweden
+
+- date_joined:   10/21/2016
+  contact_name:  Kristina Orehounig
+  contact_email: orehounig@arch.ethz.ch
+  institute:     Swiss Federal Institute of Technology (ETH) Zurich
+  country:       Switzerland
