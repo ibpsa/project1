@@ -30,10 +30,13 @@ needs to be encapsulated in an input/output block.
 Search the `Buildings` library for the model `HeaterCooler_T`,
 which can be used for this purpose (after changing the `Medium` model).
 Alternatively, you can create your own input/output container
-using the `ReplaceableTwoPort` block.
+using the `ReplaceableTwoPort` block for the latest development version of `Buildings`,
+or `TwoPortComponent` for `Buildings`, version 3.0.
 
 Next, proceed as follows:
 
 1. Export the heater as an FMU.
 1. Delete the heater from the system model, and import the FMU.
-1. Connect the FMU to the system model using the `Inlet` and `Outlet` models.
+1. Connect the FMU to the system model using the `Inlet` and `Outlet` models if you are
+   using the latest development version of `Buildings`,
+   or using `InletAdaptor` and `OutletAdaptor` if you are using version 3.0 of `Buildings`.
