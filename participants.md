@@ -112,10 +112,43 @@ The operating agents can reassess the individual participant membership annually
 
 <h2>Sponsoring Participant</h2>
 
-There is also the opportunity to register as a sponsoring participants.
 Sponsoring participants are individuals or organizations that fund the project
 with cash contributions at US-$ 5,000 per year,
 which we intent to use to offset various costs
 that otherwise would need to be paid by the participants.
 
 This membership will be valid for one year, and can be renewed for multiple periods.
+
+<table class="table_with_header">
+<colgroup>
+<col width="70%" />
+<col width="15%" />
+<col width="15%" />
+</colgroup>
+<thead valign="bottom">
+<tr>
+<th>Company</th>
+<th>Country</th>
+<th>Contact</th>
+</tr>
+</thead>
+<tbody valign="top">
+{% for participant in site.data.sponsoring_participants %}
+<tr>
+  <td>
+  {{ participant.company }}
+  </td>
+  <td>
+  {{ participant.country }}
+  </td>
+  <td>
+  <a href="mailto:{{ participant.contact_email }}">{{ participant.contact_name }}</a>
+  {% if participant.role == "Co-operating agent" %}
+  <br/>
+  {{ participant.role }}
+  {% endif %}
+  </td>  
+</tr>
+{% endfor %}
+</tbody>
+</table>
