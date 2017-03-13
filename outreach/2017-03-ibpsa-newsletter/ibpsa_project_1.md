@@ -15,18 +15,18 @@ of building and district energy and control systems.
 It extends work conducted under the IEA EBC Annex 60. All work is open-source,
 will be free available, and built on three standards:
 
-#. [IFC](http://www.buildingsmart-tech.org/) for data modeling at the building scale,
-#. [CityGML](http://www.citygml.org/) for data modeling at the district scale, and
-#. [Modelica](http://www.modelica.org/) for modeling and optimization of
-   the performance of building and district energy systems.
+* [IFC](http://www.buildingsmart-tech.org/) for data modeling at the building scale,
+* [CityGML](http://www.citygml.org/) for data modeling at the district scale, and
+* [Modelica](http://www.modelica.org/) for modeling and optimization of
+  the performance of building and district energy systems.
 
 The project will be conducted from summer 2017 to summer 2022.
 It includes three tasks that
 
-#. develop Modelica model libraries for simulation and for model predictive control,
-#. map IFC and CityGML to Modelica, and
-#. demonstrate through applications the capabilities enabled through Modelica
-   and identify research needs and test research results.
+* develop Modelica model libraries for simulation and for model predictive control,
+* map IFC and CityGML to Modelica, and
+* demonstrate through applications the capabilities enabled through Modelica
+  and identify research needs and test research results.
 
 The project kick-off meeting will be on Saturday August 5, 2017, in San Francisco,
 co-located with the Building Simulation 2017 conference.
