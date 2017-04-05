@@ -102,8 +102,26 @@
   institute:     Swiss Federal Institute of Technology (ETH) Zurich
   country:       Switzerland
 
-- date_joined:   11/04/2016
+- date_joined:   11/4/2016
   contact_name:  L. Andrew Bollinger
   contact_email: andrew.bollinger@empa.ch
   institute:     Urban Energy Systems Laboratory, Empa
   country:       Switzerland
+
+- date_joined:   1/9/2017
+  contact_name:  Christoph Nytsch-Geusen
+  contact_email: nytsch@udk-berlin.de
+  institute:     Berlin University of the Arts (UdK Berlin)
+  country:       Germany
+
+- date_joined:   3/29/2017
+  contact_name:  Massimo Cimmino
+  contact_email: massimo.cimmino@polymtl.ca
+  institute:     École Polytechnique de Montréal
+  country:       Canada
+
+- date_joined:   4/5/2017
+  contact_name:  Gerald Schweiger
+  contact_email: g.schweiger@aee.at
+  institute:     AEE Intec
+  country:       Austria
