@@ -24,7 +24,9 @@ sys.path.append(os.path.abspath('.'))
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 #extensions = ['sphinx.ext.autodoc', 'sphinx.ext.pngmath']
-extensions = ['sphinx.ext.autodoc', 'mathjax', 'sphinxcontrib.bibtex', 'numfig']
+extensions = ['sphinx.ext.autodoc', 'mathjax', \
+              'sphinxcontrib.bibtex', 'sphinx.ext.todo']
+
 # mathjax_path is based on http://www.mathjax.org/docs/2.0/start.html
 mathjax_path = "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
@@ -41,7 +43,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'IEA EBC Annex 60'
+project = u'IBPSA Project 1'
 copyright = u'(c) All rights reserved'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -107,7 +109,7 @@ html_theme = 'sphinxdoc'
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = "IEA EBC Annex 60"
+html_title = "IBPSA Project 1"
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
@@ -170,36 +172,33 @@ htmlhelp_basename = 'Documentation'
 # The paper size ('letter' or 'a4').
 #latex_paper_size = 'letter'
 
-# The font size ('10pt', '11pt' or '12pt').
-latex_font_size = '11pt'
-
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index',
    'ibpsa_project1_workplan_draft.tex',
    u'IBPSA Project 1',
-   u'Draft Workplan', 'manual'),
+   u'Draft Workplan', 'article'),
 ]
 
 
 ##latex_elements = {'fontpkg': '\\usepackage[scaled]{helvet}',
 ##                  'fontpkg': '\\renewcommand*\\familydefault{\\sfdefault}'}
 latex_elements = {'classoptions': ', openany',         # remove blank pages in PDF.
-                   'releasename': 'Version',
-                  'babel': '\\usepackage[english]{babel}'}
-
+                   'releasename': 'Release',
+                  'babel': '\\usepackage[english]{babel}',
+                  'pointsize': '11pt'}
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
-latex_logo = '_static/ebc-logo.png'
+latex_logo = '_static/IBPSA-logo-text.png'
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
 latex_use_parts = False
 
 # Additional stuff for the LaTeX preamble.
-latex_preamble = '''
+latex_elements['preamble'] = '''
 % Format of chapter fonts
 \\makeatletter
 \\ChNameVar{\\raggedleft\\sf\\bfseries\\Large} % sets the style for name
@@ -217,7 +216,10 @@ latex_preamble = '''
 \\usepackage{enumitem}
 \\setlist{nosep} % or \\setlist{noitemsep} to leave space around whole list
 
-
+% This allows adding :cite: in the label of figures.
+% It is a work-around for https://github.com/mcmtroffaes/sphinxcontrib-bibtex/issues/92
+\usepackage{etoolbox}
+\AtBeginEnvironment{figure}{\renewcommand{\phantomsection}{}}
 
 \\renewcommand{\\thepage}{\\arabic{page}}
 

@@ -1,10 +1,4 @@
-﻿.. report::
-
-Dummy
-=====
-
-
-Introduction
+﻿Introduction
 ============
 
 Joe Clarke's vision statement :cite:`Clarke2015:1` calls for a
@@ -20,13 +14,13 @@ testing, as a review framework and as a library (Propositions 1, 3, 4,
 
 Similar objectives have been shared by IEA EBC Annex 60
 (http://www.iea-annex60.org/), a project in which 41 institutes from
-16 countries participate between 2012 and 2017. Annex 60 develops and
-demonstrates new computational technologies based on the open
+16 countries participated between 2012 and 2017. Annex 60 developed and
+demonstrated new computational technologies based on the open
 standards Modelica (as a modeling language), Functional Mockup
 Interface FMI (for exchange of legacy models or simulators), and
 Industry Foundation Classes (for Building Information Models).
 
-The primary objectives within the technology-development subtask 1 of Annex 60 are:
+The primary objectives within the technology-development subtask 1 of Annex 60 were:
 
 #. To develop and distribute a well documented, vetted and validated
    open-source Modelica library that serves as the core of future
@@ -101,7 +95,7 @@ Work Plan
 The work is organized in three tasks as follows:
 
 #. Task 1: Further development of the open-source infrastructure
-   https://github.com/iea-annex60/modelica-annex60 of models and test
+   https://github.com/ibpsa/modelica-ibpsa of models and test
    suite to coordinate Modelica-based model developments for building
    and district energy system design and operation :cite:`WetterEtAl2015:2`.
 #. Task 2: Tool-chains that link object-oriented CAD systems, geoinformation
@@ -131,15 +125,16 @@ for buildings and community energy systems
 * BuildingSystems, from UdK Berlin, Germany: http://www.modelica-buildingsystems.de
 * IDEAS from KU Leuven, Belgium: https://github.com/open-ideas/IDEAS
 
+Its further development as the Modelica IBPSA Library has already started at
+https://github.com/ibpsa/modelica-ibpsa.
 An outcome will be a comprehensive free open-source library that will be
 used by different simulation tool-providers as well as by academia.
 
 WP 1.1: Library for design and operation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The objective is to continue the development of the IEA EBC Annex 60 library,
-to be renamed as the IBPSA Modelica library, as a free open-source library
-of Modelica models for building and community energy systems.
+The objective is to develop the Modelica IBPSA Library,
+as a free open-source library of Modelica models for building and community energy systems.
 This will be accomplished through the further development, documentation and
 validation of the library.
 
@@ -155,10 +150,6 @@ and publications in the peer-reviewed literature.
 
 WP 1.2: Library for Model Predictive Control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**This task has been added in Spring 2016. Whether it will
-be executed depends on how large a team can be assembled,
-and is subject to approval by IBPSA.**
 
 The objective is to develop a Modelica library, possibly as a package of the
 IBPSA Modelica library, with models that can be
@@ -186,7 +177,7 @@ Task 2: Building and City Quarter Information Models
 This task will develop free open-source
 GIS/BIM data model to Modelica translators for individual building and
 community energy systems. As in the Annex 60, emphasis was placed on
-the district and building model to Modelica transformation process. 
+the district and building model to Modelica transformation process.
 Task 2 shall be dedicated to continuing BIM-oriented developments but shall focus on the GIS
 transformation process for community energy systems. This will be
 accomplished through the use of existing standards for exchanging
@@ -247,11 +238,7 @@ Task 3: Application and Dissemination
 WP 3.1 Application
 ~~~~~~~~~~~~~~~~~~
 
-**This task has been added in Spring 2016. Whether it will
-be executed depends on how large a team can be assembled,
-and is subject to approval by IBPSA**
-
-The objective of this task is 
+The objective of this task is
 to demonstrate through applications capabilities that are enabled through
 Modelica, and to identify and test through applications research needs
 and research results.
@@ -320,7 +307,7 @@ The operating agents can reassess the individual participant membership annually
 and terminate membership if no substantial contributions are made.
 
 
-New members members can apply at xxxx [add link to form].
+New members members can apply at https://ibpsa.github.io/project1/participants.html.
 
 Approval of memberships is done by the operating agents.
 
@@ -329,8 +316,8 @@ Duties of IBPSA
 ===============
 
 IBPSA, or its regional affiliate, will provide at no cost the rooms
-for the expert meetings and will at no cost announce activities of the annex project through its publication 
-channels (web site, newsletter, social media) and will provide access to a plattform for dissemination, if applicable.
+for the expert meetings and will at no cost announce activities of the project through its publication
+channels (web site, newsletter, social media) and will provide access to a platform for dissemination, if applicable.
 
 IBPSA will administer the funds of the project. 10% of the sponsoring organizations'
 payments will remain with IBPSA to compensate for overheads, and the other 90% can be used by the project
@@ -353,16 +340,19 @@ All workshops, software and documentation will be open accessible to anyone.
 To ensure open collaboration among the participants, Modelica models
 developed within this project will be open-source and freely available
 under a slightly modified Modelica 2 license (or newer versions as applicable)
-as posted at `Annex60/legal.html
-<https://htmlpreview.github.io/?https://github.com/iea-annex60/modelica-annex60/blob/master/Annex60/legal.html>`_.
+as posted at `IBPSA/legal.html
+<https://htmlpreview.github.io/?https://github.com/ibpsa/modelica-ibpsa/blob/master/IBPSA/legal.html>`_.
 
 Code other than Modelica models will use the open-source BSD 3-Clause
 License as stated at
 http://simulationresearch.lbl.gov/modelica/buildingspy/legal.html
 
-*Note:* Subject to discussions with IBPSA is whether the
-copyright will be owned by the operating agents, or by IBPSA.
+IBPSA will be the copyright owner.
 The liberal nature of these licenses allows others to implement
 the code in their software and distribute it to others at no cost.
-Hence, ownership of the copyright should not affect the ability to
+Hence, IBPSA ownership of the copyright will allow others to
 reuse and distribute the software.
+
+
+.. bibliography:: references.bib
+   :cited:

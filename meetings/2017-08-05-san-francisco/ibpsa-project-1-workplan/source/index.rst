@@ -1,8 +1,8 @@
-.. include:: proposal.rst
+=================
+Table of contents
+=================
+.. toctree::
+   :titlesonly:
+   :numbered:
 
-.. only:: html
-
-   .. rubric:: References
-
-.. bibliography:: references.bib 
-   :all:
+   proposal
