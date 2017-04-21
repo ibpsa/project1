@@ -1,0 +1,24 @@
+{% extends "!layout.html" %}
+{% block header %}
+<div class="headerStyle">
+<table>
+<tr>
+<td align="left">IEA EBC Annex 60</td>
+<td align="right">
+<a href="http://www.ecbcs.org">
+<img src="_static/ebc-logo.png" alt="EBC logo" width="161" height="85"/>
+</a>
+</td>
+</tr>
+</table>
+</div>
+{{ super() }}
+{% endblock %}
+
+{% block rootrellink %}
+    {{ super() }} 
+{% endblock %}
+
+{% block sidebar1 %}{{ sidebar() }}{% endblock %}
+{% block sidebar2 %}{% endblock %}
+
