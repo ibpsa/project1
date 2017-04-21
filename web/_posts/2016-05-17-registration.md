@@ -5,7 +5,7 @@ date:   2015-05-17
 categories: news
 ---
 
-The [draft workplan]({{ site.url }}/downloads/ibpsa_project1_workplan_draft2.pdf)
+The [draft workplan]({{ site.url }}/downloads/ibpsa_project1_workplan_draft.pdf)
 for the continuation of IEA EBC Annex 60 as the IBPSA Project 1 is now posted. Potential participants are asked to express their interest by filling out the
 [registration form](https://docs.google.com/a/lbl.gov/forms/d/1tyu3Qb3ydPseACxBgtL_UTKIdQS75eKr4zX89v7T0EM/viewform).
 
