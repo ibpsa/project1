@@ -12,7 +12,7 @@ There are three levels of participation,
 <em>sponsoring participants</em>.
 
 For further information, see below and the
-[draft workplan]({{ site.url }}/downloads/ibpsa_project1_workplan_draft2.pdf).
+[draft workplan]({{ site.url }}/downloads/ibpsa_project1_workplan_draft.pdf).
 
 To register as a participant, visit the [registration form](https://docs.google.com/a/lbl.gov/forms/d/1tyu3Qb3ydPseACxBgtL_UTKIdQS75eKr4zX89v7T0EM/viewform).
 
