@@ -49,7 +49,7 @@ research and development for buildings and districts.
 </p>
 <p>
 The Annex 60 library is already used as the core of the four Modelica libraries
-for buildings and community energy systems
+for building and community energy systems
 </p>
 <ul>
 <li>
