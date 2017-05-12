@@ -40,10 +40,14 @@ There are three main tasks:
 <p>
 This task will develop free open-source
 libraries of Modelica models for building and community energy and control
-systems with associated documentation for new and experienced users. This will
+system design and optimization,
+with associated documentation for new and experienced users. This will
 be accomplished through the further development and validation of the
 current Annex 60 library, which will be further developed as
-the IBPSA Modelica library.
+the IBPSA Modelica library, and through the coordination of MPC
+research and developments for buildings and districts.
+</p>
+<p>
 The Annex 60 library is already used as the core of the four Modelica libraries
 for buildings and community energy systems
 </p>
