@@ -71,10 +71,10 @@
   country:       Italy
 
 - date_joined:   8/2/2017
-  contact_name:  Louis Lopes
+  contact_name:  Louis Lopez
   contact_email: luislopes007@gmail.com
   affiliation:   António Fernando Rainha Lopes & Ana Paula Franco Assis Vieira Lopes
-  country:       Spain
+  country:       Portugal
 
 - date_joined:   8/4/2017
   contact_name:  Etienne Wurtz
@@ -83,7 +83,7 @@
   country:       France
 
 - date_joined:   8/7/2017
-  contact_name:  Allelign Zero
+  contact_name:  Allelign Zeru
   contact_email: allelign.zeru@gmail.com
   affiliation:   HydroXpert SAS
   country:       France
@@ -91,7 +91,7 @@
 - date_joined:   8/15/2017
   contact_name:  Chen Wenzhen
   contact_email: lxyc2001@gmail.com
-  affiliation:   TRANE (Asia)
+  affiliation:   Trane (Asia)
   country:       China
 
 - date_joined:   8/23/2017
@@ -103,5 +103,6 @@
 - date_joined:   9/2/2017
   contact_name:  Carl Lawson
   contact_email: carllawson01@gmail.com
-  affiliation:   DC Herrmann & Asssociation
+  affiliation:   DC Herrmann & Association
   country:       USA
+  
