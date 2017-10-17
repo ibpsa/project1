@@ -143,3 +143,15 @@
   contact_email: igor.sartori@sintef.no
   institute:     SINTEF
   country:       Norway
+
+- date_joined:   9/21/2017
+  contact_name:  Christoph Stettler
+  contact_email: christoph.stettler@hslu.ch
+  institute:     Lucerne University of Applied Sciences and Arts, School for Engineering and Architecture, Center for Integrated Building Technology
+  country:       Switzerland
+
+- date_joined:   10/12/2017
+  contact_name:  Krzysztof Arendt
+  contact_email: krza@mmmi.sdu.dk
+  institute:     University of Southern Denmark
+  country:       Denmark
