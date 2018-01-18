@@ -26,8 +26,8 @@
 
 - date_joined:   5/18/2016
   contact_name:  Wangda Zuo
-  contact_email: wangda.zuo@colorado.edu
-  institute:     University of Colorado Boulder
+  contact_email: w.zuo@miami.edu
+  institute:     University of Miami
   country:       USA
 
 - date_joined:   6/10/2016
@@ -144,14 +144,14 @@
   institute:     SINTEF
   country:       Norway
 
-- date_joined:   9/21/2017
-  contact_name:  Christoph Stettler
-  contact_email: christoph.stettler@hslu.ch
-  institute:     Lucerne University of Applied Sciences and Arts, School for Engineering and Architecture, Center for Integrated Building Technology
-  country:       Switzerland
+- date_joined:   1/14/2018
+  contact_name:  Draguna Vrabie
+  contact_email: draguna.vrabie@pnnl.gov
+  institute:     Pacific Northwest National Laboratory
+  country:       USA
 
-- date_joined:   10/12/2017
-  contact_name:  Krzysztof Arendt
-  contact_email: krza@mmmi.sdu.dk
-  institute:     University of Southern Denmark
-  country:       Denmark
+- date_joined:   1/16/2018
+  contact_name:  Michael Hörner
+  contact_email: m.hoerner@iwu.de
+  institute:     Institut Wohnen und Umwelt (IWU)
+  country:       Germany
