@@ -10,6 +10,10 @@ There are three levels of participation,
 <em>organizational participants</em>,
 <em>sponsoring participants</em> and
 <em>individual participants</em>.
+There are currently
+{{ site.data.organizational_participants | size }} organizational participants,
+{{ site.data.sponsoring_participants | size }} sponsoring participants, and
+{{ site.data.individual_participants | size }} individual participants.
 
 For further information, see below and the
 [draft workplan]({{ site.url }}/downloads/ibpsa_project1_workplan_draft.pdf).
