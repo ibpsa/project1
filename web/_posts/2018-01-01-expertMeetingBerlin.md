@@ -2,7 +2,7 @@
 layout: post
 title:  Expert meeting
 event: Expert meeting
-date:   2018-02-27
+date:   2018-01-01
 categories: meeting news
 type: workshop
 author: Michael Wetter
