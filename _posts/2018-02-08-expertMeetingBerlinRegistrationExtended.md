@@ -16,8 +16,8 @@ Chief Strategy Officer and co-founder of Modelon, about
 <!--excerpt-->
 The meeting will take place on Feb. 27 and 28, 2018 at UdK Berlin,
 hosted by Christoph Nytsch-Geusen.
-The meeting agenda is at
-[posted](https://github.com/ibpsa/project1/wiki/2018-02-27-expert-meeting-agenda).
+The meeting agenda is
+[here](https://github.com/ibpsa/project1/wiki/2018-02-27-expert-meeting-agenda).
 
 As of early February, more than 40 people registered.
 
