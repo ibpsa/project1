@@ -9,4 +9,4 @@ building and district energy and control systems
 
 For the main web site, visit https://ibpsa.github.io/project1/.
 
-For the wiki, visit https://github.com/ibpsa/project1/wiki.
+For the wiki that contains meeting announcements and agendas, visit https://github.com/ibpsa/project1/wiki.
