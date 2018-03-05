@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  Expert meeting
+title:  Expert meeting Berlin - Extension of Registration Deadline
 event: Expert meeting
 date:   2018-02-08
-categories: meeting news
+categories: news
 type: workshop
 author: Michael Wetter
 ---

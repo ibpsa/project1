@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  Expert meeting
+title:  Expert meeting Berlin - Agenda posted
 event: Expert meeting
 date:   2018-01-01
-categories: meeting news
+categories: news
 type: workshop
 author: Michael Wetter
 ---

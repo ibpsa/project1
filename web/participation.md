@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Participants
-permalink: /participants
+title: Participation
+permalink: /participation
 ---
 
-<h1>Participants</h1>
+<h1>Participation</h1>
 
 There are three levels of participation,
 <em>organizational participants</em>,
@@ -20,9 +20,57 @@ For further information, see below and the
 
 To register as a participant, visit the [registration form](https://docs.google.com/a/lbl.gov/forms/d/1tyu3Qb3ydPseACxBgtL_UTKIdQS75eKr4zX89v7T0EM/viewform).
 
-To receive announcements, [join the email announcement list](https://groups.google.com/forum/#!forum/ibpsa-project-1-announcements/join). You don't need to be an
+To receive announcements you need join one or more of these email announcement list:
+
+<table>
+<tr><td>
+General Project Announcements
+</td><td>
+<a class="btn btn-primary btn"
+                style="color:white;text-decoration:none"
+                href="https://groups.google.com/forum/#!forum/ibpsa-project-1-announcements">
+                Archive</a>
+</td><td>
+<a class="btn btn-primary btn"
+                style="color:white;text-decoration:none"
+                href="https://groups.google.com/forum/#!forum/ibpsa-project-1-announcements/join">
+                Register</a>
+</td></tr>
+<tr><td>
+Task 2
+</td><td>
+<a class="btn btn-primary btn"
+                style="color:white;text-decoration:none"
+                href="https://groups.google.com/forum/#!forum/ibpsa-project-1-information-modelling">
+                Archive</a>
+</td><td>
+<a class="btn btn-primary btn"
+                style="color:white;text-decoration:none"
+                href="https://groups.google.com/forum/#!forum/ibpsa-project-1-information-modelling/join">
+                Register</a>
+</td></tr>
+<tr><td>
+Task 3
+</td><td>
+<a class="btn btn-primary btn"
+                style="color:white;text-decoration:none"
+                href="https://groups.google.com/forum/#!forum/ibpsa-project-1-application-and-dissemination">
+                Archive</a>
+</td><td>
+<a class="btn btn-primary btn"
+                style="color:white;text-decoration:none"
+                href="https://groups.google.com/forum/#!forum/ibpsa-project-1-application-and-dissemination/join">
+                Register</a>
+</td></tr>
+</table>
+
+You don't need to be an
 organizational, individual or sponsoring participant
 to join this email list.
+Please click the link to register.
+Note that the default setting from google groups is to not receive messages; you need to change this setting
+during the registration in order to received messages.
+
 
 <h2>Organizational Participants</h2>
 
