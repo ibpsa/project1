@@ -32,9 +32,9 @@ will be included in building energy simulation programs, including but not limit
 
 Lieve
 
-## WP 2.1 City Quarter Information Modeling
+## WP 2.1 City District Information Modeling
 
-Darren
+The focus here is on improving the efficiency and reducing the uncertainty of urban energy simulation workflows. Key subtasks include: (i) international data mapping: defining the task-dependent data needs of urban energy simulation software, the existence and - for this is often different - availability of data, and strategies to plug the gaps between what is needed and what is available; (ii) international archetype mapping: defining country-specific domestic and non-domestic building archetypes and associated age bands, to support the semantic attribution of 3D models for urban energy simulation. Likewise, the development of classification techniques to automate the assignment of archetypes and age bands using geospatial data; (iii) parsimonious geometric processing: better understanding the appropriate level of geometric complexity needed for urban energy simulation purposes, and developing and deploying strategies to reduce geometric model complexity to these apporpriate levels; (iv) parsimonious semantic enrichment: (semi-)autmated workflows for the acquisition, sanitation and assignment of attributes to 3D models; (v) data exchange, using CityGML and its related application domain extensions (ADEs); (vi) demonstration of the capabilities of urban energy simulation software. 
 
 ## WP 2.2 Building Information Modeling
 
