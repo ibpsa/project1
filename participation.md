@@ -20,7 +20,7 @@ For further information, see below and the
 
 To register as a participant, visit the [registration form](https://docs.google.com/a/lbl.gov/forms/d/1tyu3Qb3ydPseACxBgtL_UTKIdQS75eKr4zX89v7T0EM/viewform).
 
-To receive announcements you need join one or more of these email announcement list:
+To receive announcements you need join one or more of these email announcement lists:
 
 <table>
 <tr><td>
