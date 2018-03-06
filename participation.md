@@ -24,7 +24,7 @@ To receive announcements you need join one or more of these email announcement l
 
 <table>
 <tr><td>
-General Project Announcements
+General Project Announcements,<br/>also used to announce meetings in the work groups.
 </td><td>
 <a class="btn btn-primary btn"
                 style="color:white;text-decoration:none"
@@ -34,6 +34,32 @@ General Project Announcements
 <a class="btn btn-primary btn"
                 style="color:white;text-decoration:none"
                 href="https://groups.google.com/forum/#!forum/ibpsa-project-1-announcements/join">
+                Register</a>
+</td></tr>
+<tr><td>
+Work Package 1.1
+</td><td>
+<a class="btn btn-primary btn"
+                style="color:white;text-decoration:none"
+                href="https://groups.google.com/forum/#!forum/ibpsa-project-1-wp1-1">
+                Archive</a>
+</td><td>
+<a class="btn btn-primary btn"
+                style="color:white;text-decoration:none"
+                href="https://groups.google.com/forum/#!forum/ibpsa-project-1-wp1-1/join">
+                Register</a>
+</td></tr>
+<tr><td>
+Work Package 1.2
+</td><td>
+<a class="btn btn-primary btn"
+                style="color:white;text-decoration:none"
+                href="https://groups.google.com/forum/#!forum/ibpsa-project-1-wp1-2">
+                Archive</a>
+</td><td>
+<a class="btn btn-primary btn"
+                style="color:white;text-decoration:none"
+                href="https://groups.google.com/forum/#!forum/ibpsa-project-1-wp1-2/join">
                 Register</a>
 </td></tr>
 <tr><td>
