@@ -38,7 +38,7 @@ The focus here is on improving the efficiency and reducing the uncertainty of ur
 
 ## WP 2.2 Building Information Modeling
 
-Christoph van Treeck
+Starting from the observation that geometry processing between BIM and BPS is a tedious and error-prone process lacking a robust method for space boundary and zone identification, this work package strives to develop advanced space boundary algorithms for BIM model topology analysis and multi-scale simulation model generation. As well, the focus is on continuing the developments of the modular BIM to BPS transformation toolchain from the IEA Annex 60 for the HVAC domain. Likewise, and as a precondition, the developments will include joint work and coordination of a common BIM/HVAC classification scheme, well-linked to international standardization issues as well as the continuation of the IDM and MVD developments of the IEA Annex 60.
 
 ## WP 3.1 Application
 
