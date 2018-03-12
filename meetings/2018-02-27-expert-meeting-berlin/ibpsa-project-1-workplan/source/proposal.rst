@@ -217,16 +217,10 @@ and publications in the peer-reviewed literature.
 WP 2.2: Building Information Modeling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The objective is to further enhance the Model View Definition (MVD) created within the Annex 60 for energy performance simulation and
-to continue the developments of the BIM-to-Modelica transformation framework development, documentation and
-process validation.
+The objective is to continue the developments of the BIM-to-Modelica transformation framework development, documentation and
+process validation and to further enhance the Model View Definition (MVD) created within the Annex 60 for energy performance simulation. This is accomplished by making use of existing modeling processes, languages, tools and methods such as the ifcDoc tool, Python, C/C++, IDF and MVD. Special emphasis will be placed on the model geometry and topology analysis to support robust model transformation.
 
-This is accomplished by making use of existing modeling processes, languages, tools and methods such as the ifcDoc tool, Python, C/C++, IDF and MVD.
-
-The outcome is a free open-source library of respective tools, data standards and tutorials
-that can be used to generate and transform building/community models to Modelica models for energy performance simulation.
-
-The deliverable is an open-source, free tools library hosted on
+The outcome is a free open-source library of respective tools, data standards and tutorials that can be used to generate and transform building/community models to Modelica models for energy performance simulation. The deliverable is a tools library hosted on
 https://github.com/ibpsa,
 and publications in the peer-reviewed literature.
 
