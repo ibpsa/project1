@@ -30,7 +30,10 @@ will be included in building energy simulation programs, including but not limit
 
 ## WP 1.2: Model Predictive Control
 
-Lieve
+The focus of WP 1.2 is threefold. 
+The first objective is to develop a Modelica library, possibly as a package of the IBPSA Modelica library, with models that can be used to efficiently solve optimal control problems for building and district energy systems within a Model Predictive Control (MPC) algorithm, and that can be combined with parameter and state estimation algorithms to adapt the models using measured data.The outcome will be an open-source, free Modelica library of component and system models for optimization, hosted on https://github.com/ibpsa.
+The second objective is to develop a common framework to test and assess MPC performance. This framework is a virtual test bed that represents a common architecture with detailed building emulator models that allow control by MPC. Both the more European hydronic systems and the more American air-based systems are represented for different building types and complexities. The outcome will be an open source Building Optimization Test (BOP-TEST) hosted on https://github.com/ibpsa.
+The third objective is to compare and benchmark different MPC formulations using the BOP-TEST and selected performance indicators. the outcome will be a set of well-documented and tested MPC algorithms with their corresponding performances as benchmarked, and guidelines for good practice in MPC design.
 
 ## WP 2.1 City District Information Modeling
 
