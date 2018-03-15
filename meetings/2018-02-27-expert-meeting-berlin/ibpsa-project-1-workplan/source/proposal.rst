@@ -151,24 +151,14 @@ and publications in the peer-reviewed literature.
 WP 1.2: Library for Model Predictive Control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The objective is to develop a Modelica library, possibly as a package of the
-IBPSA Modelica library, with models that can be
-used to efficiently solve optimal control problems for building
-and district energy systems within a
-Model Predictive Control algorithm, and that can be combined
-with parameter and state estimation algorithms to adapt the models
-using measured data.
+The focus of WP 1.2 is threefold. 
+The first objective is to develop a Modelica library, possibly as a package of the IBPSA Modelica library, with models that can be used to efficiently solve optimal control problems for building and district energy systems within a Model Predictive Control (MPC) algorithm, and that can be combined with parameter and state estimation algorithms to adapt the models using measured data. The approach is to formulate all physical equations to be at least twice continuously differentiable with bounded derivatives on compact sets, which is a requirement for many efficient nonlinear optimization algorithms. The anticipated outcome is an open-source, free Modelica library of component and system models for optimization, hosted on https://github.com/ibpsa.
 
-The approach is to formulate all physical equations to be at least twice
-continuously differentiable with bounded derivatives on compact sets,
-which is a requirement for many efficient nonlinear optimization algorithms.
+The second objective is to develop a common framework to test and assess MPC performance. This framework is a virtual test bed that represents a common architecture with detailed building emulator models that allow control by MPC. Both the more European hydronic systems and the more American air-based systems are represented for different building types and complexities. The anticipated outcome is an open source Building Optimization Test (BOP-TEST) hosted on https://github.com/ibpsa.
 
-The outcome is a free open-source library of component and system models
-that can be used to construct models for implementation in model predictive controllers.
+The third objective is to compare and benchmark different MPC formulations using the BOP-TEST and selected performance indicators. The anticipated outcome is a set of well-documented and tested MPC algorithms with their corresponding performances as benchmarked, and guidelines for good practice in MPC design.
 
-The deliverable is an open-source, free Modelica library hosted on
-https://github.com/ibpsa,
-and publications in the peer-reviewed literature.
+Publications in the peer-reviewed literature are anticipated as well.
 
 
 Task 2: Building and City Quarter Information Models
