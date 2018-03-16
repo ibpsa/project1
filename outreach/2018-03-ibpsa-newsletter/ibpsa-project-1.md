@@ -45,11 +45,12 @@ Starting from the observation that geometry processing between BIM and BPS is a 
 
 ## WP 3.1 Application
 
-Dirk
+The aim of this work package is to demonstrate through applications the capabilities that are enabled through Modelica. This will lead to the identification of specific research needs that are subsequently communicated to the researchers active in Tasks 1 and 2.  The approach is to share best approaches and document them for dissemination to the community. The outcomes of this Work Package are a collection of case studies that demonstrates capabilities enabled by use of Modelica for building and district energy system design and operation.
 
 ## WP 3.2 District energy DESTEST
 
-Dirk
+The second work package within Task 3 includes the development of a validation test for district energy models that started in IEA EBC Annex 60: DESTEST. In the Berlin meeting it was agreed to define a first common exercise that simulates the behavior of a simple thermal network in a simple neighborhood. This example will serve as a first test and will be progressively be made more complex to analyze research questions related to the simulation of district energy systems. The outcome of this work package is the description of a set of representative districts that can be used for testing different DES models or testing different DES implementations and approaches (f.i. central vs decentral storage) as well as a validation test procedure for district energy system models.
+
 
 
 The next meeting will be in fall in Paris, organized by Lisa Rivalin and Valentin Gavan of Engie.
