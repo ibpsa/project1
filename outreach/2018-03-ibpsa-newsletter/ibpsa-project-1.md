@@ -1,5 +1,7 @@
 # IBPSA Project 1 Expert Meeting in Berlin
 
+Michael Wetter, Christoph van Treeck, Lieve Helsen, Darren Robinson and Dirk Saelens.
+
 On February 27 and 28, 2018, the IBPSA Project 1 held its first Expert Meeting at the UdK Berlin, hosted by Christoph Nytsch-Geusen.
 The meeting was attended by 60 people. The main focus of meeting was to organize the work
 within and the dependencies among the work packages. There was also a
