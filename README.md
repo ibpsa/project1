@@ -12,4 +12,5 @@ For the main web site, visit https://ibpsa.github.io/project1/.
 For the wiki that contains meeting announcements and agendas, visit https://github.com/ibpsa/project1/wiki.
 
 Files for the individual work packages are in the directories `wp_x_y_z`.
-To avoid too large repositories, please don't upload multiple versions of large binary files (such as PowerPoint or Excel files).
+To avoid the repository to become very large, please don't upload multiple versions of
+large binary files (such as PowerPoint or Excel files).
