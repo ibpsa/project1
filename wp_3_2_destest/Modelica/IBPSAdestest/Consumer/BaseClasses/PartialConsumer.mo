@@ -28,7 +28,7 @@ protected
           lineColor={0,0,0},
           fillColor={215,215,215},
           fillPattern=FillPattern.Solid), Text(
-          extent={{-202,140},{200,100}},
+          extent={{-320,140},{320,100}},
           lineColor={28,108,200},
           fillColor={215,215,215},
           fillPattern=FillPattern.Solid,
