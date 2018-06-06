@@ -5,8 +5,7 @@ partial model EndNode_sink
   Modelica.Fluid.Interfaces.FluidPort_a port_a(redeclare package Medium =
         Medium)
     annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
-  replaceable package Medium = IBPSA.Media.Water
-    annotation (__Dymola_choicesAllMatching=true);
+
   annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
         coordinateSystem(preserveAspectRatio=false)));
 end EndNode_sink;
