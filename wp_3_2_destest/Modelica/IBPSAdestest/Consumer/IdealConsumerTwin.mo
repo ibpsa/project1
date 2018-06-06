@@ -35,4 +35,8 @@ equation
     annotation (Line(points={{72,37},{72,32},{72,4}}, color={0,0,127}));
   connect(m_flo_min.y, smoothMin.u2)
     annotation (Line(points={{29,48},{60,48},{60,4}}, color={0,0,127}));
+  connect(smoothMin.y, pum.m_flow_in) annotation (Line(points={{66,-19},{66,-19},
+          {66,-56},{-50,-56},{-50,28}}, color={0,0,127}));
+  connect(QDem, hea.u) annotation (Line(points={{0,100},{0,42},{36,42},{36,12}},
+        color={0,0,127}));
 end IdealConsumerTwin;
