@@ -6,7 +6,8 @@ def csv_to_modelica_input(source_file, target_file):
     """
     Converts csv file to txt file suitable for loading into Modelica
 
-    :param data:
+    :param source_file: path to csv file to be converted
+    :param target_file: path to txt file to be made
     """
 
     df = pd.read_csv(source_file, sep=';', index_col=0)
