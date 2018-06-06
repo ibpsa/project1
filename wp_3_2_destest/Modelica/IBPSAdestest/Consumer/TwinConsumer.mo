@@ -1,9 +1,8 @@
-within IBPSAdestest.Consumer.BaseClasses;
 model TwinConsumer
   extends IBPSAdestest.Consumer.BaseClasses.EndNode_twoport;
-  IBPSA.Fluid.Movers.FlowControlled_m_flow pum(redeclare package Medium =
+  IBPSA.Fluid.Movers.FlowControlled_m_flow fan(redeclare package Medium =
         Medium, m_flow_nominal=m_flow_nominal)
-    annotation (Placement(transformation(extent={{-60,50},{-40,30}})));
+    annotation (Placement(transformation(extent={{-60,30},{-40,50}})));
   IBPSA.Fluid.HeatExchangers.HeaterCooler_u hea(
     redeclare package Medium = Medium,
     m_flow_nominal=m_flow_nominal,
@@ -17,9 +16,9 @@ model TwinConsumer
   parameter Modelica.SIunits.PressureDifference dp_nominal=100
     "Pressure difference";
 equation
-  connect(pum.port_a, port_a)
+  connect(fan.port_a, port_a)
     annotation (Line(points={{-60,40},{-100,40}}, color={0,127,255}));
-  connect(pum.port_b, hea.port_a) annotation (Line(points={{-40,40},{-6,40},{30,
+  connect(fan.port_b, hea.port_a) annotation (Line(points={{-40,40},{-6,40},{30,
           40},{30,10}}, color={0,127,255}));
   connect(hea.port_b, port_b) annotation (Line(points={{30,-10},{30,-42},{-100,
           -42}}, color={0,127,255}));

@@ -5,8 +5,6 @@ partial model EndNode_twoport
   Modelica.Fluid.Interfaces.FluidPort_a port_a(redeclare package Medium =
         Medium)
     annotation (Placement(transformation(extent={{-110,30},{-90,50}})));
-  replaceable package Medium = IBPSA.Media.Water
-    annotation (__Dymola_choicesAllMatching=true);
   Modelica.Fluid.Interfaces.FluidPort_b port_b(redeclare package Medium =
         Medium)
     annotation (Placement(transformation(extent={{-110,-52},{-90,-32}})));
