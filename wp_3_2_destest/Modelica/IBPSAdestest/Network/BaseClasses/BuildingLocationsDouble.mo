@@ -1,4 +1,3 @@
-within IBPSAdestest.Network.BaseClasses;
 model BuildingLocationsDouble "Supply and return are modelled"
 
   Consumer.TwinConsumer   SimpleDistrict_2(redeclare package Medium =

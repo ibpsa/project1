@@ -1,4 +1,3 @@
-within IBPSAdestest.Network;
 model SupplyNetwork "Only supply line is modelled"
   extends Modelica.Icons.Example;
   annotation (Diagram(coordinateSystem(extent={{-180,-180},{180,180}})), Icon(

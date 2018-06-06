@@ -1,4 +1,3 @@
-within IBPSAdestest.Consumer;
 model TwinConsumer
   extends IBPSAdestest.Consumer.BaseClasses.EndNode_twoport;
   IBPSA.Fluid.Movers.FlowControlled_m_flow fan(redeclare package Medium =

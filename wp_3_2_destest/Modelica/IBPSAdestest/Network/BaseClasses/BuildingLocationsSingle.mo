@@ -1,4 +1,3 @@
-within IBPSAdestest.Network.BaseClasses;
 model BuildingLocationsSingle "Only supply line is modelled"
 
   Consumer.BaseClasses.SimpleConsumer SimpleDistrict_2(redeclare package Medium
