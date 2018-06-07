@@ -35,18 +35,37 @@ model IdealConsumerTwinExample
         transformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
-        origin={10,-30})));
+        origin={10,-46})));
   parameter Modelica.SIunits.MassFlowRate m_flow_nominal=1
     "Nominal mass flow rate, used for regularization near zero flow";
+  IBPSA.Fluid.Sensors.EnthalpyFlowRate senEntFloIn(redeclare package Medium =
+        Medium, m_flow_nominal=m_flow_nominal)
+    annotation (Placement(transformation(extent={{-48,4},{-28,24}})));
+  IBPSA.Fluid.Sensors.EnthalpyFlowRate senEntFloOut(redeclare package Medium =
+        Medium, m_flow_nominal=m_flow_nominal) annotation (Placement(
+        transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=270,
+        origin={10,-14})));
+  Modelica.Blocks.Math.Feedback heaExtr
+    annotation (Placement(transformation(extent={{40,40},{60,60}})));
 equation
   connect(heaDem.y[1], con.QDem)
-    annotation (Line(points={{-19,50},{30,50},{30,20}}, color={0,0,127}));
-  connect(sou.ports[1], con.port_a) annotation (Line(points={{-60,14},{20,14}},
-                            color={0,127,255}));
+    annotation (Line(points={{-39,70},{30,70},{30,20}}, color={0,0,127}));
   connect(bou1.ports[1], senTem.port_b)
-    annotation (Line(points={{10,-60},{10,-40}}, color={0,127,255}));
-  connect(senTem.port_a, con.port_b)
-    annotation (Line(points={{10,-20},{10,5.8},{20,5.8}}, color={0,127,255}));
+    annotation (Line(points={{10,-60},{10,-56}}, color={0,127,255}));
+  connect(sou.ports[1], senEntFloIn.port_a)
+    annotation (Line(points={{-60,14},{-48,14}}, color={0,127,255}));
+  connect(senEntFloIn.port_b, con.port_a)
+    annotation (Line(points={{-28,14},{20,14}}, color={0,127,255}));
+  connect(senTem.port_a, senEntFloOut.port_b)
+    annotation (Line(points={{10,-36},{10,-24}}, color={0,127,255}));
+  connect(senEntFloOut.port_a, con.port_b)
+    annotation (Line(points={{10,-4},{10,5.8},{20,5.8}}, color={0,127,255}));
+  connect(senEntFloIn.H_flow, heaExtr.u1)
+    annotation (Line(points={{-38,25},{-38,50},{42,50}}, color={0,0,127}));
+  connect(senEntFloOut.H_flow, heaExtr.u2)
+    annotation (Line(points={{21,-14},{50,-14},{50,42}}, color={0,0,127}));
   annotation (Documentation(info="<html>
 <p>
 Example of <a href=\"modelica://IBPSAdestest.Consumer.IdealConsumerTwin\">IdealConsumerTwin</a> model using data from the DesTest building heat demand exercise. 
@@ -56,5 +75,7 @@ Example of <a href=\"modelica://IBPSAdestest.Consumer.IdealConsumerTwin\">IdealC
 <li>June 7, 2018, by Bram van der Heijde:
 <br/>First implementation</li>
 </ul>
-</html>"));
+</html>"), __Dymola_Commands(file=
+          "Resources/Scripts/Dymola/IBPSAdestest/Consumer/Examples/IdealConsumerTwinExample.mos"
+        "Simulate and plot"));
 end IdealConsumerTwinExample;
