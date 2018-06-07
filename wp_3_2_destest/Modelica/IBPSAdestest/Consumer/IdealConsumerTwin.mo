@@ -44,4 +44,12 @@ equation
           {66,-56},{-50,-56},{-50,28}}, color={0,0,127}));
   connect(QDem, hea.u) annotation (Line(points={{0,100},{0,42},{36,42},{36,12}},
         color={0,0,127}));
+  annotation (Documentation(info="<html>
+<p>Models a consumer with a deterministic heat demand, using a fixed pressure drop and ideal mass flow control to achieve this temperature drop. Fixed nominal pressure drop of heating system. Decentralized pumps</p>
+</html>", revisions="<html>
+<ul>
+<li>June 6, 2018 by Bram van der Heijde:
+<br/>First implementation</li>
+</ul>
+</html>"));
 end IdealConsumerTwin;
