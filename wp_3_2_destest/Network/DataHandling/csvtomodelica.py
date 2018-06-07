@@ -26,6 +26,6 @@ if __name__ == '__main__':
 
     wp_dir = os.path.abspath('../..')  # Work package directory
     results_dir = os.path.join(wp_dir, 'Results', 'SimpleDistrict')
-    data_dir = os.path.join(wp_dir, 'Modelica', 'Data')
+    data_dir = os.path.join(wp_dir, 'Modelica', 'IBPSAdestest', 'Resources', 'Data', 'DestestHeatDemand')
     csv_to_modelica_input(os.path.join(results_dir, 'SimpleDistrict_district.csv'),
                           os.path.join(data_dir, 'heat_profiles.txt'))

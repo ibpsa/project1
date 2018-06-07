@@ -1,4 +1,4 @@
-within IBPSAdestest.Consumer;
+within IBPSAdestest.Consumer.BaseClasses;
 model SimpleConsumer
   extends IBPSAdestest.Consumer.BaseClasses.EndNode_sink;
   IBPSA.Fluid.Sources.FixedBoundary sin(redeclare package Medium = Medium,

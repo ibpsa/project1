@@ -3,3 +3,11 @@ _site
 .jekyll-metadata
 /meetings/2016-10-24-gensim/tuesday/Teaser/Results
 /meetings/2016-10-24-gensim/tuesday/BuildingAndHVAC/Results
+*.bak-mo
+*dsin.txt
+*buildlog.txt
+*dsfinal.txt
+*dslog.txt
+*dsmodel.c
+*dymosim.exp
+*.mat

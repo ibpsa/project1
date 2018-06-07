@@ -1,9 +1,0 @@
-within IBPSAdestest.Network.BaseClasses;
-model BuildingLocations "Only supply line is modelled"
-
-  Consumer.SimpleConsumer SimpleDistrict_2(redeclare package Medium =
-        IBPSA.Media.Water)
-    annotation (Placement(transformation(extent={{-160,140},{-180,160}})));
-  annotation (Diagram(coordinateSystem(extent={{-180,-180},{180,180}})), Icon(
-        coordinateSystem(extent={{-120,-100},{100,120}})));
-end BuildingLocations;
