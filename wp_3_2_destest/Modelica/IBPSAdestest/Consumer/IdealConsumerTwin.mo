@@ -2,13 +2,14 @@ within IBPSAdestest.Consumer;
 model IdealConsumerTwin
   "Basic consumer model for DesTest with a fixed temperature drop, decentralized pump and ideal mass flow control"
   extends BaseClasses.TwinConsumer(pum(
-      T_start=T_start),             hea(T_start=T_start - deltaT));
+      T_start=T_start, nominalValuesDefineDefaultPressureCurve=true),
+                                    hea(T_start=T_start - deltaT));
 
   parameter Modelica.SIunits.TemperatureDifference deltaT=30
     "Desired temperature difference";
   parameter Modelica.SIunits.MassFlowRate m_flo_bypass=0.0001
     "Minimum bypass flow through substation";
-  Modelica.Blocks.Sources.RealExpression rho_cp_dt(y=deltaT*cp_default)
+  Modelica.Blocks.Sources.RealExpression cp_dt(y=deltaT*cp_default)
     annotation (Placement(transformation(extent={{8,50},{28,70}})));
   IBPSA.Utilities.Math.SmoothMax smoothMax(deltaX=0.001) annotation (Placement(
         transformation(
@@ -18,7 +19,7 @@ model IdealConsumerTwin
   Modelica.Blocks.Math.Division division annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
-        origin={72,48})));
+        origin={72,40})));
   Modelica.Blocks.Sources.RealExpression m_flo_min(y=m_flo_bypass)
     annotation (Placement(transformation(extent={{8,38},{28,58}})));
   Modelica.Blocks.Interfaces.RealInput QDem "Control input" annotation (
@@ -29,12 +30,12 @@ model IdealConsumerTwin
   parameter Modelica.Media.Interfaces.Types.Temperature T_start=Medium.T_default
     "Start value of temperature" annotation (Dialog(tab="Initialization"));
 equation
-  connect(rho_cp_dt.y, division.u2)
-    annotation (Line(points={{29,60},{66,60}}, color={0,0,127}));
-  connect(division.u1, QDem) annotation (Line(points={{78,60},{78,72},{0,72},{0,
+  connect(cp_dt.y, division.u2)
+    annotation (Line(points={{29,60},{66,60},{66,52}}, color={0,0,127}));
+  connect(division.u1, QDem) annotation (Line(points={{78,52},{78,72},{0,72},{0,
           100}}, color={0,0,127}));
   connect(division.y,smoothMax. u1)
-    annotation (Line(points={{72,37},{72,32},{72,4}}, color={0,0,127}));
+    annotation (Line(points={{72,29},{72,4}},         color={0,0,127}));
   connect(m_flo_min.y,smoothMax. u2)
     annotation (Line(points={{29,48},{60,48},{60,4}}, color={0,0,127}));
   connect(smoothMax.y, pum.m_flow_in) annotation (Line(points={{66,-19},{66,-19},
