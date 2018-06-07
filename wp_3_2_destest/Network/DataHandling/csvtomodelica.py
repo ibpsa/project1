@@ -11,7 +11,7 @@ def csv_to_modelica_input(source_file, target_file):
     """
 
     df = pd.read_csv(source_file, sep=';', index_col=0)
-    shape = df.shape
+    shape = (len(df.index), len(df.columns)+1)
     df.to_csv('tempfile.txt', header=None, sep=' ')
     header = '#1\ndouble data' + str(shape) + '\n'
 
