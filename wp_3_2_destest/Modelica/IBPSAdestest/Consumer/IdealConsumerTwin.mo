@@ -1,11 +1,14 @@
 within IBPSAdestest.Consumer;
 model IdealConsumerTwin
   "Basic consumer model for DesTest with a fixed temperature drop, decentralized pump and ideal mass flow control"
-  extends BaseClasses.TwinConsumer;
+  extends BaseClasses.TwinConsumer(pum(
+      T_start=T_start,
+      m_flow_nominal=m_flow_nominal,
+      m_flow_start=m_flow_nominal), hea(T_start=T_start));
 
-  parameter Modelica.Blocks.Interfaces.RealOutput deltaT=30
+  parameter Modelica.SIunits.TemperatureDifference deltaT=30
     "Desired temperature difference";
-  parameter Modelica.Blocks.Interfaces.RealOutput m_flo_bypass=0.0001
+  parameter Modelica.SIunits.MassFlowRate m_flo_bypass=0.0001
     "Minimum bypass flow through substation";
   Modelica.Blocks.Sources.RealExpression rho_cp_dt(y=deltaT*cp_default*
         rho_default)
@@ -26,6 +29,8 @@ model IdealConsumerTwin
         extent={{-20,-20},{20,20}},
         rotation=270,
         origin={0,100})));
+  parameter Modelica.Media.Interfaces.Types.Temperature T_start=Medium.T_default
+    "Start value of temperature" annotation (Dialog(tab="Initialization"));
 equation
   connect(rho_cp_dt.y, division.u2)
     annotation (Line(points={{29,60},{66,60}}, color={0,0,127}));
