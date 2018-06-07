@@ -5,13 +5,13 @@ model SupplyNetwork "Only supply line is modelled"
 
   Modelica.Blocks.Sources.CombiTimeTable combiTimeTable(
     tableOnFile=true,
-    fileName=
-        "C:/Users/u0094934/Documents/IBPSA-project1/wp_3_2_destest/Modelica/Data/heat_profiles.txt",
-
     extrapolation=Modelica.Blocks.Types.Extrapolation.HoldLastPoint,
     tableName="data",
-    columns=2:18)
+    columns=2:18,
+    fileName=Modelica.Utilities.Files.loadResource(
+        "modelica://IBPSAdestest/Resources/Data/DestestHeatDemand/heat_profiles.txt"))
     annotation (Placement(transformation(extent={{-140,-120},{-120,-100}})));
+
 protected
   Modelica.Blocks.Interfaces.RealOutput y1[size(combiTimeTable.y, 1)]
                      "Connector of Real output signals"
@@ -23,11 +23,11 @@ equation
   connect(combiTimeTable.y[5], SimpleDistrict_5.QDem) annotation (Line(points={
           {-119,-110},{-110,-110},{-100,-110},{-100,-74},{-198,-74},{-198,112},
           {-170,112},{-170,100}}, color={0,0,127}));
-  connect(combiTimeTable.y[10], SimpleDistrict_10.QDem) annotation (Line(points
-        ={{-119,-110},{-100,-110},{-100,-74},{-198,-74},{-198,52},{-170,52},{
+  connect(combiTimeTable.y[10], SimpleDistrict_10.QDem) annotation (Line(points=
+         {{-119,-110},{-100,-110},{-100,-74},{-198,-74},{-198,52},{-170,52},{
           -170,40}}, color={0,0,127}));
-  connect(combiTimeTable.y[16], SimpleDistrict_16.QDem) annotation (Line(points
-        ={{-119,-110},{-100,-110},{-100,-74},{-198,-74},{-198,-8},{-170,-8},{
+  connect(combiTimeTable.y[16], SimpleDistrict_16.QDem) annotation (Line(points=
+         {{-119,-110},{-100,-110},{-100,-74},{-198,-74},{-198,-8},{-170,-8},{
           -170,-20}}, color={0,0,127}));
   connect(combiTimeTable.y, y1) annotation (Line(points={{-119,-110},{-100,-110},
           {-100,-73.5},{-0.5,-73.5}}, color={0,0,127}));

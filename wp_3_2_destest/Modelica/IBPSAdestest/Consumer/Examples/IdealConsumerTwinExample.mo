@@ -7,16 +7,17 @@ model IdealConsumerTwinExample
     dp_nominal(displayUnit="Pa"),
     deltaT=20,
     m_flow_nominal=m_flow_nominal,
-    m_flo_bypass=0.0001,
+    m_flo_bypass=0,
     T_start=323.15)
     annotation (Placement(transformation(extent={{20,0},{40,20}})));
   Modelica.Blocks.Sources.CombiTimeTable heaDem(
     tableOnFile=true,
-    fileName="C:/Users/u0094934/Documents/IBPSA-project1/wp_3_2_destest/Modelica/Data/heat_profiles.txt",
     extrapolation=Modelica.Blocks.Types.Extrapolation.HoldLastPoint,
     tableName="data",
-    columns=2:18)
-    annotation (Placement(transformation(extent={{-40,40},{-20,60}})));
+    columns=2:18,
+    fileName=Modelica.Utilities.Files.loadResource(
+        "modelica://IBPSAdestest/Resources/Data/DestestHeatDemand/heat_profiles.txt"))
+    annotation (Placement(transformation(extent={{-60,60},{-40,80}})));
 
   IBPSA.Fluid.Sources.Boundary_pT sou(
     nPorts=1,
