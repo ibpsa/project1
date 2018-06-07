@@ -2,18 +2,15 @@ within IBPSAdestest.Consumer;
 model IdealConsumerTwin
   "Basic consumer model for DesTest with a fixed temperature drop, decentralized pump and ideal mass flow control"
   extends BaseClasses.TwinConsumer(pum(
-      T_start=T_start,
-      m_flow_nominal=m_flow_nominal,
-      m_flow_start=m_flow_nominal), hea(T_start=T_start));
+      T_start=T_start),             hea(T_start=T_start - deltaT));
 
   parameter Modelica.SIunits.TemperatureDifference deltaT=30
     "Desired temperature difference";
   parameter Modelica.SIunits.MassFlowRate m_flo_bypass=0.0001
     "Minimum bypass flow through substation";
-  Modelica.Blocks.Sources.RealExpression rho_cp_dt(y=deltaT*cp_default*
-        rho_default)
+  Modelica.Blocks.Sources.RealExpression rho_cp_dt(y=deltaT*cp_default)
     annotation (Placement(transformation(extent={{8,50},{28,70}})));
-  IBPSA.Utilities.Math.SmoothMin smoothMin(deltaX=0.001) annotation (Placement(
+  IBPSA.Utilities.Math.SmoothMax smoothMax(deltaX=0.001) annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
@@ -36,11 +33,11 @@ equation
     annotation (Line(points={{29,60},{66,60}}, color={0,0,127}));
   connect(division.u1, QDem) annotation (Line(points={{78,60},{78,72},{0,72},{0,
           100}}, color={0,0,127}));
-  connect(division.y, smoothMin.u1)
+  connect(division.y,smoothMax. u1)
     annotation (Line(points={{72,37},{72,32},{72,4}}, color={0,0,127}));
-  connect(m_flo_min.y, smoothMin.u2)
+  connect(m_flo_min.y,smoothMax. u2)
     annotation (Line(points={{29,48},{60,48},{60,4}}, color={0,0,127}));
-  connect(smoothMin.y, pum.m_flow_in) annotation (Line(points={{66,-19},{66,-19},
+  connect(smoothMax.y, pum.m_flow_in) annotation (Line(points={{66,-19},{66,-19},
           {66,-56},{-50,-56},{-50,28}}, color={0,0,127}));
   connect(QDem, hea.u) annotation (Line(points={{0,100},{0,42},{36,42},{36,12}},
         color={0,0,127}));

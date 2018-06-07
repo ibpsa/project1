@@ -13,13 +13,6 @@ protected
       Medium.specificHeatCapacityCp(state=sta_default)
     "Heat capacity of medium";
 
-  parameter Modelica.SIunits.Density rho_default=Medium.density_pTX(
-      p=Medium.p_default,
-      T=Medium.T_default,
-      X=Medium.X_default)
-    "Default density (e.g., rho_liquidWater = 995, rho_air = 1.2)"
-    annotation (Dialog(group="Advanced"));
-
 
 
   annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
