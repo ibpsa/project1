@@ -9,8 +9,9 @@ permalink: /schedule
 <img src="{{ site.url }}/assets/img/project_schedule.png" alt="Project schedule"
 width="600px">
 
-The kick-off meeting is in August 2017,
-coinciding with the the [Building Simulation 2017 conference](http://buildingsimulation2017.org/).
+Below are the main expert meetings and presentations.
+For coordination meeting schedule, visit
+[https://github.com/ibpsa/project1/wiki/Meetings](https://github.com/ibpsa/project1/wiki/Meetings)
 
 
 # Upcoming meetings and presentations
@@ -20,10 +21,10 @@ coinciding with the the [Building Simulation 2017 conference](http://buildingsim
   {% if post.date >= site.time %}
   {% if post.categories contains 'presentation' or 'meeting' %}
   <tr valign="top">
-  <td>
+  <td width="150pt">
   <p>{{ post.date | date: '%B %d, %Y' }}</p>
   </td>
-  <td>
+  <td width="500pt">
   <p>
   {{ post.title }}
   </p>
@@ -52,10 +53,10 @@ coinciding with the the [Building Simulation 2017 conference](http://buildingsim
   {% if post.date < site.time %}
     {% if post.categories contains 'presentation' or 'meeting' %}
     <tr valign="top">
-    <td>
+    <td width="150pt">
     <p>{{ post.date | date: '%B %d, %Y' }}</p>
     </td>
-    <td>
+    <td width="500pt">
     <p>
     {{ post.title }}
     </p>

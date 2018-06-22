@@ -2,7 +2,7 @@
 layout: post
 title:  Expert meeting Paris - Registration open
 event: Expert meeting
-date:   2018-06-22
+date:   2018-10-01
 categories: news
 type: workshop
 author: Michael Wetter
