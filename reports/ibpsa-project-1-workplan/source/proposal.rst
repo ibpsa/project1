@@ -66,6 +66,8 @@ validated and verified Modelica libraries and BIM/GIS to/from Modelica
 translators that allow buildings and community energy systems and
 grids to be designed and operated as integrated, robust, performance
 based systems with low energy use and low peak power demand.
+These tools will also be used to develop a testing and benchmarking
+infrastructure for advanced control algorithms and for district energy simulations.
 The software development will be organized through a
 stable software development process that
 allows third-party developers to build applications that encapsulate
@@ -82,7 +84,9 @@ computing tools for buildings. The goals are
 #. to provide to simulation tool providers stable, well-tested, validated and
    documented code that they can integrate in their software tools
    for deployment to design firms, energy service companies,
-   equipment and control manufacturers.
+   equipment and control manufacturers,
+#. to set up testing and benchmarking infrastructure for advanced control
+   algorithms and for district energy simulations, and
 #. to demonstrate through applications capabilities that are enabled through
    Modelica, and to identify and test through applications research needs
    and research results.
@@ -97,38 +101,33 @@ The work is organized in three tasks as follows:
 #. Task 1: Further development of the open-source infrastructure
    https://github.com/ibpsa/modelica-ibpsa of models and test
    suite to coordinate Modelica-based model developments for building
-   and district energy system design and operation :cite:`WetterEtAl2015:2`.
+   and district energy system design and operation :cite:`WetterEtAl2015:2`,
+   as well as development of a Modelica library suitable for use in
+   Model Predictive Controllers (MPC), and an infrastructure
+   to test advanced control algorithms.
 #. Task 2: Tool-chains that link object-oriented CAD systems, geoinformation
    systems, building and control design tools at various
-   levels of detail with Modelica models, and that allow the
-   deployment of these models to real-time systems in support of
+   levels of detail with Modelica models, and that allow the deployment of
+   these models to real-time systems in support of
    building commissioning, building controls and fault detection and
    diagnostics :cite:`ThoradeEtAl2015`.
 #. Task 3: Application, demonstration and dissemination of work conducted in Tasks 1 and 2.
 
 The tasks and work packages are as described below.
 
-Task 1: Modelica libraries
---------------------------
+Task 1: Modelica
+----------------
 
 This task will develop free open-source
 libraries of Modelica models for building and community energy and control
-systems with associated documentation for new and experienced users. This will
-be accomplished through the further development and validation of the
-current Annex 60 library, which will be further developed as
-the IBPSA Modelica library.
-The Annex 60 library is already used as the core of the four Modelica libraries
-for buildings and community energy systems
-
-* AixLib, from RWTH Aachen University, Germany: https://github.com/RWTH-EBC/AixLib
-* Buildings, from LBNL, Berkeley, CA, USA: http://simulationresearch.lbl.gov/modelica
-* BuildingSystems, from UdK Berlin, Germany: http://www.modelica-buildingsystems.de
-* IDEAS from KU Leuven, Belgium: https://github.com/open-ideas/IDEAS
-
-Its further development as the Modelica IBPSA Library has already started at
-https://github.com/ibpsa/modelica-ibpsa.
-An outcome will be a comprehensive free open-source library that will be
-used by different simulation tool-providers as well as by academia.
+systems with associated documentation for new and experienced users.
+Through WP 1.1, Modelica libraries will be developed for design and operation through
+the further development of the Modelica IBPSA Library (previously called
+the Modelica Annex 60 Library).
+Through WP 1.2, a library with models that are suited for use in
+nonlinear Model Predictive Control (MPC) will be developed.
+Also through WP 1.2, a test infrastructure for advanced control algorithms
+will be developed and used to compare the performance of MPC algorithms.
 
 WP 1.1: Library for design and operation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -137,6 +136,13 @@ The objective is to develop the Modelica IBPSA Library,
 as a free open-source library of Modelica models for building and community energy systems.
 This will be accomplished through the further development, documentation and
 validation of the library.
+The Modelica IBPSA Library is already used as the core of the four Modelica libraries
+for buildings and community energy systems
+
+* AixLib, from RWTH Aachen University, Germany: https://github.com/RWTH-EBC/AixLib
+* Buildings, from LBNL, Berkeley, CA, USA: http://simulationresearch.lbl.gov/modelica
+* BuildingSystems, from UdK Berlin, Germany: http://www.modelica-buildingsystems.de
+* IDEAS from KU Leuven, Belgium: https://github.com/open-ideas/IDEAS
 
 The anticipated outcome will be a comprehensive free open-source library
 that is used by the above libraries,
@@ -144,19 +150,38 @@ by EnergyPlus
 and potentially by other building simulation programs.
 
 The deliverable will be two official releases of the library per year,
-hosted on https://github.com/ibpsa,
+hosted on https://github.com/ibpsa/modelica-ibpsa,
 and publications in the peer-reviewed literature.
 
 
 WP 1.2: Library for Model Predictive Control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The focus of WP 1.2 is threefold. 
-The first objective is to develop a Modelica library, possibly as a package of the IBPSA Modelica library, with models that can be used to efficiently solve optimal control problems for building and district energy systems within a Model Predictive Control (MPC) algorithm, and that can be combined with parameter and state estimation algorithms to adapt the models using measured data. The approach is to formulate all physical equations to be at least twice continuously differentiable with bounded derivatives on compact sets, which is a requirement for many efficient nonlinear optimization algorithms. The anticipated outcome is an open-source, free Modelica library of component and system models for optimization, hosted on https://github.com/ibpsa.
+The focus of WP 1.2 is threefold.
+The first objective is to develop a Modelica library, possibly as a package
+of the IBPSA Modelica library, with models that can be used to efficiently
+solve optimal control problems for building and district energy systems within
+a Model Predictive Control (MPC) algorithm, and that can be combined with
+parameter and state estimation algorithms to adapt the models using measured data.
+The approach is to formulate all physical equations to be at least
+twice continuously differentiable with bounded derivatives on compact sets,
+which is a requirement for many efficient nonlinear optimization algorithms.
+The anticipated outcome is an open-source, free Modelica library of
+component and system models for optimization, hosted on https://github.com/ibpsa.
 
-The second objective is to develop a common framework to test and assess MPC performance. This framework is a virtual test bed that represents a common architecture with detailed building emulator models that allow control by MPC. Both the more European hydronic systems and the more American air-based systems are represented for different building types and complexities. The anticipated outcome is an open source Building Optimization Test (BOP-TEST) hosted on https://github.com/ibpsa.
+The second objective is to develop a common framework to test and assess MPC performance.
+This framework is a virtual test bed that represents a common architecture
+with detailed building emulator models that allow control by MPC.
+Both the more European hydronic systems and the more American air-based systems
+are represented for different building types and complexities.
+The anticipated outcome is an open source Building Optimization Test (BOPTEST)
+hosted on https://github.com/ibpsa/project1-boptest.
 
-The third objective is to compare and benchmark different MPC formulations using the BOP-TEST and selected performance indicators. The anticipated outcome is a set of well-documented and tested MPC algorithms with their corresponding performances as benchmarked, and guidelines for good practice in MPC design.
+The third objective is to compare and benchmark different
+MPC formulations using the BOPTEST and selected performance indicators.
+The anticipated outcome is a set of well-documented and tested MPC algorithms
+with their corresponding performances as benchmarked, and guidelines for
+good practice in MPC design.
 
 Publications in the peer-reviewed literature are anticipated as well.
 
@@ -321,18 +346,13 @@ Intellectual Property
 
 All workshops, software and documentation will be open accessible to anyone.
 
-To ensure open collaboration among the participants, Modelica models
-developed within this project will be open-source and freely available
-under a slightly modified Modelica 2 license (or newer versions as applicable)
-as posted at `IBPSA/legal.html
-<https://htmlpreview.github.io/?https://github.com/ibpsa/modelica-ibpsa/blob/master/IBPSA/legal.html>`_.
-
-Code other than Modelica models will use the open-source BSD 3-Clause
+To ensure open collaboration among the participants, all code will
+be released as open-source using the BSD 3-Clause
 License as stated at
-http://simulationresearch.lbl.gov/modelica/buildingspy/legal.html
+https://github.com/ibpsa/project1/blob/master/legal.md.
 
 IBPSA will be the copyright owner.
-The liberal nature of these licenses allows others to implement
+The liberal nature of the license allows others to implement
 the code in their software and distribute it to others at no cost.
 Hence, IBPSA ownership of the copyright will allow others to
 reuse and distribute the software.

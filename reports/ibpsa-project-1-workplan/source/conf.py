@@ -176,9 +176,9 @@ htmlhelp_basename = 'Documentation'
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index',
-   'ibpsa_project1_workplan_draft.tex',
+   'ibpsa_project1_workplan.tex',
    u'IBPSA Project 1',
-   u'Draft Workplan', 'article'),
+   u'Workplan', 'article'),
 ]
 
 
