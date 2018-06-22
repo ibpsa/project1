@@ -25,9 +25,9 @@ All work is open-source and built on three standards:
  - [CityGML](http://www.citygml.org/) for data modeling at the district scale, and
  - [Modelica](http://www.modelica.org) for modeling the performance of building and district energy systems.
 
-The project will be conducted from summer 2017 to summer 2022.
-We are currently in the planning phase and further refine the
-[draft workplan]({{ site.url }}/downloads/ibpsa_project1_workplan_draft.pdf).
+The project will be conducted from summer 2017 to summer 2022,
+performing the tasks outlined in the
+[workplan]({{ site.url }}/downloads/ibpsa_project1_workplan.pdf).
 
 To register, please visit the [registration form](https://docs.google.com/a/lbl.gov/forms/d/1tyu3Qb3ydPseACxBgtL_UTKIdQS75eKr4zX89v7T0EM/viewform).
 
