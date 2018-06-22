@@ -1,7 +1,7 @@
 License
 =======
 
-Modelica IBPSA Library. Copyright (c) 1998-2018 Modelica Association,
+IBPSA Project 1. Copyright (c) 1998-2018
 International Building Performance Simulation Association (IBPSA) and
 contributors. All rights reserved.
 
