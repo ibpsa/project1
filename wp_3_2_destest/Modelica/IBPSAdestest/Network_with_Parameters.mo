@@ -5,7 +5,7 @@ extends Modelica.Icons.Package;
     extends Modelica.Icons.Example;
     extends BaseClasses.BuildingLocationsDouble;
 
-    parameter Modelica.SIunits.MassFlowRate m_flow_nominal=1;
+    parameter Modelica.SIunits.MassFlowRate m_flow_nominal=5;
     parameter Modelica.SIunits.Pressure dP=100;
 
     Modelica.Blocks.Sources.CombiTimeTable combiTimeTable(
@@ -330,8 +330,8 @@ extends Modelica.Icons.Package;
             {120,6},{146,6},{146,16}}, color={0,127,255}));
     connect(h_ret_in.port_2, h_ret_out.port_1) annotation (Line(points={{130,-34},
             {134,-34},{134,-34},{134,-34}}, color={0,127,255}));
-    connect(h_ret_out.port_2, SimpleDistrict_13.port_b) annotation (Line(points
-          ={{154,-34},{158,-34},{158,-34.2},{160,-34.2}}, color={0,127,255}));
+    connect(h_ret_out.port_2, SimpleDistrict_13.port_b) annotation (Line(points=
+           {{154,-34},{158,-34},{158,-34.2},{160,-34.2}}, color={0,127,255}));
     connect(i_ret.port_2, h_ret_out.port_3) annotation (Line(points={{8,-146},{
             144,-146},{144,-44}}, color={0,127,255}));
     connect(i_sup.port_2, h_sup_in.port_3)
@@ -340,8 +340,8 @@ extends Modelica.Icons.Package;
       annotation (Line(points={{98,34},{160,34}}, color={0,127,255}));
     connect(g_ret_in.port_2, g_ret_out.port_1)
       annotation (Line(points={{130,26},{136,26}}, color={0,127,255}));
-    connect(g_ret_out.port_2, SimpleDistrict_12.port_b) annotation (Line(points
-          ={{156,26},{158,26},{158,25.8},{160,25.8}}, color={0,127,255}));
+    connect(g_ret_out.port_2, SimpleDistrict_12.port_b) annotation (Line(points=
+           {{156,26},{158,26},{158,25.8},{160,25.8}}, color={0,127,255}));
     connect(g_ret_in.port_1, SimpleDistrict_9.port_b) annotation (Line(points={
             {110,26},{76,26},{76,25.8},{40,25.8}}, color={0,127,255}));
     connect(e_ret.port_1, SimpleDistrict_1.port_b) annotation (Line(points={{
