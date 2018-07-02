@@ -25,9 +25,9 @@ All work is open-source and built on three standards:
  - [CityGML](http://www.citygml.org/) for data modeling at the district scale, and
  - [Modelica](http://www.modelica.org) for modeling the performance of building and district energy systems.
 
-The project will be conducted from summer 2017 to summer 2022.
-We are currently in the planning phase and further refine the
-[draft workplan]({{ site.url }}/downloads/ibpsa_project1_workplan_draft.pdf).
+The project will be conducted from summer 2017 to summer 2022,
+performing the tasks outlined in the
+[workplan]({{ site.url }}/downloads/ibpsa_project1_workplan.pdf).
 
 To register, please visit the [registration form](https://docs.google.com/a/lbl.gov/forms/d/1tyu3Qb3ydPseACxBgtL_UTKIdQS75eKr4zX89v7T0EM/viewform).
 
@@ -41,16 +41,10 @@ There are three main tasks:
 <p>
 This task will develop free open-source
 libraries of Modelica models for building and community energy and control
-system design and optimization,
-with associated documentation for new and experienced users. This will
-be accomplished through the further development and validation of the
-current Annex 60 library, which will be further developed as
-the IBPSA Modelica library, and through the coordination of MPC
-research and development for buildings and districts.
-</p>
-<p>
-The Annex 60 library is already used as the core of the four Modelica libraries
-for building and community energy systems
+systems with associated documentation for new and experienced users.
+Modelica libraries will be developed for design and operation through
+the further development of the Modelica IBPSA Library, a library which is
+used as the core of the four Modelica libraries
 </p>
 <ul>
 <li>
@@ -71,8 +65,11 @@ for building and community energy systems
  </li>
  </ul>
 <p>
-An outcome will be a comprehensive free open-source library that will be
-used by different simulation tool-providers as well as by academia.
+Also, a library with models that are suited for use in
+nonlinear Model Predictive Control (MPC) will be developed.
+Also developed will be a test infrastructure for advanced control algorithms.
+This test infrastructure will allow to test and compare the performance of MPC algorithms
+with emulated building models in the loop.
 </p>
 </div>
 <div class="col-md-6">
@@ -91,7 +88,7 @@ This task will develop free open-source
 GIS/BIM data model to Modelica translators for individual building and
 community energy systems. As in the Annex 60, emphasis was placed on
 the district and building model to Modelica transformation process.
-Task 2 shall be dedicated to continuing BIM-oriented developments but shall focus on the GIS
+Task 2 is dedicated to continuing BIM-oriented developments but focuses on the GIS
 transformation process for community energy systems. This will be
 accomplished through the use of existing standards for exchanging
 energy calculation data, and through extending standards such as
