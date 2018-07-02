@@ -12,7 +12,7 @@ model SupplyNetwork "Only supply line is modelled"
     columns=2:18,
     fileName=Modelica.Utilities.Files.loadResource(
         "modelica://IBPSAdestest/Resources/Data/DestestHeatDemand/heat_profiles.txt"))
-    annotation (Placement(transformation(extent={{-140,-120},{-120,-100}})));
+    annotation (Placement(transformation(extent={{-160,-114},{-140,-94}})));
 
 protected
   Modelica.Blocks.Interfaces.RealOutput y1[size(combiTimeTable.y, 1)]
@@ -339,6 +339,7 @@ equation
                       color={0,0,127}));
   connect(combiTimeTable.y, y1) annotation (Line(points={{-119,-110},{-108,-110},
           {-108,-73.5},{-0.5,-73.5}}, color={0,0,127}));
+
   connect(SimpleDistrict_3.QDem, y1[3]) annotation (Line(points={{-30,160},{-30,
           176},{-0.5,176},{-0.5,-73.5}}, color={0,0,127}));
   connect(SimpleDistrict_1.QDem, y1[1]) annotation (Line(points={{30,160},{30,
