@@ -89,7 +89,7 @@ model BuildingLocationsDouble "Supply and return are modelled"
     m_flow_nominal=m_flow_nominal,
     m_flo_bypass=0,
     T_start=323.15)
-    annotation (Placement(transformation(extent={{160,78},{180,98}})));
+    annotation (Placement(transformation(extent={{160,80},{180,100}})));
   Consumer.IdealConsumerTwin   SimpleDistrict_8(redeclare package Medium =
         IBPSA.Media.Water,
     dp_nominal(displayUnit="Pa"),

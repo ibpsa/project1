@@ -214,7 +214,7 @@ equation
           0},{-0.5,0},{-0.5,-73.5}}, color={0,0,127}));
   connect(SimpleDistrict_4.QDem, y1[4]) annotation (Line(points={{170,160},{170,
           174},{202,174},{202,-73.5},{-0.5,-73.5}}, color={0,0,127}));
-  connect(SimpleDistrict_7.QDem, y1[7]) annotation (Line(points={{170,98},{170,
+  connect(SimpleDistrict_7.QDem, y1[7]) annotation (Line(points={{170,100},{170,
           112},{202,112},{202,-73.5},{-0.5,-73.5}}, color={0,0,127}));
   connect(SimpleDistrict_12.QDem, y1[12]) annotation (Line(points={{170,40},{
           170,50},{202,50},{202,-73.5},{-0.5,-73.5}}, color={0,0,127}));
@@ -296,14 +296,14 @@ equation
     annotation (Line(points={{46,94},{40,94}}, color={0,127,255}));
   connect(f_sup_out.port_2, f_sup_in.port_1) annotation (Line(points={{66,94},
           {70,94},{70,94},{74,94}}, color={0,127,255}));
-  connect(f_sup_in.port_2, SimpleDistrict_7.port_a) annotation (Line(points={
-          {94,94},{128,94},{128,92},{160,92}}, color={0,127,255}));
+  connect(f_sup_in.port_2, SimpleDistrict_7.port_a) annotation (Line(points={{94,94},
+          {128,94},{128,94},{160,94}},         color={0,127,255}));
   connect(f_ret_in.port_1, SimpleDistrict_8.port_b) annotation (Line(points={
           {110,86},{76,86},{76,85.8},{40,85.8}}, color={0,127,255}));
   connect(f_ret_in.port_2, f_ret_out.port_1) annotation (Line(points={{130,86},
           {132,86},{132,84},{134,84}}, color={0,127,255}));
-  connect(f_ret_out.port_2, SimpleDistrict_7.port_b) annotation (Line(points=
-          {{154,84},{158,84},{158,83.8},{160,83.8}}, color={0,127,255}));
+  connect(f_ret_out.port_2, SimpleDistrict_7.port_b) annotation (Line(points={{154,84},
+          {158,84},{158,85.8},{160,85.8}},           color={0,127,255}));
   connect(f_ret_in.port_3, e_ret.port_3)
     annotation (Line(points={{120,96},{120,136}}, color={0,127,255}));
   connect(f_ret_out.port_3, g_ret_in.port_3) annotation (Line(points={{144,74},
