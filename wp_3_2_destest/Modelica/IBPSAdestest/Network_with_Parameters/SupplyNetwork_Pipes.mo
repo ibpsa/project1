@@ -18,7 +18,8 @@ model SupplyNetwork_Pipes "Only supply line is modelled"
     pipeSD14h(nPorts=1),
     pipeSD9g(nPorts=1),
     pipeSD8f(nPorts=1),
-    pipeSD1e(nPorts=1));
+    pipeSD1e(nPorts=1),
+    pipeef(nPorts=3));
   extends BaseClasses.PipeLocationsSupply(
     pipeeSD4(nPorts=1),
     pipefSD7(nPorts=1),
@@ -46,39 +47,21 @@ model SupplyNetwork_Pipes "Only supply line is modelled"
     columns=2:18,
     fileName="C:/Users/kfi/Documents/gitrepos/gitrepos/wp_3_2_destest/Modelica/IBPSAdestest/Resources/Data/DestestHeatDemand/heat_profiles.txt")
     annotation (Placement(transformation(extent={{-160,-116},{-140,-96}})));
-  IBPSA.Fluid.HeatExchangers.HeaterCooler_u hea(
-    redeclare package Medium = IBPSA.Media.Water,
-    m_flow_nominal=m_flow_nominal,
-    dp_nominal=200,
-    Q_flow_nominal=16)    annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={-2,-116})));
   IBPSA.Fluid.Sources.FixedBoundary bou(redeclare package Medium =
         IBPSA.Media.Water, nPorts=1)
-    annotation (Placement(transformation(extent={{12,-70},{32,-50}})));
-  BaseClasses.PlugFlowPipe_IBPSA plugFlowPipe_IBPSA4(
-    nPorts=2,
-    length=20,
-    m_flow_nominal=m_flow_nominal,
-    dIns=0.1,
-    kIns=0.4,
-    redeclare package Medium = IBPSA.Media.Water) annotation (Placement(
-        transformation(
+    annotation (Placement(transformation(extent={{12,-66},{32,-46}})));
+  IBPSA.Fluid.HeatExchangers.Heater_T hea1(
+    redeclare package Medium = IBPSA.Media.Water,
+    m_flow_nominal=5,
+    dp_nominal=100) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
-        origin={-2,-90})));
-  BaseClasses.PlugFlowPipe_IBPSA plugFlowPipe_IBPSA9(
-    nPorts=2,
-    length=20,
-    m_flow_nominal=m_flow_nominal,
-    dIns=0.1,
-    kIns=0.4,
-    redeclare package Medium = IBPSA.Media.Water) annotation (Placement(
-        transformation(
-        extent={{10,-10},{-10,10}},
-        rotation=90,
-        origin={-2,-146})));
+        origin={-2,-114})));
+  Modelica.Blocks.Sources.RealExpression realExpression(y=333)
+    annotation (Placement(transformation(extent={{-48,-144},{-28,-124}})));
+  Modelica.Thermal.HeatTransfer.Sources.FixedTemperature fixedTemperature(T=
+        283.15)
+    annotation (Placement(transformation(extent={{-240,-92},{-220,-72}})));
 protected
   Modelica.Blocks.Interfaces.RealOutput y1[size(combiTimeTable.y, 1)]
                      "Connector of Real output signals"
@@ -186,24 +169,184 @@ equation
                       color={0,0,127}));
   connect(combiTimeTable.y, y1) annotation (Line(points={{-139,-106},{-100,-106},
           {-100,-73.5},{-0.5,-73.5}}, color={0,0,127}));
-  connect(hea.u, SimpleDistrict_2.QDem) annotation (Line(points={{-8,-128},{-54,
-          -128},{-54,-120},{-100,-120},{-100,-74},{-198,-74},{-198,170},{-170,170},
-          {-170,160}}, color={0,0,127}));
-  connect(hea.port_b,plugFlowPipe_IBPSA4. port_a)
-    annotation (Line(points={{-2,-106},{-2,-100}}, color={0,127,255}));
-  connect(hea.port_a,plugFlowPipe_IBPSA9. port_a)
-    annotation (Line(points={{-2,-126},{-2,-136}}, color={0,127,255}));
-  connect(pipehi.port_a, plugFlowPipe_IBPSA9.ports_b[1]) annotation (Line(
-        points={{106,-54},{106,-156},{-1.55431e-15,-156}},           color={0,127,
-          255}));
-  connect(pipeih.port_a, plugFlowPipe_IBPSA4.ports_b[1]) annotation (Line(
-        points={{94,-46},{94,-80},{8.88178e-16,-80}},          color={0,127,255}));
-  connect(pipeih.port_a, bou.ports[1])
-    annotation (Line(points={{94,-46},{32,-46},{32,-60}}, color={0,127,255}));
-  connect(plugFlowPipe_IBPSA9.ports_b[2], pipedi.port_a) annotation (Line(
-        points={{-4,-156},{-94,-156},{-94,-54}}, color={0,127,255}));
-  connect(pipeid.port_a, plugFlowPipe_IBPSA4.ports_b[2]) annotation (Line(
-        points={{-106,-46},{-106,-80},{-4,-80}}, color={0,127,255}));
+  connect(realExpression.y, hea1.TSet) annotation (Line(points={{-27,-134},{-16,
+          -134},{-16,-136},{-10,-136},{-10,-126}}, color={0,0,127}));
+  connect(hea1.port_b, pipeid.port_a) annotation (Line(points={{-2,-104},{-56,
+          -104},{-56,-46},{-106,-46}}, color={0,127,255}));
+  connect(hea1.port_b, pipeih.port_a) annotation (Line(points={{-2,-104},{46,
+          -104},{46,-46},{94,-46}}, color={0,127,255}));
+  connect(hea1.port_a, pipehi.port_a) annotation (Line(points={{-2,-124},{-4,
+          -124},{-4,-152},{106,-152},{106,-54}}, color={0,127,255}));
+  connect(hea1.port_a, pipedi.port_a) annotation (Line(points={{-2,-124},{-4,
+          -124},{-4,-152},{-98,-152},{-98,-54},{-94,-54}}, color={0,127,255}));
+  connect(fixedTemperature.port, pipeSD16d.heatPort) annotation (Line(points={{
+          -220,-82},{-140,-82},{-140,-44}}, color={191,0,0}));
+  connect(pipeid.heatPort, pipeSD16d.heatPort) annotation (Line(points={{-116,
+          -36},{-128,-36},{-128,-56},{-140,-56},{-140,-44}}, color={191,0,0}));
+  connect(pipeSD10c.heatPort, pipeSD16d.heatPort) annotation (Line(points={{
+          -140,16},{-132,16},{-132,-36},{-128,-36},{-128,-56},{-140,-56},{-140,
+          -44}}, color={191,0,0}));
+  connect(pipedc.heatPort, pipeSD16d.heatPort) annotation (Line(points={{-116,
+          24},{-122,24},{-122,18},{-132,18},{-132,-36},{-128,-36},{-128,-56},{
+          -140,-56},{-140,-44}}, color={191,0,0}));
+  connect(pipeSD5b.heatPort, pipeSD16d.heatPort) annotation (Line(points={{-140,
+          76},{-132,76},{-132,20},{-122,20},{-122,18},{-132,18},{-132,-36},{
+          -128,-36},{-128,-56},{-140,-56},{-140,-44}}, color={191,0,0}));
+  connect(pipecb.heatPort, pipeSD16d.heatPort) annotation (Line(points={{-116,
+          84},{-118,84},{-118,22},{-124,22},{-124,20},{-122,20},{-122,18},{-132,
+          18},{-132,-36},{-128,-36},{-128,-56},{-140,-56},{-140,-44}}, color={
+          191,0,0}));
+  connect(pipeba.heatPort, pipecb.heatPort)
+    annotation (Line(points={{-116,144},{-116,84}}, color={191,0,0}));
+  connect(pipeSD2a.heatPort, pipecb.heatPort) annotation (Line(points={{-140,
+          136},{-128,136},{-128,118},{-116,118},{-116,84}}, color={191,0,0}));
+  connect(pipeab.heatPort, pipecb.heatPort) annotation (Line(points={{-84,136},
+          {-84,112},{-116,112},{-116,84}}, color={191,0,0}));
+  connect(pipeSD3a.heatPort, pipecb.heatPort) annotation (Line(points={{-60,136},
+          {-74,136},{-74,112},{-116,112},{-116,84}}, color={191,0,0}));
+  connect(pipebSD6.heatPort, pipecb.heatPort) annotation (Line(points={{-60,104},
+          {-70,104},{-70,110},{-82,110},{-82,112},{-116,112},{-116,84}}, color=
+          {191,0,0}));
+  connect(pipebc.heatPort, pipeSD16d.heatPort) annotation (Line(points={{-84,76},
+          {-84,56},{-118,56},{-118,22},{-124,22},{-124,20},{-122,20},{-122,18},
+          {-132,18},{-132,-36},{-128,-36},{-128,-56},{-140,-56},{-140,-44}},
+        color={191,0,0}));
+  connect(pipecSD11.heatPort, pipeSD16d.heatPort) annotation (Line(points={{-60,
+          44},{-118,44},{-118,22},{-124,22},{-124,20},{-122,20},{-122,18},{-132,
+          18},{-132,-36},{-128,-36},{-128,-56},{-140,-56},{-140,-44}}, color={
+          191,0,0}));
+  connect(pipeSD6b.heatPort, pipeSD16d.heatPort) annotation (Line(points={{-60,
+          76},{-60,56},{-118,56},{-118,22},{-124,22},{-124,20},{-122,20},{-122,
+          18},{-132,18},{-132,-36},{-128,-36},{-128,-56},{-140,-56},{-140,-44}},
+        color={191,0,0}));
+  connect(pipedSD15.heatPort, pipeSD16d.heatPort) annotation (Line(points={{-60,
+          -16},{-96,-16},{-96,-14},{-132,-14},{-132,-36},{-128,-36},{-128,-56},
+          {-140,-56},{-140,-44}}, color={191,0,0}));
+  connect(pipedSD16.heatPort, pipeSD16d.heatPort) annotation (Line(points={{
+          -140,-16},{-136,-16},{-136,-6},{-132,-6},{-132,-36},{-128,-36},{-128,
+          -56},{-140,-56},{-140,-44}}, color={191,0,0}));
+  connect(pipeSD11c.heatPort, pipeSD16d.heatPort) annotation (Line(points={{-60,
+          16},{-70,16},{-70,-10},{-86,-10},{-86,-16},{-96,-16},{-96,-14},{-132,
+          -14},{-132,-36},{-128,-36},{-128,-56},{-140,-56},{-140,-44}}, color={
+          191,0,0}));
+  connect(pipeSD15d.heatPort, pipeSD16d.heatPort) annotation (Line(points={{-60,
+          -44},{-78,-44},{-78,-68},{-142,-68},{-142,-72},{-140,-72},{-140,-44}},
+        color={191,0,0}));
+  connect(pipedi.heatPort, pipeSD16d.heatPort) annotation (Line(points={{-84,
+          -44},{-84,-68},{-142,-68},{-142,-72},{-140,-72},{-140,-44}}, color={
+          191,0,0}));
+  connect(pipeaSD2.heatPort, pipeSD16d.heatPort) annotation (Line(points={{-140,
+          164},{-154,164},{-154,-84},{-168,-84},{-168,-82},{-140,-82},{-140,-44}},
+        color={191,0,0}));
+  connect(pipeaSD3.heatPort, pipeSD16d.heatPort) annotation (Line(points={{-60,
+          164},{-62,164},{-62,184},{-150,184},{-150,164},{-154,164},{-154,-84},
+          {-168,-84},{-168,-82},{-140,-82},{-140,-44}}, color={191,0,0}));
+  connect(pipeeSD1.heatPort, pipeSD16d.heatPort) annotation (Line(points={{60,
+          164},{60,180},{-62,180},{-62,184},{-150,184},{-150,164},{-154,164},{
+          -154,-84},{-168,-84},{-168,-82},{-140,-82},{-140,-44}}, color={191,0,
+          0}));
+  connect(pipeeSD4.heatPort, pipeSD16d.heatPort) annotation (Line(points={{140,
+          164},{140,170},{60,170},{60,180},{-62,180},{-62,184},{-150,184},{-150,
+          164},{-154,164},{-154,-84},{-168,-84},{-168,-82},{-140,-82},{-140,-44}},
+        color={191,0,0}));
+  connect(pipefe.heatPort, pipeSD16d.heatPort) annotation (Line(points={{84,144},
+          {80,144},{80,168},{76,168},{76,170},{60,170},{60,180},{-62,180},{-62,
+          184},{-150,184},{-150,164},{-154,164},{-154,-84},{-168,-84},{-168,-82},
+          {-140,-82},{-140,-44}}, color={191,0,0}));
+  connect(pipeef.heatPort, pipeSD16d.heatPort) annotation (Line(points={{116,
+          136},{118,136},{118,170},{60,170},{60,180},{-62,180},{-62,184},{-150,
+          184},{-150,164},{-154,164},{-154,-84},{-168,-84},{-168,-82},{-140,-82},
+          {-140,-44}}, color={191,0,0}));
+  connect(pipeSD4e.heatPort, pipeSD16d.heatPort) annotation (Line(points={{140,
+          136},{130,136},{130,148},{118,148},{118,170},{60,170},{60,180},{-62,
+          180},{-62,184},{-150,184},{-150,164},{-154,164},{-154,-84},{-168,-84},
+          {-168,-82},{-140,-82},{-140,-44}}, color={191,0,0}));
+  connect(pipefSD7.heatPort, pipeSD16d.heatPort) annotation (Line(points={{140,
+          104},{134,104},{134,138},{122,138},{122,148},{118,148},{118,170},{60,
+          170},{60,180},{-62,180},{-62,184},{-150,184},{-150,164},{-154,164},{
+          -154,-84},{-168,-84},{-168,-82},{-140,-82},{-140,-44}}, color={191,0,
+          0}));
+  connect(pipegf.heatPort, pipeSD16d.heatPort) annotation (Line(points={{84,84},
+          {82,84},{82,152},{80,152},{80,168},{76,168},{76,170},{60,170},{60,180},
+          {-62,180},{-62,184},{-150,184},{-150,164},{-154,164},{-154,-84},{-168,
+          -84},{-168,-82},{-140,-82},{-140,-44}}, color={191,0,0}));
+  connect(pipefSD8.heatPort, pipecb.heatPort) annotation (Line(points={{60,104},
+          {54,104},{54,130},{-74,130},{-74,112},{-116,112},{-116,84}}, color={
+          191,0,0}));
+  connect(pipeSD1e.heatPort, pipecb.heatPort) annotation (Line(points={{60,136},
+          {60,122},{54,122},{54,130},{-74,130},{-74,112},{-116,112},{-116,84}},
+        color={191,0,0}));
+  connect(pipeSD8f.heatPort, pipeSD16d.heatPort) annotation (Line(points={{60,
+          76},{30,76},{30,70},{-62,70},{-62,64},{-60,64},{-60,56},{-118,56},{
+          -118,22},{-124,22},{-124,20},{-122,20},{-122,18},{-132,18},{-132,-36},
+          {-128,-36},{-128,-56},{-140,-56},{-140,-44}}, color={191,0,0}));
+  connect(pipeSD9g.heatPort, pipeSD16d.heatPort) annotation (Line(points={{60,
+          16},{58,16},{58,2},{-70,2},{-70,-10},{-86,-10},{-86,-16},{-96,-16},{
+          -96,-14},{-132,-14},{-132,-36},{-128,-36},{-128,-56},{-140,-56},{-140,
+          -44}}, color={191,0,0}));
+  connect(pipecd.heatPort, pipeSD16d.heatPort) annotation (Line(points={{-84,16},
+          {-78,16},{-78,14},{-70,14},{-70,-10},{-86,-10},{-86,-16},{-96,-16},{
+          -96,-14},{-132,-14},{-132,-36},{-128,-36},{-128,-56},{-140,-56},{-140,
+          -44}}, color={191,0,0}));
+  connect(pipehSD14.heatPort, pipeSD16d.heatPort) annotation (Line(points={{60,
+          -16},{58,-16},{58,2},{-70,2},{-70,-10},{-86,-10},{-86,-16},{-96,-16},
+          {-96,-14},{-132,-14},{-132,-36},{-128,-36},{-128,-56},{-140,-56},{
+          -140,-44}}, color={191,0,0}));
+  connect(pipeSD14h.heatPort, pipeSD16d.heatPort) annotation (Line(points={{60,
+          -44},{62,-44},{62,-68},{-142,-68},{-142,-72},{-140,-72},{-140,-44}},
+        color={191,0,0}));
+  connect(pipehg.heatPort, pipeSD16d.heatPort) annotation (Line(points={{84,24},
+          {82,24},{82,10},{56,10},{56,2},{-70,2},{-70,-10},{-86,-10},{-86,-16},
+          {-96,-16},{-96,-14},{-132,-14},{-132,-36},{-128,-36},{-128,-56},{-140,
+          -56},{-140,-44}}, color={191,0,0}));
+  connect(pipeih.heatPort, pipeSD16d.heatPort) annotation (Line(points={{84,-36},
+          {76,-36},{76,-46},{64,-46},{64,-58},{62,-58},{62,-68},{-142,-68},{
+          -142,-72},{-140,-72},{-140,-44}}, color={191,0,0}));
+  connect(pipehi.heatPort, pipeSD16d.heatPort) annotation (Line(points={{116,
+          -44},{116,-68},{-142,-68},{-142,-72},{-140,-72},{-140,-44}}, color={
+          191,0,0}));
+  connect(pipeSD13h.heatPort, pipeSD16d.heatPort) annotation (Line(points={{140,
+          -44},{142,-44},{142,-68},{-142,-68},{-142,-72},{-140,-72},{-140,-44}},
+        color={191,0,0}));
+  connect(pipehSD13.heatPort, pipeSD16d.heatPort) annotation (Line(points={{140,
+          -16},{140,-2},{58,-2},{58,2},{-70,2},{-70,-10},{-86,-10},{-86,-16},{
+          -96,-16},{-96,-14},{-132,-14},{-132,-36},{-128,-36},{-128,-56},{-140,
+          -56},{-140,-44}}, color={191,0,0}));
+  connect(pipeSD12g.heatPort, pipeSD16d.heatPort) annotation (Line(points={{140,
+          16},{140,-2},{58,-2},{58,2},{-70,2},{-70,-10},{-86,-10},{-86,-16},{
+          -96,-16},{-96,-14},{-132,-14},{-132,-36},{-128,-36},{-128,-56},{-140,
+          -56},{-140,-44}}, color={191,0,0}));
+  connect(pipegh.heatPort, pipeSD16d.heatPort) annotation (Line(points={{116,16},
+          {116,-2},{58,-2},{58,2},{-70,2},{-70,-10},{-86,-10},{-86,-16},{-96,
+          -16},{-96,-14},{-132,-14},{-132,-36},{-128,-36},{-128,-56},{-140,-56},
+          {-140,-44}}, color={191,0,0}));
+  connect(pipegSD12.heatPort, pipeSD16d.heatPort) annotation (Line(points={{140,
+          44},{112,44},{112,56},{24,56},{24,70},{-62,70},{-62,64},{-60,64},{-60,
+          56},{-118,56},{-118,22},{-124,22},{-124,20},{-122,20},{-122,18},{-132,
+          18},{-132,-36},{-128,-36},{-128,-56},{-140,-56},{-140,-44}}, color={
+          191,0,0}));
+  connect(pipegSD9.heatPort, pipeSD16d.heatPort) annotation (Line(points={{60,
+          44},{60,56},{24,56},{24,70},{-62,70},{-62,64},{-60,64},{-60,56},{-118,
+          56},{-118,22},{-124,22},{-124,20},{-122,20},{-122,18},{-132,18},{-132,
+          -36},{-128,-36},{-128,-56},{-140,-56},{-140,-44}}, color={191,0,0}));
+  connect(pipefg.heatPort, pipeSD16d.heatPort) annotation (Line(points={{116,76},
+          {118,76},{118,44},{112,44},{112,56},{24,56},{24,70},{-62,70},{-62,64},
+          {-60,64},{-60,56},{-118,56},{-118,22},{-124,22},{-124,20},{-122,20},{
+          -122,18},{-132,18},{-132,-36},{-128,-36},{-128,-56},{-140,-56},{-140,
+          -44}}, color={191,0,0}));
+  connect(pipeSD7f.heatPort, pipeSD16d.heatPort) annotation (Line(points={{140,
+          76},{136,76},{136,46},{126,46},{126,44},{112,44},{112,56},{24,56},{24,
+          70},{-62,70},{-62,64},{-60,64},{-60,56},{-118,56},{-118,22},{-124,22},
+          {-124,20},{-122,20},{-122,18},{-132,18},{-132,-36},{-128,-36},{-128,
+          -56},{-140,-56},{-140,-44}}, color={191,0,0}));
+  connect(pipebSD5.heatPort, pipecb.heatPort) annotation (Line(points={{-140,
+          104},{-140,122},{-128,122},{-128,118},{-116,118},{-116,84}}, color={
+          191,0,0}));
+  connect(pipecSD10.heatPort, pipeSD16d.heatPort) annotation (Line(points={{
+          -140,44},{-132,44},{-132,20},{-122,20},{-122,18},{-132,18},{-132,-36},
+          {-128,-36},{-128,-56},{-140,-56},{-140,-44}}, color={191,0,0}));
+  connect(bou.ports[1], pipehi.port_a) annotation (Line(points={{32,-56},{32,
+          -152},{106,-152},{106,-54}}, color={0,127,255}));
   annotation (Diagram(coordinateSystem(extent={{-180,-180},{180,180}})), Icon(
         coordinateSystem(extent={{-100,-100},{100,100}})));
 end SupplyNetwork_Pipes;
