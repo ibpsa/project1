@@ -2,7 +2,23 @@ within IBPSAdestest.Network;
 model SupplyNetwork_numerical
   "Supply and return are modelled. Numerical design parameters are hard-coded"
   extends Modelica.Icons.Example;
-  extends BaseClasses.BuildingLocationsDouble;
+  extends BaseClasses.BuildingLocationsDouble(
+    SimpleDistrict_16(T_start=supTem),
+    SimpleDistrict_10(T_start=supTem),
+    SimpleDistrict_5(T_start=supTem),
+    SimpleDistrict_2(T_start=supTem),
+    SimpleDistrict_3(T_start=supTem),
+    SimpleDistrict_6(T_start=supTem),
+    SimpleDistrict_11(T_start=supTem),
+    SimpleDistrict_15(T_start=supTem),
+    SimpleDistrict_14(T_start=supTem),
+    SimpleDistrict_9(T_start=supTem),
+    SimpleDistrict_8(T_start=supTem),
+    SimpleDistrict_1(T_start=supTem),
+    SimpleDistrict_4(T_start=supTem),
+    SimpleDistrict_7(T_start=supTem),
+    SimpleDistrict_12(T_start=supTem),
+    SimpleDistrict_13(T_start=supTem));
 
   package Medium1 = IBPSA.Media.Water "Medium model";
 
@@ -27,7 +43,9 @@ public
     dh=0.025,
     length=12,
     dIns=0.11,
-    kIns=kIns)
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
     annotation (Placement(transformation(extent={{-128,148},{-140,160}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_2_a(
@@ -47,7 +65,9 @@ public
     dh=0.025,
     length=12,
     dIns=0.11,
-    kIns=kIns)
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
     annotation (Placement(transformation(extent={{-68,148},{-56,160}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_3_a(
@@ -67,7 +87,9 @@ public
     dh=0.02,
     length=12,
     dIns=0.11,
-    kIns=kIns)
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
     annotation (Placement(transformation(extent={{-128,88},{-140,100}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_5_b(
@@ -96,7 +118,9 @@ public
     dh=0.02,
     length=12,
     dIns=0.11,
-    kIns=kIns)
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
     annotation (Placement(transformation(extent={{-68,88},{-56,100}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_10_c(
@@ -106,7 +130,9 @@ public
     dh=0.02,
     length=12,
     dIns=0.11,
-    kIns=kIns)
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
     annotation (Placement(transformation(extent={{-128,28},{-140,40}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_10_c(
@@ -116,7 +142,9 @@ public
     dh=0.02,
     length=12,
     dIns=0.11,
-    kIns=kIns)
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
     annotation (Placement(transformation(extent={{-140,2},{-128,14}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_11_c(
@@ -135,7 +163,10 @@ public
     dh=0.02,
     length=12,
     dIns=0.11,
-    kIns=kIns)        annotation (Placement(transformation(extent={{-68,28},{-56,40}})));
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
+                      annotation (Placement(transformation(extent={{-68,28},{-56,40}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_16_d(
     redeclare package Medium = Medium1,
@@ -144,7 +175,9 @@ public
     dh=0.02,
     length=12,
     dIns=0.11,
-    kIns=kIns)
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
     annotation (Placement(transformation(extent={{-128,-32},{-140,-20}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_16_d(
@@ -174,7 +207,9 @@ public
     dh=0.02,
     length=12,
     dIns=0.11,
-    kIns=kIns)
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
     annotation (Placement(transformation(extent={{-68,-32},{-56,-20}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_1_e(
@@ -184,7 +219,10 @@ public
     dh=0.025,
     length=12,
     dIns=0.11,
-    kIns=kIns)       annotation (Placement(transformation(extent={{72,148},{60,160}})));
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
+                     annotation (Placement(transformation(extent={{72,148},{60,160}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_1_e(
     redeclare package Medium = Medium1,
@@ -202,7 +240,9 @@ public
     dh=0.025,
     length=12,
     dIns=0.11,
-    kIns=kIns)
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
     annotation (Placement(transformation(extent={{132,148},{144,160}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_4_e(
@@ -222,7 +262,10 @@ public
     dh=0.02,
     length=12,
     dIns=0.11,
-    kIns=kIns)       annotation (Placement(transformation(extent={{72,88},{60,100}})));
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
+                     annotation (Placement(transformation(extent={{72,88},{60,100}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_8_f(
     redeclare package Medium = Medium1,
@@ -249,7 +292,9 @@ public
     dh=0.02,
     length=12,
     dIns=0.11,
-    kIns=kIns)
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
     annotation (Placement(transformation(extent={{132,88},{144,100}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_9_g(
@@ -259,7 +304,10 @@ public
     dh=0.02,
     length=12,
     dIns=0.11,
-    kIns=kIns)       annotation (Placement(transformation(extent={{72,28},{60,40}})));
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
+                     annotation (Placement(transformation(extent={{72,28},{60,40}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_9_g(
     redeclare package Medium = Medium1,
@@ -286,7 +334,10 @@ public
     kIns=kIns,
     dh=0.02,
     length=12,
-    dIns=0.11)        annotation (Placement(transformation(extent={{132,28},{144,40}})));
+    dIns=0.11,
+    T_start_in=supTem,
+    T_start_out=supTem)
+                      annotation (Placement(transformation(extent={{132,28},{144,40}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_14_h(
     redeclare package Medium = Medium1,
@@ -295,7 +346,10 @@ public
     dh=0.02,
     length=12,
     dIns=0.11,
-    kIns=kIns)        annotation (Placement(transformation(extent={{72,-32},{60,-20}})));
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
+                      annotation (Placement(transformation(extent={{72,-32},{60,-20}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_14_h(
     redeclare package Medium = Medium1,
@@ -323,7 +377,9 @@ public
     dh=0.02,
     length=12,
     dIns=0.11,
-    kIns=kIns)
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
     annotation (Placement(transformation(extent={{132,-32},{144,-20}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_a_b(
@@ -333,7 +389,10 @@ public
     dh=0.032,
     length=24,
     dIns=0.125,
-    kIns=kIns)       annotation (Placement(transformation(
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
+                     annotation (Placement(transformation(
         extent={{6,-6},{-6,6}},
         rotation=-90,
         origin={-108,142})));
@@ -357,7 +416,10 @@ public
     dh=0.04,
     length=24,
     dIns=0.125,
-    kIns=kIns)       annotation (Placement(transformation(
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
+                     annotation (Placement(transformation(
         extent={{6,-6},{-6,6}},
         rotation=-90,
         origin={-108,82})));
@@ -381,7 +443,10 @@ public
     dh=0.05,
     length=24,
     dIns=0.14,
-    kIns=kIns)       annotation (Placement(transformation(
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
+                     annotation (Placement(transformation(
         extent={{6,-6},{-6,6}},
         rotation=-90,
         origin={-108,22})));
@@ -405,7 +470,10 @@ public
     dh=0.05,
     length=36,
     dIns=0.14,
-    kIns=kIns)       annotation (Placement(transformation(
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
+                     annotation (Placement(transformation(
         extent={{6,-6},{-6,6}},
         rotation=-90,
         origin={-108,-38})));
@@ -429,7 +497,10 @@ public
     dh=0.032,
     length=24,
     dIns=0.125,
-    kIns=kIns)       annotation (Placement(transformation(
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
+                     annotation (Placement(transformation(
         extent={{6,-6},{-6,6}},
         rotation=-90,
         origin={92,142})));
@@ -453,7 +524,10 @@ public
     dh=0.04,
     length=24,
     dIns=0.125,
-    kIns=kIns)       annotation (Placement(transformation(
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
+                     annotation (Placement(transformation(
         extent={{6,-6},{-6,6}},
         rotation=-90,
         origin={92,82})));
@@ -477,7 +551,10 @@ public
     dh=0.05,
     length=24,
     dIns=0.14,
-    kIns=kIns)       annotation (Placement(transformation(
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
+                     annotation (Placement(transformation(
         extent={{6,-6},{-6,6}},
         rotation=-90,
         origin={92,22})));
@@ -501,7 +578,10 @@ public
     dh=0.05,
     length=36,
     dIns=0.14,
-    kIns=kIns)       annotation (Placement(transformation(
+    kIns=kIns,
+    T_start_in=supTem,
+    T_start_out=supTem)
+                     annotation (Placement(transformation(
         extent={{6,-6},{-6,6}},
         rotation=-90,
         origin={92,-38})));
@@ -517,8 +597,7 @@ public
         extent={{6,6},{-6,-6}},
         rotation=-90,
         origin={108,-64})));
-  Modelica.Thermal.HeatTransfer.Sources.FixedTemperature fixedTemperature(T=
-        283.15)
+  Modelica.Thermal.HeatTransfer.Sources.FixedTemperature fixedTemperature(T=Tgro)
     annotation (Placement(transformation(extent={{-160,-160},{-140,-140}})));
   IBPSA.Fluid.HeatExchangers.Heater_T hea1(
     redeclare package Medium = IBPSA.Media.Water,
@@ -528,7 +607,7 @@ public
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-2,-114})));
-  Modelica.Blocks.Sources.RealExpression realExpression(y=333)
+  Modelica.Blocks.Sources.RealExpression supTemExp(y=supTem)
     annotation (Placement(transformation(extent={{-48,-144},{-28,-124}})));
   IBPSA.Fluid.Sources.FixedBoundary bou(redeclare package Medium =
         IBPSA.Media.Water, nPorts=1)
@@ -537,6 +616,10 @@ public
     "Heat conductivity of pipe insulation, used to compute R";
   parameter Modelica.SIunits.MassFlowRate m_flow_nominal=3
     "Nominal mass flow rate";
+  parameter Modelica.SIunits.Temperature supTem=333
+    "Supply temperature of network";
+  parameter Modelica.SIunits.Temperature Tgro=283.15
+    "Constant ground temperature";
 equation
   connect(combiTimeTable.y[2], SimpleDistrict_2.QDem) annotation (Line(points={{-139,
           -110},{-108,-110},{-108,-74},{-198,-74},{-198,170},{-170,170},{-170,160}},
@@ -793,33 +876,32 @@ equation
       points={{132,-26},{93.6,-26},{93.6,-32}},
       color={217,67,180},
       thickness=0.5));
-  connect(fixedTemperature.port, Supply_2_a.heatPort) annotation (Line(points={
-          {-140,-150},{-4,-150},{-4,174},{-134,174},{-134,160}}, color={191,0,0}));
-  connect(Supply_3_a.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          -62,160},{-62,174},{-134,174},{-134,160}}, color={191,0,0}));
-  connect(Supply_1_e.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          66,160},{66,174},{-134,174},{-134,160}}, color={191,0,0}));
-  connect(Supply_4_e.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          138,160},{138,174},{-134,174},{-134,160}}, color={191,0,0}));
-  connect(Return_1_e.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          66,134},{68,134},{68,174},{-134,174},{-134,160}}, color={191,0,0}));
-  connect(Return_4_e.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          138,134},{136,134},{136,174},{-134,174},{-134,160}}, color={191,0,0}));
-  connect(Return_3_a.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          -62,134},{-60,134},{-60,174},{-134,174},{-134,160}}, color={191,0,0}));
-  connect(Return_2_a.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          -134,134},{-132,134},{-132,174},{-134,174},{-134,160}}, color={191,0,
+  connect(fixedTemperature.port, Supply_2_a.heatPort) annotation (Line(points={{
+          -140,-150},{-4,-150},{-4,174},{-134,174},{-134,160}}, color={191,0,0}));
+  connect(Supply_3_a.heatPort, Supply_2_a.heatPort) annotation (Line(points={{-62,
+          160},{-62,174},{-134,174},{-134,160}}, color={191,0,0}));
+  connect(Supply_1_e.heatPort, Supply_2_a.heatPort) annotation (Line(points={{66,
+          160},{66,174},{-134,174},{-134,160}}, color={191,0,0}));
+  connect(Supply_4_e.heatPort, Supply_2_a.heatPort) annotation (Line(points={{138,
+          160},{138,174},{-134,174},{-134,160}}, color={191,0,0}));
+  connect(Return_1_e.heatPort, Supply_2_a.heatPort) annotation (Line(points={{66,
+          134},{68,134},{68,174},{-134,174},{-134,160}}, color={191,0,0}));
+  connect(Return_4_e.heatPort, Supply_2_a.heatPort) annotation (Line(points={{138,
+          134},{136,134},{136,174},{-134,174},{-134,160}}, color={191,0,0}));
+  connect(Return_3_a.heatPort, Supply_2_a.heatPort) annotation (Line(points={{-62,
+          134},{-60,134},{-60,174},{-134,174},{-134,160}}, color={191,0,0}));
+  connect(Return_2_a.heatPort, Supply_2_a.heatPort) annotation (Line(points={{-134,
+          134},{-132,134},{-132,174},{-134,174},{-134,160}}, color={191,0,0}));
+  connect(Supply_5_b.heatPort, Supply_2_a.heatPort) annotation (Line(points={{-134,
+          100},{-134,104},{-4,104},{-4,174},{-134,174},{-134,160}}, color={191,0,
           0}));
-  connect(Supply_5_b.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          -134,100},{-134,104},{-4,104},{-4,174},{-134,174},{-134,160}}, color=
-          {191,0,0}));
-  connect(Supply_6_b.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          -62,100},{-62,104},{-4,104},{-4,174},{-134,174},{-134,160}}, color={
-          191,0,0}));
-  connect(Supply_a_b.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          -102,142},{-98,142},{-98,174},{-134,174},{-134,160}}, color={191,0,0}));
-  connect(Return_a_b.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          -98,116},{-98,174},{-134,174},{-134,160}}, color={191,0,0}));
+  connect(Supply_6_b.heatPort, Supply_2_a.heatPort) annotation (Line(points={{-62,
+          100},{-62,104},{-4,104},{-4,174},{-134,174},{-134,160}}, color={191,0,
+          0}));
+  connect(Supply_a_b.heatPort, Supply_2_a.heatPort) annotation (Line(points={{-102,
+          142},{-98,142},{-98,174},{-134,174},{-134,160}}, color={191,0,0}));
+  connect(Return_a_b.heatPort, Supply_2_a.heatPort) annotation (Line(points={{-98,
+          116},{-98,174},{-134,174},{-134,160}}, color={191,0,0}));
   connect(Supply_b_c.heatPort, Return_a_b.heatPort)
     annotation (Line(points={{-102,82},{-98,82},{-98,116}}, color={191,0,0}));
   connect(Return_b_c.heatPort, Return_a_b.heatPort)
@@ -830,37 +912,35 @@ equation
     annotation (Line(points={{-102,22},{-98,22},{-98,56}}, color={191,0,0}));
   connect(Return_c_d.heatPort, Return_d_i.heatPort)
     annotation (Line(points={{-98,-4},{-98,-64}}, color={191,0,0}));
-  connect(Supply_d_i.heatPort, Return_d_i.heatPort) annotation (Line(points={{
-          -102,-38},{-98,-38},{-98,-64}}, color={191,0,0}));
-  connect(Return_5_b.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          -134,74},{-132,74},{-132,104},{-4,104},{-4,174},{-134,174},{-134,160}},
+  connect(Supply_d_i.heatPort, Return_d_i.heatPort) annotation (Line(points={{-102,
+          -38},{-98,-38},{-98,-64}}, color={191,0,0}));
+  connect(Return_5_b.heatPort, Supply_2_a.heatPort) annotation (Line(points={{-134,
+          74},{-132,74},{-132,104},{-4,104},{-4,174},{-134,174},{-134,160}},
         color={191,0,0}));
-  connect(Return_6_b.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          -62,74},{-64,74},{-64,104},{-4,104},{-4,174},{-134,174},{-134,160}},
+  connect(Return_6_b.heatPort, Supply_2_a.heatPort) annotation (Line(points={{-62,
+          74},{-64,74},{-64,104},{-4,104},{-4,174},{-134,174},{-134,160}},
         color={191,0,0}));
-  connect(Supply_10_c.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          -134,40},{-134,46},{-4,46},{-4,174},{-134,174},{-134,160}}, color={
+  connect(Supply_10_c.heatPort, Supply_2_a.heatPort) annotation (Line(points={{-134,
+          40},{-134,46},{-4,46},{-4,174},{-134,174},{-134,160}}, color={191,0,0}));
+  connect(Supply_11_c.heatPort, Supply_2_a.heatPort) annotation (Line(points={{-62,
+          40},{-62,46},{-4,46},{-4,174},{-134,174},{-134,160}}, color={191,0,0}));
+  connect(Return_10_c.heatPort, Supply_2_a.heatPort) annotation (Line(points={{-134,
+          14},{-132,14},{-132,46},{-4,46},{-4,174},{-134,174},{-134,160}},
+        color={191,0,0}));
+  connect(Return_11_c.heatPort, Supply_2_a.heatPort) annotation (Line(points={{-62,
+          14},{-64,14},{-64,46},{-4,46},{-4,174},{-134,174},{-134,160}}, color={
           191,0,0}));
-  connect(Supply_11_c.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          -62,40},{-62,46},{-4,46},{-4,174},{-134,174},{-134,160}}, color={191,
-          0,0}));
-  connect(Return_10_c.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          -134,14},{-132,14},{-132,46},{-4,46},{-4,174},{-134,174},{-134,160}},
+  connect(Supply_16_d.heatPort, Supply_2_a.heatPort) annotation (Line(points={{-134,
+          -20},{-134,-14},{-4,-14},{-4,174},{-134,174},{-134,160}}, color={191,0,
+          0}));
+  connect(Supply_15_d.heatPort, Supply_2_a.heatPort) annotation (Line(points={{-62,
+          -20},{-62,-14},{-4,-14},{-4,174},{-134,174},{-134,160}}, color={191,0,
+          0}));
+  connect(Return_16_d.heatPort, Supply_2_a.heatPort) annotation (Line(points={{-134,
+          -48},{-132,-48},{-132,-14},{-4,-14},{-4,174},{-134,174},{-134,160}},
         color={191,0,0}));
-  connect(Return_11_c.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          -62,14},{-64,14},{-64,46},{-4,46},{-4,174},{-134,174},{-134,160}},
-        color={191,0,0}));
-  connect(Supply_16_d.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          -134,-20},{-134,-14},{-4,-14},{-4,174},{-134,174},{-134,160}}, color=
-          {191,0,0}));
-  connect(Supply_15_d.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          -62,-20},{-62,-14},{-4,-14},{-4,174},{-134,174},{-134,160}}, color={
-          191,0,0}));
-  connect(Return_16_d.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          -134,-48},{-132,-48},{-132,-14},{-4,-14},{-4,174},{-134,174},{-134,
-          160}}, color={191,0,0}));
-  connect(Return_15_d.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          -62,-48},{-64,-48},{-64,-14},{-4,-14},{-4,174},{-134,174},{-134,160}},
+  connect(Return_15_d.heatPort, Supply_2_a.heatPort) annotation (Line(points={{-62,
+          -48},{-64,-48},{-64,-14},{-4,-14},{-4,174},{-134,174},{-134,160}},
         color={191,0,0}));
   connect(Return_h_i.heatPort, Return_g_h.heatPort)
     annotation (Line(points={{102,-64},{102,-4}}, color={191,0,0}));
@@ -868,109 +948,114 @@ equation
     annotation (Line(points={{102,-4},{102,56}}, color={191,0,0}));
   connect(Return_f_g.heatPort, Return_e_f.heatPort)
     annotation (Line(points={{102,56},{102,116}}, color={191,0,0}));
-  connect(Return_e_f.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          102,116},{102,174},{-134,174},{-134,160}}, color={191,0,0}));
-  connect(Supply_e_f.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          98,142},{102,142},{102,174},{-134,174},{-134,160}}, color={191,0,0}));
+  connect(Return_e_f.heatPort, Supply_2_a.heatPort) annotation (Line(points={{102,
+          116},{102,174},{-134,174},{-134,160}}, color={191,0,0}));
+  connect(Supply_e_f.heatPort, Supply_2_a.heatPort) annotation (Line(points={{98,
+          142},{102,142},{102,174},{-134,174},{-134,160}}, color={191,0,0}));
   connect(Supply_f_g.heatPort, Return_e_f.heatPort)
     annotation (Line(points={{98,82},{102,82},{102,116}}, color={191,0,0}));
   connect(Supply_g_h.heatPort, Return_f_g.heatPort)
     annotation (Line(points={{98,22},{102,22},{102,56}}, color={191,0,0}));
   connect(Supply_h_i.heatPort, Return_g_h.heatPort)
     annotation (Line(points={{98,-38},{102,-38},{102,-4}}, color={191,0,0}));
-  connect(Supply_14_h.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          66,-20},{66,-14},{-4,-14},{-4,174},{-134,174},{-134,160}}, color={191,
-          0,0}));
-  connect(Supply_13_h.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          138,-20},{138,-14},{-4,-14},{-4,174},{-134,174},{-134,160}}, color={
-          191,0,0}));
-  connect(Return_14_h.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          66,-48},{68,-48},{68,-14},{-4,-14},{-4,174},{-134,174},{-134,160}},
-        color={191,0,0}));
-  connect(Return_13_h.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          138,-48},{136,-48},{136,-14},{-4,-14},{-4,174},{-134,174},{-134,160}},
-        color={191,0,0}));
-  connect(Supply_12_g.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          138,40},{138,46},{-4,46},{-4,174},{-134,174},{-134,160}}, color={191,
-          0,0}));
-  connect(Supply_9_g.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          66,40},{66,46},{-4,46},{-4,174},{-134,174},{-134,160}}, color={191,0,
+  connect(Supply_14_h.heatPort, Supply_2_a.heatPort) annotation (Line(points={{66,
+          -20},{66,-14},{-4,-14},{-4,174},{-134,174},{-134,160}}, color={191,0,0}));
+  connect(Supply_13_h.heatPort, Supply_2_a.heatPort) annotation (Line(points={{138,
+          -20},{138,-14},{-4,-14},{-4,174},{-134,174},{-134,160}}, color={191,0,
           0}));
-  connect(Return_9_g.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          66,14},{68,14},{68,46},{-4,46},{-4,174},{-134,174},{-134,160}}, color
-        ={191,0,0}));
-  connect(Return_12_g.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          138,14},{136,14},{136,46},{-4,46},{-4,174},{-134,174},{-134,160}},
+  connect(Return_14_h.heatPort, Supply_2_a.heatPort) annotation (Line(points={{66,
+          -48},{68,-48},{68,-14},{-4,-14},{-4,174},{-134,174},{-134,160}},
         color={191,0,0}));
-  connect(Supply_7_f.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          138,100},{138,104},{-4,104},{-4,174},{-134,174},{-134,160}}, color={
-          191,0,0}));
-  connect(Supply_8_f.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          66,100},{66,104},{-4,104},{-4,174},{-134,174},{-134,160}}, color={191,
+  connect(Return_13_h.heatPort, Supply_2_a.heatPort) annotation (Line(points={{138,
+          -48},{136,-48},{136,-14},{-4,-14},{-4,174},{-134,174},{-134,160}},
+        color={191,0,0}));
+  connect(Supply_12_g.heatPort, Supply_2_a.heatPort) annotation (Line(points={{138,
+          40},{138,46},{-4,46},{-4,174},{-134,174},{-134,160}}, color={191,0,0}));
+  connect(Supply_9_g.heatPort, Supply_2_a.heatPort) annotation (Line(points={{66,
+          40},{66,46},{-4,46},{-4,174},{-134,174},{-134,160}}, color={191,0,0}));
+  connect(Return_9_g.heatPort, Supply_2_a.heatPort) annotation (Line(points={{66,
+          14},{68,14},{68,46},{-4,46},{-4,174},{-134,174},{-134,160}}, color={191,
           0,0}));
-  connect(Return_8_f.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          66,74},{68,74},{68,104},{-4,104},{-4,174},{-134,174},{-134,160}},
+  connect(Return_12_g.heatPort, Supply_2_a.heatPort) annotation (Line(points={{138,
+          14},{136,14},{136,46},{-4,46},{-4,174},{-134,174},{-134,160}}, color={
+          191,0,0}));
+  connect(Supply_7_f.heatPort, Supply_2_a.heatPort) annotation (Line(points={{138,
+          100},{138,104},{-4,104},{-4,174},{-134,174},{-134,160}}, color={191,0,
+          0}));
+  connect(Supply_8_f.heatPort, Supply_2_a.heatPort) annotation (Line(points={{66,
+          100},{66,104},{-4,104},{-4,174},{-134,174},{-134,160}}, color={191,0,0}));
+  connect(Return_8_f.heatPort, Supply_2_a.heatPort) annotation (Line(points={{66,
+          74},{68,74},{68,104},{-4,104},{-4,174},{-134,174},{-134,160}}, color={
+          191,0,0}));
+  connect(Return_7_f.heatPort, Supply_2_a.heatPort) annotation (Line(points={{138,
+          74},{136,74},{136,104},{-4,104},{-4,174},{-134,174},{-134,160}},
         color={191,0,0}));
-  connect(Return_7_f.heatPort, Supply_2_a.heatPort) annotation (Line(points={{
-          138,74},{136,74},{136,104},{-4,104},{-4,174},{-134,174},{-134,160}},
-        color={191,0,0}));
-  connect(Return_3_a.ports_b[1], Return_a_b.ports_b[1]) annotation (Line(points
-        ={{-68,128},{-90.8,128},{-90.8,122}}, color={0,127,255}));
-  connect(Return_2_a.ports_b[1], Return_a_b.ports_b[2]) annotation (Line(points
-        ={{-128,128},{-93.2,128},{-93.2,122}}, color={0,127,255}));
-  connect(Return_6_b.ports_b[1], Return_b_c.ports_b[1]) annotation (Line(points
-        ={{-68,68},{-90.4,68},{-90.4,62}}, color={0,127,255}));
-  connect(Return_a_b.port_a, Return_b_c.ports_b[2]) annotation (Line(points={{
-          -92,110},{-92,86},{-92,62},{-92,62}}, color={0,127,255}));
-  connect(Return_5_b.ports_b[1], Return_b_c.ports_b[3]) annotation (Line(points
-        ={{-128,68},{-93.6,68},{-93.6,62}}, color={0,127,255}));
+  connect(Return_3_a.ports_b[1], Return_a_b.ports_b[1]) annotation (Line(points=
+         {{-68,128},{-90.8,128},{-90.8,122}}, color={0,127,255}));
+  connect(Return_2_a.ports_b[1], Return_a_b.ports_b[2]) annotation (Line(points=
+         {{-128,128},{-93.2,128},{-93.2,122}}, color={0,127,255}));
+  connect(Return_6_b.ports_b[1], Return_b_c.ports_b[1]) annotation (Line(points=
+         {{-68,68},{-90.4,68},{-90.4,62}}, color={0,127,255}));
+  connect(Return_a_b.port_a, Return_b_c.ports_b[2]) annotation (Line(points={{-92,
+          110},{-92,86},{-92,62},{-92,62}}, color={0,127,255}));
+  connect(Return_5_b.ports_b[1], Return_b_c.ports_b[3]) annotation (Line(points=
+         {{-128,68},{-93.6,68},{-93.6,62}}, color={0,127,255}));
   connect(Return_11_c.ports_b[1], Return_c_d.ports_b[1])
     annotation (Line(points={{-68,8},{-90.4,8},{-90.4,2}}, color={0,127,255}));
-  connect(Return_b_c.port_a, Return_c_d.ports_b[2]) annotation (Line(points={{
-          -92,50},{-92,26},{-92,2},{-92,2}}, color={0,127,255}));
+  connect(Return_b_c.port_a, Return_c_d.ports_b[2]) annotation (Line(points={{-92,
+          50},{-92,26},{-92,2},{-92,2}}, color={0,127,255}));
   connect(Return_10_c.ports_b[1], Return_c_d.ports_b[3]) annotation (Line(
         points={{-128,8},{-93.6,8},{-93.6,2}}, color={0,127,255}));
   connect(Return_15_d.ports_b[1], Return_d_i.ports_b[1]) annotation (Line(
         points={{-68,-54},{-90.4,-54},{-90.4,-58}}, color={0,127,255}));
-  connect(Return_c_d.port_a, Return_d_i.ports_b[2]) annotation (Line(points={{
-          -92,-10},{-92,-34},{-92,-58},{-92,-58}}, color={0,127,255}));
+  connect(Return_c_d.port_a, Return_d_i.ports_b[2]) annotation (Line(points={{-92,
+          -10},{-92,-34},{-92,-58},{-92,-58}}, color={0,127,255}));
   connect(Return_16_d.ports_b[1], Return_d_i.ports_b[3]) annotation (Line(
         points={{-128,-54},{-93.6,-54},{-93.6,-58}}, color={0,127,255}));
-  connect(Return_4_e.ports_b[1], Return_e_f.ports_b[1]) annotation (Line(points
-        ={{132,128},{109.2,128},{109.2,122}}, color={0,127,255}));
-  connect(Return_1_e.ports_b[1], Return_e_f.ports_b[2]) annotation (Line(points
-        ={{72,128},{106.8,128},{106.8,122}}, color={0,127,255}));
-  connect(Return_7_f.ports_b[1], Return_f_g.ports_b[1]) annotation (Line(points
-        ={{132,68},{109.6,68},{109.6,62}}, color={0,127,255}));
-  connect(Return_e_f.port_a, Return_f_g.ports_b[2]) annotation (Line(points={{
-          108,110},{108,110},{108,62}}, color={0,127,255}));
-  connect(Return_8_f.ports_b[1], Return_f_g.ports_b[3]) annotation (Line(points
-        ={{72,68},{106.4,68},{106.4,62}}, color={0,127,255}));
+  connect(Return_4_e.ports_b[1], Return_e_f.ports_b[1]) annotation (Line(points=
+         {{132,128},{109.2,128},{109.2,122}}, color={0,127,255}));
+  connect(Return_1_e.ports_b[1], Return_e_f.ports_b[2]) annotation (Line(points=
+         {{72,128},{106.8,128},{106.8,122}}, color={0,127,255}));
+  connect(Return_7_f.ports_b[1], Return_f_g.ports_b[1]) annotation (Line(points=
+         {{132,68},{109.6,68},{109.6,62}}, color={0,127,255}));
+  connect(Return_e_f.port_a, Return_f_g.ports_b[2]) annotation (Line(points={{108,
+          110},{108,110},{108,62}}, color={0,127,255}));
+  connect(Return_8_f.ports_b[1], Return_f_g.ports_b[3]) annotation (Line(points=
+         {{72,68},{106.4,68},{106.4,62}}, color={0,127,255}));
   connect(Return_12_g.ports_b[1], Return_g_h.ports_b[1])
     annotation (Line(points={{132,8},{109.6,8},{109.6,2}}, color={0,127,255}));
-  connect(Return_f_g.port_a, Return_g_h.ports_b[2]) annotation (Line(points={{
-          108,50},{108,26},{108,2},{108,2}}, color={0,127,255}));
+  connect(Return_f_g.port_a, Return_g_h.ports_b[2]) annotation (Line(points={{108,
+          50},{108,26},{108,2},{108,2}}, color={0,127,255}));
   connect(Return_9_g.ports_b[1], Return_g_h.ports_b[3])
     annotation (Line(points={{72,8},{106.4,8},{106.4,2}}, color={0,127,255}));
   connect(Return_13_h.ports_b[1], Return_h_i.ports_b[1]) annotation (Line(
         points={{132,-54},{109.6,-54},{109.6,-58}}, color={0,127,255}));
-  connect(Return_g_h.port_a, Return_h_i.ports_b[2]) annotation (Line(points={{
-          108,-10},{108,-34},{108,-58},{108,-58}}, color={0,127,255}));
+  connect(Return_g_h.port_a, Return_h_i.ports_b[2]) annotation (Line(points={{108,
+          -10},{108,-34},{108,-58},{108,-58}}, color={0,127,255}));
   connect(Return_14_h.ports_b[1], Return_h_i.ports_b[3]) annotation (Line(
         points={{72,-54},{106.4,-54},{106.4,-58}}, color={0,127,255}));
-  connect(realExpression.y, hea1.TSet) annotation (Line(points={{-27,-134},{-10,
-          -134},{-10,-126}}, color={0,0,127}));
-  connect(hea1.port_b, Supply_d_i.port_a) annotation (Line(points={{-2,-104},{
-          -2,-88},{-106,-88},{-106,-66},{-108,-66},{-108,-44}}, color={0,127,
-          255}));
-  connect(Return_d_i.port_a, hea1.port_a) annotation (Line(points={{-92,-70},{
-          -92,-144},{-2,-144},{-2,-124}}, color={0,127,255}));
-  connect(hea1.port_b, Supply_h_i.port_a) annotation (Line(points={{-2,-104},{
-          -2,-88},{92,-88},{92,-44}}, color={0,127,255}));
-  connect(Return_h_i.port_a, hea1.port_a) annotation (Line(points={{108,-70},{
-          108,-144},{-2,-144},{-2,-124}}, color={0,127,255}));
-  connect(bou.ports[1], hea1.port_a) annotation (Line(points={{-12,-166},{-2,
-          -166},{-2,-124}}, color={0,127,255}));
+  connect(supTemExp.y, hea1.TSet) annotation (Line(points={{-27,-134},{-10,-134},
+          {-10,-126}}, color={0,0,127}));
+  connect(hea1.port_b, Supply_d_i.port_a) annotation (Line(points={{-2,-104},{-2,
+          -88},{-106,-88},{-106,-66},{-108,-66},{-108,-44}}, color={0,127,255}));
+  connect(Return_d_i.port_a, hea1.port_a) annotation (Line(points={{-92,-70},{-92,
+          -144},{-2,-144},{-2,-124}}, color={0,127,255}));
+  connect(hea1.port_b, Supply_h_i.port_a) annotation (Line(points={{-2,-104},{-2,
+          -88},{92,-88},{92,-44}}, color={0,127,255}));
+  connect(Return_h_i.port_a, hea1.port_a) annotation (Line(points={{108,-70},{108,
+          -144},{-2,-144},{-2,-124}}, color={0,127,255}));
+  connect(bou.ports[1], hea1.port_a) annotation (Line(points={{-12,-166},{-2,-166},
+          {-2,-124}}, color={0,127,255}));
   annotation (Diagram(coordinateSystem(extent={{-180,-180},{180,180}})), Icon(
-        coordinateSystem(extent={{-100,-100},{100,100}})));
+        coordinateSystem(extent={{-100,-100},{100,100}})),
+    experiment(StopTime=604800, Interval=59.9999616),
+    __Dymola_experimentSetupOutput,
+    __Dymola_experimentFlags(
+      Advanced(
+        EvaluateAlsoTop=false,
+        GenerateVariableDependencies=false,
+        OutputModelicaCode=false),
+      Evaluate=true,
+      OutputCPUtime=true,
+      OutputFlatModelica=false));
 end SupplyNetwork_numerical;
