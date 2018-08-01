@@ -27,8 +27,7 @@ model IdealConsumerTwin
         extent={{-20,-20},{20,20}},
         rotation=270,
         origin={0,100})));
-  parameter Modelica.Media.Interfaces.Types.Temperature T_start=Medium.T_default
-    "Start value of temperature" annotation (Dialog(tab="Initialization"));
+
 equation
   connect(cp_dt.y, division.u2)
     annotation (Line(points={{29,60},{66,60},{66,52}}, color={0,0,127}));
