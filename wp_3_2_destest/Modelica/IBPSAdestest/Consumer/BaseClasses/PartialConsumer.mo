@@ -13,8 +13,6 @@ protected
       Medium.specificHeatCapacityCp(state=sta_default)
     "Heat capacity of medium";
 
-
-
   annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
           Rectangle(
           extent={{-100,100},{100,-100}},

@@ -12,7 +12,7 @@ model SupplyNetwork "Only supply line is modelled"
     columns=2:18,
     fileName=Modelica.Utilities.Files.loadResource(
         "modelica://IBPSAdestest/Resources/Data/DestestHeatDemand/heat_profiles.txt"))
-    annotation (Placement(transformation(extent={{-140,-120},{-120,-100}})));
+    annotation (Placement(transformation(extent={{-160,-120},{-140,-100}})));
 
 protected
   Modelica.Blocks.Interfaces.RealOutput y1[size(combiTimeTable.y, 1)]
@@ -22,185 +22,317 @@ public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_2_a(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1)
+    nPorts=1,
+    length=L_sup2a,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_sup2a,
+    kIns=kIns_sup2a)
     annotation (Placement(transformation(extent={{-128,148},{-140,160}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_2_a(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1)
+    nPorts=1,
+    length=L_ret2a,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_ret2a,
+    kIns=kIns_ret2a)
     annotation (Placement(transformation(extent={{-140,122},{-128,134}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_3_a(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1)
+    nPorts=1,
+    length=L_sup3a,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_sup3a,
+    kIns=kIns_sup3a)
     annotation (Placement(transformation(extent={{-68,148},{-56,160}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_3_a(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1)
+    nPorts=1,
+    length=L_ret3a,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_ret3a,
+    kIns=kIns_ret3a)
     annotation (Placement(transformation(extent={{-56,122},{-68,134}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_5_b(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1)
+    nPorts=1,
+    length=L_sup5b,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_sup5b,
+    kIns=kIns_sup5b)
     annotation (Placement(transformation(extent={{-128,88},{-140,100}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_5_b(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1)
+    nPorts=1,
+    length=L_ret5b,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_ret5b,
+    kIns=kIns_ret5b)
     annotation (Placement(transformation(extent={{-140,62},{-128,74}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_6_b(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1) annotation (Placement(transformation(extent={{-56,62},{-68,74}})));
+    nPorts=1,
+    length=L_ret6b,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_ret6b,
+    kIns=kIns_ret6b) annotation (Placement(transformation(extent={{-56,62},{-68,74}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_6_b(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1)
+    nPorts=1,
+    length=L_sup6b,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_sup6b,
+    kIns=kIns_sup6b)
     annotation (Placement(transformation(extent={{-68,88},{-56,100}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_10_c(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1)
+    nPorts=1,
+    length=L_sup10c,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_sup10c,
+    kIns=kIns_sup10c)
     annotation (Placement(transformation(extent={{-128,28},{-140,40}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_10_c(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1)
+    nPorts=1,
+    length=L_ret10c,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_ret10c,
+    kIns=kIns_ret10c)
     annotation (Placement(transformation(extent={{-140,2},{-128,14}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_11_c(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1) annotation (Placement(transformation(extent={{-56,2},{-68,14}})));
+    nPorts=1,
+    length=L_ret11c,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_ret11c,
+    kIns=kIns_ret11c) annotation (Placement(transformation(extent={{-56,2},{-68,14}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_11_c(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1) annotation (Placement(transformation(extent={{-68,28},{-56,40}})));
+    nPorts=1,
+    length=L_sup11c,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_sup11c,
+    kIns=kIns_sup11c) annotation (Placement(transformation(extent={{-68,28},{-56,40}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_16_d(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1)
+    nPorts=1,
+    length=L_sup16d,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_sup16d,
+    kIns=kIns_sup16d)
     annotation (Placement(transformation(extent={{-128,-32},{-140,-20}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_16_d(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1)
+    nPorts=1,
+    length=L_ret16d,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_ret16d,
+    kIns=kIns_ret16d)
     annotation (Placement(transformation(extent={{-140,-60},{-128,-48}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_15_d(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1)
+    nPorts=1,
+    length=L_ret15d,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_ret15d,
+    kIns=kIns_ret15d)
     annotation (Placement(transformation(extent={{-56,-60},{-68,-48}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_15_d(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1)
+    nPorts=1,
+    length=L_sup15d,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_sup15d,
+    kIns=kIns_sup15d)
     annotation (Placement(transformation(extent={{-68,-32},{-56,-20}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_1_e(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1) annotation (Placement(transformation(extent={{72,148},{60,160}})));
+    nPorts=1,
+    length=L_sup1e,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_sup1e,
+    kIns=kIns_sup1e) annotation (Placement(transformation(extent={{72,148},{60,160}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_1_e(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1) annotation (Placement(transformation(extent={{60,122},{72,134}})));
+    nPorts=1,
+    length=L_ret1e,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_ret1e,
+    kIns=kIns_ret1e) annotation (Placement(transformation(extent={{60,122},{72,134}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_4_e(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1)
+    nPorts=1,
+    length=L_sup4e,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_sup4e,
+    kIns=kIns_sup4e)
     annotation (Placement(transformation(extent={{132,148},{144,160}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_4_e(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1)
+    nPorts=1,
+    length=L_ret4e,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_ret4e,
+    kIns=kIns_ret4e)
     annotation (Placement(transformation(extent={{144,122},{132,134}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_8_f(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1) annotation (Placement(transformation(extent={{72,88},{60,100}})));
+    nPorts=1,
+    length=L_sup8f,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_sup8f,
+    kIns=kIns_sup8f) annotation (Placement(transformation(extent={{72,88},{60,100}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_8_f(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1) annotation (Placement(transformation(extent={{60,62},{72,74}})));
+    nPorts=1,
+    length=L_ret8f,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_ret8f,
+    kIns=kIns_ret8f) annotation (Placement(transformation(extent={{60,62},{72,74}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_7_f(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1) annotation (Placement(transformation(extent={{144,62},{132,74}})));
+    nPorts=1,
+    length=L_ret7f,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_ret7f,
+    kIns=kIns_ret7f) annotation (Placement(transformation(extent={{144,62},{132,74}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_7_f(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1)
+    nPorts=1,
+    length=L_sup7f,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_sup7f,
+    kIns=kIns_sup7f)
     annotation (Placement(transformation(extent={{132,88},{144,100}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_9_g(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1) annotation (Placement(transformation(extent={{72,28},{60,40}})));
+    nPorts=1,
+    length=L_sup9g,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_sup9g,
+    kIns=kIns_sup9g) annotation (Placement(transformation(extent={{72,28},{60,40}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_9_g(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1) annotation (Placement(transformation(extent={{60,2},{72,14}})));
+    nPorts=1,
+    length=L_ret9g,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_ret9g,
+    kIns=kIns_ret9g) annotation (Placement(transformation(extent={{60,2},{72,14}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_12_g(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1) annotation (Placement(transformation(extent={{144,2},{132,14}})));
+    nPorts=1,
+    length=L_ret12g,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_ret12g,
+    kIns=kIns_ret12g) annotation (Placement(transformation(extent={{144,2},{132,14}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_12_g(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1) annotation (Placement(transformation(extent={{132,28},{144,40}})));
+    nPorts=1,
+    length=L_sup12g,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_sup12g,
+    kIns=kIns_sup12g) annotation (Placement(transformation(extent={{132,28},{144,40}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_14_h(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1) annotation (Placement(transformation(extent={{72,-32},{60,-20}})));
+    nPorts=1,
+    length=L_sup14h,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_sup14h,
+    kIns=kIns_sup14h) annotation (Placement(transformation(extent={{72,-32},{60,-20}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_14_h(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1) annotation (Placement(transformation(extent={{60,-60},{72,-48}})));
+    nPorts=1,
+    length=L_ret14h,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_ret14h,
+    kIns=kIns_ret14h) annotation (Placement(transformation(extent={{60,-60},{72,-48}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_13_h(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1)
+    nPorts=1,
+    length=L_ret13h,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_ret13h,
+    kIns=kIns_ret13h)
     annotation (Placement(transformation(extent={{144,-60},{132,-48}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_13_h(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1)
+    nPorts=1,
+    length=L_sup13h,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_sup13h,
+    kIns=kIns_sup13h)
     annotation (Placement(transformation(extent={{132,-32},{144,-20}})));
 public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_a_b(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=2) annotation (Placement(transformation(
+    nPorts=2,
+    length=L_supab,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_supab,
+    kIns=kIns_supab) annotation (Placement(transformation(
         extent={{6,-6},{-6,6}},
         rotation=-90,
         origin={-108,142})));
@@ -208,7 +340,11 @@ public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_a_b(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1) annotation (Placement(transformation(
+    nPorts=1,
+    length=L_retab,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_retab,
+    kIns=kIns_retab) annotation (Placement(transformation(
         extent={{-6,6},{6,-6}},
         rotation=-90,
         origin={-92,116})));
@@ -216,7 +352,11 @@ public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_b_c(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=3) annotation (Placement(transformation(
+    nPorts=3,
+    length=L_supbc,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_supbc,
+    kIns=kIns_supbc) annotation (Placement(transformation(
         extent={{6,-6},{-6,6}},
         rotation=-90,
         origin={-108,82})));
@@ -224,7 +364,11 @@ public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_b_c(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1) annotation (Placement(transformation(
+    nPorts=1,
+    length=L_retbc,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_retbc,
+    kIns=kIns_retbc) annotation (Placement(transformation(
         extent={{-6,6},{6,-6}},
         rotation=-90,
         origin={-92,56})));
@@ -232,7 +376,11 @@ public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_c_d(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=3) annotation (Placement(transformation(
+    nPorts=3,
+    length=L_supcd,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_supcd,
+    kIns=kIns_supcd) annotation (Placement(transformation(
         extent={{6,-6},{-6,6}},
         rotation=-90,
         origin={-108,22})));
@@ -240,7 +388,11 @@ public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_c_d(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1) annotation (Placement(transformation(
+    nPorts=1,
+    length=L_retcd,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_retcd,
+    kIns=kIns_retcd) annotation (Placement(transformation(
         extent={{-6,6},{6,-6}},
         rotation=-90,
         origin={-92,-4})));
@@ -248,7 +400,11 @@ public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_d_i(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=3) annotation (Placement(transformation(
+    nPorts=3,
+    length=L_supdi,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_supdi,
+    kIns=kIns_supdi) annotation (Placement(transformation(
         extent={{6,-6},{-6,6}},
         rotation=-90,
         origin={-108,-38})));
@@ -256,7 +412,11 @@ public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_d_i(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1) annotation (Placement(transformation(
+    nPorts=1,
+    length=L_retdi,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_retdi,
+    kIns=kIns_retdi) annotation (Placement(transformation(
         extent={{-6,6},{6,-6}},
         rotation=-90,
         origin={-92,-64})));
@@ -264,7 +424,11 @@ public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_e_f(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=2) annotation (Placement(transformation(
+    nPorts=2,
+    length=L_supef,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_supef,
+    kIns=kIns_supef) annotation (Placement(transformation(
         extent={{6,-6},{-6,6}},
         rotation=-90,
         origin={92,142})));
@@ -272,7 +436,11 @@ public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_e_f(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1) annotation (Placement(transformation(
+    nPorts=1,
+    length=L_retab,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_retef,
+    kIns=kIns_retef) annotation (Placement(transformation(
         extent={{-6,6},{6,-6}},
         rotation=-90,
         origin={108,116})));
@@ -280,7 +448,11 @@ public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_f_g(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=3) annotation (Placement(transformation(
+    nPorts=3,
+    length=L_supfg,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_supfg,
+    kIns=kIns_supfg) annotation (Placement(transformation(
         extent={{6,-6},{-6,6}},
         rotation=-90,
         origin={92,82})));
@@ -288,7 +460,11 @@ public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_f_g(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1) annotation (Placement(transformation(
+    nPorts=1,
+    length=L_retfg,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_retfg,
+    kIns=kIns_retfg) annotation (Placement(transformation(
         extent={{-6,6},{6,-6}},
         rotation=-90,
         origin={108,56})));
@@ -296,7 +472,11 @@ public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_g_h(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=3) annotation (Placement(transformation(
+    nPorts=3,
+    length=L_supgh,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_supgh,
+    kIns=kIns_supgh) annotation (Placement(transformation(
         extent={{6,-6},{-6,6}},
         rotation=-90,
         origin={92,22})));
@@ -304,7 +484,11 @@ public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_g_h(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1) annotation (Placement(transformation(
+    nPorts=1,
+    length=L_retgh,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_retgh,
+    kIns=kIns_retgh) annotation (Placement(transformation(
         extent={{-6,6},{6,-6}},
         rotation=-90,
         origin={108,-4})));
@@ -312,7 +496,11 @@ public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Supply_h_i(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=3) annotation (Placement(transformation(
+    nPorts=3,
+    length=L_suphi,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_suphi,
+    kIns=kIns_suphi) annotation (Placement(transformation(
         extent={{6,-6},{-6,6}},
         rotation=-90,
         origin={92,-38})));
@@ -320,25 +508,30 @@ public
   IBPSA.Fluid.FixedResistances.PlugFlowPipe Return_h_i(
     redeclare package Medium = Medium1,
     dh=1,
-    nPorts=1) annotation (Placement(transformation(
+    nPorts=1,
+    length=L_rethi,
+    m_flow_nominal=m_flow_nominal,
+    dIns=dIns_rethi,
+    kIns=kIns_rethi) annotation (Placement(transformation(
         extent={{-6,6},{6,-6}},
         rotation=-90,
         origin={108,-64})));
 equation
-  connect(combiTimeTable.y[2], SimpleDistrict_2.QDem) annotation (Line(points={{-119,
+  connect(combiTimeTable.y[2], SimpleDistrict_2.QDem) annotation (Line(points={{-139,
           -110},{-108,-110},{-108,-74},{-198,-74},{-198,170},{-170,170},{-170,160}},
                       color={0,0,127}));
-  connect(combiTimeTable.y[5], SimpleDistrict_5.QDem) annotation (Line(points={{-119,
-          -110},{-108,-110},{-108,-110},{-108,-74},{-198,-74},{-198,112},{-170,112},
-          {-170,100}},            color={0,0,127}));
-  connect(combiTimeTable.y[10], SimpleDistrict_10.QDem) annotation (Line(points={{-119,
+  connect(combiTimeTable.y[5], SimpleDistrict_5.QDem) annotation (Line(points={{-139,
+          -110},{-108,-110},{-108,-74},{-198,-74},{-198,112},{-170,112},{-170,100}},
+                                  color={0,0,127}));
+  connect(combiTimeTable.y[10], SimpleDistrict_10.QDem) annotation (Line(points={{-139,
           -110},{-108,-110},{-108,-74},{-198,-74},{-198,52},{-170,52},{-170,40}},
                      color={0,0,127}));
-  connect(combiTimeTable.y[16], SimpleDistrict_16.QDem) annotation (Line(points={{-119,
+  connect(combiTimeTable.y[16], SimpleDistrict_16.QDem) annotation (Line(points={{-139,
           -110},{-108,-110},{-108,-74},{-198,-74},{-198,-8},{-170,-8},{-170,-20}},
                       color={0,0,127}));
-  connect(combiTimeTable.y, y1) annotation (Line(points={{-119,-110},{-108,-110},
+  connect(combiTimeTable.y, y1) annotation (Line(points={{-139,-110},{-108,-110},
           {-108,-73.5},{-0.5,-73.5}}, color={0,0,127}));
+
   connect(SimpleDistrict_3.QDem, y1[3]) annotation (Line(points={{-30,160},{-30,
           176},{-0.5,176},{-0.5,-73.5}}, color={0,0,127}));
   connect(SimpleDistrict_1.QDem, y1[1]) annotation (Line(points={{30,160},{30,
