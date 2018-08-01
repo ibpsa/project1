@@ -61,7 +61,7 @@ model SupplyNetwork_Pipes "Only supply line is modelled"
     annotation (Placement(transformation(extent={{-48,-144},{-28,-124}})));
   Modelica.Thermal.HeatTransfer.Sources.FixedTemperature fixedTemperature(T=
         283.15)
-    annotation (Placement(transformation(extent={{-240,-92},{-220,-72}})));
+    annotation (Placement(transformation(extent={{-220,-116},{-200,-96}})));
 protected
   Modelica.Blocks.Interfaces.RealOutput y1[size(combiTimeTable.y, 1)]
                      "Connector of Real output signals"
@@ -179,8 +179,8 @@ equation
           -124},{-4,-152},{106,-152},{106,-54}}, color={0,127,255}));
   connect(hea1.port_a, pipedi.port_a) annotation (Line(points={{-2,-124},{-4,
           -124},{-4,-152},{-98,-152},{-98,-54},{-94,-54}}, color={0,127,255}));
-  connect(fixedTemperature.port, pipeSD16d.heatPort) annotation (Line(points={{
-          -220,-82},{-140,-82},{-140,-44}}, color={191,0,0}));
+  connect(fixedTemperature.port, pipeSD16d.heatPort) annotation (Line(points={{-200,
+          -106},{-140,-106},{-140,-44}},    color={191,0,0}));
   connect(pipeid.heatPort, pipeSD16d.heatPort) annotation (Line(points={{-116,
           -36},{-128,-36},{-128,-56},{-140,-56},{-140,-44}}, color={191,0,0}));
   connect(pipeSD10c.heatPort, pipeSD16d.heatPort) annotation (Line(points={{

@@ -1067,5 +1067,10 @@ equation
         OutputModelicaCode=false),
       Evaluate=true,
       OutputCPUtime=true,
-      OutputFlatModelica=false));
+      OutputFlatModelica=false),
+    __Dymola_Commands(file=
+          "Resources/Scripts/IBPSAdestest/Network/SupplyNetwork_numerical.mos"
+        "Simulate and plot", file=
+          "Resources/Scripts/IBPSAdestest/Network/SupplyNetwork_numerical_plotonly.mos"
+        "Plot only"));
 end SupplyNetwork_numerical;
