@@ -519,6 +519,19 @@ public
   Modelica.Thermal.HeatTransfer.Sources.FixedTemperature fixedTemperature(T=
         283.15)
     annotation (Placement(transformation(extent={{-160,-160},{-140,-140}})));
+  IBPSA.Fluid.HeatExchangers.Heater_T hea1(
+    redeclare package Medium = IBPSA.Media.Water,
+    dp_nominal=100,
+    m_flow_nominal=50)
+                    annotation (Placement(transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=90,
+        origin={-2,-114})));
+  Modelica.Blocks.Sources.RealExpression realExpression(y=333)
+    annotation (Placement(transformation(extent={{-48,-144},{-28,-124}})));
+  IBPSA.Fluid.Sources.FixedBoundary bou(redeclare package Medium =
+        IBPSA.Media.Water, nPorts=1)
+    annotation (Placement(transformation(extent={{-32,-176},{-12,-156}})));
 equation
   connect(combiTimeTable.y[2], SimpleDistrict_2.QDem) annotation (Line(points={{-139,
           -110},{-108,-110},{-108,-74},{-198,-74},{-198,170},{-170,170},{-170,160}},
@@ -940,6 +953,19 @@ equation
           108,-10},{108,-34},{108,-58},{108,-58}}, color={0,127,255}));
   connect(Return_14_h.ports_b[1], Return_h_i.ports_b[3]) annotation (Line(
         points={{72,-54},{106.4,-54},{106.4,-58}}, color={0,127,255}));
+  connect(realExpression.y, hea1.TSet) annotation (Line(points={{-27,-134},{-10,
+          -134},{-10,-126}}, color={0,0,127}));
+  connect(hea1.port_b, Supply_d_i.port_a) annotation (Line(points={{-2,-104},{
+          -2,-88},{-106,-88},{-106,-66},{-108,-66},{-108,-44}}, color={0,127,
+          255}));
+  connect(Return_d_i.port_a, hea1.port_a) annotation (Line(points={{-92,-70},{
+          -92,-144},{-2,-144},{-2,-124}}, color={0,127,255}));
+  connect(hea1.port_b, Supply_h_i.port_a) annotation (Line(points={{-2,-104},{
+          -2,-88},{92,-88},{92,-44}}, color={0,127,255}));
+  connect(Return_h_i.port_a, hea1.port_a) annotation (Line(points={{108,-70},{
+          108,-144},{-2,-144},{-2,-124}}, color={0,127,255}));
+  connect(bou.ports[1], hea1.port_a) annotation (Line(points={{-12,-166},{-2,
+          -166},{-2,-124}}, color={0,127,255}));
   annotation (Diagram(coordinateSystem(extent={{-180,-180},{180,180}})), Icon(
         coordinateSystem(extent={{-100,-100},{100,100}})));
 end SupplyNetwork;
