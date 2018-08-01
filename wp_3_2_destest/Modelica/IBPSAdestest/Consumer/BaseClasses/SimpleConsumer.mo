@@ -1,5 +1,5 @@
 within IBPSAdestest.Consumer.BaseClasses;
-model SimpleConsumer
+partial model SimpleConsumer
   extends IBPSAdestest.Consumer.BaseClasses.EndNode_sink;
   IBPSA.Fluid.Sources.FixedBoundary sin(redeclare package Medium = Medium,
       nPorts=1) annotation (Placement(transformation(
