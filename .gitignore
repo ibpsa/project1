@@ -11,3 +11,4 @@ _site
 *dsmodel.c
 *dymosim.exp
 *.mat
+*.c
