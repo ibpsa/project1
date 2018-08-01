@@ -620,6 +620,12 @@ public
     "Supply temperature of network";
   parameter Modelica.SIunits.Temperature Tgro=283.15
     "Constant ground temperature";
+  IBPSA.Fluid.Sensors.TemperatureTwoPort senTemRetLef(m_flow_nominal=
+        m_flow_nominal, redeclare package Medium = Medium1)
+    annotation (Placement(transformation(extent={{-54,-154},{-34,-134}})));
+  IBPSA.Fluid.Sensors.TemperatureTwoPort senTemRetRig(m_flow_nominal=
+        m_flow_nominal, redeclare package Medium = Medium1)
+    annotation (Placement(transformation(extent={{60,-154},{40,-134}})));
 equation
   connect(combiTimeTable.y[2], SimpleDistrict_2.QDem) annotation (Line(points={{-139,
           -110},{-108,-110},{-108,-74},{-198,-74},{-198,170},{-170,170},{-170,160}},
@@ -1038,14 +1044,18 @@ equation
           {-10,-126}}, color={0,0,127}));
   connect(hea1.port_b, Supply_d_i.port_a) annotation (Line(points={{-2,-104},{-2,
           -88},{-106,-88},{-106,-66},{-108,-66},{-108,-44}}, color={0,127,255}));
-  connect(Return_d_i.port_a, hea1.port_a) annotation (Line(points={{-92,-70},{-92,
-          -144},{-2,-144},{-2,-124}}, color={0,127,255}));
   connect(hea1.port_b, Supply_h_i.port_a) annotation (Line(points={{-2,-104},{-2,
           -88},{92,-88},{92,-44}}, color={0,127,255}));
-  connect(Return_h_i.port_a, hea1.port_a) annotation (Line(points={{108,-70},{108,
-          -144},{-2,-144},{-2,-124}}, color={0,127,255}));
   connect(bou.ports[1], hea1.port_a) annotation (Line(points={{-12,-166},{-2,-166},
           {-2,-124}}, color={0,127,255}));
+  connect(Return_d_i.port_a, senTemRetLef.port_a) annotation (Line(points={{-92,
+          -70},{-92,-144},{-54,-144}}, color={0,127,255}));
+  connect(senTemRetLef.port_b, hea1.port_a) annotation (Line(points={{-34,-144},
+          {-2,-144},{-2,-124}}, color={0,127,255}));
+  connect(Return_h_i.port_a, senTemRetRig.port_a) annotation (Line(points={{108,
+          -70},{108,-144},{60,-144}}, color={0,127,255}));
+  connect(senTemRetRig.port_b, hea1.port_a) annotation (Line(points={{40,-144},
+          {-2,-144},{-2,-124}}, color={0,127,255}));
   annotation (Diagram(coordinateSystem(extent={{-180,-180},{180,180}})), Icon(
         coordinateSystem(extent={{-100,-100},{100,100}})),
     experiment(StopTime=604800, Interval=59.9999616),
