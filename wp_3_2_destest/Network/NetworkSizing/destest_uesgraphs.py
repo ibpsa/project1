@@ -16,7 +16,13 @@ def main():
         'https://raw.githubusercontent.com/ibpsa/project1/master/'
         'wp_3_2_destest/Network/NetworkSizing/Node%20data.csv', sep=',')
 
+    pipe_data = pd.read_csv(
+        'https://raw.githubusercontent.com/ibpsa/project1/master/'
+        'wp_3_2_destest/Network/NetworkSizing/Pipe%20data.csv', sep=',')
+
     node_data = node_data.set_index('Node')
+
+    pipe_data = pipe_data.replace(to_replace='i', value='Destest_Supply')
 
     simple_district = ug.UESGraph()
     supply_heating_1 = simple_district.add_building(
@@ -54,12 +60,25 @@ def main():
                 simple_district.nodes_by_name[key],
                 simple_district.nodes_by_name[value])
 
+    for index, row in pipe_data.iterrows():
+        simple_district.edges[
+            simple_district.nodes_by_name[row['Beginning Node']],
+            simple_district.nodes_by_name[row['Ending Node']]][
+                'diameter'] =\
+                    row['Inner Diameter [m]']
+        simple_district.edges[
+            simple_district.nodes_by_name[row['Beginning Node']],
+            simple_district.nodes_by_name[row['Ending Node']]]['length'] =\
+                row['Length [m]']
+
     vis = ug.Visuals(simple_district)
     vis.show_network(
         save_as="uesgraph_destest.png",
-        scaling_factor=12,
+        show_diameters=True,
+        scaling_factor=25,
         labels="name",
-        label_size=10
+        label_size=10,
+        scaling_factor_diameter=100
     )
 
 
