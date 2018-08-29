@@ -79,7 +79,11 @@ Task 3: Application and Dissemination
 WP 3.1 Application
 ^^^^^^^^^^^^^^^^^^
 
-xxxx
+In this work package a District Energy Simulation Test (DESTEST) is under development. The aim is to provide a means to validate models of urban energy systems or subsystems and to define district energy cases for testing in different simulation environments.
+
+The first ongoing steps include the selection, description and simulation of a district heating network topology that will serve as a simple first case. The work has been split up in two groups that work interactively: (1) the building modeling group focusses on the selection and modeling of the buildings in the district, (2) the network modeling group investigates the sizing and operation of the energy network.
+
+An abstract has been submitted to the BS2019 conference to report on the progress.
 
 WP 3.2 Dissemination
 ^^^^^^^^^^^^^^^^^^^^
