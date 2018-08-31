@@ -44,20 +44,27 @@ in WP 1.2
 WP 1.2: Library for Model Predictive Control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The main activity was focused on the initiation
-of  a
-Building Optimization Performance Test framework (BOPTEST).
-BOPTEST will allow testing of advanced control sequences
-on a range of models that emulate the response
-of the building and HVAC system.
-The development of the testing infrastucture, and
-of emulators for different types of buildings and HVAC systems,
-is ongoing.
+Three main tasks were defined, i.e., using Modelica
 
-A journal paper about effect of model accuracy
-on the performance of MPC has been developed
-and submitted to a journal.
+1. To develop a framework to test and assess MPC performance
+2. To compare and benchmark different MPC formulations
+3. To develop an open-source Library for MPC
 
+The development is actively ongoing, with monthly coordination meetings.
+The main activity was focused on the initiation of a Building Optimization Performance Test framework (BOPTEST).
+BOPTEST will allow testing of advanced control sequences on a range of models that emulate the response
+of the building and HVAC system. The development of the testing infrastructure, and of emulators
+for different types of buildings and HVAC systems, is ongoing.
+Emulators have been selected for single-zone and multi-zone residential and commercial buildings
+for both air-based and hydronic HVAC systems, a Modelica code template and MPC description template
+are being developed, first thoughts about quantification of performance indicators
+have been made and we are moving towards a prototype BOPTEST.
+
+A journal paper about effect of model accuracy on the performance of MPC has been developed and submitted to a journal.
+
+An abstract about the framework for simulation-based testing of advanced control strategies in buildings is being submitted for the BS2019 Conference.
+
+There was a lot of interest in this BOPTEST from the participants in the Intelligent Building Operation (IBO) Workshop in Purdue (July 2018).
 
 
 Task 2: Building and City Quarter Information Models
