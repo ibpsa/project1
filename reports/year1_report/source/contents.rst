@@ -78,7 +78,7 @@ xxx
 WP 2.2: Building Information Modeling
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-xxxx
+In the first phase of WP2, groundwork was set up for the collaborative development and testing of different classes of geometric algorithms for transforming building information models to building performance simulation. Various libraries were considered for reading IFC data and for processing geometric information such as IfcOpenShell, IfcPlusPlus, xBIM (IFC), OpenCascade, ParaSolid and the ACIS geometry kernel. Test runs with the IfcOpenShell library were successful for importing IFC files and extracting geometrical and semantical information from the IFC schema. The information then was used to export the building’s geometry to CAD files in the format STEP and STL using the OpenCascade library. The libraries were chosen because of their up-to-dateness, quality of documentation and support, dissemination in the building sector as well as extent, capability and suitability of the provided functions. Both libraries are distributed under a GNU Lesser General Public License. In the next working meeting, the final decision will be made which libraries to choose as basis for further developing and testing of various geometric algorithms for model transformation.
 
 Task 3: Application and Dissemination
 -------------------------------------
