@@ -1,7 +1,13 @@
 ﻿Introduction
 ============
 
-xxx [Michael to provide brief intro].
+IBPSA Project 1 had a productive year, with the two expert meetings attended
+by around 50 people each. These meetings were similar in size than
+for the preceeding IEA EBC Annex 60 project.
+
+Each of the three tasks had several coordination meetings.
+Funding for the continued collaboration has been secured by many
+of the key participants.
 
 
 Structure and Management of the Project
