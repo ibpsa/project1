@@ -10,14 +10,16 @@ Funding for the continued collaboration has been secured by many
 of the key participants.
 
 
-Structure and Management of the Project
-=======================================
+Management of the Project
+=========================
 
 As of August 1, 2018,
 there are currently 27 organizational participants,
 2 sponsoring participants, and 30 individual participants.
 A full list of the participants can be found at
-https://ibpsa.github.io/project1/participation.html.
+https://ibpsa.github.io/project1/participation.html
+and a list of meetings with their minutes is available at
+https://github.com/ibpsa/project1/wiki/Meetings.
 
 
 Progress of the activities
@@ -82,20 +84,20 @@ After having identified that our target scale is the urban district (for us mean
 
 1. Data mapping: defining the questions to which modellers seek answers and the candidate tools available to answer them, the data needs of these tools, the country-specific data available and candidate strategies for plugging the gaps. A draft data availability mapping template has been prepared.
 
-2. Archtypcal definitions: country-specific categorisations of age bands and archetypal geometric forms for both domestic and non-domestic buildings, and strategies for the automated classiciations of age and form. This to facilitate the association of semantic attributes to the built forms.
+2. Archetypical definitions: country-specific categorisations of age bands and archetypal geometric forms for both domestic and non-domestic buildings, and strategies for the automated classification of age and form. This is to facilitate the association of semantic attributes to the built forms.
 
-3. Parsimonious geometric processing: analysis of appropriate geometric complexity, workflows for the preparation and sanitation of 3D forms (e.g. from cadastral and LiDAR data) and the evaluation of algorithms to simplify these forms. The purpose here is to identify strategies for the preparation of 3D models that represent a good compromise between realism and the associated data and computational costs. 
+3. Parsimonious geometric processing: analysis of appropriate geometric complexity, workflows for the preparation and sanitation of 3D forms (e.g. from cadastral and LiDAR data) and the evaluation of algorithms to simplify these forms. The purpose here is to identify strategies for the preparation of 3D models that represent a good compromise between realism and the associated data and computational costs.
 
-4. Parsimonious semantic enrichment: workflows for the acquisition and sanitation of semantic attribute data, the assigment of attributes to 3D models using this data, and for the plugging of gaps where attributional data is unavailable or of poor quality. 
+4. Parsimonious semantic enrichment: workflows for the acquisition and sanitation of semantic attribute data, the assignment of attributes to 3D models using this data, and for the plugging of gaps where attributional data is unavailable or of poor quality.
 
 5. Data exchange: Comparisons between IFC and CityGML schemas, methods to enrich CityGML and the Energy ADE for specific simulation tools, integration of the EnergyADE into 3DCityDB.
 
 6. Exemplar datasets: Semantically attributed 3D models for urban-scale building energy simulation for a range of geographical contexts.
 
-7. Demonstrations of the application of developed workflows for specific simulations tools and geographic contexts. 
+7. Demonstrations of the application of developed workflows for specific simulations tools and geographic contexts.
 
 
-Collaborative papers have been identified for several of these tasks. 
+Collaborative papers have been identified for several of these tasks.
 
 
 WP 2.2: Building Information Modeling
