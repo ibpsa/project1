@@ -76,15 +76,32 @@ There was a lot of interest in this BOPTEST from the participants in the Intelli
 Task 2: Building and City Quarter Information Models
 ----------------------------------------------------
 
-WP 2.1: City Quarter Information Modeling
+WP 2.1: City District Information Modeling
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+After having identified that our target scale is the urban district (for us meaning a scale of 100s to 1000s of buildings) and that our target scope is on the energy simulation of domestic and non-domestic buildings, the following priorities were agreed:
 
-xxx
+1. Data mapping: defining the questions to which modellers seek answers and the candidate tools available to answer them, the data needs of these tools, the country-specific data available and candidate strategies for plugging the gaps. A draft data availability mapping template has been prepared.
+
+2. Archtypcal definitions: country-specific categorisations of age bands and archetypal geometric forms for both domestic and non-domestic buildings, and strategies for the automated classiciations of age and form. This to facilitate the association of semantic attributes to the built forms.
+
+3. Parsimonious geometric processing: analysis of appropriate geometric complexity, workflows for the preparation and sanitation of 3D forms (e.g. from cadastral and LiDAR data) and the evaluation of algorithms to simplify these forms. The purpose here is to identify strategies for the preparation of 3D models that represent a good compromise between realism and the associated data and computational costs. 
+
+4. Parsimonious semantic enrichment: workflows for the acquisition and sanitation of semantic attribute data, the assigment of attributes to 3D models using this data, and for the plugging of gaps where attributional data is unavailable or of poor quality. 
+
+5. Data exchange: Comparisons between IFC and CityGML schemas, methods to enrich CityGML and the Energy ADE for specific simulation tools, integration of the EnergyADE into 3DCityDB.
+
+6. Exemplar datasets: Semantically attributed 3D models for urban-scale building energy simulation for a range of geographical contexts.
+
+7. Demonstrations of the application of developed workflows for specific simulations tools and geographic contexts. 
+
+
+Collaborative papers have been identified for several of these tasks. 
+
 
 WP 2.2: Building Information Modeling
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the first phase of WP2, groundwork was set up for the collaborative development and testing of different classes of geometric algorithms for transforming building information models to building performance simulation. Various libraries were considered for reading IFC data and for processing geometric information such as IfcOpenShell, IfcPlusPlus, xBIM (IFC), OpenCascade, ParaSolid and the ACIS geometry kernel. Test runs with the IfcOpenShell library were successful for importing IFC files and extracting geometrical and semantical information from the IFC schema. The information then was used to export the building’s geometry to CAD files in the format STEP and STL using the OpenCascade library. The libraries were chosen because of their up-to-dateness, quality of documentation and support, dissemination in the building sector as well as extent, capability and suitability of the provided functions. Both libraries are distributed under a GNU Lesser General Public License. In the next working meeting, the final decision will be made which libraries to choose as basis for further developing and testing of various geometric algorithms for model transformation.
+In the first phase of WP2.2, groundwork was set up for the collaborative development and testing of different classes of geometric algorithms for transforming building information models to building performance simulation. Various libraries were considered for reading IFC data and for processing geometric information such as IfcOpenShell, IfcPlusPlus, xBIM (IFC), OpenCascade, ParaSolid and the ACIS geometry kernel. Test runs with the IfcOpenShell library were successful for importing IFC files and extracting geometrical and semantical information from the IFC schema. The information then was used to export the building’s geometry to CAD files in the format STEP and STL using the OpenCascade library. The libraries were chosen because of their up-to-dateness, quality of documentation and support, dissemination in the building sector as well as extent, capability and suitability of the provided functions. Both libraries are distributed under a GNU Lesser General Public License. In the next working meeting, the final decision will be made which libraries to choose as basis for further developing and testing of various geometric algorithms for model transformation.
 
 Task 3: Application and Dissemination
 -------------------------------------
