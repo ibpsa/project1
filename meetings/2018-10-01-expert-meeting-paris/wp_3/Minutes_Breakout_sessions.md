@@ -2,6 +2,31 @@
 
 Paris, October 1-2, 2018
 
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [IBPSA Project 1 Paris Expert Meeting](#ibpsa-project-1-paris-expert-meeting)
+	- [Breakout session 1-1](#breakout-session-1-1)
+		- [Presentation Krzysztof](#presentation-krzysztof)
+		- [Presentation Ina](#presentation-ina)
+	- [Breakout session 1-2](#breakout-session-1-2)
+		- [Presentation Bram](#presentation-bram)
+		- [Discussion on results building modelling group](#discussion-on-results-building-modelling-group)
+	- [Breakout session 2-1](#breakout-session-2-1)
+		- [Discussion building models](#discussion-building-models)
+		- [Discussion thermal network model](#discussion-thermal-network-model)
+		- [Discussion on possible interactions and further steps](#discussion-on-possible-interactions-and-further-steps)
+	- [Breakout session 2-2](#breakout-session-2-2)
+		- [Presentation Enora](#presentation-enora)
+		- [Presentation Julie](#presentation-julie)
+		- [Presentation Igor](#presentation-igor)
+	- [Breakout session 2-3](#breakout-session-2-3)
+		- [WP 1.1](#wp-11)
+		- [WP 1.2](#wp-12)
+		- [WP 2.2](#wp-22)
+	- [Breakout session 2-4](#breakout-session-2-4)
+
+<!-- /TOC -->
+
 ## Breakout session 1-1
 
 ### Presentation Krzysztof
