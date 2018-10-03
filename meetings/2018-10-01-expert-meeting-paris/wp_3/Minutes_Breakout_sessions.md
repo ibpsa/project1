@@ -71,7 +71,7 @@ Paris, October 1-2, 2018
 - Discussion on generation of "typical" comfort set-points for archetype simulation, including simpler method to reduce computation time (10x speed-up)
 
 ### Organisation of the break-out sessions of day 2
-- Brain storm session > framework of a DESTEST (+ reality check! > what are we going to work on?)
+- Brain storm session > framework of a DESTEST (+ reality check! > what are we going to work on specifically?)
 
 ## Breakout session 2-1
 
@@ -84,7 +84,7 @@ Paris, October 1-2, 2018
   - Enora: Dimosim
   - Julie: Buildings (reduced-order)
   - Haris: BuildingsSystems
-  - Send results to Ina by 31st of October:
+  - **Send results to Ina by 31st of October:**
     - Indoor temperature profile (day zone + night zone) [K]
     - Total heat demand for space heating [W]
     - 600 s timestep
@@ -101,7 +101,7 @@ Paris, October 1-2, 2018
   - Felix: IBPSA library - finished
   - Bram: IBPSA library - finished (although it is exactly the same as Felix's code except for the automatic parameter loading)
   - Enora: Dimosim
-  - Julie: Modelica IBPSA library
+  - Julie: IBPSA library
   - Alessandro: Buildings library
   - Konstantin: get junction model working
 - Detailed information regarding common exercise can be found  [here](../../../wp_3_2_destest/Specifications/NetworkCommonExercise1.md)
