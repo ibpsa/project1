@@ -156,7 +156,7 @@ Ina, Dirk, ...
  - RWTH Aachen will develop a similar tool to TEASER (compatible to TEASER) to translate BIM (IFC) to Modelica
 
 ## Breakout session 2-4
-Brainstorm on possible outcomes and next steps:everyone pitches 1 idea that they would like to realize within the project
+Brainstorm on possible outcomes and next steps: everyone pitches 1 idea that they would like to realize within the project
 - Felix: 
 - Alessandro:
 - Haris: 
@@ -168,5 +168,5 @@ Brainstorm on possible outcomes and next steps:everyone pitches 1 idea that they
 - Enora: 
 
 ## Action points
-- Send short summary (bullet points) of pitch to Dirk so he can condense it into a first version of the framework (will be added in these minutes as well)
+- Send short summary (bullet points) of pitch to Dirk so he can condense it into a first version of the framework (pitches will be added in these minutes as well)
 - Check commitments in breakout session 2-1
