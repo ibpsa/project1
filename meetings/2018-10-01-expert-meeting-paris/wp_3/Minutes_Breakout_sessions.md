@@ -104,6 +104,7 @@ Paris, October 1-2, 2018
   - Konstantin: get junction model working
 - Detailed information regarding common exercise can be found  [here](../../../wp_3_2_destest/Specifications/NetworkCommonExercise1.md)
   - **Send results to Felix by 15th of November**
+  - Session to explain network modelling in Modelica will be organised soon (TBD)
 
 ## Breakout session 2-2
 
