@@ -75,14 +75,14 @@ Paris, October 1-2, 2018
 
 ### Discussion building models
 
-- The following people agreed to model the single building that was part of our first dummy district. An elaborate description can be found at: https://github.com/ibpsa/project1/tree/master/wp_3_2_destest (in this repository, you find a README.txt-file; the climate file in TMY-format as well as a MOS-file to convert the weather format to EPW-format, you also find the IDEAS Modelica models as well as the results in csv format from these models). If you have any questions, please don’t hesitate to send Ina an e-mail (ina.dejaeger@kuleuven.be). 
+- The following people agreed to model the single building that was part of our first dummy district. An elaborate description can be found at: https://github.com/ibpsa/project1/tree/master/wp_3_2_destest (in this repository, you find a README.txt-file; the climate file in TMY-format as well as a MOS-file to convert the weather format to EPW-format, you also find the IDEAS Modelica models as well as the results in csv format from these models). If you have any questions, please don’t hesitate to send Ina an e-mail (ina.dejaeger@kuleuven.be).
   - Ina: IDEAS - finished
   - Alessandro: Buildings (higher-order) - finished
   - Michael: AixLib - under construction
   - Enora: Dimosim
   - Julie: Buildings (reduced-order)
   - Haris: BuildingsSystems
-  - Send results to Ina by 31st of October: 
+  - Send results to Ina by 31st of October:
     - Indoor temperature profile (day zone + night zone) [K]
     - Total heat demand for space heating [W]
     - 600 s timestep
@@ -95,16 +95,15 @@ Paris, October 1-2, 2018
   - Bad experience with the integrator block in Modelica
   - Bram co-developed the plug flow
   - Bram and Annelies developed a substation model
-- The following people agreed to model the network (we want to perform both an inter-model comparison and an intra-model comparison). If you have any questions, please don’t hesitate to contact Felix (felix.buenning@empa.ch). 
-  - Felix: ??? - finished
-  - Bram: ??? - finished (?)
+- The following people agreed to model the network (we want to perform both an inter-model comparison and an intra-model comparison). If you have any questions, please don’t hesitate to contact Felix (felix.buenning@empa.ch).
+  - Felix: IBPSA library - finished
+  - Bram: IBPSA library - finished (although it is exactly the same as Felix's code except for the automatic parameter loading)
   - Enora: Dimosim
   - Julie: Modelica IBPSA library
   - Alessandro: Buildings library
   - Konstantin: get junction model working
-  - Send results to Felix by 15th of November: @Felix, could you please specify the exact variables and the time step you would like to have in order to make an in-depth comparison? 
-
-### Discussion on possible interactions and further steps
+- Detailed information regarding common exercise can be found  [here](../../../wp_3_2_destest/Specifications/NetworkCommonExercise1.md)
+  - **Send results to Felix by 15th of November**
 
 ## Breakout session 2-2
 
@@ -130,23 +129,44 @@ Use case of the city of Rennes, France
   - In this project, they will also develop the building models
 
 ### Small brain storm session
-- The outcome of WP3: 
+- The outcome of WP3:
   - An elaborate framework of what would ideally be included in the DESTEST
   - Multiple sets of real models + an elaborate description of these models
      - You are able to model exactly the same model in your modelling environment
      - You are able to get a model and test e.g. the performance of your substation against the average
    - Document evolvement of the DESTEST as well (easy if you want to start modelling in Modelica)
-- Different energy carriers: district heating, district cooling, smart grids (electrical networks), gas networks, 
+- Different energy carriers: district heating, district cooling, smart grids (electrical networks), gas networks,
 - Control?
-- Scale? 
+- Scale?
   - Different models for different scales (high-order model > low-order model > load profiles)
 - Time horizon: do we need to simulate the whole year? (most of us are convinced that we do)
+- Possible interactions within IBPSA Project 1
+  - **WP 1.1 Library**
+    - Substation modelling: help defining list of typical configurations and their implementation
+    - Check new fluid model implementation (see paper Dirk Zimmer using inertial pressure and mass flow state)
+    - Debugging of network model regarding solver tolerance
+  - **WP 1.2 BOP-TEST**
+    - DESTEST could be one of the reference cases for BOP-TEST
+    - Interest in developing control methods for thermal networks
+  - **WP 2.2 Urban modelling**
+    - Interaction to translate GIS into Urban Energy Models
+    - Define neighbourhood archetypes
+
 ## Breakout session 2-3
 
 All participants join other sessions
 
 ### WP 1.1
 Alessandro, Bram, Konstantin, Michael
+- Discuss new fluid port implementation according to paper Dirk Zimmer
+  - Able to break algebraic loops
+  - Problem is that current implementation still not robust, and Dynasim not easy to convince to do something about it, while new implementation has shown applicability in aircraft modelling
+  - Filip not sure if this is the way to go; problem is shifted from Newton solver to integrator, but not removed. Is it worth the time and the non-backwards-compatibility?
+  - Try to add this to base-models of fluid resistance components
+- Short discussion of problem regarding influence of tolerance on network modelling results
+  - Need to isolate problem better
+    - = Make unit test for pipe that can be run at different tolerances
+- Short discussion on implementation of ASHRAE control templates
 
 ### WP 1.2
 Felix, ...
@@ -157,15 +177,17 @@ Ina, Dirk, ...
 
 ## Breakout session 2-4
 Brainstorm on possible outcomes and next steps: everyone pitches 1 idea that they would like to realize within the project
-- Felix: 
+- Felix:
 - Alessandro:
-- Haris: 
-- Konstantin: 
-- Ina: 
-- Bram: 
-- Igor: 
-- Julie: 
-- Enora: 
+- Haris:
+- Konstantin:
+- Ina:
+- Bram:
+  - Extension of neighborhood aggregation paper to assess the influence of district heating network on aggregated heat load.
+  - Can this influence also be represented by a simple model?
+- Igor:
+- Julie:
+- Enora:
 
 ## Action points
 - Send short summary (bullet points) of pitch to Dirk so he can condense it into a first version of the framework (pitches will be added in these minutes as well)
