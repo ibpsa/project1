@@ -84,8 +84,9 @@ Paris, October 1-2, 2018
   - Enora: Dimosim
   - Julie: Buildings (reduced-order)
   - Haris: BuildingsSystems
-  - **Send results to Ina by 31st of October:**
-    - Indoor temperature profile (day zone + night zone) [K]
+  - **Send results to Ina by 31st of October: in 1 csv-file **
+    - Indoor temperature profile day zone [K]
+    - Indoor temperature profile night zone [K]
     - Total heat demand for space heating [W]
     - 600 s timestep
 
