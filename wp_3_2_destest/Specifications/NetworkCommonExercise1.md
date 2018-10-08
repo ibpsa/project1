@@ -46,6 +46,6 @@ Heat load profile for each of the buildings can be found in ``wp_3_2_destest/Res
 
 ### Format
 - Time step: 15 min
-- Horizon: One year
+- Horizon: One week
 - File format: .csv
 - Columns: Time / Central heat injection / Total network heat loss
