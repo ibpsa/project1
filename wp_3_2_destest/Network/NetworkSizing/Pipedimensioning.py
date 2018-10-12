@@ -42,7 +42,8 @@ def main():
     g = calculateInsulationThickness(g)     #Calculate the thickness of insulation for all graphs
     plotGraph(g)                            #Plot the graph and save figure
     generateNodeFile(g)                     #Generate csv file containing information about the nodes
-    generatePipeFile(g)                    #Generate csv file containg ingotmation about all edges/pipes
+    generatePipeFile(g)                     #Generate csv file containg ingotmation about all edges/pipes
+    generatePipeFileWithoutNames(g)         #Generate csv file containg ingotmation about all edges/pipes w/o names for Modelica
     
     return g
     
@@ -231,6 +232,16 @@ def generatePipeFile(g):
         currentFrame=pd.DataFrame([[i[0],i[1],edge['weight'],edge['attr_dict']['D'],edge['attr_dict']['D_ins'],edge['attr_dict']['peakPower'],edge['attr_dict']['dP'],0.035]],columns=['Beginning Node','Ending Node','Length [m]','Inner Diameter [m]', 'Insulation Thickness [m]', 'Peak Load [kW]', 'Total pressure loss [Pa/m]', 'U-value [W/mK]'])
         file = file.append(currentFrame)
     file.to_csv('Pipe data.csv', index=False)
+    return file
+
+def generatePipeFileWithoutNames(g):
+    """Generate a csv file that describes the pipes without the node names (for Modelica modeling)"""
+    file=pd.DataFrame(columns=['Length [m]','Inner Diameter [m]', 'Insulation Thickness [m]', 'Peak Load [kW]', 'Total pressure loss [Pa/m]', 'U-value [W/mK]'])
+    for i in list(g.edges):
+        edge=g.edges[i]
+        currentFrame=pd.DataFrame([[edge['weight'],edge['attr_dict']['D'],edge['attr_dict']['D_ins'],edge['attr_dict']['peakPower'],edge['attr_dict']['dP'],0.035]],columns=['Length [m]','Inner Diameter [m]', 'Insulation Thickness [m]', 'Peak Load [kW]', 'Total pressure loss [Pa/m]', 'U-value [W/mK]'])
+        file = file.append(currentFrame)
+    file.to_csv('Pipe data wo names.csv', index=False)
     return file
         
 def generateNodeFile(g):
