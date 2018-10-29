@@ -16,4 +16,6 @@ The link is  https://webconf.vc.dfn.de/rfv1iitutli9/
 You can also join via telephone call to +49 30 200 97934948   
 Further Information about the necessary steps for Adobe Connect  can be found here: https://www.vc.dfn.de/en/web-conferencing/short-guide/
 
+**Process chart**   
+The process chart is saved as .bpmn file (Business Process Model and Notation). It can be uploaded and edited using the following webpage: https://demo.bpmn.io/new
 
