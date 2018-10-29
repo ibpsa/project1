@@ -2,11 +2,11 @@
 # @Author: MichaMans
 # @Date:   2018-09-20 11:05:56
 # @Last Modified by:   MichaMans
-# @Last Modified time: 2018-10-28 19:26:18
+# @Last Modified time: 2018-10-29 09:27:01
 
 """This module contains an example how to generate archetype buildings using
 TEASER API functions. THis script currently only works with TEASER branch
-ibpsa_wp3
+issue539_setpoints
 """
 import os
 from teaser.project import Project
