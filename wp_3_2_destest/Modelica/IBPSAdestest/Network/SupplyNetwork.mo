@@ -2,22 +2,118 @@ within IBPSAdestest.Network;
 model SupplyNetwork "Only supply line is modelled"
   extends Modelica.Icons.Example;
   extends BaseClasses.BuildingLocationsDouble(
-    SimpleDistrict_2(deltaT=20, T_start=T_supply + 273.15),
-    SimpleDistrict_3(deltaT=20, T_start=T_supply + 273.15),
-    SimpleDistrict_1(deltaT=20, T_start=T_supply + 273.15),
-    SimpleDistrict_4(deltaT=20, T_start=T_supply + 273.15),
-    SimpleDistrict_5(deltaT=20, T_start=T_supply + 273.15),
-    SimpleDistrict_6(deltaT=20, T_start=T_supply + 273.15),
-    SimpleDistrict_8(deltaT=20, T_start=T_supply + 273.15),
-    SimpleDistrict_7(deltaT=20, T_start=T_supply + 273.15),
-    SimpleDistrict_10(deltaT=20, T_start=T_supply + 273.15),
-    SimpleDistrict_11(deltaT=20, T_start=T_supply + 273.15),
-    SimpleDistrict_9(deltaT=20, T_start=T_supply + 273.15),
-    SimpleDistrict_12(deltaT=20, T_start=T_supply + 273.15),
-    SimpleDistrict_16(deltaT=20, T_start=T_supply + 273.15),
-    SimpleDistrict_15(deltaT=20, T_start=T_supply + 273.15),
-    SimpleDistrict_14(deltaT=20, T_start=T_supply + 273.15),
-    SimpleDistrict_13(deltaT=20, T_start=T_supply + 273.15));
+    SimpleDistrict_2(           T_start=T_supply + 273.15,
+      m_flo_bypass=0.001,
+      pum(
+        energyDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        massDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        use_inputFilter=false),
+      deltaT=20),
+    SimpleDistrict_3(           T_start=T_supply + 273.15,
+      m_flo_bypass=0.001,
+      pum(
+        energyDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        massDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        use_inputFilter=false),
+      deltaT=20),
+    SimpleDistrict_1(           T_start=T_supply + 273.15,
+      m_flo_bypass=0.001,
+      pum(
+        energyDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        massDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        use_inputFilter=false),
+      deltaT=20),
+    SimpleDistrict_4(           T_start=T_supply + 273.15,
+      m_flo_bypass=0.001,
+      pum(
+        energyDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        massDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        use_inputFilter=false),
+      deltaT=20),
+    SimpleDistrict_5(           T_start=T_supply + 273.15,
+      m_flo_bypass=0.001,
+      pum(
+        energyDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        massDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        use_inputFilter=false),
+      deltaT=20),
+    SimpleDistrict_6(           T_start=T_supply + 273.15,
+      m_flo_bypass=0.001,
+      pum(
+        energyDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        massDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        use_inputFilter=false),
+      deltaT=20),
+    SimpleDistrict_8(           T_start=T_supply + 273.15,
+      m_flo_bypass=0.001,
+      pum(
+        energyDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        massDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        use_inputFilter=false),
+      deltaT=20),
+    SimpleDistrict_7(           T_start=T_supply + 273.15,
+      m_flo_bypass=0.001,
+      pum(
+        energyDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        massDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        use_inputFilter=false),
+      deltaT=20),
+    SimpleDistrict_10(           T_start=T_supply + 273.15,
+      m_flo_bypass=0.001,
+      pum(
+        energyDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        massDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        use_inputFilter=false),
+      deltaT=20),
+    SimpleDistrict_11(           T_start=T_supply + 273.15,
+      m_flo_bypass=0.001,
+      pum(
+        energyDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        massDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        use_inputFilter=false),
+      deltaT=20),
+    SimpleDistrict_9(           T_start=T_supply + 273.15,
+      m_flo_bypass=0.001,
+      pum(
+        energyDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        massDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        use_inputFilter=false),
+      deltaT=20),
+    SimpleDistrict_12(           T_start=T_supply + 273.15,
+      m_flo_bypass=0.001,
+      pum(
+        energyDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        massDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        use_inputFilter=false),
+      deltaT=20),
+    SimpleDistrict_16(           T_start=T_supply + 273.15,
+      m_flo_bypass=0.001,
+      pum(
+        energyDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        massDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        use_inputFilter=false),
+      deltaT=20),
+    SimpleDistrict_15(           T_start=T_supply + 273.15,
+      m_flo_bypass=0.001,
+      pum(
+        energyDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        massDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        use_inputFilter=false),
+      deltaT=20),
+    SimpleDistrict_14(           T_start=T_supply + 273.15,
+      m_flo_bypass=0.001,
+      pum(
+        energyDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        massDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        use_inputFilter=false),
+      deltaT=20),
+    SimpleDistrict_13(           T_start=T_supply + 273.15,
+      m_flo_bypass=0.001,
+      pum(
+        energyDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        massDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
+        use_inputFilter=false),
+      deltaT=20));
 
   package Medium1 = IBPSA.Media.Water "Medium model";
 
@@ -725,14 +821,12 @@ public
     annotation (Placement(transformation(extent={{160,-140},{180,-120}})));
   Modelica.Blocks.Continuous.Integrator integrator
     annotation (Placement(transformation(extent={{130,-140},{150,-120}})));
-  Modelica.Blocks.Math.Sum sum1(nin=16)
-    annotation (Placement(transformation(extent={{60,-160},{80,-140}})));
-  Modelica.Blocks.Math.Add add(k2=-1)
-    annotation (Placement(transformation(extent={{100,-160},{120,-140}})));
   Modelica.Blocks.Interfaces.RealOutput HeatLossesTotal
     annotation (Placement(transformation(extent={{160,-180},{180,-160}})));
   Modelica.Blocks.Continuous.Integrator integrator1
     annotation (Placement(transformation(extent={{130,-180},{150,-160}})));
+  Modelica.Blocks.Sources.RealExpression realExpression1(y=fixedTemperature.port.Q_flow)
+    annotation (Placement(transformation(extent={{74,-160},{94,-140}})));
 equation
   connect(combiTimeTable.y[2], SimpleDistrict_2.QDem) annotation (Line(points={{-119,
           -110},{-108,-110},{-108,-74},{-198,-74},{-198,170},{-170,170},{-170,160}},
@@ -1199,20 +1293,14 @@ equation
     annotation (Line(points={{151,-130},{170,-130}}, color={0,0,127}));
   connect(integrator.u, HeatInjection) annotation (Line(points={{128,-130},{108,
           -130},{108,-112},{170,-112}}, color={0,0,127}));
-  connect(combiTimeTable.y[1:16], sum1.u[:]) annotation (Line(points={{-119,-110},{-112,-110},
-          {-112,-110},{-108,-110},{-108,-150},{58,-150}}, color={0,0,127}));
   connect(HeatInjection, HeatInjection)
     annotation (Line(points={{170,-112},{170,-112}}, color={0,0,127}));
-  connect(add.u1, HeatInjection) annotation (Line(points={{98,-144},{96,-144},{96,
-          -144},{86,-144},{86,-112},{170,-112}}, color={0,0,127}));
-  connect(sum1.y, add.u2) annotation (Line(points={{81,-150},{86,-150},{86,-156},
-          {98,-156}}, color={0,0,127}));
-  connect(add.y, HeatLosses)
-    annotation (Line(points={{121,-150},{170,-150}}, color={0,0,127}));
   connect(integrator1.y, HeatLossesTotal)
     annotation (Line(points={{151,-170},{170,-170}}, color={0,0,127}));
   connect(integrator1.u, HeatLosses) annotation (Line(points={{128,-170},{124,-170},
           {124,-150},{170,-150}}, color={0,0,127}));
+  connect(realExpression1.y, HeatLosses)
+    annotation (Line(points={{95,-150},{170,-150}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(extent={{-180,-180},{180,180}})), Icon(
         coordinateSystem(extent={{-100,-100},{100,100}})));
 end SupplyNetwork;
