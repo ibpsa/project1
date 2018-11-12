@@ -25,5 +25,5 @@ Geometry kernel: OpenCascade (PythonOCC)
 | Geometric algorithms | Identification of geometric problems, Collecting geometric problems until second half of November, Telefonce meeting (invitation via Doodle by Eric)  | All | 11/2018 :heavy_plus_sign:
 | Space boundary algorithms | Review and preparation for publication, Transformation of implemented code from institutes to task tool chain (SPT, CBIP, …), Problematic of exportation of 2nd level space boundaries from Revit, etc. | All | 12/2018 :x:
 | MVD for BPS | To be continued at next meeting, Input by Petra v. Both (KIT), Goal: Development of "BPS-MVD" | James, Georgios, Vlado, PetraV.Both | 11/2018 :x:
-| IFC schema | Check possibility to switch between IFC2x3 and IFC4 in IfcOpenShell, IFC wrapper for IFC2x3<->IFC4 existing?, Definition of used format  | David  | 11/2018 :x:
-| HVAC modeling | Create list of missing IFC entities or property sets and push them into committees, Schema to use for generic description, Pressure on vendors, Hold in mind different LOD for simulations | Moritz, David | 11/2018 :x:
+| IFC schema | Check possibility to switch between IFC2x3 and IFC4 in IfcOpenShell, IFC wrapper for IFC2x3<->IFC4 existing?, Definition of used format  | David  | 11/2018 :heavy_plus_sign:   
+| HVAC modeling | Create list of missing IFC entities or property sets and push them into committees, Schema to use for generic description, Pressure on vendors, Hold in mind different LOD for simulations | Moritz, David | 11/2018:heavy_plus_sign:  
