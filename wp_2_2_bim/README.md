@@ -19,3 +19,6 @@ Further Information about the necessary steps for Adobe Connect  can be found he
 **Process chart**   
 The process chart is saved as .bpmn file (Business Process Model and Notation). It can be uploaded and edited using the following webpage: https://demo.bpmn.io/new
 
+**List of IFC issues**   
+To be extended and specified  
+https://github.com/ibpsa/project1/blob/master/wp_2_2_bim/ifc_issues.md
