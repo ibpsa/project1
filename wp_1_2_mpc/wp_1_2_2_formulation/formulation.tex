@@ -1,0 +1,341 @@
+% This conference manuscript template is prepared for:   
+% Kim Stockment, Conference Coordinator, Ray W. Herrick Laboratories, Purdue University, West Lafayette, IN, USA. 
+% Latest revision = 2016-02-23 
+
+\documentclass[10pt]{extarticle}
+% Miktex users: require l3 packages
+%             : optional 3 packages
+\usepackage{amssymb,amsmath,multicol,titlesec,apacite,booktabs,tabto,url, multirow, makecell, eurosym}
+%\usepackage[round]{natbib}  
+
+\usepackage[hmargin = 1in, vmargin = 1in]{geometry}
+
+\renewcommand{\refname}{References}
+    
+%\usepackage[MnSymbol]{mathspec}
+%\setallmainfonts{Times New Roman}
+% Mathspec requires the XeTeX compiler. 
+
+\usepackage[parfill]{parskip}
+\usepackage{graphicx}
+\usepackage[font=bf]{caption}
+
+\usepackage{titlesec} 
+%\titleformat{command}[shape]{format}{label}{sep}{before}[after]
+\titleformat{\section}[hang]{\fontsize{12pt}{1em}\selectfont \bfseries}{\thesection. }{0pt}{\centering \MakeUppercase}
+\titleformat{\subsection}[hang]{\fontsize{11pt}{1em}\selectfont \bfseries}{\thesubsection}{5pt}{}
+\titleformat{\subsubsection}[runin]{}{\thesubsubsection}{5pt}{} 
+%\titlespacing{command}{left}{beforesep}{aftersep}[right]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+\titlespacing{\subsection}{0pt}{10pt}{0pt}
+\titlespacing{\subsubsection}{0pt}{10pt}{0pt}	
+%\setlength{\bibsep}{3pt}
+%\pagenumbering{\gobble}
+%\setlength{\hyphenpenalty}{1000}
+%\setlength{\exhyphenpenalty}{1000}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[R]{\fontsize{12pt}{1em}\selectfont {{\textbf{Page \thepage}}}}
+\fancyhead[L]{}
+\fancyfoot[C]{IBPSA Project 1, September 2018}
+\renewcommand{\headrulewidth}{0pt} % Turn off the bar
+
+\newcommand\thefontsize[1]{{#1 The current font size is: \f@size pt\par}}
+
+\begin{document}
+	
+\begin{center}
+\vspace{0.2in}
+\noindent{\fontsize{14pt}{1em}\selectfont \textbf{MPC formulation description template}}\\[14pt]
+
+{\fontsize{11pt}{1.2em}\selectfont
+Iago Cupeiro Figueroa\textsuperscript{1}, J\'an Drgo\v na\textsuperscript{2}
+\\[11pt]
+
+KU Leuven\\
+Department of Mechanical Engineering - TME Division\\
+The Sysi's \\[11pt]
+
+iago.cupeirofigueroa@kuleuven.be\textsuperscript{1}, jan.drgona@kuleuven.be\textsuperscript{2} \\
+}
+\end{center}
+
+\vspace{0.5cm}
+
+
+\section*{ABSTRACT}
+
+This document contains the MPC formulation template within the frame of the IBPSA Project 1.
+The proposed template aims to adapt all possible formulations for the different types of models and key performance indicators (KPIs) in consideration.
+It has to be general.
+To this end, we choose the control engineering notation as our starting point,
+since it considers the formulation in a general way from an abstract point of view.
+From here, we  move to a formulation with physical meanind based on the specific characteristics of the building sector.
+
+%\section*{NOMENCLATURE}
+%
+%\begin{samepage}
+%	$x$\tabto{1.0in}Vector of states	\\
+%	$u$\tabto{1.0in}Vector of inputs	\\
+%	$y$\tabto{1.0in}Vector of outputs\\	
+%	$d$\tabto{1.0in}Vector of disturbances\ \\
+%	$N$\tabto{1.0in}Prediction horizon
+%	
+%\end{samepage}
+%\begin{samepage}
+%	\textbf{Subscript}\\
+%	$k$\tabto{1.0in}Considered time-step index
+%\end{samepage}
+
+
+\section{CONTROL ENGINEERING NOTATION}
+
+General MPC formulation can be cast as a following optimal control problem (OCP) in discrete time
+\begin{subequations}
+	\label{eq:mpc_general_formal}
+	\begin{align}
+	\min_{u_0, \ldots, u_{N-1}} & \ell_N(x_N) + \sum_{k=0}^{N-1} \ell(x_k, y_k, u_k) &
+	\label{eq:mpc_general_formal:cost}\\
+	\text{s.t.} \ & x_{k+1} = f(x_k, u_k, d_k),  & k \in \mathbb{N}_{0}^{N-1} & \label{eq:mpc_general_formal:xp} \\
+	& y_{k} = g(x_k, u_k, d_k),  & k \in \mathbb{N}_{0}^{N-1} & \label{eq:mpc_general_formal:yp} \\
+	&  x_{k} \in \mathcal{X},  & k \in \mathbb{N}_{0}^{N-1}   \label{eq:mpc_general_formal:ub}\\
+	& u_{k} \in \mathcal{U}, & k \in \mathbb{N}_{0}^{N-1} 
+	\label{eq:mpc_general_formal:xb}\\
+	%   & \underline{x} \le x_k \le \overline{x}, \label{eq:mpc_general_formal:xb}\\
+	%   & \underline{u} \le u_k \le \overline{u}, \label{eq:mpc_general_formal:ub}\\
+	& x_0 = x(t),\label{eq:mpc_general_formal:x0} \\
+	& d_0 = d(t),\label{eq:mpc_general_formal:d0}
+	\end{align}
+\end{subequations}
+where $x_k \in \mathbb{R}^{n_x}$, $y_k \in \mathbb{R}^{n_y}$, $u_k \in \mathbb{R}^{n_u}$ and $d_k \in \mathbb{R}^{n_d}$ denote the values of states, outputs,
+inputs and disturbances, respectively, at the $k$-th step of the prediction
+horizon $N$. 
+Objective function is given by~\eqref{eq:mpc_general_formal:cost} where   $\ell_N(x_N)$  represents the terminal penalty,
+while $\ell(x_k,u_k)$  is called a stage cost and its
+purpose is to assign a cost to a particular choice of $x_k$ and
+$u_k$.
+The predictions of the state values are obtained from the state update equation~\eqref{eq:mpc_general_formal:xp}, while values of the predicted outputs are given by
+the output equation~\eqref{eq:mpc_general_formal:yp}.
+States and inputs are subject to
+constraints~\eqref{eq:mpc_general_formal:ub} and~\eqref{eq:mpc_general_formal:xb}.
+Initial conditions of the problem are given by~\eqref{eq:mpc_general_formal:x0} for the state variables which are either  measured or estimated, and by~\eqref{eq:mpc_general_formal:d0} for the disturbances which are measured for the current timestep and forecasted for the future.
+For generality we can denote by $\xi$ the vector that encapsulates all time-varying parameters
+of~\eqref{eq:mpc_general_formal}, i.e. the current states $x(t)$,
+current and future disturbances $d(t), \ldots, d(t+N T_s)$, or possibly other parameters such as comfort boundaries or reference signals which depend on specific formulation.
+
+\section{MPC FORMULATION IN BUILDINGS: GRANTING A PHYSICAL MEANING }
+
+Now that the MPC abstract formulation has been defined, 
+physical meaning and ranges of variables have to be specified.
+Table~\ref{tab:mpc_form:translation} summarizes the most common
+variables found in building control and maps them with the abstract
+notation from the control engineering notation. 
+An overview of the most common parameters in building control is given in Table~\ref{tab:mpc_form:parameters}.
+
+Table~\ref{tab:mpc_form:objectives} recaps the most common objectives used 
+in the MPC formulation. These objectives can be combined in a multi-objective
+function. Since the main objective of building control is the maximization of 
+the occupant comfort while using as less resources as possible,
+usually two conflicting terms are found: an energy-related term
+and a comfort related term.   
+ 
+The energetic term accounts for the energy delivered to the building by all
+the HVAC components within. For $n$ HVAC components in the building, 
+the energy used by the building stands for the sum of the energy of each
+HVAC component $Q_i$, leading to the total energy used $Q_{HVAC}$.
+Generally, the energy used by any HVAC component $i$ can be calculated as the
+ratio between the heat that it delivers $Q_i$ and its efficiency $COP_i, EER_i$ or $\eta_i$. 
+These efficiencies are parameters that can be considered either constant or variable
+in function of the inputs, states and disturbances modelled.
+
+In function of which objective it is desired to minimised, the energy use
+minimisation function can be transformed using a pricing factor parameter,
+which can be added to the formulation. 
+The price factor $p_i$ converts the energy into monetary cost 
+for the component $i$ and it can be variable
+(in electric-based components), constant (in fuel-based components) or even negative 
+(renewable-based components that pour energy into the grid).
+The emission factor $e_i$ converts the energy into the associatted $CO_2$ emissions 
+for the component $i$ and it can be variable on electric-based components,
+constant for fuel-based components and zero on renewable-based components.
+The renewable energy sources (RES) share $r_i$ represents the fraction of renewable
+energy coming from the component $i$ and depends on the share of the grid for
+electric-based components, for fuel-based ones the share is zero and for
+renewable-based components the share would be unitary.
+
+The balance between the different objectives is typically adjusted
+by means of weighting terms $Q_x$ to give more or less priority to the
+term $x$.
+
+In general, there are two types of constraints,
+inequality  (control inputs range, comfort zones, etc.) and equality 
+(building model dynamics, rate limits, etc.) constraints.
+A recap of the most common constraints in building control can be found at
+Table \ref{tab:mpc_form:constraints}.
+The constraints which satisfaction is mandatory are called 
+\textit{hard constraints}. For example, control actions
+bounds limit the formulation according to the limitations (e.g., in power
+$\underline{Q_i}, \overline{Q_i}$ or rate of change $\underline{\Delta Q_i},
+\overline{\Delta Q_i}$)
+of the HVAC components and they need to be satysfied at every time instant
+for whole prediction horizon. On the other hand, the constraints which can 
+be violated are known as \textit{soft constraints}. They are usually relaxed
+by additional slack variables $s_k$ that are added to and
+penalized in the objective function (see Comfort objective in Table
+\ref{tab:mpc_form:objectives}), trying to keep within the established
+comfort bounds. The constrainst can be time-varying.
+
+% TODO: Q_i is conflicting notation with weights, keep using Q_{HVAC}^i
+% TODO: we could add units
+\begin{table}[h]
+	% Suppressing floating placement of tables/figures in LaTeX is generally deprecated. 
+	\centering
+	\caption{MPC variables notation and translation between physical and abstract domain.}
+	\label{tab:mpc_form:translation}
+	\begin{tabular}{l|c|l|cccc}
+		\toprule
+		\multicolumn{3}{l}{\textbf{Physical domain}} &  \multicolumn{4}{r}{\textbf{Abstract domain}} \\
+		\toprule
+		\textbf{Variables} & \textbf{Symbol} & \textbf{Description} & \textbf{$x$} & \textbf{$y$} & \textbf{$u$} & \textbf{$d$} \\ 
+		\midrule
+		\multirow{5}{*}{\textbf{Temperatures}} & $T$ & Envelope temperatures (wall, concrete, glazing...) & $\bullet$ & - & - & - \\ 
+		& $T_z$ & Zone operative temperatures & - & $\bullet$ & - & - \\
+		& $T_{sup}$ & Air/water supply temperatures &  - & - & $\bullet$ & - \\
+		& $T_e$ & Ambient temperature &  - & - & - & $\bullet$ \\
+		& $T_b$ & Borefield deep temperatures & $\bullet$ & - & - & - \\
+		\midrule
+		\multirow{5}{*}{\textbf{Heat flows}} &
+		$Q_{HVAC}$ & Total heat flow of HVAC components & - & - & $\bullet$ & - \\
+		& $Q_{i}$ & Heat flow of the HVAC component $i$ & - & - &  $\bullet$ &- \\
+		& $Q_{rad}$ & Solar radiation & - & - & - & $\bullet$ \\
+		& $Q_{occ}$ & Occupancy internal gains & - & - & - & $\bullet$ \\
+		& $Q_{lig}$ & Lighting internal gains & - & - & $\bullet$ & $\bullet$ \\
+		\midrule
+		\multirow{3}{*}{\textbf{Power used}} &
+		$P_{HVAC}$ & Total power of HVAC components & - & - & $\bullet$ & - \\
+		& $P_{i}$ & Power of the HVAC component $i$ & - & - &  $\bullet$ &- \\
+		& $P_{lig}$ & Lighting power & - & - & $\bullet$ & $\bullet$ \\
+\midrule
+		\multirow{2}{*}{\textbf{Mass flows}} &
+		$m_{wat}$ & Water mass flow & - & - & $\bullet$ & - \\
+		& $m_{air}$ & Air mass flow & - & - & $\bullet$ & - \\
+		\midrule
+		\multirow{6}{*}{\textbf{\shortstack[l]{Component signals \\ (use set superscript)}}} &
+		$T^{set}_{i}$ & Supply system set-points & - & - & $\bullet$ & - \\
+		& $T^{set}_{z}$ & Zone set-point & - & - & $\bullet$ & - \\
+		& $x^{set}_{mov}$ & Pump/fan speed signal & - & - & $\bullet$ & - \\
+		& $\Delta p^{set}$ & Pump/fan dif. pressure & - & - & $\bullet$ & - \\
+		& $x^{set}_{val}$ & Valve positions & - & - & $\bullet$ & - \\
+		& $x^{set}_{dam}$ & Damper positions & - & - & $\bullet$ & - \\
+		\midrule
+		\multirow{4}{*}{\textbf{\shortstack[l]{Indoor Environmental \\ Quality (IEQ)}}} &
+		$PMV$ & Predicted mean vote & - & $\bullet$ & - & - \\
+		& $CO_2$ & $CO_2$ concentration in air & - & $\bullet$ & - & $\bullet$ \\
+		& $\phi$ & Humidity & - & $\bullet$ & - & $\bullet$ \\
+		& $E_v$ & Illuminance & - & $\bullet$ & - & - \\
+		\bottomrule 
+	\end{tabular}
+\end{table} 
+
+
+\renewcommand{\arraystretch}{2}
+\begin{table}[h]
+	% Suppressing floating placement of tables/figures in LaTeX is generally deprecated. 
+	\centering
+	\caption{MPC formulation parameters}
+	\label{tab:mpc_form:parameters}
+	\begin{tabular}{l|c|l}
+		\toprule
+		\textbf{Efficiencies}  & \textbf{Symbol} &  \textbf{Description} \\
+		\midrule
+		\makecell[l]{Coefficient of \\ performance} & $COP$ &  \makecell[l]{Heating efficiency of heat pumps and air conditioning systems} \\
+		\makecell[l]{Energy efficiency \\ ratio} & $EER$ & \makecell[l]{Cooling efficiency of heat pumps and air conditioning systems}  \\
+		Efficiency & $\eta$ & \makecell[l]{Efficiency of all other systems} \\
+		\midrule
+		\textbf{Pricing factor}  & \textbf{Symbol} &  \textbf{Description} \\
+		\midrule
+		Price factor & $p_i$ &  Conversion factor from energy to monetary cost of component $i$ \\
+		Emission factor & $e_i$ & Conversion factor from energy to $CO_2$ emissions of component $i$ \\
+		RES share factor & $r_i$ & Ratio of renewable energy of the considered component  of component $i$\\
+		\midrule
+		\textbf{Comfort bounds}  & \textbf{Symbol} &  \textbf{Description} \\
+		\midrule
+		Temperature & $\underline{T},\overline{T}$ & Operative temperature comfort bounds \\
+		$CO_2$ concentration & $\underline{CO_2},\overline{CO_2}$ & $CO_2$ concentration comfort bounds \\
+		Predicted mean vote & $\underline{PMV},\overline{PMV}$ &  Predicted mean vote comfort bounds \\
+		Humidity & $\underline{\phi},\overline{\phi}$ &  Humidity comfort bounds  \\
+		Illuminance & $\underline{E_v},\overline{E_v}$ & Illuminance comfort bounds  \\
+		\bottomrule 
+		\textbf{Component limitations}  & \textbf{Symbol} &  \textbf{Description} \\
+		\midrule
+		Power limit & $\underline{Q_i},\overline{Q_i}$ & Minimum/maximum power of the HVAC component $i$ \\
+		Power rate of change & $\underline{\Delta Q_i},\overline{\Delta Q_i}$ & Minimum/maximum power rate of change of the HVAC component $i$ \\
+		\midrule
+		\textbf{Auxiliary parameters}  & \textbf{Symbol} &  \textbf{Description} \\
+		\midrule
+		\makecell[l]{Arbitrary weighting \\ term} & $Q_{\ell}$ &  Weighting term for the $\ell$ term in the objective function \\
+		\makecell[l]{Slack variable} & $s$ &  Used to soften the constraints, usually for the given comfort requirement \\
+		\makecell[l]{Time-step} & $t_s$ &  Time-step used in the optimization problem \\
+		\bottomrule 
+	\end{tabular}
+\end{table}
+
+% TODO: add definition and use of mathematical norms, 1,2,inf
+\renewcommand{\arraystretch}{2.5}
+\begin{table}[h]
+	% Suppressing floating placement of tables/figures in LaTeX is generally deprecated. 
+	\centering
+	\caption{MPC formulation objectives for $\ell(x_k, u_k, d_k)$}
+	\label{tab:mpc_form:objectives}
+	\begin{tabular}{l|c}
+		\toprule
+		\textbf{Linguistic objective}  & \textbf{MPC formulation} \\
+		\midrule
+		Minimise energy use &   $ \sum_{i=1}^{n} P_i = \sum_{i=1}^{n} \dfrac{Q_{i}}{\eta_i}$ \\
+		Minimise cost & $ \sum_{i=1}^{n} p_i P_i = \sum_{i=1}^{n} p_i \dfrac{Q_{i}}{\eta_i}$  \\
+		Minimise $CO_2$ emissions & $ \sum_{i=1}^{n} e_i P_i = \sum_{i=1}^{n}  e_i \dfrac{Q_{i}}{\eta_i}$  \\
+		Maximise RES &  $ \sum_{i=1}^{n} (1-r_i) P_i  = \sum_{i=1}^{n} (1-r_i) \dfrac{Q_{i}}{\eta_i}$  \\
+		Flexibility & ???  \\
+		Minimize discomfort &  $ \sum_{j=1}^{n_y} ||s_j||^2$ \\
+		\bottomrule 
+	\end{tabular}
+\end{table}
+
+\renewcommand{\arraystretch}{2.5}
+\begin{table}[h]
+	% Suppressing floating placement of tables/figures in LaTeX is generally deprecated. 
+	\centering
+	\caption{MPC formulation constraints}
+	\label{tab:mpc_form:constraints}
+	\begin{tabular}{l|c}
+		\toprule
+		\textbf{Linguistic constraint}  & \textbf{MPC formulation} \\
+		\midrule
+		Component limitations & $ \underline{Q_i}  <= Q_i <= \overline{Q_i} $ \\ 
+		Component rate of change & $ \underline{\Delta Q_i}  <= \Delta Q_i <= \overline{\Delta Q_i} $ \\ 
+		Temperature comfort bounds &   $ \underline{T_k} - s_{T_k} <= T_z <= \overline{T_k} + s_{T_k} $ \\
+		$CO_2$ concentration & $ \underline{{CO_2}_k} - s_{{CO_2}_k} <= CO_2 <= \overline{{CO_2}_k} + s_{{CO_2}_k} $  \\
+		Predicted mean vote & $ \underline{PMV_k} - s_{PMV_k} <= PMV <= \overline{PMV_k} + s_{PMV_k} $  \\
+		Humidity &  $ \underline{\phi_k} - s_{\phi_k} <= \phi <= \overline{\phi_k} + s_{\phi_k} $  \\
+		Illuminance & $ \underline{{E_v}_k} - s_{{E_v}_k} <= E_v <= \overline{{E_v}_k} + s_{{E_v}_k} $  \\
+		\bottomrule 
+	\end{tabular}
+\end{table}
+
+
+\bibliographystyle{apacite}
+\bibliography{template}
+\vspace{24pt}
+
+
+\section*{ACKNOWLEDGMENTS}
+
+This work emerged from the IBPSA Project 1, an international project conducted under the umbrella of the International Building Performance Simulation Association (IBPSA). Project 1 will develop and demonstrate a BIM/GIS and Modelica Framework for building and community energy system design and operation.
+
+The authors acknowledge the financial support by the European Union through  the EU-H2020-GEOT\euro CH 
+project ‘Geothermal Technology for \euro conomic Cooling and Heating’ 
+and within the H2020-EE-2016-RIA-IAprogramme for the project ‘Model Predictive Control and Innovative System Integration of GEOTABS;-) 
+in Hybrid Low Grade Thermal Energy Systems - Hybrid MPC GEOTABS’ (grant number 723649 - MPC-; GT). 
+
+\end{document}
