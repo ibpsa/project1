@@ -117,7 +117,7 @@ model SupplyNetwork "Only supply line is modelled"
 
   package Medium1 = IBPSA.Media.Water "Medium model";
 
-  parameter Real pipeData[24,6]=DataFiles.readCSVmatrix(Buildings.BoundaryConditions.WeatherData.BaseClasses.getAbsolutePath("modelica://IBPSAdestest/Resources/Data/DestestPipeData/Pipe data wo names.csv"));
+  parameter Real pipeData[24,6]=DataFiles.readCSVmatrix(Modelica.Utilities.Files.loadResource("modelica://IBPSAdestest/Resources/Data/DestestPipeData/Pipe data wo names.csv"));
 
   parameter Real dT=20 "Temperature difference between suply and return line";
   parameter Real cp_water=4.182 "Cp of water";
