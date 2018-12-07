@@ -90,6 +90,19 @@ def main():
         scaling_factor_diameter=100
     )
 
+    import pdb; pdb.set_trace()  # breakpoint e54190da //
+    None
+
+    node_data = pd.read_csv(
+        'https://raw.githubusercontent.com/ibpsa/project1/master/'
+        'wp_3_2_destest/Results/SimpleDistrict/SimpleDistrict_district.csv',
+        sep=',')
+
+    data_raw = pd.read_csv(filepath_or_buffer=file_input,
+                           index_col=0,
+                           parse_dates=True,
+                           infer_datetime_format=True)
+
 
 # Main function
 if __name__ == '__main__':
