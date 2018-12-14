@@ -19,7 +19,7 @@ Geometry kernel: OpenCascade (PythonOCC)
 | Task | Description |Team|Due to|
 |-----	|------- |------- |------- |
 | Wiki for Tools | Installation and setup process, Version management | Eric, ChristophN. | 10/2018 :heavy_check_mark: 
-| Git repository | Base code for tools | Eric, ChristophN., Jiauri, Christian | 12/2018 :heavy_plus_sign: 
+| Git repository | Base code for tools | Eric, ChristophN., Jiauri, Christian | 12/2018 :heavy_check_mark:
 | Database/repository of test cases | Installing KIT IFC server tool on E3D server, Definition of a table of attributes for: Model quality, Instantiated variants of object types (e.g., windows, type of geometry representation), Errors & problems associated with objects  | Karl-Heinz, James, Jérôme | 11/2018 :heavy_check_mark: 
 | Information Delivery Process | Definition of information delivery process (from input over algorithm to output), Definition of data drops & links, Preparing publication | Eric, ChristophV.T., Georgios, Christian | 04/2019 :heavy_plus_sign: 
 | Geometric problems | Identification of geometric problems, Collecting geometric problems until second half of November, Telefonce meeting (invitation via Doodle by Eric)  | All | 04/2019 :heavy_plus_sign:
