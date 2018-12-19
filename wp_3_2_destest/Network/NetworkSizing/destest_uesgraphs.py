@@ -83,13 +83,21 @@ def main():
             simple_district.nodes_by_name[row['Beginning Node']],
             simple_district.nodes_by_name[row['Ending Node']]][
                 'length'] = row['Length [m]']
+        simple_district.edges[
+            simple_district.nodes_by_name[row['Beginning Node']],
+            simple_district.nodes_by_name[row['Ending Node']]][
+                'dIns'] = row['Insulation Thickness [m]']
+        simple_district.edges[
+            simple_district.nodes_by_name[row['Beginning Node']],
+            simple_district.nodes_by_name[row['Ending Node']]][
+                'kIns'] = row['U-value [W/mK]']
 
     # Plotting / Visualization with pipe diameters scaling
     vis = ug.Visuals(simple_district)
     vis.show_network(
-        save_as="uesgraph_destest.png",
+        save_as="uesgraph_destest.pdf",
         show_diameters=True,
-        scaling_factor=25,
+        scaling_factor=15,
         labels="name",
         label_size=10,
         scaling_factor_diameter=100
@@ -121,11 +129,11 @@ def main():
             demand = demand_data[
                 simple_district.nodes[bldg]['name']].values
             demand = [round(x, 1) for x in demand]
-            demand = [x if x else 1000 for x in demand]
+            # demand = [x if x else 83.6 for x in demand]
             simple_district.nodes[bldg]['input_heat'] = demand
         else:
             simple_district.nodes[bldg]['T_supply'] = [273.15 + 50]
-            simple_district.nodes[bldg]['p_supply'] = [12.8e5]
+            simple_district.nodes[bldg]['p_supply'] = [3.4e5]
 
     # write general simulation data to graph
     # values needs to be revised for common excersise
@@ -136,7 +144,7 @@ def main():
 
     simple_district.graph['network_type'] = 'heating'
     simple_district.graph['T_nominal'] = 273.15 + 50
-    simple_district.graph['p_nominal'] = 6e5
+    simple_district.graph['p_nominal'] = 3e5
     simple_district.graph['T_ground'] = [285.15] * int(n_steps)
 
     for node in simple_district.nodelist_building:
@@ -146,14 +154,19 @@ def main():
         simple_district.edges[edge[0], edge[1]]['name'] = \
             str(edge[0]) + 'to' + str(edge[1])
         simple_district.edges[edge[0], edge[1]]['m_flow_nominal'] = 1
-        simple_district.edges[edge[0], edge[1]]['dIns'] = 0.045
-        simple_district.edges[edge[0], edge[1]]['kIns'] = 0.035
-        simple_district.edges[edge[0], edge[1]]['fac'] = 1.1
-        simple_district.edges[edge[0], edge[1]]['roughness'] = 4.5e-5   # Ref
+        simple_district.edges[edge[0], edge[1]]['fac'] = 1.0
+        simple_district.edges[edge[0], edge[1]]['roughness'] = 2.5e-5   # Ref
 
     # special m_flow estimation
     simple_district = um.utilities.estimate_m_flow_nominal_tablebased(
-        simple_district, network_type='heating')
+        simple_district,
+        network_type='heating')
+
+    # peak power m_flow estimation
+    simple_district = um.utilities.estimate_m_flow_nominal(
+        simple_district,
+        dT_design=20,
+        network_type='heating')
 
     dir_model = os.path.join(os.path.dirname(__file__), 'model')
     if not os.path.exists(dir_model):
@@ -163,13 +176,15 @@ def main():
     new_model.stop_time = end_time
     new_model.timestep = time_step
     new_model.tolerance = 1e-5
-    new_model.T_nominal = 273.15 + 50
+    new_model.T_nominal = 273.15 + 35
     new_model.p_nominal = 3e5
     new_model.import_from_uesgraph(simple_district)
     new_model.set_connection(remove_network_nodes=True)
     new_model.add_ground_around_pipe = False
     new_model.ground_buried_cylindric = False
     new_model.ground_model = 't_ground_table'
+    new_model.with_heat_flow_output = True
+    new_model.with_heat_loss_output = True
 
     new_model.set_control_pressure(
         name_building='max_distance',
@@ -182,19 +197,20 @@ def main():
     package = 'AixLib.Fluid.DistrictHeatingCooling.'
     model_supply_ideal = package + 'Supplies.OpenLoop.SourceIdeal'
     model_supply_power = package + 'Supplies.OpenLoop.SourcePowerDoubleMvar'
-    model_demand = package + 'Demands.OpenLoop.VarTSupplyDpFixedTempDifference'
+    model_demand = package +\
+        'Demands.OpenLoop.VarTSupplyDpFixedTempDifferenceBypass'
     model_pipe = 'AixLib.Fluid.FixedResistances.PlugFlowPipe'
 
     new_model.add_return_network = True
     new_model.medium = 'AixLib.Media.Specialized.Water.ConstantProperties_pT'
-    new_model.t_nominal = 273.15 + 50
-    new_model.p_nominal = 10e5
+    new_model.t_nominal = 273.15 + 35
+    new_model.p_nominal = 3e5
 
     for node in new_model.nodelist_building:
         is_supply = 'is_supply_{}'.format(new_model.network_type)
         if new_model.nodes[node][is_supply]:
             new_model.nodes[node]['comp_model'] = model_supply_ideal
-            new_model.nodes[node]['p_return'] = 10e5
+            new_model.nodes[node]['p_return'] = 3e5
             new_model.nodes[node]['T_return'] = 273.15 + 30
         else:
             new_model.nodes[node]['comp_model'] = model_demand
@@ -212,6 +228,7 @@ def main():
 
     print('dir_model', dir_model)
     time_stamp = int(round(datetime.datetime.now().timestamp(), 0))
+    time_stamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
     # Write Modelica code
     new_model.model_name = 'Sim' + str(time_stamp) + "Destest" +\
         '_open_loop_dT_var'
