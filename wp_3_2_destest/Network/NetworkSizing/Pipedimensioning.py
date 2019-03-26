@@ -12,6 +12,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import math
 from scipy.optimize import fsolve
+import matplotlib
 
 """General parameters"""
 dT=20.                  #Temperature difference between supply and return in K"""
@@ -49,8 +50,8 @@ def main():
     
 def importData():    
     """Import data from csv files"""
-    energyData = pd.read_csv('https://raw.githubusercontent.com/ibpsa/project1/master/wp_3_2_destest/Results/SimpleDistrict/SimpleDistrict_energyKPI.csv', sep=';')[:-1]
-    geometryData = pd.read_csv('https://raw.githubusercontent.com/ibpsa/project1/master/wp_3_2_destest/Results/SimpleDistrict/SimpleDistrict_geometryKPI.csv', sep=';')
+    energyData = pd.read_csv('https://raw.githubusercontent.com/ibpsa/project1/master/wp_3_2_destest/Buildings/SimpleDistrict/Results/SimpleDistrict_IDEAS/SimpleDistrict_energyKPI.csv', sep=';')[:-1]
+    geometryData = pd.read_csv('https://raw.githubusercontent.com/ibpsa/project1/master/wp_3_2_destest/Buildings/SimpleDistrict/Results/SimpleDistrict_IDEAS/SimpleDistrict_geometryKPI.csv', sep=';')
     
     """Create a node list"""
     nodelist=pd.DataFrame(data=geometryData['Name of building'])
@@ -147,16 +148,33 @@ def calculateInsulationThickness(g):
         g.edges[i]['attr_dict']['D_ins']=giveInsulation(g.edges[i]['attr_dict']['D'])
     return g
 
-def plotGraph(g):  
+def plotGraph(g): 
+    
+    fontsize = 16
+    sitewidth = 21 / 2.52
+    siteheight = sitewidth * 25 / 40
+    font = {
+        'family': 'serif',
+        'weight': 'normal',
+        'size': fontsize}
+    matplotlib.rc('font', **font)
+
+    fig1 = plt.figure(
+        'First Week', figsize=(sitewidth, siteheight))
+    ax1 = fig1.add_subplot(111)
+    fig1.subplots_adjust(bottom=0.1)
+    
     """Plot Graph"""    
     node_positions = {node[0]: (node[1]['X'], node[1]['Y']) for node in g.nodes(data=True)}
-    plt.figure(figsize=(18, 13))
+    """plt.figure(figsize=(18, 13))"""
     nx.draw_networkx(g,pos=node_positions)
     """nx.draw(g, pos=node_positions, edge_color='red', node_size=10, node_color='black',)"""
     plt.ylabel('Longitude in m')
     plt.xlabel('Latitude in m')
     plt.show()     
+    plt.tight_layout()
     plt.savefig('DistrictHeatingStructure.png')
+    plt.savefig('DistrictHeatingStructure.pdf')
     return g
 
 def calculateWholePath(graph,path,p_p):
@@ -218,9 +236,9 @@ def pressureLossSum(graph,path):
 
 def giveInsulation(D):
     """Return insulation thickness for given pipe diameter"""
-    ins=np.array([[0.005,0.09],[0.010,0.09],[0.015,0.09],[0.02,0.110],[0.025,0.110],[0.032,0.125],[0.04,0.125],[0.05,0.140],
-                [0.065,0.160],[0.080,0.180],[0.1,0.225],[0.125,0.25],[0.150,0.28],[0.2,0.355],[0.25,0.450],[0.3,0.5],[0.35,0.56],[0.4,0.63],[
-                  0.45,0.67],[0.5,0.8],[0.6,0.9],[0.7,1.],[0.8,1.1],[0.9,1.2]])
+    ins=np.array([[0.005,0.0425],[0.010,0.04],[0.015,0.0375],[0.02,0.045],[0.025,0.0425],[0.032,0.0465],[0.04,0.0425],[0.05,0.045],
+                [0.065,0.0475],[0.080,0.05],[0.1,0.0625],[0.125,0.0625],[0.150,0.065],[0.2,0.0775],[0.25,0.1],[0.3,0.1],[0.35,0.105],[0.4,0.115],[
+                  0.45,0.11],[0.5,0.15],[0.6,0.15],[0.7,0.15],[0.8,0.15],[0.9,0.15]])
     diameterindex=np.searchsorted(ins[:,0],[D-0.0001],side='right')
     return np.amax(ins[diameterindex,1])
     
