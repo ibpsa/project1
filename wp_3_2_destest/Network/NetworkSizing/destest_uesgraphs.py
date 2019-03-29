@@ -20,11 +20,11 @@ def main():
 
     # Read node and pipe data
     node_data = pd.read_csv(
-        'https://raw.githubusercontent.com/ibpsa/project1/master/'
+        'https://raw.githubusercontent.com/ibpsa/project1/WP3/'
         'wp_3_2_destest/Network/NetworkSizing/Node%20data.csv', sep=',')
 
     pipe_data = pd.read_csv(
-        'https://raw.githubusercontent.com/ibpsa/project1/master/'
+        'https://raw.githubusercontent.com/ibpsa/project1/WP3/'
         'wp_3_2_destest/Network/NetworkSizing/Pipe%20data.csv', sep=',')
 
     node_data = node_data.set_index('Node')
@@ -106,7 +106,7 @@ def main():
     # write demand data to graph
 
     demand_data = pd.read_csv(
-        'https://raw.githubusercontent.com/ibpsa/project1/master/'
+        'https://raw.githubusercontent.com/ibpsa/project1/WP3/'
         'wp_3_2_destest/Results/SimpleDistrict/SimpleDistrict_district.csv',
         sep=';',
         index_col=0)
@@ -217,6 +217,7 @@ def main():
             input_heat = new_model.nodes[node]['input_heat']
             if new_model.network_type == 'heating':
                 new_model.nodes[node]['Q_flow_nominal'] = max(input_heat)
+                new_model.nodes[node]['m_flow_bypass'] = 0.0007
 
     for node in new_model.nodelist_pipe:
         new_model.nodes[node]['comp_model'] = model_pipe
