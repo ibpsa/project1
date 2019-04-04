@@ -1,7 +1,3 @@
-### Definition of tool chain
-IFC-Parser and BRep creator: IfcOpenShell (Python)  
-Geometry kernel: OpenCascade (PythonOCC)  
-
 ### Contributors
 | Institution| Contributors	|
 |-----	|------- |
