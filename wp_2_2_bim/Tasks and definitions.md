@@ -1,12 +1,12 @@
 ### Contributors
 | Institution| Contributors	|
 |-----	|------- |
-| EBC (RWTH Aachen University) | Moritz Lauster, David Jansen |
+| EBC (RWTH Aachen University) | David Jansen |
 | E3D (RWTH Aachen University) | Christoph van Treeck, Eric Fichter, Jérôme Frisch |
-| KIT (Karlsruhe Institute of Technology) | Karl-Heinz Haefele, Joachim Benner |
+| KIT (Karlsruhe Institute of Technology) | Karl-Heinz Haefele, Joachim Benner, Andreas Geiger |
 | liNear GmbH	 | Christian Waluga |
 | SU (Stanford University) | Vladimir Bazjanac |
-| TU (Tsinghua University)	 | Jiarui Li |
+| TU (Tsinghua University)	 | Jiarui Lin |
 | TUC (Technical University of Crete)	 | Georgios I. Giannakis |
 | UCD (University College Dublin)		| James O’Donnell |
 | UDK (Universität der Künste Berlin)	 | Christoph Nytsch-Geusen |
