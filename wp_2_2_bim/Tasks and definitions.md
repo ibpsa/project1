@@ -20,6 +20,6 @@
 | IFC schema | Check possibility to switch between IFC2x3 and IFC4 in IfcOpenShell, IFC wrapper for IFC2x3<->IFC4 existing?, Definition of used format  | David  |  :heavy_check_mark:    
 | HVAC modeling | Create list of missing IFC entities or property sets and push them into committees, Schema to use for generic description, Pressure on vendors, Hold in mind different LOD for simulations | David |  :heavy_check_mark:  
 | 1) Geometric problems | Identification of geometric problems, Collecting geometric problems, providing IFC test files | All | :heavy_plus_sign:
-| 2) Space boundary algorithms | Review and preparation for publication, Transformation of implemented code from institutes to task tool chain (SBT, CBIP, …) | All | :x:
+| 2) Space boundary algorithms | Review and preparation for publication, Transformation of implemented code from institutes to task tool chain (SBT, CBIP, …) | All | :heavy_plus_sign: 
 | 3) Information Delivery Process | Definition of processes to program including input, method and output | Eric, ChristophV.T., Georgios, Christian | :heavy_plus_sign: 
-| MVD for BPS | To be continued at next meeting, Input by Petra v. Both (KIT), Goal: Collect simulation relevant information and eventually development of "BPS-MVD" | James, Georgios, Vlado, PetraV.Both | :x:
+| MVD for BPS | To be continued at next meeting, Input by Petra v. Both (KIT), Goal: Collect simulation relevant information and eventually development of "BPS-MVD" | James, Georgios, Vlado, PetraV.Both | :heavy_plus_sign: 
