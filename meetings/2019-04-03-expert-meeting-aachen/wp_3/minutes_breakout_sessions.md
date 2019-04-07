@@ -133,7 +133,9 @@ Aachen, April 3-4, 2019
         * Define new KPIs in the network simulation
     * Dirk:
         * Scalability: go up to 50 - 100 -1000 buildings
-        * Summary of ideas in BS2019 paper 
+        * Summary of ideas in BS2019 paper
+	
+	
 ## Breakout session 2-3
 ### Joint session with 1.1, 1.2
 * DESTEST parallel session with 1.1 (Numerics with Felix, Michael Mans, 10 minutes)
@@ -142,7 +144,9 @@ Aachen, April 3-4, 2019
 
 ### Set-up work plan for network group and building group
 * Spontaneous gathering: discuss and decide on next steps and commitments
-* See pictures [here](https://www.google.com) for network and [here](https://www.google.com) for building ***> Ina will add links to pictures of the whiteboard***
+* See pictures [here](https://github.com/ibpsa/project1/blob/master/meetings/2019-04-03-expert-meeting-aachen/wp_3/190404_workplan_network.jpg) for network and [here](https://github.com/ibpsa/project1/blob/master/meetings/2019-04-03-expert-meeting-aachen/wp_3/190404_workplan_buildings.jpg) for building 
+
+
 ## Breakout session 2-4
 * Discuss work plan of previous session with the whole group + make commitments
 * Extend BSRome paper to journal paper
