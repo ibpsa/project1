@@ -142,7 +142,7 @@ Aachen, April 3-4, 2019
 
 ### Set-up work plan for network group and building group
 * Spontaneous gathering: discuss and decide on next steps and commitments
-* See pictures [here](https://www.google.com) for network and [here](https://www.google.com) for building ***> Ina will add links***
+* See pictures [here](https://www.google.com) for network and [here](https://www.google.com) for building ***> Ina will add links to pictures of the whiteboard***
 ## Breakout session 2-4
 * Discuss work plan of previous session with the whole group + make commitments
 * Extend BSRome paper to journal paper
