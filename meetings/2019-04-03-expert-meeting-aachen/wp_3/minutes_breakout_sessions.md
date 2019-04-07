@@ -3,6 +3,7 @@
 Aachen, April 3-4, 2019
 
 ***Present***: Dirk Saelens, Ina De Jaeger (notes), Konstantin Filonenko, Annelies Vandermeulen, Felix Bünning, Rémi Pattureau, Enora Garreau, Alessandro Maccarini, Michael Mans, Igor Sartori (first day), Oystein Ronneseth (first day), Peter Remmen (second day)
+
 ***Excused***: Bram Van der Heijde, Haris Shamsi
 
 ## Breakout session 1-1
@@ -55,7 +56,7 @@ Aachen, April 3-4, 2019
 ## Breakout session 1-2
 
 ### Progress of the buildings group
-* Ina did not take notes (presenting) ***> someone else took notes? Please, include or send them to Ina***
+* ***> someone else took notes? Please, include or send them to Ina***
 * Definition of next common exercise: 
     * Based on template!
     * Don't limit ideas because they don't fit in the template, but do get a standardised format, in which we can clearly indicate: I want to do this or that or that. 
@@ -141,11 +142,11 @@ Aachen, April 3-4, 2019
 
 ### Set-up work plan for network group and building group
 * Spontaneous gathering: discuss and decide on next steps and commitments
-* See pictures [here](https://www.google.com) for network and [here](https://www.google.com) for building *** > Ina will add links ***
+* See pictures [here](https://www.google.com) for network and [here](https://www.google.com) for building ***> Ina will add links***
 ## Breakout session 2-4
 * Discuss work plan of previous session with the whole group + make commitments
 * Extend BSRome paper to journal paper
-***> someone else took notes? Please, include or send them to Ina***
+* ***> someone else took notes? Please, include or send them to Ina***
 
 ## Action points
 * Setup Doodle for next Coordination meeting (within 6 weeks) - Ina
