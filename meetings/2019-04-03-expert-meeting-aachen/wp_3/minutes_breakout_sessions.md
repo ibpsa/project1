@@ -79,7 +79,7 @@ Aachen, April 3-4, 2019
     	* Annelies
     	* Michael M
     	* Felix
-    	* Christoph (Berlin)
+    	* Christoph Nytsch-Geusen
     	* Igor
     	* Enora (to be decided if other tools can be included)
     
