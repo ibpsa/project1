@@ -157,7 +157,7 @@ Aachen, April 3-4, 2019
 * See pictures of work plan for both network and building
 
 ## Follow-up
-* Results were included in a Google Spreadsheet, which can be found [here] (https://docs.google.com/spreadsheets/d/1AnvL1CzttjYHrJ7qINL3M3IJgnnVvDy2eloYHjl8OgY/edit#gid=0)
+* Results were included in a Google Spreadsheet, which can be found [here](https://docs.google.com/spreadsheets/d/1AnvL1CzttjYHrJ7qINL3M3IJgnnVvDy2eloYHjl8OgY/edit#gid=0).
 * Enora made the plots in this document, a few remarks from her side: 
     * At the beginning you (Ina) told us to use a 15min step simulation, but then we change to a 10min simulation. It's better if everyone has a 10min step, I don't know how to do with several steps in the spreadsheet, so for now 2 simulators don't match with the others
     * If someone wants to see a particular time during the year: click on edit charts above the plot, go to customize and then horizontal axis. There you can choose whatever time you want to see on the chart
