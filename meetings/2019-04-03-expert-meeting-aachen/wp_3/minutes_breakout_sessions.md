@@ -74,11 +74,14 @@ Aachen, April 3-4, 2019
     * We discuss the template for the case studies, give some feedback
     * Alessandro will update the template and present again at the closing session, in order to get feedback of the whole group
     * Who commits to fill out the template?
-        * Ina
-        * Konstantin (3x)
-        * Annelies
-        * Michael M 
-        * ... ***> Alessandro, could you include exhaustive list?***
+    	* Ina
+    	* Konstantin (3x)
+    	* Annelies
+    	* Michael M
+    	* Felix
+    	* Christoph (Berlin)
+    	* Igor
+    	* Enora (to be decided if other tools can be included)
     
 ### Free presentations    
 * Automated model generation and simplification for district heating and cooling grids - Michael Mans
