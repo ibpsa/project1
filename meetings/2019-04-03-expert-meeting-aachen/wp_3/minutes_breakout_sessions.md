@@ -60,6 +60,16 @@ Aachen, April 3-4, 2019
 * Definition of next common exercise: 
     * Based on template!
     * Don't limit ideas because they don't fit in the template, but do get a standardised format, in which we can clearly indicate: I want to do this or that or that. 
+    
+Igor: suggested to use a "load profile generator" (under development at SINTEF/Norway) based on real measurements from buildings served by district heating; it contains several categories of non-residential buildings too. This would be a completely "back box" model and cannot help very much for investigating the building side, but it could be a useful tool for quickly generating a variety of loads for the network side. 
+
+	In addition, one could also think of using grey-box models (reduced order models) in two variations. One is to estimate the parameters from predefined archetypes, e.g. from TABULA, as some modelica libraries already do (I would call this a "light-grey" model). The other way is to calibrate parameters from real measurements (and I would call this a "dark-grey" model)... which of course implies we should have access to a common database with enough (hourly) measurements for several building types (homes, offices, etc.). So the first step should be to create such a database by pulling together measurements from the different institutes. 
+
+	Therefore, the building side could be simulated at all levels of detail: white-box models (detailed), grey-box models ("light-grey" archetype-calibrated & "dark grey" measurements-calibrated) and black-box models. The different levels could serve different purposes:
+	- white & "light grey" box models are useful to study building design/retrofit options
+	- "dark grey" and black box models are uselful to study larger variability in the demand side, without having to model user behavior
+	- grey box models (both light and dark) can be used in combination with MCP (Task 1.2) in real-time controls
+	
 
 ## Breakout session 2-1
 ### Joint session with 1.1
@@ -79,7 +89,7 @@ Aachen, April 3-4, 2019
     	* Annelies
     	* Michael M
     	* Felix
-    	* Christoph Nytsch-Geusen
+    	* Christoph (Berlin)
     	* Igor
     	* Enora (to be decided if other tools can be included)
     
