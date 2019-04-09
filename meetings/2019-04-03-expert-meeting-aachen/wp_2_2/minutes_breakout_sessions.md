@@ -2,10 +2,6 @@
 
 Aachen, April 3-4, 2019
 
-***Present***: ...
-
-***Excused***: ...
-
 BIM
 * Geometry processing
 	* Work packages: defining Input (IFC) and output (IFC+SB), base code (repository + test files), algorithmic review and coding
