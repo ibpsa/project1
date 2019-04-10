@@ -17,6 +17,7 @@ BIM
 	* Next steps: 
 		* Speedup of code processing with networks
 		* Check if network creation can also be done via topology	
+		* create templates for export of modelica language 
 
 * MVD
 	* Pragmatic approach
