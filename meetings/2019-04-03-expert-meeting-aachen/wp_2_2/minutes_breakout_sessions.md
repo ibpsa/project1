@@ -10,9 +10,14 @@ BIM
 		* E3D (E. Fichter), KIT (A. Geiger): Algorithms regarding IFC to Connection Model to Space
 		* UDT (C. Nytsch-Geusen), TUC (G. Giannakis): Algorithms regarding Space to 2ndSB
 		* Tsinghua (J. Lin)					
+
 * HVAC processing
-	* Circuit analysis
-	* Speedup of code processing
+	* Created a list with necessary parameters for HVAC simulation and comparison with existing attributes and PropertySets in IFC
+	* Circuit analysis via graph networks
+	* Next steps: 
+		* Speedup of code processing with networks
+		* Check if network creation can also be done via topology	
+		* create templates for export of modelica language 
 
 * MVD
 	* Pragmatic approach
