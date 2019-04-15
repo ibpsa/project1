@@ -60,6 +60,10 @@ Aachen, April 3-4, 2019
 * Definition of next common exercise: 
     * Based on template!
     * Don't limit ideas because they don't fit in the template, but do get a standardised format, in which we can clearly indicate: I want to do this or that or that. 
+* Template for district definitions:
+    * cityGML might be a good option, as it is a "standard" solution used also by the industry. We should go with standards as much as possible. But also document if we are hitting a wall, and things are not possible. Check first how easy it is to implement and use the cityGML format. If it is very difficult, then we will not use it. > Get input from WP2 
+* Differences between different solvers in Modelica:
+    * Ina tested the difference between three solvers (dassl, lsodar and cvode) in Modelica. On the building level, the difference in annual behaviour between different solvers is really small! So we should not worry about it. The temporal behaviour is to be checked (hourly profiles).
 * Suggestions of Igor:
     * Igor suggested to use a "load profile generator" (under development at SINTEF/Norway) based on real measurements from buildings served by district heating; it contains several categories of non-residential buildings too. This would be a completely "black box" model and cannot help very much for investigating the building side, but it could be a useful tool for quickly generating a variety of loads for the network side. 
     * In addition, one could also think of using grey-box models (reduced order models) in two variations. One is to estimate the parameters from predefined archetypes, e.g. from TABULA, as some modelica libraries already do (I would call this a "light-grey" model). The other way is to calibrate parameters from real measurements (and I would call this a "dark-grey" model)... which of course implies we should have access to a common database with enough (hourly) measurements for several building types (homes, offices, etc.). So the first step should be to create such a database by pulling together measurements from the different institutes. 
