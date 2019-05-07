@@ -2,7 +2,7 @@
 layout: post
 title:  Expert meeting Rome - Registration open
 event: Expert meeting
-date:   2019-03-07
+date:   2019-05-07
 categories: news
 type: workshop
 author: Michael Wetter
