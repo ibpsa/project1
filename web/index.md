@@ -43,8 +43,9 @@ This task will develop free open-source
 libraries of Modelica models for building and community energy and control
 systems with associated documentation for new and experienced users.
 Modelica libraries will be developed for design and operation through
-the further development of the Modelica IBPSA Library, a library which is
-used as the core of the four Modelica libraries
+the further development of the Modelica IBPSA Library
+(<a href="https://github.com/ibpsa/modelica-ibpsa">github.com/ibpsa/modelica-ibpsa</a>),
+a library which is used as the core of the four Modelica libraries
 </p>
 <ul>
 <li>
