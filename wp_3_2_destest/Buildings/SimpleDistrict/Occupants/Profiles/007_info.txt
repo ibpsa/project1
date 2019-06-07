@@ -1,0 +1,10 @@
+ - Household size is ;4;
+ - Employment types are ;['FTE', 'PTE', 'School', 'School'];
+ - Set of clusters is ;[1, 2, 4, 5, 6];
+ - Total presence time is ;5056; out of 8760 hours
+   (being ;57; percent)
+ - Receptacle load is ;2484; kWh
+ - Lighting load is ;674; kWh
+ - Draw-off is ;39; l/pp.day
+ - Space heating pattern 3, heating ['dayzone', 'nightzone']
+ - Average comfort setting is ;18.38; Celsius
