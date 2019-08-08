@@ -2,6 +2,8 @@ within IBPSAdestest.Consumer.BaseClasses;
 partial model PartialConsumer
   replaceable package Medium = IBPSA.Media.Water annotation (
       __Dymola_choicesAllMatching=true);
+  parameter Modelica.Media.Interfaces.Types.Temperature T_start=Medium.T_default
+    "Start value of temperature" annotation (Dialog(tab="Initialization"));
 
 protected
   parameter Medium.ThermodynamicState sta_default=Medium.setState_pTX(
@@ -12,8 +14,6 @@ protected
   parameter Modelica.SIunits.SpecificHeatCapacity cp_default=
       Medium.specificHeatCapacityCp(state=sta_default)
     "Heat capacity of medium";
-
-
 
   annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
           Rectangle(

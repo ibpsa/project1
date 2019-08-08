@@ -1,0 +1,39 @@
+﻿createPlot(id=1, position={13, 8, 591, 517}, y=fill("", 0), range={0.0, 32000000.0, 0.0, 80.0}, autoscale=false, grid=true, filename="ReaderTMY3.mat", displayUnits={"degC", "degC", "degC", "degC", "degC", "degC", "degC", "degC", "degC", "degC",
+ "degC", "degC", "degC", "degC", "degC", "degC"});
+createPlot(id=1, position={13, 8, 591, 517}, y={"SimpleDistrict_2.senTemSup.T", "SimpleDistrict_3.senTemSup.T", 
+"SimpleDistrict_5.senTemSup.T", "SimpleDistrict_6.senTemSup.T", 
+"SimpleDistrict_10.senTemSup.T", "SimpleDistrict_16.senTemSup.T", 
+"SimpleDistrict_15.senTemSup.T", "SimpleDistrict_11.senTemSup.T", 
+"SimpleDistrict_1.senTemSup.T", "SimpleDistrict_4.senTemSup.T", 
+"SimpleDistrict_7.senTemSup.T", "SimpleDistrict_8.senTemSup.T", 
+"SimpleDistrict_9.senTemSup.T", "SimpleDistrict_12.senTemSup.T", 
+"SimpleDistrict_13.senTemSup.T", "SimpleDistrict_14.senTemSup.T"}, range={0.0, 32000000.0, 0.0, 80.0}, erase=false, autoscale=false, grid=true, filename="SupplyNetwork_numerical.mat", colors={{28,108,200}, {238,46,47}, {0,140,72}, {217,67,180}, {0,0,0}, {162,29,33}, 
+{244,125,35}, {102,44,145}, {28,108,200}, {238,46,47}, {0,140,72}, 
+{217,67,180}, {0,0,0}, {162,29,33}, {244,125,35}, {102,44,145}}, patterns={LinePattern.Solid, LinePattern.Solid, LinePattern.Solid, LinePattern.Solid, 
+LinePattern.Solid, LinePattern.Solid, LinePattern.Solid, LinePattern.Solid, 
+LinePattern.Dash, LinePattern.Dash, LinePattern.Dash, LinePattern.Dash, 
+LinePattern.Dash, LinePattern.Dash, LinePattern.Dash, LinePattern.Dash}, displayUnits={"degC", "degC", "degC", "degC", "degC", "degC", "degC", "degC", "degC", "degC",
+ "degC", "degC", "degC", "degC", "degC", "degC"});
+ 
+createPlot(id=1, position={13, 8, 591, 169}, y=fill("", 0), range={0.0, 32000000.0, -20.0, 40.0}, autoscale=false, grid=true, subPlot=2, range2={0.18, 0.24}, displayUnits={"degC", "degC", "degC", "degC", "degC", "degC", "degC", "degC", "degC", "degC",
+ "degC", "degC", "degC", "degC", "degC", "degC"});
+createPlot(id=1, position={13, 8, 591, 169}, y={"SimpleDistrict_2.senTemRet.T", "SimpleDistrict_3.senTemRet.T", 
+"SimpleDistrict_5.senTemRet.T", "SimpleDistrict_6.senTemRet.T", 
+"SimpleDistrict_10.senTemRet.T", "SimpleDistrict_16.senTemRet.T", 
+"SimpleDistrict_15.senTemRet.T", "SimpleDistrict_11.senTemRet.T", 
+"SimpleDistrict_1.senTemRet.T", "SimpleDistrict_4.senTemRet.T", 
+"SimpleDistrict_7.senTemRet.T", "SimpleDistrict_8.senTemRet.T", 
+"SimpleDistrict_9.senTemRet.T", "SimpleDistrict_12.senTemRet.T", 
+"SimpleDistrict_13.senTemRet.T", "SimpleDistrict_14.senTemRet.T"}, range={0.0, 32000000.0, -20.0, 40.0}, erase=false, autoscale=false, grid=true, subPlot=2, colors={{28,108,200}, {238,46,47}, {0,140,72}, {217,67,180}, {0,0,0}, {162,29,33}, 
+{244,125,35}, {102,44,145}, {28,108,200}, {238,46,47}, {0,140,72}, 
+{217,67,180}, {0,0,0}, {162,29,33}, {244,125,35}, {102,44,145}}, patterns={LinePattern.Solid, LinePattern.Solid, LinePattern.Solid, LinePattern.Solid, 
+LinePattern.Solid, LinePattern.Solid, LinePattern.Solid, LinePattern.Solid, 
+LinePattern.Dash, LinePattern.Dash, LinePattern.Dash, LinePattern.Dash, 
+LinePattern.Dash, LinePattern.Dash, LinePattern.Dash, LinePattern.Dash}, range2={0.18, 0.24}, displayUnits={"degC", "degC", "degC", "degC", "degC", "degC", "degC", "degC", "degC", "degC",
+ "degC", "degC", "degC", "degC", "degC", "degC"});
+ 
+createPlot(id=1, position={13, 8, 591, 169}, y=fill("", 0), range={0.0, 32000000.0, 0.0, 60.0}, grid=true, subPlot=3, displayUnits={"degC", "degC"});
+createPlot(id=1, position={13, 8, 591, 169}, y={"senTemRetLef.T", "senTemRetRig.T"}, range={0.0, 32000000.0, 0.0, 60.0}, erase=false, grid=true, subPlot=3, colors={{28,108,200}, {238,46,47}}, displayUnits={"degC", "degC"});
+ 
+createPlot(id=1, position={13, 8, 591, 125}, y=fill("", 0), range={830000.0, 970000.0, 0.0, 4.0}, autoscale=false, grid=true, subPlot=4);
+createPlot(id=1, position={13, 8, 591, 125}, y={"hea1.port_a.m_flow"}, range={830000.0, 970000.0, 0.0, 4.0}, erase=false, autoscale=false, grid=true, subPlot=4, colors={{28,108,200}});

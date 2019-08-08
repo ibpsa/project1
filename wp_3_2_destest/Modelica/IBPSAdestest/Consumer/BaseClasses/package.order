@@ -3,3 +3,6 @@ EndNode_twoport
 PartialConsumer
 TwinConsumer
 SimpleConsumer
+Storage_controlled_base
+Storage_controlled_heating
+Storage_controlled_cooling
