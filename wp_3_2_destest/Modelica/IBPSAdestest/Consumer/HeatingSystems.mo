@@ -7,7 +7,10 @@ package HeatingSystems
     extends IBPSAdestest.Consumer.HeatingSystems.BaseClasses.Primary_Side(
       nEmbPorts=0,
       nConvPorts = nZones,
-      nRadPorts = nZones);
+      nRadPorts = nZones,
+      pump_prim_SH(allowFlowReversal=false),
+      Tsup(allowFlowReversal=false),
+      Tret(allowFlowReversal=false));
 
     parameter Real fraRad = 0.35 "Fraction of radiator heat transferred by radiation";
 
@@ -26,9 +29,12 @@ package HeatingSystems
       addPowerToMedium=false,
       nominalValuesDefineDefaultPressureCurve=true,
       T_start=Tret_sec,
-      energyDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
       massDynamics=Modelica.Fluid.Types.Dynamics.SteadyState,
-      riseTime=30) annotation (Placement(transformation(
+      riseTime=30,
+      each energyDynamics=Modelica.Fluid.Types.Dynamics.FixedInitial,
+      each tau=60,
+      each allowFlowReversal=false)
+                   annotation (Placement(transformation(
           extent={{-10,10},{10,-10}},
           rotation=180,
           origin={-120,-52})));
@@ -40,18 +46,26 @@ package HeatingSystems
       T_a_nominal=Tsup_sec,
       T_b_nominal=Tret_sec,
       T_start=Tret_sec,
-      VWat=5.8E-8*abs(rad.Q_flow_nominal),
-      mDry=0.000263*abs(rad.Q_flow_nominal),
       Q_flow_nominal=QNom,
-      energyDynamics=Modelica.Fluid.Types.Dynamics.SteadyState)
+      each allowFlowReversal=false,
+      nEle=3,
+      energyDynamics=Modelica.Fluid.Types.Dynamics.FixedInitial)
       annotation (Placement(transformation(extent={{-146,-30},{-126,-10}})));
-    Modelica.Fluid.Sensors.TemperatureTwoPort Tsup_sec_SH(redeclare package
-        Medium = Medium) annotation (Placement(transformation(
+    IDEAS.Fluid.Sensors.TemperatureTwoPort Tsup_sec_SH(redeclare package Medium
+        =        Medium,
+      allowFlowReversal=false,
+      tau=0,
+      m_flow_nominal=sum(mf_sec))
+                         annotation (Placement(transformation(
           extent={{-10,10},{10,-10}},
           rotation=180,
           origin={-94,-52})));
-    Modelica.Fluid.Sensors.TemperatureTwoPort Tret_sec_SH(redeclare package
-        Medium = Medium) annotation (Placement(transformation(
+    IDEAS.Fluid.Sensors.TemperatureTwoPort Tret_sec_SH(redeclare package Medium
+        =        Medium,
+      allowFlowReversal=false,
+      tau=0,
+      m_flow_nominal=sum(mf_sec))
+                         annotation (Placement(transformation(
           extent={{-10,-10},{10,10}},
           rotation=0,
           origin={-80,-20})));
@@ -84,18 +98,17 @@ package HeatingSystems
     IDEAS.Controls.Continuous.LimPID conPID_prim_SH_sec[nZones](
       controllerType=Modelica.Blocks.Types.SimpleController.PI,
       yMin=0,
-      k=0.05,
-      Ti=30,
       yMax=mf_sec,
-      initType=Modelica.Blocks.Types.InitPID.InitialState)
-              annotation (Placement(transformation(extent={{-152,52},{-132,32}})));
+      initType=Modelica.Blocks.Types.InitPID.InitialState,
+      k=0.005,
+      Ti=180) annotation (Placement(transformation(extent={{-152,52},{-132,32}})));
     IDEAS.Controls.Continuous.LimPID conPID_prim_SH_sup(
       controllerType=Modelica.Blocks.Types.SimpleController.PI,
       yMax=mf_prim,
       yMin=0,
-      k=0.005,
-      Ti=50,
-      initType=Modelica.Blocks.Types.InitPID.InitialState)
+      initType=Modelica.Blocks.Types.InitPID.InitialState,
+      Ti=180,
+      k=0.005)
               annotation (Placement(transformation(extent={{-8,48},{12,28}})));
     IDEAS.Utilities.Math.SmoothMin smoothMin(deltaX=0.001) annotation (
         Placement(transformation(
@@ -186,8 +199,6 @@ package HeatingSystems
         pattern=LinePattern.Dot,
         thickness=0.5));
 
-    connect(smoothMin.y, pump_prim_SH.m_flow_in)
-      annotation (Line(points={{20,1},{20,-8}}, color={0,0,127}));
     connect(smoothMin.u2, conPID_prim_SH_sup.y) annotation (Line(points={{14,24},
             {14,32},{14,38},{13,38}}, color={0,0,127}));
     connect(conv_to_mf_DHW.y, smoothMin.u1)
@@ -196,6 +207,8 @@ package HeatingSystems
             -131,80},{-131,42}}, color={0,0,127}));
     connect(sum1.y, conv_to_mf_DHW.u)
       annotation (Line(points={{-89,80},{26,80},{26,69.2}}, color={0,0,127}));
+    connect(smoothMin.y, pump_prim_SH.m_flow_in)
+      annotation (Line(points={{20,1},{20,-8}}, color={0,0,127}));
       annotation (Line(points={{-39.3,-24},{-39.3,-24}}, color={0,0,127}),
                 Icon(coordinateSystem(preserveAspectRatio=false, extent={{-200,-100},
               {200,100}})),                                        Diagram(
@@ -500,13 +513,17 @@ package HeatingSystems
             extent={{10,10},{-10,-10}},
             rotation=180,
             origin={20,-20})));
-      Modelica.Fluid.Sensors.TemperatureTwoPort Tret(redeclare package Medium
-          = Medium)
+      IDEAS.Fluid.Sensors.TemperatureTwoPort Tret(redeclare package Medium =
+            Medium,
+        m_flow_nominal=mf_prim,
+        tau=0)
         annotation (Placement(transformation(extent={{-7,-8},{7,8}},
             rotation=270,
             origin={160,-73})));
-      Modelica.Fluid.Sensors.TemperatureTwoPort Tsup(redeclare package Medium
-          = Medium) annotation (Placement(transformation(
+      IDEAS.Fluid.Sensors.TemperatureTwoPort Tsup(redeclare package Medium =
+            Medium,
+        m_flow_nominal=mf_prim,
+        tau=0)      annotation (Placement(transformation(
             extent={{-7,-8},{7,8}},
             rotation=90,
             origin={120,-73})));

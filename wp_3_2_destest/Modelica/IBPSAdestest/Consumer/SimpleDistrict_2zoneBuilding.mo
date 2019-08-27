@@ -662,8 +662,13 @@ package SimpleDistrict_2zoneBuilding
         parameter Modelica.SIunits.Temperature Tret_prim "Space heating nominal supply temperature";
         parameter Modelica.SIunits.Temperature Tret_sec "Space heating ominal return temperature";
 
+    equation
+      connect(heatingSystem.mDHW60C, occupant.mDHW60C) annotation (Line(
+          points={{6,-10.2},{6,-30}},
+          color={0,0,127},
+          pattern=LinePattern.Dash));
         annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                -100},{100,100}}), graphics),
+                -100},{100,100}})),
         experiment(
           StartTime=-2.592e+006,
           StopTime=3.1536e+007,
@@ -702,8 +707,8 @@ package SimpleDistrict_2zoneBuilding
         redeclare package Medium = IDEAS.Media.Water,
         T=67 + 273.15)
         annotation (Placement(transformation(extent={{-40,-20},{-20,0}})));
-      IDEAS.Fluid.Sources.Boundary_pT bou1(nPorts=1, redeclare package Medium
-          = IDEAS.Media.Water) annotation (Placement(transformation(
+      IDEAS.Fluid.Sources.Boundary_pT bou1(nPorts=1, redeclare package Medium =
+            IDEAS.Media.Water) annotation (Placement(transformation(
             extent={{-10,-10},{10,10}},
             rotation=180,
             origin={50,-10})));
@@ -1324,14 +1329,26 @@ package SimpleDistrict_2zoneBuilding
           building,
             redeclare IDEAS.Templates.Ventilation.None ventilationSystem,
             redeclare
-          SimpleDistrict_2zoneBuilding.SimpleDistrict_2.Occupant.ISO13790 occupant,
-            redeclare IDEAS.Templates.Heating.IdealRadiatorHeating heatingSystem(
+          IDEAS.BoundaryConditions.Occupants.Standards.ISO13790 occupant,
+            redeclare IBPSAdestest.Consumer.HeatingSystems.Substation_no_DHW heatingSystem(
                 QNom = building.Q_design,
-                VZones = building.VZones),
+          Tsup_prim=Tsup_prim,
+          Tret_prim=Tret_prim,
+          Tsup_sec=Tsup_sec,
+          Tret_sec=Tret_sec),
         redeclare IDEAS.Templates.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid);
 
+
+        parameter Modelica.SIunits.Temperature Tsup_prim "Primary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tsup_sec "Secondary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_prim "Space heating nominal supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_sec "Space heating ominal return temperature";
+
+    equation
+      connect(heatingSystem.mDHW60C, occupant.mDHW60C)
+        annotation (Line(points={{6,-10.2},{6,-30}}, color={0,0,127}));
         annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                -100},{100,100}}), graphics),
+                -100},{100,100}})),
         experiment(
           StartTime=-2.592e+006,
           StopTime=3.1536e+007,
@@ -1350,7 +1367,7 @@ package SimpleDistrict_2zoneBuilding
         Modelica.SIunits.Power QHeaSys = SimpleDistrict_2_Building.heatingSystem.QHeaSys;
         Modelica.SIunits.Area[SimpleDistrict_2_Building.building.nZones] AZones = SimpleDistrict_2_Building.building.AZones;
         Modelica.SIunits.Temperature Te = sim.Te;
-        Modelica.SIunits.MassFlowRate mDHW60C = SimpleDistrict_2_Building.heatingSystem.mDHW60C;
+        //Modelica.SIunits.MassFlowRate mDHW60C = SimpleDistrict_2_Building.heatingSystem.mDHW60C;
         Modelica.SIunits.Temperature[SimpleDistrict_2_Building.building.nZones] TSet = SimpleDistrict_2_Building.heatingSystem.TSet;
         Modelica.SIunits.Power QHeating = -(sum(SimpleDistrict_2_Building.heatingSystem.heatPortCon.Q_flow) + sum(SimpleDistrict_2_Building.heatingSystem.heatPortRad.Q_flow));
         Modelica.SIunits.Power QDHW = QHeaSys - QHeating;
@@ -1358,8 +1375,30 @@ package SimpleDistrict_2zoneBuilding
         inner IDEAS.BoundaryConditions.SimInfoManager sim
             annotation (Placement(transformation(extent={{-100,80},{-80,100}})));
         SimpleDistrict_2zoneBuilding.SimpleDistrict_2.SimpleDistrict_2_Building
-        SimpleDistrict_2_Building
+        SimpleDistrict_2_Building(
+        isDH=true,
+        Tsup_prim=67 + 273.15,
+        Tsup_sec=47 + 273.15,
+        Tret_prim=37 + 273.15,
+        Tret_sec=35 + 273.15)
         annotation (Placement(transformation(extent={{0,0},{20,20}})));
+    public
+      IDEAS.Fluid.Sources.Boundary_pT bou(
+        redeclare package Medium = IDEAS.Media.Water,
+        T=67 + 273.15,
+        nPorts=1)
+        annotation (Placement(transformation(extent={{-40,-20},{-20,0}})));
+      IDEAS.Fluid.Sources.Boundary_pT bou1(          redeclare package Medium =
+            IDEAS.Media.Water, nPorts=1)
+                               annotation (Placement(transformation(
+            extent={{-10,-10},{10,10}},
+            rotation=180,
+            origin={50,-10})));
+    equation
+      connect(SimpleDistrict_2_Building.port_a, bou.ports[1]) annotation (Line(
+            points={{8,0},{8,-10},{-20,-10},{-20,-10}}, color={0,127,255}));
+      connect(SimpleDistrict_2_Building.port_b, bou1.ports[1])
+        annotation (Line(points={{12,0},{12,-10},{40,-10}}, color={0,127,255}));
      annotation (experiment(
           StartTime=-2.592e+006,
           StopTime=3.1536e+007,
@@ -1972,14 +2011,26 @@ package SimpleDistrict_2zoneBuilding
           building,
             redeclare IDEAS.Templates.Ventilation.None ventilationSystem,
             redeclare
-          SimpleDistrict_2zoneBuilding.SimpleDistrict_3.Occupant.ISO13790 occupant,
-            redeclare IDEAS.Templates.Heating.IdealRadiatorHeating heatingSystem(
+          IDEAS.BoundaryConditions.Occupants.Standards.ISO13790 occupant,
+            redeclare IBPSAdestest.Consumer.HeatingSystems.Substation_no_DHW heatingSystem(
                 QNom = building.Q_design,
-                VZones = building.VZones),
+          Tsup_prim=Tsup_prim,
+          Tret_prim=Tret_prim,
+          Tsup_sec=Tsup_sec,
+          Tret_sec=Tret_sec),
         redeclare IDEAS.Templates.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid);
 
+
+        parameter Modelica.SIunits.Temperature Tsup_prim "Primary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tsup_sec "Secondary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_prim "Space heating nominal supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_sec "Space heating ominal return temperature";
+
+    equation
+      connect(heatingSystem.mDHW60C, occupant.mDHW60C)
+        annotation (Line(points={{6,-10.2},{6,-30}}, color={0,0,127}));
         annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                -100},{100,100}}), graphics),
+                -100},{100,100}})),
         experiment(
           StartTime=-2.592e+006,
           StopTime=3.1536e+007,
@@ -1998,7 +2049,7 @@ package SimpleDistrict_2zoneBuilding
         Modelica.SIunits.Power QHeaSys = SimpleDistrict_3_Building.heatingSystem.QHeaSys;
         Modelica.SIunits.Area[SimpleDistrict_3_Building.building.nZones] AZones = SimpleDistrict_3_Building.building.AZones;
         Modelica.SIunits.Temperature Te = sim.Te;
-        Modelica.SIunits.MassFlowRate mDHW60C = SimpleDistrict_3_Building.heatingSystem.mDHW60C;
+        //Modelica.SIunits.MassFlowRate mDHW60C = SimpleDistrict_3_Building.heatingSystem.mDHW60C;
         Modelica.SIunits.Temperature[SimpleDistrict_3_Building.building.nZones] TSet = SimpleDistrict_3_Building.heatingSystem.TSet;
         Modelica.SIunits.Power QHeating = -(sum(SimpleDistrict_3_Building.heatingSystem.heatPortCon.Q_flow) + sum(SimpleDistrict_3_Building.heatingSystem.heatPortRad.Q_flow));
         Modelica.SIunits.Power QDHW = QHeaSys - QHeating;
@@ -2006,8 +2057,30 @@ package SimpleDistrict_2zoneBuilding
         inner IDEAS.BoundaryConditions.SimInfoManager sim
             annotation (Placement(transformation(extent={{-100,80},{-80,100}})));
         SimpleDistrict_2zoneBuilding.SimpleDistrict_3.SimpleDistrict_3_Building
-        SimpleDistrict_3_Building
+        SimpleDistrict_3_Building(
+        Tsup_prim=67 + 273.15,
+        Tsup_sec=47 + 273.15,
+        Tret_prim=37 + 273.15,
+        Tret_sec=35 + 273.15,
+        isDH=true)
         annotation (Placement(transformation(extent={{0,0},{20,20}})));
+    public
+      IDEAS.Fluid.Sources.Boundary_pT bou(
+        redeclare package Medium = IDEAS.Media.Water,
+        T=67 + 273.15,
+        nPorts=1)
+        annotation (Placement(transformation(extent={{-40,-20},{-20,0}})));
+      IDEAS.Fluid.Sources.Boundary_pT bou1(          redeclare package Medium =
+            IDEAS.Media.Water, nPorts=1)
+                               annotation (Placement(transformation(
+            extent={{-10,-10},{10,10}},
+            rotation=180,
+            origin={50,-10})));
+    equation
+      connect(SimpleDistrict_3_Building.port_a, bou.ports[1])
+        annotation (Line(points={{8,0},{8,-10},{-20,-10}}, color={0,127,255}));
+      connect(SimpleDistrict_3_Building.port_b, bou1.ports[1]) annotation (Line(
+            points={{12,0},{12,-10},{40,-10}}, color={0,127,255}));
      annotation (experiment(
           StartTime=-2.592e+006,
           StopTime=3.1536e+007,
@@ -2620,14 +2693,25 @@ package SimpleDistrict_2zoneBuilding
           building,
             redeclare IDEAS.Templates.Ventilation.None ventilationSystem,
             redeclare
-          SimpleDistrict_2zoneBuilding.SimpleDistrict_4.Occupant.ISO13790 occupant,
-            redeclare IDEAS.Templates.Heating.IdealRadiatorHeating heatingSystem(
+          IDEAS.BoundaryConditions.Occupants.Standards.ISO13790 occupant,
+            redeclare IBPSAdestest.Consumer.HeatingSystems.Substation_no_DHW heatingSystem(
                 QNom = building.Q_design,
-                VZones = building.VZones),
+          Tsup_prim=Tsup_prim,
+          Tret_prim=Tret_prim,
+          Tsup_sec=Tsup_sec,
+          Tret_sec=Tret_sec),
         redeclare IDEAS.Templates.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid);
 
+        parameter Modelica.SIunits.Temperature Tsup_prim "Primary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tsup_sec "Secondary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_prim "Space heating nominal supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_sec "Space heating ominal return temperature";
+
+    equation
+      connect(heatingSystem.mDHW60C, occupant.mDHW60C)
+        annotation (Line(points={{6,-10.2},{6,-30}}, color={0,0,127}));
         annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                -100},{100,100}}), graphics),
+                -100},{100,100}})),
         experiment(
           StartTime=-2.592e+006,
           StopTime=3.1536e+007,
@@ -2654,8 +2738,30 @@ package SimpleDistrict_2zoneBuilding
         inner IDEAS.BoundaryConditions.SimInfoManager sim
             annotation (Placement(transformation(extent={{-100,80},{-80,100}})));
         SimpleDistrict_2zoneBuilding.SimpleDistrict_4.SimpleDistrict_4_Building
-        SimpleDistrict_4_Building
+        SimpleDistrict_4_Building(
+        isDH=true,
+        Tsup_prim=67 + 273.15,
+        Tsup_sec=47 + 273.15,
+        Tret_prim=37 + 273.15,
+        Tret_sec=35 + 273.15)
         annotation (Placement(transformation(extent={{0,0},{20,20}})));
+    public
+      IDEAS.Fluid.Sources.Boundary_pT bou(
+        redeclare package Medium = IDEAS.Media.Water,
+        T=67 + 273.15,
+        nPorts=1)
+        annotation (Placement(transformation(extent={{-40,-20},{-20,0}})));
+      IDEAS.Fluid.Sources.Boundary_pT bou1(          redeclare package Medium =
+            IDEAS.Media.Water, nPorts=1)
+                               annotation (Placement(transformation(
+            extent={{-10,-10},{10,10}},
+            rotation=180,
+            origin={50,-10})));
+    equation
+      connect(SimpleDistrict_4_Building.port_a, bou.ports[1])
+        annotation (Line(points={{8,0},{8,-10},{-20,-10}}, color={0,127,255}));
+      connect(SimpleDistrict_4_Building.port_b, bou1.ports[1]) annotation (Line(
+            points={{12,0},{12,-10},{40,-10}}, color={0,127,255}));
      annotation (experiment(
           StartTime=-2.592e+006,
           StopTime=3.1536e+007,
@@ -3268,14 +3374,25 @@ package SimpleDistrict_2zoneBuilding
           building,
             redeclare IDEAS.Templates.Ventilation.None ventilationSystem,
             redeclare
-          SimpleDistrict_2zoneBuilding.SimpleDistrict_5.Occupant.ISO13790 occupant,
-            redeclare IDEAS.Templates.Heating.IdealRadiatorHeating heatingSystem(
+          IDEAS.BoundaryConditions.Occupants.Standards.ISO13790 occupant,
+            redeclare IBPSAdestest.Consumer.HeatingSystems.Substation_no_DHW heatingSystem(
                 QNom = building.Q_design,
-                VZones = building.VZones),
+          Tsup_prim=Tsup_prim,
+          Tret_prim=Tret_prim,
+          Tsup_sec=Tsup_sec,
+          Tret_sec=Tret_sec),
         redeclare IDEAS.Templates.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid);
 
+        parameter Modelica.SIunits.Temperature Tsup_prim "Primary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tsup_sec "Secondary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_prim "Space heating nominal supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_sec "Space heating ominal return temperature";
+
+    equation
+      connect(heatingSystem.mDHW60C, occupant.mDHW60C)
+        annotation (Line(points={{6,-10.2},{6,-30}}, color={0,0,127}));
         annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                -100},{100,100}}), graphics),
+                -100},{100,100}})),
         experiment(
           StartTime=-2.592e+006,
           StopTime=3.1536e+007,
@@ -3916,14 +4033,25 @@ package SimpleDistrict_2zoneBuilding
           building,
             redeclare IDEAS.Templates.Ventilation.None ventilationSystem,
             redeclare
-          SimpleDistrict_2zoneBuilding.SimpleDistrict_6.Occupant.ISO13790 occupant,
-            redeclare IDEAS.Templates.Heating.IdealRadiatorHeating heatingSystem(
+          IDEAS.BoundaryConditions.Occupants.Standards.ISO13790 occupant,
+            redeclare IBPSAdestest.Consumer.HeatingSystems.Substation_no_DHW heatingSystem(
                 QNom = building.Q_design,
-                VZones = building.VZones),
+          Tsup_prim=Tsup_prim,
+          Tret_prim=Tret_prim,
+          Tsup_sec=Tsup_sec,
+          Tret_sec=Tret_sec),
         redeclare IDEAS.Templates.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid);
 
+        parameter Modelica.SIunits.Temperature Tsup_prim "Primary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tsup_sec "Secondary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_prim "Space heating nominal supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_sec "Space heating ominal return temperature";
+
+    equation
+      connect(heatingSystem.mDHW60C, occupant.mDHW60C)
+        annotation (Line(points={{6,-10.2},{6,-30}}, color={0,0,127}));
         annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                -100},{100,100}}), graphics),
+                -100},{100,100}})),
         experiment(
           StartTime=-2.592e+006,
           StopTime=3.1536e+007,
@@ -4564,14 +4692,25 @@ package SimpleDistrict_2zoneBuilding
           building,
             redeclare IDEAS.Templates.Ventilation.None ventilationSystem,
             redeclare
-          SimpleDistrict_2zoneBuilding.SimpleDistrict_7.Occupant.ISO13790 occupant,
-            redeclare IDEAS.Templates.Heating.IdealRadiatorHeating heatingSystem(
+          IDEAS.BoundaryConditions.Occupants.Standards.ISO13790 occupant,
+            redeclare IBPSAdestest.Consumer.HeatingSystems.Substation_no_DHW heatingSystem(
                 QNom = building.Q_design,
-                VZones = building.VZones),
+          Tsup_prim=Tsup_prim,
+          Tret_prim=Tret_prim,
+          Tsup_sec=Tsup_sec,
+          Tret_sec=Tret_sec),
         redeclare IDEAS.Templates.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid);
 
+        parameter Modelica.SIunits.Temperature Tsup_prim "Primary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tsup_sec "Secondary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_prim "Space heating nominal supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_sec "Space heating ominal return temperature";
+
+    equation
+      connect(heatingSystem.mDHW60C, occupant.mDHW60C)
+        annotation (Line(points={{6,-10.2},{6,-30}}, color={0,0,127}));
         annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                -100},{100,100}}), graphics),
+                -100},{100,100}})),
         experiment(
           StartTime=-2.592e+006,
           StopTime=3.1536e+007,
@@ -5212,14 +5351,25 @@ package SimpleDistrict_2zoneBuilding
           building,
             redeclare IDEAS.Templates.Ventilation.None ventilationSystem,
             redeclare
-          SimpleDistrict_2zoneBuilding.SimpleDistrict_8.Occupant.ISO13790 occupant,
-            redeclare IDEAS.Templates.Heating.IdealRadiatorHeating heatingSystem(
+          IDEAS.BoundaryConditions.Occupants.Standards.ISO13790 occupant,
+            redeclare IBPSAdestest.Consumer.HeatingSystems.Substation_no_DHW heatingSystem(
                 QNom = building.Q_design,
-                VZones = building.VZones),
+          Tsup_prim=Tsup_prim,
+          Tret_prim=Tret_prim,
+          Tsup_sec=Tsup_sec,
+          Tret_sec=Tret_sec),
         redeclare IDEAS.Templates.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid);
 
+        parameter Modelica.SIunits.Temperature Tsup_prim "Primary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tsup_sec "Secondary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_prim "Space heating nominal supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_sec "Space heating ominal return temperature";
+
+    equation
+      connect(heatingSystem.mDHW60C, occupant.mDHW60C)
+        annotation (Line(points={{6,-10.2},{6,-30}}, color={0,0,127}));
         annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                -100},{100,100}}), graphics),
+                -100},{100,100}})),
         experiment(
           StartTime=-2.592e+006,
           StopTime=3.1536e+007,
@@ -5860,14 +6010,25 @@ package SimpleDistrict_2zoneBuilding
           building,
             redeclare IDEAS.Templates.Ventilation.None ventilationSystem,
             redeclare
-          SimpleDistrict_2zoneBuilding.SimpleDistrict_9.Occupant.ISO13790 occupant,
-            redeclare IDEAS.Templates.Heating.IdealRadiatorHeating heatingSystem(
+          IDEAS.BoundaryConditions.Occupants.Standards.ISO13790 occupant,
+            redeclare IBPSAdestest.Consumer.HeatingSystems.Substation_no_DHW heatingSystem(
                 QNom = building.Q_design,
-                VZones = building.VZones),
+          Tsup_prim=Tsup_prim,
+          Tret_prim=Tret_prim,
+          Tsup_sec=Tsup_sec,
+          Tret_sec=Tret_sec),
         redeclare IDEAS.Templates.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid);
 
+        parameter Modelica.SIunits.Temperature Tsup_prim "Primary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tsup_sec "Secondary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_prim "Space heating nominal supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_sec "Space heating ominal return temperature";
+
+    equation
+      connect(heatingSystem.mDHW60C, occupant.mDHW60C)
+        annotation (Line(points={{6,-10.2},{6,-30}}, color={0,0,127}));
         annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                -100},{100,100}}), graphics),
+                -100},{100,100}})),
         experiment(
           StartTime=-2.592e+006,
           StopTime=3.1536e+007,
@@ -6508,14 +6669,25 @@ package SimpleDistrict_2zoneBuilding
           building,
             redeclare IDEAS.Templates.Ventilation.None ventilationSystem,
             redeclare
-          SimpleDistrict_2zoneBuilding.SimpleDistrict_10.Occupant.ISO13790 occupant,
-            redeclare IDEAS.Templates.Heating.IdealRadiatorHeating heatingSystem(
+          IDEAS.BoundaryConditions.Occupants.Standards.ISO13790 occupant,
+            redeclare IBPSAdestest.Consumer.HeatingSystems.Substation_no_DHW heatingSystem(
                 QNom = building.Q_design,
-                VZones = building.VZones),
+          Tsup_prim=Tsup_prim,
+          Tret_prim=Tret_prim,
+          Tsup_sec=Tsup_sec,
+          Tret_sec=Tret_sec),
         redeclare IDEAS.Templates.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid);
 
+        parameter Modelica.SIunits.Temperature Tsup_prim "Primary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tsup_sec "Secondary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_prim "Space heating nominal supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_sec "Space heating ominal return temperature";
+
+    equation
+      connect(heatingSystem.mDHW60C, occupant.mDHW60C)
+        annotation (Line(points={{6,-10.2},{6,-30}}, color={0,0,127}));
         annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                -100},{100,100}}), graphics),
+                -100},{100,100}})),
         experiment(
           StartTime=-2.592e+006,
           StopTime=3.1536e+007,
@@ -7156,14 +7328,25 @@ package SimpleDistrict_2zoneBuilding
           building,
             redeclare IDEAS.Templates.Ventilation.None ventilationSystem,
             redeclare
-          SimpleDistrict_2zoneBuilding.SimpleDistrict_11.Occupant.ISO13790 occupant,
-            redeclare IDEAS.Templates.Heating.IdealRadiatorHeating heatingSystem(
+          IDEAS.BoundaryConditions.Occupants.Standards.ISO13790 occupant,
+            redeclare IBPSAdestest.Consumer.HeatingSystems.Substation_no_DHW heatingSystem(
                 QNom = building.Q_design,
-                VZones = building.VZones),
+          Tsup_prim=Tsup_prim,
+          Tret_prim=Tret_prim,
+          Tsup_sec=Tsup_sec,
+          Tret_sec=Tret_sec),
         redeclare IDEAS.Templates.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid);
 
+        parameter Modelica.SIunits.Temperature Tsup_prim "Primary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tsup_sec "Secondary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_prim "Space heating nominal supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_sec "Space heating ominal return temperature";
+
+    equation
+      connect(heatingSystem.mDHW60C, occupant.mDHW60C)
+        annotation (Line(points={{6,-10.2},{6,-30},{6,-30}}, color={0,0,127}));
         annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                -100},{100,100}}), graphics),
+                -100},{100,100}})),
         experiment(
           StartTime=-2.592e+006,
           StopTime=3.1536e+007,
@@ -7804,14 +7987,25 @@ package SimpleDistrict_2zoneBuilding
           building,
             redeclare IDEAS.Templates.Ventilation.None ventilationSystem,
             redeclare
-          SimpleDistrict_2zoneBuilding.SimpleDistrict_12.Occupant.ISO13790 occupant,
-            redeclare IDEAS.Templates.Heating.IdealRadiatorHeating heatingSystem(
+          IDEAS.BoundaryConditions.Occupants.Standards.ISO13790 occupant,
+            redeclare IBPSAdestest.Consumer.HeatingSystems.Substation_no_DHW heatingSystem(
                 QNom = building.Q_design,
-                VZones = building.VZones),
+          Tsup_prim=Tsup_prim,
+          Tret_prim=Tret_prim,
+          Tsup_sec=Tsup_sec,
+          Tret_sec=Tret_sec),
         redeclare IDEAS.Templates.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid);
 
+        parameter Modelica.SIunits.Temperature Tsup_prim "Primary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tsup_sec "Secondary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_prim "Space heating nominal supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_sec "Space heating ominal return temperature";
+
+    equation
+      connect(heatingSystem.mDHW60C, occupant.mDHW60C)
+        annotation (Line(points={{6,-10.2},{6,-30}}, color={0,0,127}));
         annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                -100},{100,100}}), graphics),
+                -100},{100,100}})),
         experiment(
           StartTime=-2.592e+006,
           StopTime=3.1536e+007,
@@ -8452,14 +8646,25 @@ package SimpleDistrict_2zoneBuilding
           building,
             redeclare IDEAS.Templates.Ventilation.None ventilationSystem,
             redeclare
-          SimpleDistrict_2zoneBuilding.SimpleDistrict_13.Occupant.ISO13790 occupant,
-            redeclare IDEAS.Templates.Heating.IdealRadiatorHeating heatingSystem(
+          IDEAS.BoundaryConditions.Occupants.Standards.ISO13790 occupant,
+            redeclare IBPSAdestest.Consumer.HeatingSystems.Substation_no_DHW heatingSystem(
                 QNom = building.Q_design,
-                VZones = building.VZones),
+          Tsup_prim=Tsup_prim,
+          Tret_prim=Tret_prim,
+          Tsup_sec=Tsup_sec,
+          Tret_sec=Tret_sec),
         redeclare IDEAS.Templates.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid);
 
+        parameter Modelica.SIunits.Temperature Tsup_prim "Primary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tsup_sec "Secondary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_prim "Space heating nominal supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_sec "Space heating ominal return temperature";
+
+    equation
+      connect(heatingSystem.mDHW60C, occupant.mDHW60C)
+        annotation (Line(points={{6,-10.2},{6,-30}}, color={0,0,127}));
         annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                -100},{100,100}}), graphics),
+                -100},{100,100}})),
         experiment(
           StartTime=-2.592e+006,
           StopTime=3.1536e+007,
@@ -9100,14 +9305,25 @@ package SimpleDistrict_2zoneBuilding
           building,
             redeclare IDEAS.Templates.Ventilation.None ventilationSystem,
             redeclare
-          SimpleDistrict_2zoneBuilding.SimpleDistrict_14.Occupant.ISO13790 occupant,
-            redeclare IDEAS.Templates.Heating.IdealRadiatorHeating heatingSystem(
+          IDEAS.BoundaryConditions.Occupants.Standards.ISO13790 occupant,
+            redeclare IBPSAdestest.Consumer.HeatingSystems.Substation_no_DHW heatingSystem(
                 QNom = building.Q_design,
-                VZones = building.VZones),
+          Tsup_prim=Tsup_prim,
+          Tret_prim=Tret_prim,
+          Tsup_sec=Tsup_sec,
+          Tret_sec=Tret_sec),
         redeclare IDEAS.Templates.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid);
 
+        parameter Modelica.SIunits.Temperature Tsup_prim "Primary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tsup_sec "Secondary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_prim "Space heating nominal supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_sec "Space heating ominal return temperature";
+
+    equation
+      connect(heatingSystem.mDHW60C, occupant.mDHW60C)
+        annotation (Line(points={{6,-10.2},{6,-30}}, color={0,0,127}));
         annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                -100},{100,100}}), graphics),
+                -100},{100,100}})),
         experiment(
           StartTime=-2.592e+006,
           StopTime=3.1536e+007,
@@ -9748,14 +9964,25 @@ package SimpleDistrict_2zoneBuilding
           building,
             redeclare IDEAS.Templates.Ventilation.None ventilationSystem,
             redeclare
-          SimpleDistrict_2zoneBuilding.SimpleDistrict_15.Occupant.ISO13790 occupant,
-            redeclare IDEAS.Templates.Heating.IdealRadiatorHeating heatingSystem(
+          IDEAS.BoundaryConditions.Occupants.Standards.ISO13790 occupant,
+            redeclare IBPSAdestest.Consumer.HeatingSystems.Substation_no_DHW heatingSystem(
                 QNom = building.Q_design,
-                VZones = building.VZones),
+          Tsup_prim=Tsup_prim,
+          Tret_prim=Tret_prim,
+          Tsup_sec=Tsup_sec,
+          Tret_sec=Tret_sec),
         redeclare IDEAS.Templates.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid);
 
+        parameter Modelica.SIunits.Temperature Tsup_prim "Primary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tsup_sec "Secondary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_prim "Space heating nominal supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_sec "Space heating ominal return temperature";
+
+    equation
+      connect(heatingSystem.mDHW60C, occupant.mDHW60C)
+        annotation (Line(points={{6,-10.2},{6,-30}}, color={0,0,127}));
         annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                -100},{100,100}}), graphics),
+                -100},{100,100}})),
         experiment(
           StartTime=-2.592e+006,
           StopTime=3.1536e+007,
@@ -10396,14 +10623,25 @@ package SimpleDistrict_2zoneBuilding
           building,
             redeclare IDEAS.Templates.Ventilation.None ventilationSystem,
             redeclare
-          SimpleDistrict_2zoneBuilding.SimpleDistrict_16.Occupant.ISO13790 occupant,
-            redeclare IDEAS.Templates.Heating.IdealRadiatorHeating heatingSystem(
+          IDEAS.BoundaryConditions.Occupants.Standards.ISO13790 occupant,
+            redeclare IBPSAdestest.Consumer.HeatingSystems.Substation_no_DHW heatingSystem(
                 QNom = building.Q_design,
-                VZones = building.VZones),
+          Tsup_prim=Tsup_prim,
+          Tret_prim=Tret_prim,
+          Tsup_sec=Tsup_sec,
+          Tret_sec=Tret_sec),
         redeclare IDEAS.Templates.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid);
 
+        parameter Modelica.SIunits.Temperature Tsup_prim "Primary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tsup_sec "Secondary district heating supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_prim "Space heating nominal supply temperature";
+        parameter Modelica.SIunits.Temperature Tret_sec "Space heating ominal return temperature";
+
+    equation
+      connect(heatingSystem.mDHW60C, occupant.mDHW60C)
+        annotation (Line(points={{6,-10.2},{6,-30}}, color={0,0,127}));
         annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                -100},{100,100}}), graphics),
+                -100},{100,100}})),
         experiment(
           StartTime=-2.592e+006,
           StopTime=3.1536e+007,
