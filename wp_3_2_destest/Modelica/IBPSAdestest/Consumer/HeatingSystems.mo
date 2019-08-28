@@ -33,7 +33,8 @@ package HeatingSystems
       riseTime=30,
       each energyDynamics=Modelica.Fluid.Types.Dynamics.FixedInitial,
       each tau=60,
-      each allowFlowReversal=false)
+      each allowFlowReversal=false,
+      use_inputFilter=false)
                    annotation (Placement(transformation(
           extent={{-10,10},{10,-10}},
           rotation=180,
@@ -51,8 +52,8 @@ package HeatingSystems
       nEle=3,
       energyDynamics=Modelica.Fluid.Types.Dynamics.FixedInitial)
       annotation (Placement(transformation(extent={{-146,-30},{-126,-10}})));
-    IDEAS.Fluid.Sensors.TemperatureTwoPort Tsup_sec_SH(redeclare package Medium
-        =        Medium,
+    IDEAS.Fluid.Sensors.TemperatureTwoPort Tsup_sec_SH(redeclare package Medium =
+                 Medium,
       allowFlowReversal=false,
       tau=0,
       m_flow_nominal=sum(mf_sec))
@@ -60,8 +61,8 @@ package HeatingSystems
           extent={{-10,10},{10,-10}},
           rotation=180,
           origin={-94,-52})));
-    IDEAS.Fluid.Sensors.TemperatureTwoPort Tret_sec_SH(redeclare package Medium
-        =        Medium,
+    IDEAS.Fluid.Sensors.TemperatureTwoPort Tret_sec_SH(redeclare package Medium =
+                 Medium,
       allowFlowReversal=false,
       tau=0,
       m_flow_nominal=sum(mf_sec))
@@ -70,7 +71,7 @@ package HeatingSystems
           rotation=0,
           origin={-80,-20})));
 
-    GenkNET.Buildings.HeatingSystems.Controls.OnOff onOff_BP annotation (
+    IBPSAdestest.Consumer.HeatingSystems.BaseClasses.OnOff onOff_BP annotation (
         Placement(transformation(
           extent={{7,-7},{-7,7}},
           rotation=180,
@@ -87,7 +88,7 @@ package HeatingSystems
           origin={79,-71})));
     Modelica.Blocks.Sources.RealExpression outside_temp(y=sim.Te)
       annotation (Placement(transformation(extent={{-78,26},{-56,50}})));
-    GenkNET.Buildings.HeatingSystems.Controls.heating_curve heating_curve(
+    IBPSAdestest.Consumer.HeatingSystems.BaseClasses.heating_curve heating_curve(
       Tout_min=-10 + 273.15,
       Tsup_max=Tsup_prim - 3,
       Tsup_nom=Tsup_sec,
@@ -285,7 +286,7 @@ package HeatingSystems
           rotation=0,
           origin={-80,-20})));
 
-    GenkNET.Buildings.HeatingSystems.Controls.OnOff onOff_BP annotation (
+    IBPSAdestest.Consumer.HeatingSystems.BaseClasses.OnOff onOff_BP annotation (
         Placement(transformation(
           extent={{7,-7},{-7,7}},
           rotation=180,
@@ -302,7 +303,7 @@ package HeatingSystems
           origin={79,-71})));
     Modelica.Blocks.Sources.RealExpression outside_temp(y=sim.Te)
       annotation (Placement(transformation(extent={{-92,54},{-70,78}})));
-    GenkNET.Buildings.HeatingSystems.Controls.heating_curve heating_curve(
+    IBPSAdestest.Consumer.HeatingSystems.BaseClasses.heating_curve heating_curve(
       Tout_min=-10 + 273.15,
       Tsup_max=Tsup_prim - 3,
       Tsup_nom=Tsup_sec,
@@ -509,7 +510,8 @@ package HeatingSystems
         T_start=Tsup_prim,
         m_flow_nominal=mf_prim,
         m_flow_start=mf_prim,
-        riseTime=30)            annotation (Placement(transformation(
+        riseTime=30,
+        use_inputFilter=false)  annotation (Placement(transformation(
             extent={{10,10},{-10,-10}},
             rotation=180,
             origin={20,-20})));
@@ -527,7 +529,7 @@ package HeatingSystems
             extent={{-7,-8},{7,8}},
             rotation=90,
             origin={120,-73})));
-      GenkNET.Buildings.HeatingSystems.HeatExchanger heatExchanger_SH(
+      IBPSAdestest.Consumer.HeatingSystems.BaseClasses.HeatExchanger heatExchanger_SH(
         redeclare package Medium1 = Medium,
         redeclare package Medium2 = Medium,
         m1_flow_nominal=mf_prim,
@@ -566,7 +568,8 @@ package HeatingSystems
         T_start=Tsup_prim,
         m_flow_start=0,
         m_flow_nominal=mf_bypass + 0.001,
-        riseTime=30) if                      add_bypass annotation (Placement(
+        riseTime=30,
+        use_inputFilter=false) if            add_bypass annotation (Placement(
             transformation(
             extent={{-10,10},{10,-10}},
             rotation=0,
@@ -701,7 +704,7 @@ package HeatingSystems
             extent={{-10,-10},{10,10}},
             rotation=0,
             origin={144,62})));
-      GenkNET.Buildings.HeatingSystems.HeatExchanger heatExchanger_DHW(
+      IBPSAdestest.Consumer.HeatingSystems.BaseClasses.HeatExchanger heatExchanger_DHW(
         redeclare package Medium1 = Medium,
         redeclare package Medium2 = Medium,
         m1_flow_nominal=mf_DHW_prim,
@@ -742,5 +745,122 @@ package HeatingSystems
           color={0,127,255},
           thickness=1));
     end Direct_DHW;
+
+    model HeatExchanger
+      "eps-NTU counter flow heat exhchanger model with UA-value depending on mass flow rate"
+      extends IDEAS.Fluid.HeatExchangers.BaseClasses.PartialEffectiveness(
+        sensibleOnly1 = true,
+        sensibleOnly2 = true,
+        final prescribedHeatFlowRate1=true,
+        final prescribedHeatFlowRate2=true,
+        Q1_flow = eps * QMax_flow,
+        Q2_flow = -Q1_flow,
+        mWat1_flow = 0,
+        mWat2_flow = 0);
+
+      parameter Real Q_nominal;
+      parameter Real K = Q_nominal/dTlm*(m1_flow_nominal^(-q) + m2_flow_nominal^(-q));
+      parameter Real q = 0.7;
+      parameter Real T1_in;
+      parameter Real T2_in;
+      parameter Real T1_out;
+      parameter Real T2_out;
+      final parameter Real dTlm = ((T1_in - T2_out) - (T1_out - T2_in))/
+                             log((T1_in - T2_out)/(T1_out - T2_in));
+
+      Modelica.SIunits.ThermalConductance CMax_flow(min=0) = max(C1_flow, C2_flow);
+      Real Cstar(min=0) = CMin_flow/(CMax_flow+1e-4);
+      Modelica.SIunits.ThermalConductance UA = K / ((m1_flow+1e-4)^(-q) +
+          (m2_flow+1e-4)^(-q));
+      Real NTU = UA/(CMin_flow+1e-4);
+      Modelica.SIunits.Efficiency eps(max=1)=
+          (1 - exp(-NTU * (1 - Cstar))) / (1 - Cstar * exp(-NTU * (1 - Cstar)));
+
+      annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
+            Rectangle(
+              extent={{-98,-55},{103,-65}},
+              lineColor={0,0,255},
+              pattern=LinePattern.None,
+              fillColor={0,0,0},
+              fillPattern=FillPattern.Solid),
+            Rectangle(
+              extent={{-98,65},{103,55}},
+              lineColor={0,0,255},
+              pattern=LinePattern.None,
+              fillColor={0,0,0},
+              fillPattern=FillPattern.Solid)}),                      Diagram(
+            coordinateSystem(preserveAspectRatio=false)));
+    end HeatExchanger;
+
+    model OnOff
+
+      parameter Real ymin=0;
+
+      Modelica.Blocks.Interfaces.BooleanInput u annotation (Placement(
+            transformation(
+            extent={{-20,-20},{20,20}},
+            rotation=90,
+            origin={0,-120}), iconTransformation(
+            extent={{-20,-20},{20,20}},
+            rotation=90,
+            origin={0,-120})));
+      Modelica.Blocks.Interfaces.RealInput u1 annotation (Placement(transformation(
+              extent={{-140,-20},{-100,20}}), iconTransformation(extent={{-140,-20},
+                {-100,20}})));
+      Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+
+    equation
+      if noEvent(u) then
+        y=u1;
+      else
+        y=ymin;
+      end if;
+
+      annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
+                -100},{100,100}}), graphics), Icon(coordinateSystem(
+              preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+                                             Rectangle(
+              extent={{-100,100},{100,-100}},
+              fillColor={210,210,210},
+              lineThickness=5.0,
+              fillPattern=FillPattern.Solid,
+              borderPattern=BorderPattern.Raised), Text(
+              extent={{-150,150},{150,110}},
+              textString="%name",
+              lineColor={0,0,255}),
+            Ellipse(extent={{-60,58},{60,-60}}, lineColor={255,85,170}),
+            Line(
+              points={{0,86},{0,28}},
+              color={255,85,170},
+              smooth=Smooth.None)}));
+    end OnOff;
+
+    model heating_curve "Heating curve for a DH substation"
+
+      extends Modelica.Blocks.Interfaces.BlockIcon;
+
+      parameter Modelica.SIunits.Temperature Tsup_max "Maximum supply temperature";
+      parameter Modelica.SIunits.Temperature Tsup_min "Minimum supply temperature";
+      parameter Modelica.SIunits.Temperature Tout_max "Maximum outdoor temperature";
+      parameter Modelica.SIunits.Temperature Tout_min "Minimum outdoor temperature";
+      parameter Modelica.SIunits.Temperature Tsup_nom "Nominal supply temperature";
+      parameter Modelica.SIunits.Temperature Tout_nom "Nominal outdoor temperature";
+
+      final parameter Real slope = (Tsup_nom - Tsup_min) / (Tout_nom - Tout_max);
+
+      Real TSup_init;
+
+      Modelica.Blocks.Interfaces.RealInput TOut
+        annotation (Placement(transformation(extent={{-120,-20},{-80,20}})));
+      Modelica.Blocks.Interfaces.RealOutput TSup
+        annotation (Placement(transformation(extent={{90,-10},{110,10}})));
+
+    equation
+      TSup_init = slope*(TOut - Tout_nom) + Tsup_nom;
+
+      TSup = if TSup_init > Tsup_max then Tsup_max else (if TSup_init < Tsup_min then Tsup_min else TSup_init);
+      annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
+            coordinateSystem(preserveAspectRatio=false)));
+    end heating_curve;
   end BaseClasses;
 end HeatingSystems;
