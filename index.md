@@ -25,24 +25,26 @@ All work is open-source and built on three standards:
  - [CityGML](http://www.citygml.org/) for data modeling at the district scale, and
  - [Modelica](http://www.modelica.org) for modeling the performance of building and district energy systems.
 
-The project will be conducted from summer 2017 to summer 2022,
-performing the tasks outlined in the
-[workplan]({{ site.url }}/downloads/ibpsa_project1_workplan.pdf).
-
 To register, please visit the [registration form](https://docs.google.com/a/lbl.gov/forms/d/1tyu3Qb3ydPseACxBgtL_UTKIdQS75eKr4zX89v7T0EM/viewform).
 
 To receive announcements, [join the email announcement list](https://groups.google.com/forum/#!forum/ibpsa-project-1-announcements/join).
 
-There are three main tasks:
+The main tasks, which evolved from the original
+[workplan]({{ site.url }}/downloads/ibpsa_project1_workplan.pdf), are as follows:
 
 <div class="row">
       <div class="col-md-6">
       <h2>Task 1: Modelica libraries</h2>
+<h3>Work package 1.1: Modelica IBPSA Library</h3>
 <p>
-This task will develop free open-source
-libraries of Modelica models for building and community energy and control
+<b>Task leader:</b> Michael Wetter, LBNL, Berkeley, CA.
+</p>
+<p>
+This work package will develop a free open-source
+library of Modelica models for design and operation of
+building and community energy and control
 systems with associated documentation for new and experienced users.
-Modelica libraries will be developed for design and operation through
+The library is being developed through
 the further development of the Modelica IBPSA Library
 (<a href="https://github.com/ibpsa/modelica-ibpsa">github.com/ibpsa/modelica-ibpsa</a>),
 a library which is used as the core of the four Modelica libraries
@@ -65,6 +67,35 @@ a library which is used as the core of the four Modelica libraries
  from KU Leuven, Belgium.
  </li>
  </ul>
+<p>
+All models are documented and validated against analytical solutions, against
+the results of other simulators or against measurement data.
+</p>
+<h3>Work Package 1.2: Building Optimization Performance Tests and Modelica library for MPC</h3>
+<p>
+<b>Task leader:</b> Lieve Helsen, KU Leuven, Belgium.
+</p>
+<p>
+This work package is developing
+a software package called BOPTEST that allows testing, assessing, comparing and benchmarking
+Model Predictive Control algorithms and other control formulations, and
+a Modelica library for use within a Model Predictive Controller.
+</p>
+<p>
+The BOPTEST framework consist of reference building emulation test cases, key performance indicators
+(KPIs) for quantification and assessment, and a software platform to select and manage test cases,
+exchange control and measurement data, calculate KPIs and generate reports. The aim of a test case is
+to provide a clear and unambiguously defined scenario where any controller can be tested to enable a
+fair comparison between different control strategies. Therefore, a test case is defined as a
+combination of a building emulator model and a data-set gathering boundary conditions like weather,
+energy prices, emission factors, occupancy schedules and comfort requirements for a one-year duration.
+The test cases
+selected represent combinations of buildings and energy systems typically encountered in Europe and the
+US. Each test case describes the signals that are accessible at different control levels, e.g. room
+temperature set points at high level, damper positions, fan and pump speeds, flow rates etc. at low level.
+Baseline controllers are included and operate whenever the control signal is not overwritten by the
+external (tested) controller.
+</p>
 <p>
 Also, a library with models that are suited for use in
 nonlinear Model Predictive Control (MPC) will be developed.
@@ -137,3 +168,22 @@ width="75%">
 The software develop in this project will be available under the following
 <a href="license.html">open-source license</a>.
 </p>
+
+<table>
+<tr>
+<td>
+Duration
+</td>
+<td>2017-2022
+</td>
+</tr>
+<tr valign="top">
+<td>
+Operating Agents
+</td>
+<td>
+Michael Wetter, LBNL, Berkeley, CA<br/>
+Christoph van Treeck, RWTH Aachen, Germany
+</td>
+</tr>
+</table>
