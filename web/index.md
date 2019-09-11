@@ -167,11 +167,11 @@ This work package will demonstrate capabilities enabled by the use of Modelica f
 
 </p>
 <ul>
- <li>
+<li>
 Identifying research needs for Task 1 and Task 2.
 </li>
 <li>
-Illustrating which advantages Modelica offers for the design, modeling and analysis of building and district energy systems.
+Illustrating the advantages that Modelica offers for the design, modeling and analysis of building and district energy systems.
 </li>
 <li>
 Sharing best practices and document them for dissemination to the simulation community.
