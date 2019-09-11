@@ -176,7 +176,6 @@ Illustrating which advantages Modelica offers for the design, modeling and analy
 <li>
 Identifying research needs for Task 1 and Task 2 
  </li>
- <li>
 
 </p>
 </div>
