@@ -143,20 +143,6 @@ width="75%">
 <div class="col-md-6">
 <h2>Task 3: Application and Dissemination</h2>
 <p>
-The objective of this task is
-to demonstrate through applications capabilities that are enabled through
-Modelica, and to identify and test through applications research needs
-and research results.
-The approach is to share best approaches and document them for dissemination
-to the community.
-
-This task will also include the development of a validation test for
-district energy models that started in IEA EBC Annex 60.
-
-The outcomes are a collection of case studies that demonstrates
-capabilities enabled by use of Modelica for building and district
-energy system design and operation, and a validation test procedure for
-district energy system models.
 
 <h3>Work Package 3.2: Application </h3>
 <p>
