@@ -165,9 +165,19 @@ district energy system models.
 <p>
 This work package will demonstrate capabilities enabled by the use of Modelica for building and district energy systems. A number of case studies from different applications (e.g. HVAC systems in buildings, district heating networks etc.) will be collected and described through a unified template. The template includes information such as objective of the simulation study, system diagram, computing time, libraries and models used. The collection and systematic description of application case studies aim at:
 
--Sharing best practices and document them for dissemination to the simulation community
--Illustrating which advantages Modelica offers for the design, modeling and analysis of building and district energy systems
--Identifying research needs for Task 1 and Task 2 
+</p>
+<ul>
+<li>
+Sharing best practices and document them for dissemination to the simulation community.
+</li>
+<li>
+Illustrating which advantages Modelica offers for the design, modeling and analysis of building and district energy systems
+</li>
+<li>
+Identifying research needs for Task 1 and Task 2 
+ </li>
+ <li>
+
 </p>
 </div>
 <div class="col-md-6">
