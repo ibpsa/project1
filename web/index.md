@@ -142,8 +142,15 @@ width="75%">
 <div class="row">
 <div class="col-md-6">
 <h2>Task 3: Application and Dissemination</h2>
+<h3>Work Package 3.1: District Energy DESTEST</h3>
 <p>
-
+<b>Task leader:</b> Dirk Saelens, KU Leuven, Belgium.
+</p>
+<p>
+This work package aims at developing a framework to test District Energy System simulations called DESTEST. The aim of DESTEST is to provide a means to validate models of urban energy systems by defining specific district energy cases for testing in different simulation environments. By carefully selecting and specifying these cases, and by using different libraries for modeling these energy systems, a thorough verification, comparison and benchmarking will become possible. The description of the DESTEST cases and the simulation results of extensively verified models for urban energy systems will be available as a reference for comparing other simulation programs and model libraries.
+</p> 
+This work package makes use of common exercises in which different participants solve a well described case, discuss the difficulties during execution and compare the results. This common exercises will gradually increase in complexity: different building typologies and characteristics, climate and occupancy patterns as well as districts with different scales will be implemented. With respect to networks, cooling networks and electrical grids will also be analysed. Finally, demand and distribution subsystems will be combined to assess their performance and to check interoperability of tools that model separate subsystems.
+</p>
 <h3>Work Package 3.2: Application </h3>
 <p>
 <b>WP leader:</b> Alessandro Maccarini, Aalborg University, Denmark.
