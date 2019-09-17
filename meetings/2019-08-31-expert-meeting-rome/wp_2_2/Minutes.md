@@ -1,4 +1,5 @@
-***Break-out session 2.2***
+***Break-out session 2.2*** 
+
 **Participants**
 -   Allan, James (EMPA)
 -   Gilliland , Allen (BuildZero)
