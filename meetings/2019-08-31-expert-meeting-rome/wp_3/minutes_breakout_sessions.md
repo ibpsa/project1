@@ -129,3 +129,7 @@ Everyone prepares a short presentation on their work, on how they can contribute
  
  
 ## Follow-up
+
+* A joint effort of Michael, Enora and me has resulted in this nice feature: a notebook.ai: https://notebooks.ai/MichaMans/project-1-plots-e59f9de8
+    * This notebook allows you to download some of the simulated power profiles and temperatures of the others’ models and upload your own. Subsequently, you can compare your results and see if they are reasonable. You can fork this code from Michael’s account.
+
