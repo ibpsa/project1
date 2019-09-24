@@ -129,3 +129,25 @@ Everyone prepares a short presentation on their work, on how they can contribute
  
  
 ## Follow-up
+
+### E-mail sent by Ina on September 10
+Dear WP3 colleagues,
+Here, you finally find the follow-up e-mail from the IBPSA Project 1 Expert meeting in Rome. Thank you again for the enthusiasm you all brought to our discussions. A lot has been said, so a larger follow-up e-mail as well. 
+1.	The meeting minutes of the break-out sessions can be found here (<https://github.com/ibpsa/project1/edit/master/meetings/2019-08-31-expert-meeting-rome/wp_3/minutes_breakout_sessions.md>).
+    * Please, feel free to change/add anything. If you don’t have the rights to do it right away, don’t hesitate to send your comments to me. 
+2.	I promised to send the details for the new participants. 
+    * The presentation I gave in Rome is available here (<https://github.com/ibpsa/project1/blob/master/meetings/2019-08-31-expert-meeting-rome/wp_3/190901_WP3_howtogetstarted.pdf>). 
+    * The key take-aways:
+        * The description of the single-family dwelling will be finished by the end of this month. It would be nice if you could use this one to model the first single-family dwelling (either text of CityGML format). 
+        * The description of the office building is under discussion again. Please, think about possible office descriptions that you have available and that you could present shortly at the next coordination meeting. However, we agreed on a simple layout office building, Dirk had shown. We should enrich this building with data, maybe with some standard data from TEASER?
+3.	We think it would be nice to have a Skype call soon, to coordinate the next steps. I have set up a Doodle here (<https://doodle.com/poll/4xxfz8abvkv8vc3c>). Please, fill this in by September 16, 2019. Then, I’ll set up the meeting details and send them to you. 
+a.	As we have more colleagues from the US joining, I think we should agree on having the meeting at a reasonable time for both sides. That’s why I only proposed 5pm-6pm. Please, let me know if you disagree or have other ideas.
+4.	*Kind reminder*
+    * Would those, who have presented something at the meeting, please send their slides to me (in pdf format)? I’ll upload them to the GitHub (you are also welcome to do it yourself by creating a pull request if you don’t have the rights to upload things directly).
+5.	Smaller details  
+    * Enora noted that the simulations are done with a 10 min timestep, but that the occupant profiles are provided at a 15 min timestep > I’ll resample the occupant profiles and upload them again on  GitHub (<https://github.com/ibpsa/project1/tree/master/meetings/2019-08-31-expert-meeting-rome/wp_3>).
+    * I am currently working on the different insulation standards > will be ready for the next coordination meeting, we can discuss there 
+    * A joint effort of Michael, Enora and me has resulted in this nice feature: a notebook.ai: https://notebooks.ai/MichaMans/project-1-plots-e59f9de8
+        * This notebook allows you to download some of the simulated power profiles and temperatures of the others’ models and upload your own. Subsequently, you can compare your results and see if they are reasonable. You can fork this code from Michael’s 	account.
+        * I’ll also add this link to the “follow-up” section of the expert meeting minutes.
+
