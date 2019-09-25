@@ -115,6 +115,37 @@ with emulated building models in the loop.
 <div class="row">
           <div class="col-md-6">
           <h2>Task 2: Building and City Quarter Models</h2>
+<h3>Work Package 2.1: City District Information Modeling</h3>
+<p>
+  <b>Task leader:</b> Gerald Schweiker, TU Graz, Austria.</b>
+</p>
+<p>
+  This work package addresses urban scale energy performance simulation of domestic and non-domestic buildings. Highlighting the exchange requirements and country-specific data mapping approaches, the work package also deals with archetypal definitions of buildings with respect to the generalization of country-specific age-bands, geometrical forms and building functions. Semantic data enrichment, parsimonious geometric information processing and the participation in development of the CityGML schema and EnergyADE for specific simulation tools is also emphasized. Considering different modelling techniques, generic import-export functionalities and enrichment algorithms, the team aims to demonstrate the application of the developed workflows for a range of tools, including Modelica and EnergyPlus, and for a range of geographical contexts and application use cases. The GML ToolBox, which extends the pre-processing of geometric prerequisites, modelling of thermal zones and openings and checks CityGML base standards and ADE conformance conditions for dynamic heating and cooling demand simulations in EnergyPlus, is one such example. Another example is an extension to the TEASER tool that is currently being developed to process the five CityGML Levels of Detail and Energy ADE information as an input for annual thermal simulation using Modelica. A further example is the development of a new workflow for the preparation of large (thousands to tens of thousands of buildings) urban scenes for simulation using the CitySim+ urban enery simulation engine. 
+Open source translators and workflows for district energy simulations can be recognized as some of the outputs for this work package.
+</p>
+
+<h3>Work Package 2.2: Building Information Modeling</h3>
+<p>
+  <b>Task leader:</b> Jérôme Frisch, RWTH Aachen University, Germany.</b>
+</p>
+<p>
+The work package starts from the core observations that CAD-integrated calculation and dimensioning requires detailed models and that such models are typically not available in the early design stages. Furthermore, common HVAC classification schemes are lacking, HVAC wiring diagrams, which are relevant for linking with control descriptions, cannot be exchanged with common software, standards are not available for digital function specification exchange and existing BIM software is typically not capable of extracting space boundary descriptions in a way to be used for energy performance simulation using zonal modeling or for CFD approaches for detailed indoor air flow analysis. 
+The work package therefore addresses such data classification and specification, geometry and HVAC model processing. 
+In the first phase, groundwork was set up for the collaborative development and testing of different classes of geometric algorithms for transforming building information models to building performance simulation. Various libraries were considered for reading IFC data and for processing geometric information such as IfcOpenShell, IfcPlusPlus, xBIM (IFC) as well as geometry kernels such as OpenCascade, ParaSolid and ACIS. 
+
+Based on this experience, developments will be continued using the IfcOpenShell and OpenCascade libraries. Advanced space boundary algorithms for model topology analysis and model generation are currently tested and new algorithms are developed. 
+
+<a href="https://github.com/ibpsa/project1/tree/master/wp_2_2_bim">Link to the WP 2.2 development repository</a>
+
+</p>
+  
+</div>
+</div>
+
+<!-- --------------------------------------- OLD CONTENT
+<div class="row">
+          <div class="col-md-6">
+          <h2>Task 2: Building and City Quarter Models</h2>
 <p>
 This task will develop free open-source
 GIS/BIM data model to Modelica translators for individual building and
@@ -137,7 +168,8 @@ that also specifies control sequences.
 width="75%">
 </div>
 </div>
-<!-- ------------------------------------ -->
+ -->
+
 
 <div class="row">
 <div class="col-md-6">
