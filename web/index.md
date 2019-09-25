@@ -117,7 +117,7 @@ with emulated building models in the loop.
           <h2>Task 2: Building and City Quarter Models</h2>
 <h3>Work Package 2.1: City District Information Modeling</h3>
 <p>
-  <b>Task leader:</b> Gerald Schweiker, TU Graz, Austria.</b>
+  <b>Task leader:</b> Gerald Schweiger, TU Graz, Austria.</b>
 </p>
 <p>
   This work package addresses urban scale energy performance simulation of domestic and non-domestic buildings. Highlighting the exchange requirements and country-specific data mapping approaches, the work package also deals with archetypal definitions of buildings with respect to the generalization of country-specific age-bands, geometrical forms and building functions. Semantic data enrichment, parsimonious geometric information processing and the participation in development of the CityGML schema and EnergyADE for specific simulation tools is also emphasized. Considering different modelling techniques, generic import-export functionalities and enrichment algorithms, the team aims to demonstrate the application of the developed workflows for a range of tools, including Modelica and EnergyPlus, and for a range of geographical contexts and application use cases. The GML ToolBox, which extends the pre-processing of geometric prerequisites, modelling of thermal zones and openings and checks CityGML base standards and ADE conformance conditions for dynamic heating and cooling demand simulations in EnergyPlus, is one such example. Another example is an extension to the TEASER tool that is currently being developed to process the five CityGML Levels of Detail and Energy ADE information as an input for annual thermal simulation using Modelica. A further example is the development of a new workflow for the preparation of large (thousands to tens of thousands of buildings) urban scenes for simulation using the CitySim+ urban enery simulation engine. 
@@ -136,40 +136,9 @@ In the first phase, groundwork was set up for the collaborative development and 
 Based on this experience, developments will be continued using the IfcOpenShell and OpenCascade libraries. Advanced space boundary algorithms for model topology analysis and model generation are currently tested and new algorithms are developed. 
 
 <a href="https://github.com/ibpsa/project1/tree/master/wp_2_2_bim">Link to the WP 2.2 development repository</a>
-
-</p>
-  
-</div>
-</div>
-
-<!-- --------------------------------------- OLD CONTENT
-<div class="row">
-          <div class="col-md-6">
-          <h2>Task 2: Building and City Quarter Models</h2>
-<p>
-This task will develop free open-source
-GIS/BIM data model to Modelica translators for individual building and
-community energy systems. As in the Annex 60, emphasis was placed on
-the district and building model to Modelica transformation process.
-Task 2 is dedicated to continuing BIM-oriented developments but focuses on the GIS
-transformation process for community energy systems. This will be
-accomplished through the use of existing standards for exchanging
-energy calculation data, and through extending standards such as
-CityGML as appropriate. This capability will facilitate the
-construction of whole building and district Modelica models, it will integrate
-energy performance simulation, especially with respect to Modelica,
-with the developments of BIM/GIS-based tools that are ongoing outside
-of this project, and provide a path for a next-generation modeling
-that also specifies control sequences.
 </p>
 </div>
-<div class="col-md-6" >
-  <img src="{{ site.url }}/assets/img/gis_model.png" alt="Network temperatures"
-width="75%">
 </div>
-</div>
- -->
-
 
 <div class="row">
 <div class="col-md-6">
