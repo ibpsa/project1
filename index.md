@@ -175,7 +175,7 @@ This work package makes use of common exercises in which different participants 
 </p>
 <h4>Work Package 3.2: Application </h4>
 <p>
-<b>WP leader:</b> Alessandro Maccarini, Aalborg University, Denmark.
+<b>Work Package Leader:</b> Alessandro Maccarini, Aalborg University, Denmark.
 </p>
 <p>
 This work package will demonstrate capabilities enabled by the use of Modelica for building and district energy systems. A number of case studies from different applications (e.g. HVAC systems in buildings, district heating networks etc.) will be collected and described through a unified template. The template includes information such as objective of the simulation study, system diagram, computing time, libraries and models used. The collection and systematic description of application case studies aim at
