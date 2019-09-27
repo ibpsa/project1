@@ -33,12 +33,13 @@ To receive announcements, [join the email announcement list]({{ site.url }}/part
 
 <h2>Main Research Tasks</h2>
 The main tasks, which evolved from the original
-[workplan]({{ site.url }}/downloads/ibpsa_project1_workplan.pdf), are as follows:
+[workplan]({{ site.url }}/downloads/ibpsa_project1_workplan.pdf), are as
+described below.
 
-<h3>Task 1: Modelica libraries</h3>
-<h4>Work package 1.1: Modelica IBPSA Library</h4>
+<h3>Task 1: Modelica Libraries</h3>
+<h4>Work Package 1.1: Modelica IBPSA Library</h4>
 <p>
-<b>Task leader:</b> Michael Wetter, LBNL, Berkeley, CA.
+<b>Work Package Leader:</b> Michael Wetter, LBNL, Berkeley, CA.
 </p>
 <p>
 This work package will develop a free open-source
@@ -74,7 +75,7 @@ the results of other simulators or against measurement data.
 </p>
 <h4>Work Package 1.2: Building Optimization Performance Tests and Modelica library for MPC</h4>
 <p>
-<b>Task leader:</b> Lieve Helsen, KU Leuven, Belgium.
+<b>Work Package Leader:</b> Lieve Helsen, KU Leuven, Belgium.
 </p>
 <p>
 This work package is developing
@@ -106,7 +107,7 @@ nonlinear Model Predictive Control (MPC) is being developed.
 <h3>Task 2: Building and City Quarter Models</h3>
 <h4>Work Package 2.1: City District Information Modeling</h4>
 <p>
-<b>Task leader:</b> Gerald Schweiger, TU Graz, Austria.
+<b>Work Package Leader:</b> Gerald Schweiger, TU Graz, Austria.
 </p>
 <p>
 This work package addresses urban scale energy performance simulation of domestic and non-domestic buildings.
@@ -129,7 +130,7 @@ Open source translators and workflows for district energy simulations can be rec
 
 <h4>Work Package 2.2: Building Information Modeling</h4>
 <p>
-<b>Task leader:</b> Jérôme Frisch, RWTH Aachen University, Germany.
+<b>Work Package Leader:</b> Jérôme Frisch, RWTH Aachen University, Germany.
 </p>
 <p>
 This work package starts from the core observations that CAD-integrated calculation and dimensioning requires detailed
@@ -159,7 +160,7 @@ Based on this experience, developments will be continued using the IfcOpenShell 
 <h3>Task 3: Application and Dissemination</h3>
 <h4>Work Package 3.1: District Energy DESTEST</h4>
 <p>
-<b>Task leader:</b> Dirk Saelens, KU Leuven, Belgium.
+<b>Work Package Leader:</b> Dirk Saelens, KU Leuven, Belgium.
 </p>
 <p>
 This work package is developing a framework called DESTEST to test District Energy System simulations.
