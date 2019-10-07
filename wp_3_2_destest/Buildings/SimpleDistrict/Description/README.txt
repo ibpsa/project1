@@ -38,3 +38,13 @@ In the folder ‘SimpleDistrict’, you find the resulting IDEAS models that wer
 
 DATA FORMAT OF THE SIMULATION RESULTS
 The simulations results can be found in the Results-folder. The SimpleDistrict_district.csv-file gives the demand profiles (only for space heating! Currently, no domestic hot water is considered!) for all buildings (1 column per building, identical in this case, but in the future not!) at a 10-minute interval. The SimpleDistrict_energyKPI.csv gives an overview of the peak power and yearly energy demand per building. The SimpleDistrict_geometryKPI.csv gives an overview of the geometrical characteristics of the buildings, as well as their latitude, longitude and altitude. 
+
+UPDATE - CityGML model
+After the first definition, we have created a text report that can be used for modelling + a CityGML EnergyADE model, which is also available in this folder. The CityGML EnergyADE model has been created by Karl-Heinz and Joachim. An overview of these files:
+1.	180314_simple_district_16-KIT-LOD3-V4.skp this Karl-Heinz' initial Sketchup Model to produce CityGML. It is made in Sketchup Pro 2018 with the CityGML addon from 3DIS (https://www.3dis.de  ). The product he's using is the CityEditor (https://www.3dis.de/cityeditor-citygml2cad/ ). It is not for free.
+2.	180314_simple_district_16-KIT-LOD3-V4-Solid.gml is the CityGML model LoD3. As the generation of LoD3 has some weaknesses in creating the building solid, this is done by his own script (xslt). That’s why the file name contains “solid”
+3.	SingleBuilding.gml, SingleBuildingADE.gml, SingleBuildingADE-results.gml are the files from Joachim. SingleBuilding.gml extracts one building from the original 16 building. SingleBuildingADE.gml is the enriched ADE file before simulation (data taken from the TEASER file as good as possible). SingleBuildingADE-results.gml is the model after simulation (in this case we used EnergyPlus and of course there are not all EP results in the file). 
+
+For the Sketchup model you need Sketchup 2018.
+For the CityGML models you can use KIT's Viewer (www.iai.kit.edu/ifc ). It should be able to read all CityGML files including the ADE, but not all functions have been test deeply. And there is no user manual for the FZKViewer, so you have to explorer the program by yourself.
+
