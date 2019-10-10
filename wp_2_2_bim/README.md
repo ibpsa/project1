@@ -1,14 +1,46 @@
 This directory is for coordination of Work Package 2.2 (BIM).
 
 **Next meeting**  
-Telefone conference on October, 15th 2019 at 17:00 (CEST).  
+Telefone conference on October, 15th 2019 at 17:00 (CEST). 
+-------------------------
 
-The following link and number will be updated soon!
+You are invited to a DFNconf Meeting:	
 
-The telephone conference is organized via Adobe Connect   
-The link is  https://webconf.vc.dfn.de/rfv1iitutli9/   
-You can also join via telephone call to +49 30 200 97934948   
-Further Information about the necessary steps for Adobe Connect  can be found here: https://www.vc.dfn.de/en/web-conferencing/short-guide/
+Meeting Room Name:   IBPSA Project 1 - WP2.2		
+Meeting Room Number: 97980506
+
+In order to join the meeting you can select one of the alternatives:
+
+1. With your Browser under Windows, MacOS, GNU/Linux:
+   https://conf.dfn.de/webapp/conference/97980506
+
+2. With a SIP/H.323 room system or SIP/H.323 software client:
+
+   H.323: 004910097980506
+   SIP:   97980506@conf.dfn.de
+   
+3. With a telephone (audio only): 
+   Call 0049 30 200 97980506
+
+4. Via Skype for Business:
+   97980506@vc.dfn.de
+
+5. Using a mobile smart phone.
+   You have to install the Pexip App beforehand:
+
+     Android: https://play.google.com/store/apps/details?id=com.pexip.infinityconnect
+     iOS:     https://itunes.apple.com/us/app/pexip-infinity-connect/id1195088102
+
+   Please Enter:
+
+   97980506@conf.dfn.de
+
+Please wait for your host to join the meeting room.
+
+For a connection test look at following website: https://www.conf.dfn.de/beschreibung-des-dienstes/zugangswege/testcall-service/
+
+See our Privacy Policy to learn about your personal data and all your
+related rights and obligations: https://www.conf.dfn.de/datenschutz
 
 **Link list**
   
