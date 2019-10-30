@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
 
-import bibtexparser
+try:
+    import bibtexparser
+except ImportError:
+    raise ImportError(
+        '''Please, install bibtexparser package using:
+        pip3 install bibtexparser==1.1.0'''
+    )
 from bibtexparser.customization import splitname
 from bibtexparser.bwriter import BibTexWriter
 from bibtexparser.bibdatabase import BibDatabase
@@ -49,7 +55,7 @@ ENCODING ='ISO-8859-1'
 #encoding = 'UTF-8'
 
 # location of pdf-files
-PDFPATH = './pdf'
+PDFPATH = './pubs/pdf/'
 
 # references file (input file)
 BIBFILE = 'references.bib'
@@ -96,18 +102,20 @@ CHAPTERFORMAT = '<span class="title">{chaptertitle}</span>.<br>'
 TITLEFORMAT = CHAPTERFORMAT
 NAMEFORMAT = '{first} {jr} {von} {last}'
 AUTHORFORMAT = '<span class="author">{author}</span>.<br>'
-BOOKCHAPTERFORMAT = 'in: <i>{title}</i>, {publisher}'
-JOURNALFORMAT = '<i>{journal}</i>'
-BOOKTITLEFORMAT = '<i>{booktitle}</i>'
-THESISFORMAT = 'PhD thesis, {school}'
-REPORTFORMAT = 'Tech. Report, {number}'
-VOLUMEFORMAT = ', Vol. {volume}'
-NUMBERFORMAT = ', No. {number}'
-PAGESFORMAT = ', p. {pages}'
-MONTHFORMAT = '<span class="month">, {month}</span>'
-YEARFORMAT = '<span class="year">, {year}</span>'
-PDFFORMAT = '<br>\n[&nbsp;<a href="{pdfpath}">pdf</a>&nbsp;]'
-URLFORMAT = '<br>\n[&nbsp;<a href="{url}">link</a>&nbsp;]'
+JOURNALFORMAT = '<i>{journal}</i>, '
+BOOKTITLEFORMAT = '<i>{booktitle}</i>, '
+BOOKCHAPTERFORMAT = 'in: <i>{title}</i>, {publisher}, '
+THESISFORMAT = 'PhD thesis, {school}, '
+REPORTFORMAT = 'Tech. Report, {number}, '
+VOLUMEFORMAT = 'Vol. {volume}, '
+NUMBERFORMAT = 'No. {number}, '
+PAGESFORMAT = 'p. {pages}, '
+NOTEFORMAT = 'Note: {note}, '
+MONTHFORMAT = '<span class="month">{month}</span>, '
+YEARFORMAT = '<span class="year">{year}</span>.<br>'
+PDFFORMAT = '[ <a href="{pdfpath}">pdf</a> ]'
+URLFORMAT = '[ <a href="{url}">link</a> ]'
+PDFURLFORMAT = '[ <a href="{pdfpath}">pdf</a> | <a href="{url}">link</a> ]'
 LISTFORMAT = '''
 <h1>{listtitle}</h1>
 <ol reversed>
@@ -121,7 +129,6 @@ def to_html(entry):
     out = ''
 
     # --- Start list ---
-    # out += '\n'
     out += '<li>\n'
 
     # --- chapter ---
@@ -165,12 +172,8 @@ def to_html(entry):
     # This entry is for conference proceedings that have not page numbers.
     if 'pages' in entry:
         out += PAGESFORMAT.format(pages=entry['pages'])
-    else:
-        out += ', '
-        if 'note' in entry:
-            if journal or chapter: 
-                out += ', '
-            out += entry['note']
+    elif 'note' in entry:
+        out += NOTEFORMAT.format(note=entry['note'])
 
     if 'month' in entry:
         if entry['month'] in MONTHSDICT:
@@ -182,22 +185,19 @@ def to_html(entry):
     # --- year ---
     out += YEARFORMAT.format(year=entry['year'])
 
-    # final period
-    out += '.'
-
     # --- Links ---
-    pdf = 'pdf' in entry
-    url = ('url' in entry)
-    url_doi = url or ('doi' in entry)
-
-    if pdf or url_doi:
-        if pdf:
-            PDFFORMAT.format(pdfpath=PDFPATH+entry['pdf'])
-        if url_doi:
-            if url:
-                out += URLFORMAT.format(url=entry['url'])
-            else:
-                out += URLFORMAT.format(url='http://dx.doi.org/'+self.doi)
+    if 'url' in entry:
+        _url = entry['url']
+    elif 'doi' in entry:
+        _url = 'http://dx.doi.org/{}'.format(self.doi)
+    else:
+        _url = ''
+    if 'pdf' in entry and _url:
+        out += PDFURLFORMAT.format(pdfpath=PDFPATH+entry['pdf'], url=_url)
+    elif 'pdf' in entry:
+        out += PDFFORMAT.format(pdfpath=PDFPATH+entry['pdf'])
+    elif _url:
+        out += URLFORMAT.format(url=_url)
 
     # Terminate the list entry
     out += '\n</li>'
