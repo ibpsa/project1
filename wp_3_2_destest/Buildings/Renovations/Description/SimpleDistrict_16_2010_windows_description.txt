@@ -1,0 +1,15 @@
+"""
+Written on 09/12/2019 by Ina De Jaeger
+"""
+
+Description of dummy district - implemented windows with construction year 2010:
+
+Windows with double glazing:
+	Area fraction of the window frame = 0.15
+	U-value of the window frame = 2.8
+	Double glazing: glass with thickness of 0.004 m with low-E, air cavity with thickness of 0.015 m, glass with thickness of 0.004 m
+	U-value of glazing = 1.1
+	g-value of glazing = 0.589
+
+MORE DETAILS CAN BE FOUND IN THE IDEAS MODELS!
+ 
