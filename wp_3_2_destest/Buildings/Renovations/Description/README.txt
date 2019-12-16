@@ -1,0 +1,7 @@
+This file walks you through the workflow that was followed to define the different renovations for the single-family dwelling of the simple district. Two renovations have been defined, according to the Belgian TABULA archetypes. The first one is a light renovation and is called the 2000s-renovation. The second one is a heavy renovation and is called the 2010s-renovations. The building model is identical to the original dwellings, eexcept some insulation layers are inserted in the walls, the roof and the ground floor. Additionally, the windows have been replaced and the air tightness has been adapted. All warnings for the original building model also apply to these models. This document only describes the differences. 
+
+DESCRIPTION OF THE USED BUILDING MODEL
+Two-zone building models were used for the simulations, with a day zone (ground floor) and a night zone (first floor), as you will see in the TEASERxml-file. Some remarks when reading the TEASERxml-file: 
+1. The windows are not described correctly, a better description can be found in “2000_windows_description.txt” and “2010_windows_description.txt”.  
+2. The air infiltration rate is set to 0.2 air changes per hour at real conditions for both renovations. The 2010s-renovation has a better building envelope, but includes a balanced ventilation system. The ventilation system is simplified and recalculated as an "air infiltration."
+3. Please, ignore the use conditions within the TEASERxml-file (as they should have been overwritten by either the standard occupant or the stochastic occupant.
