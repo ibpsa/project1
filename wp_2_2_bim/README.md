@@ -1,29 +1,31 @@
 This directory is for coordination of Work Package 2.2 (BIM).
 
 **Next meeting**  
-Telefone conference on October, 15th 2019 at 17:00 (CEST). 
+Telefone conference on January, 13th 2020 at 5pm (CEST). 
 -------------------------
 
 You are invited to a DFNconf Meeting:	
+-------------------------------------		
 
-Meeting Room Name:   IBPSA Project 1 - WP2.2		
-Meeting Room Number: 97980506
+Meeting Room Name:   IBPSA Project 1 - WP 2.2 Meeting		
+Meeting Room Number: 97986537
+
 
 In order to join the meeting you can select one of the alternatives:
 
 1. With your Browser under Windows, MacOS, GNU/Linux:
-   https://conf.dfn.de/webapp/conference/97980506
+   https://conf.dfn.de/webapp/conference/97986537
 
 2. With a SIP/H.323 room system or SIP/H.323 software client:
 
-   H.323: 004910097980506
-   SIP:   97980506@conf.dfn.de
+   H.323: 004910097986537
+   SIP:   97986537@conf.dfn.de
    
 3. With a telephone (audio only): 
-   Call 0049 30 200 97980506
+   Call 0049 30 200 97986537
 
 4. Via Skype for Business:
-   97980506@vc.dfn.de
+   97986537@vc.dfn.de
 
 5. Using a mobile smart phone.
    You have to install the Pexip App beforehand:
@@ -33,7 +35,7 @@ In order to join the meeting you can select one of the alternatives:
 
    Please Enter:
 
-   97980506@conf.dfn.de
+   97986537@conf.dfn.de
 
 Please wait for your host to join the meeting room.
 
