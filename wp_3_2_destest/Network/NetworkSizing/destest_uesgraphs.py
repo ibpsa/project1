@@ -6,8 +6,11 @@ from shapely.geometry import Point
 import pandas as pd
 import os
 
-from uesmodels.uesmodel import UESModel
-import uesmodels as um
+# from uesmodels.uesmodel import UESModel
+# import uesmodels as um
+
+from uesgraphs.uesmodels.utilities import utilities as utils
+from uesgraphs.systemmodels import utilities as sysmod_utils
 
 
 def main():
@@ -19,13 +22,29 @@ def main():
     """
 
     # Read node and pipe data
-    node_data = pd.read_csv(
-        'https://raw.githubusercontent.com/ibpsa/project1/WP3/'
-        'wp_3_2_destest/Network/NetworkSizing/Node%20data.csv', sep=',')
+    # node_data = pd.read_csv(
+    #     'https://raw.githubusercontent.com/ibpsa/project1/WP3/'
+    #     'wp_3_2_destest/Network/NetworkSizing/Node%20data.csv', sep=',')
 
-    pipe_data = pd.read_csv(
-        'https://raw.githubusercontent.com/ibpsa/project1/WP3/'
-        'wp_3_2_destest/Network/NetworkSizing/Pipe%20data.csv', sep=',')
+    # pipe_data = pd.read_csv(
+    #     'https://raw.githubusercontent.com/ibpsa/project1/WP3/'
+    #     'wp_3_2_destest/Network/NetworkSizing/Pipe%20data.csv', sep=',')
+
+    # 8 Buildings
+    node_data = pd.read_csv('Node_data_8_buildings.csv', sep=',')
+    pipe_data = pd.read_csv('Pipe_data_8_buildings.csv', sep=',')
+
+    # 16 Buildings
+    # node_data = pd.read_csv(
+    #     'https://raw.githubusercontent.com/ibpsa/project1/WP3/'
+    #     'wp_3_2_destest/Network/NetworkSizing/Node%20data.csv', sep=',')
+    # pipe_data = pd.read_csv(
+    #     'https://raw.githubusercontent.com/ibpsa/project1/WP3/'
+    #     'wp_3_2_destest/Network/NetworkSizing/Pipe%20data.csv', sep=',')
+
+    # 32 Buildings
+    # node_data = pd.read_csv('Node_data_32_buildings.csv', sep=',')
+    # pipe_data = pd.read_csv('Pipe_data_32_buildings.csv', sep=',')
 
     node_data = node_data.set_index('Node')
 
@@ -55,16 +74,45 @@ def main():
                     values['X-Position [m]'], values['Y-Position [m]']),
                 is_supply_heating=False)
 
-    # Help dictionary for drawing the connections / edges
+    # Help dictionary for drawing the connections / edges 8 buildings
     connection_dict_heating_nodes = {
-        "a": ["b", "SimpleDistrict_2", "SimpleDistrict_3"],
-        "b": ["c", "SimpleDistrict_5", "SimpleDistrict_6"],
         "c": ["d", "SimpleDistrict_10", "SimpleDistrict_11"],
-        "e": ["f", "SimpleDistrict_1", "SimpleDistrict_4"],
-        "f": ["g", "SimpleDistrict_8", "SimpleDistrict_7"],
         "g": ["h", "SimpleDistrict_9", "SimpleDistrict_12"],
         "d": ["Destest_Supply", "SimpleDistrict_16", "SimpleDistrict_15"],
-        "h": ["Destest_Supply", "SimpleDistrict_14", "SimpleDistrict_13"]}
+        "h": ["Destest_Supply", "SimpleDistrict_14", "SimpleDistrict_13"],
+    }
+
+    # Help dictionary for drawing the connections / edges 16 buildings
+    # connection_dict_heating_nodes = {
+    #     "a": ["b", "SimpleDistrict_2", "SimpleDistrict_3"],
+    #     "b": ["c", "SimpleDistrict_5", "SimpleDistrict_6"],
+    #     "c": ["d", "SimpleDistrict_10", "SimpleDistrict_11"],
+    #     "g": ["h", "SimpleDistrict_9", "SimpleDistrict_12"],
+    #     "d": ["Destest_Supply", "SimpleDistrict_16", "SimpleDistrict_15"],
+    #     "e": ["f", "SimpleDistrict_1", "SimpleDistrict_4"],
+    #     "f": ["g", "SimpleDistrict_8", "SimpleDistrict_7"],
+    #     "h": ["Destest_Supply", "SimpleDistrict_14", "SimpleDistrict_13"],
+    # }
+
+    # Help dictionary for drawing the connections / edges 32 buildings
+    # connection_dict_heating_nodes = {
+    #     "a": ["b", "SimpleDistrict_2", "SimpleDistrict_3"],
+    #     "b": ["c", "SimpleDistrict_5", "SimpleDistrict_6"],
+    #     "c": ["d", "SimpleDistrict_10", "SimpleDistrict_11"],
+    #     "g": ["h", "SimpleDistrict_9", "SimpleDistrict_12"],
+    #     "d": ["Destest_Supply", "SimpleDistrict_16", "SimpleDistrict_15"],
+    #     "e": ["f", "SimpleDistrict_1", "SimpleDistrict_4"],
+    #     "f": ["g", "SimpleDistrict_8", "SimpleDistrict_7"],
+    #     "h": ["Destest_Supply", "SimpleDistrict_14", "SimpleDistrict_13"],
+    #     "j": ["k", "SimpleDistrict_18", "SimpleDistrict_19"],
+    #     "k": ["l", "SimpleDistrict_21", "SimpleDistrict_22"],
+    #     "l": ["m", "SimpleDistrict_26", "SimpleDistrict_27"],
+    #     "m": ["a", "SimpleDistrict_31", "SimpleDistrict_32"],
+    #     "n": ["o", "SimpleDistrict_17", "SimpleDistrict_20"],
+    #     "o": ["p", "SimpleDistrict_24", "SimpleDistrict_23"],
+    #     "p": ["q", "SimpleDistrict_25", "SimpleDistrict_28"],
+    #     "q": ["e", "SimpleDistrict_30", "SimpleDistrict_29"],
+    # }
 
     # Adding the edges
     for key, values in connection_dict_heating_nodes.items():
@@ -95,7 +143,7 @@ def main():
     # Plotting / Visualization with pipe diameters scaling
     vis = ug.Visuals(simple_district)
     vis.show_network(
-        save_as="uesgraph_destest.pdf",
+        save_as="uesgraph_destest_8.png",
         show_diameters=True,
         scaling_factor=15,
         labels="name",
@@ -122,15 +170,31 @@ def main():
 
     demand_data.columns = demand_data.columns.str.replace(' / W', '')
 
+    # currently every building gets the same load, therefore we shorten this to
+    # load one heatload (SimpleDistrict_1) and assign it to all buildings
+    # old code is commented
+
+    # for bldg in simple_district.nodelist_building:
+    #     if not simple_district.nodes[bldg]['is_supply_heating']:
+    #         demand = demand_data[
+    #             simple_district.nodes[bldg]['name']].values.tolist()
+    #         demand = demand_data[
+    #             simple_district.nodes[bldg]['name']].values
+    #         demand = [round(x, 1) for x in demand]
+    #         # demand = [x if x else 83.6 for x in demand]
+    #         simple_district.nodes[bldg]['input_heat'] = demand
+    #         simple_district.nodes[bldg]['max_demand_heating'] = max(demand)
+    #     else:
+    #         simple_district.nodes[bldg]['T_supply'] = [273.15 + 50]
+    #         simple_district.nodes[bldg]['p_supply'] = [3.4e5]
+
+    demand = demand_data["SimpleDistrict_1"].values
+    demand = [round(x, 1) for x in demand]
+
     for bldg in simple_district.nodelist_building:
         if not simple_district.nodes[bldg]['is_supply_heating']:
-            demand = demand_data[
-                simple_district.nodes[bldg]['name']].values.tolist()
-            demand = demand_data[
-                simple_district.nodes[bldg]['name']].values
-            demand = [round(x, 1) for x in demand]
-            # demand = [x if x else 83.6 for x in demand]
             simple_district.nodes[bldg]['input_heat'] = demand
+            simple_district.nodes[bldg]['max_demand_heating'] = max(demand)
         else:
             simple_district.nodes[bldg]['T_supply'] = [273.15 + 50]
             simple_district.nodes[bldg]['p_supply'] = [3.4e5]
@@ -157,13 +221,25 @@ def main():
         simple_district.edges[edge[0], edge[1]]['fac'] = 1.0
         simple_district.edges[edge[0], edge[1]]['roughness'] = 2.5e-5   # Ref
 
+    print("####")
+
+    # simple_district = utils.size_hydronic_network(
+    #     graph=simple_district,
+    #     network_type="heating",
+    #     delta_t_heating=5,
+    #     dp_set=100.0,
+    #     loop=False)
+
+    # for edge in simple_district.edges:
+    #     print(simple_district.edges[edge[0], edge[1]]["diameter"])
+
     # special m_flow estimation
-    simple_district = um.utilities.estimate_m_flow_nominal_tablebased(
+    simple_district = sysmod_utils.estimate_m_flow_nominal_tablebased(
         simple_district,
         network_type='heating')
 
     # peak power m_flow estimation
-    simple_district = um.utilities.estimate_m_flow_nominal(
+    simple_district = sysmod_utils.estimate_m_flow_nominal(
         simple_district,
         dT_design=20,
         network_type='heating')
@@ -171,6 +247,40 @@ def main():
     dir_model = os.path.join(os.path.dirname(__file__), 'model')
     if not os.path.exists(dir_model):
         os.mkdir(dir_model)
+
+    for edge in simple_district.edges:
+        print(simple_district.edges[edge[0], edge[1]]["diameter"])
+
+    for edge in simple_district.edges:
+        simple_district.edges[edge[0], edge[1]]["diameter"] = 0
+
+    # for bldg_node in simple_district.nodelist_building:
+    #     if not simple_district.nodes[bldg_node]["is_supply_heating"]:
+    #         simple_district.nodes[bldg_node]["max_demand_heating"] = max(
+    #             simple_district.nodes[bldg_node]["input_heat"])
+
+    print("####")
+
+    simple_district = utils.size_hydronic_network(
+        graph=simple_district,
+        network_type="heating",
+        delta_t_heating=20,
+        dp_set=100.0,
+        loop=False)
+
+    # Plotting / Visualization with pipe diameters scaling
+    vis = ug.Visuals(simple_district)
+    vis.show_network(
+        save_as="uesgraph_destest_8_selfsized.png",
+        show_diameters=True,
+        scaling_factor=15,
+        labels="name",
+        label_size=10,
+        scaling_factor_diameter=100
+    )
+
+    for edge in simple_district.edges:
+        print(simple_district.edges[edge[0], edge[1]]["diameter"])
 
     new_model = UESModel(network_type=simple_district.graph['network_type'])
     new_model.stop_time = end_time

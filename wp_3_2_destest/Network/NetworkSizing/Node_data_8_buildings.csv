@@ -1,0 +1,14 @@
+Node,X-Position [m],Y-Position [m],Peak power [kW]
+i,44,-12,309.5564688
+SimpleDistrict_16,8,0,19.3472793
+d,20,0,154.7782344
+SimpleDistrict_15,32,0,19.3472793
+SimpleDistrict_14,56,0,19.3472793
+h,68,0,154.7782344
+SimpleDistrict_13,80,0,19.3472793
+SimpleDistrict_10,8,24,19.3472793
+c,20,24,116.0836758
+SimpleDistrict_11,32,24,19.3472793
+SimpleDistrict_9,56,24,19.3472793
+g,68,24,116.0836758
+SimpleDistrict_12,80,24,19.3472793
