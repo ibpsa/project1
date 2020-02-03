@@ -61,6 +61,9 @@ Visit
 <span class="title">Quantifying Uncertainty Propagation For The District Energy Demand Using Realistic Variations On Input Data</span>.<br><span class="author">I. De Jaeger, G. Reynders, D. Saelens</span>.<br><i>Proceedings of Building Simulation 2019: 16th Conference of IBPSA</i>, Vol. 16, <span class="month">September</span>, <span class="year">2019</span>.<br>
 </li>
 <li>
+<span class="title">Stripping off the implementation complexity of physics-based model predictive control for buildings via deep learning</span>.<br><span class="author">J&aacute;n Drgona, Lieve Helsen, Draguna Vrabie</span>.<br><i>2019 Conference on Neural Information Processing Systems</i>, <span class="month">December</span>, <span class="year">2019</span>.<br>[ <a href="https://www.climatechange.ai/NeurIPS2019_workshop.html">link</a> ]
+</li>
+<li>
 <span class="title">Modeling and Simulation of a Heating Mini-Grid for a Block of Buildings</span>.<br><span class="author">K. Filonenko, K. Arendt, M. Jradi, S. Andersen, C. Veje</span>.<br><i>Proceedings of Building Simulation 2019: 16th Conference of IBPSA</i>, Vol. 16, <span class="month">September</span>, <span class="year">2019</span>.<br>[ <a href="./pubs/pdf/FilonenkoArendtEtAl_2019_1.pdf">pdf</a> ]
 </li>
 <li>
