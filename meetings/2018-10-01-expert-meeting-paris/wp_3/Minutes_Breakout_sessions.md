@@ -2,28 +2,30 @@
 
 Paris, October 1-2, 2018
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+## Contents
+<!-- TOC depthFrom:2 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [IBPSA Project 1 Paris Expert Meeting](#ibpsa-project-1-paris-expert-meeting)
-	- [Breakout session 1-1](#breakout-session-1-1)
-		- [Presentation Krzysztof](#presentation-krzysztof)
-		- [Presentation Ina](#presentation-ina)
-	- [Breakout session 1-2](#breakout-session-1-2)
-		- [Presentation Bram](#presentation-bram)
-		- [Discussion on results building modelling group](#discussion-on-results-building-modelling-group)
-	- [Breakout session 2-1](#breakout-session-2-1)
-		- [Discussion building models](#discussion-building-models)
-		- [Discussion thermal network model](#discussion-thermal-network-model)
-		- [Discussion on possible interactions and further steps](#discussion-on-possible-interactions-and-further-steps)
-	- [Breakout session 2-2](#breakout-session-2-2)
-		- [Presentation Enora](#presentation-enora)
-		- [Presentation Julie](#presentation-julie)
-		- [Presentation Igor](#presentation-igor)
-	- [Breakout session 2-3](#breakout-session-2-3)
-		- [WP 1.1](#wp-11)
-		- [WP 1.2](#wp-12)
-		- [WP 2.2](#wp-22)
-	- [Breakout session 2-4](#breakout-session-2-4)
+- [Contents](#contents)
+- [Breakout session 1-1](#breakout-session-1-1)
+	- [Presentation Krzysztof](#presentation-krzysztof)
+	- [Presentation Ina](#presentation-ina)
+- [Breakout session 1-2](#breakout-session-1-2)
+	- [Presentation Bram](#presentation-bram)
+	- [Organisation of the break-out sessions of day 2](#organisation-of-the-break-out-sessions-of-day-2)
+- [Breakout session 2-1](#breakout-session-2-1)
+	- [Discussion building models](#discussion-building-models)
+	- [Discussion thermal network model](#discussion-thermal-network-model)
+- [Breakout session 2-2](#breakout-session-2-2)
+	- [Presentation Enora](#presentation-enora)
+	- [Presentation Julie](#presentation-julie)
+	- [Presentation Igor](#presentation-igor)
+	- [Small brain storm session](#small-brain-storm-session)
+- [Breakout session 2-3](#breakout-session-2-3)
+	- [WP 1.1](#wp-11)
+	- [WP 1.2](#wp-12)
+	- [WP 2.2](#wp-22)
+- [Breakout session 2-4](#breakout-session-2-4)
+- [Action points](#action-points)
 
 <!-- /TOC -->
 
@@ -69,7 +71,7 @@ Paris, October 1-2, 2018
 - Discussion on generation of "typical" comfort set-points for archetype simulation, including simpler method to reduce computation time (10x speed-up)
 
 ### Organisation of the break-out sessions of day 2
-- Brain storm session > framework of a DESTEST (+ reality check! > what are we going to work on?)
+- Brain storm session > framework of a DESTEST (+ reality check! > what are we going to work on specifically?)
 
 ## Breakout session 2-1
 
@@ -82,8 +84,9 @@ Paris, October 1-2, 2018
   - Enora: Dimosim
   - Julie: Buildings (reduced-order)
   - Haris: BuildingsSystems
-  - Send results to Ina by 31st of October:
-    - Indoor temperature profile (day zone + night zone) [K]
+  - **Send results to Ina by 31st of October: in 1 csv-file **
+    - Indoor temperature profile day zone [K]
+    - Indoor temperature profile night zone [K]
     - Total heat demand for space heating [W]
     - 600 s timestep
 
@@ -99,7 +102,7 @@ Paris, October 1-2, 2018
   - Felix: IBPSA library - finished
   - Bram: IBPSA library - finished (although it is exactly the same as Felix's code except for the automatic parameter loading)
   - Enora: Dimosim
-  - Julie: Modelica IBPSA library
+  - Julie: IBPSA library
   - Alessandro: Buildings library
   - Konstantin: get junction model working
 - Detailed information regarding common exercise can be found  [here](../../../wp_3_2_destest/Specifications/NetworkCommonExercise1.md)

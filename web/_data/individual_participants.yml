@@ -177,3 +177,87 @@
   contact_email: kachalovsky@gmail.com
   affiliation:   Czech Technical University in Prague
   country:       Czech Republic
+
+- date_joined:   10/12/2018
+  contact_name:  Rémi Paturea
+  contact_email: remi.patureau@mines-paritech.fr
+  affiliation:   ENGIE Lab
+  country:       France
+
+- date_joined:   10/17/2018
+  contact_name:  Wei Tian
+  contact_email: wei.tian@schneider-electric.com
+  affiliation:   Schneider Electric
+  country:       USA
+
+- date_joined:   2/6/2019
+  contact_name:  Julian Bischof
+  contact_email: julian.bischof@gmail.com
+  affiliation:   Institut Wohnen und Umwelt (IWU)
+  country:       Germany
+
+- date_joined:   3/13/2019
+  contact_name:  Carlos Andrade
+  contact_email: carlos.andrade@3e.eu
+  affiliation:   3E
+  country:       Belgium
+
+- date_joined:   3/18/2019
+  contact_name:  Johan Simonsson
+  contact_email: johan.simonsson@ltu.se
+  affiliation:   Lulea University of Technology
+  country:       Sweden
+
+- date_joined:   6/1/2019
+  contact_name:  Ettore Zanetti
+  contact_email: ettore.polimi@polimi.it
+  affiliation:   Politecnico di Milano
+  country:       Italy
+
+- date_joined:   9/18/2019
+  contact_name:  Jessica Stershic
+  contact_email: jessica.stershic@colorado.edu
+  affiliation:   University of Colorado Boulder, SBS Lab
+  country:       USA
+
+- date_joined:   9/29/2019
+  contact_name:  Laura Zabala
+  contact_email: laura.zabala@tekniker.es
+  affiliation:   Tekniker
+  country:       Spain
+
+- date_joined:   11/19/2019
+  contact_name:  Piljae Im
+  contact_email: imp1@ornl.gov
+  affiliation:   Oakridge National Laboratory
+  country:       USA
+
+- date_joined:   11/19/2019
+  contact_name:  Qi Li
+  contact_email: qi.li@anl.gov
+  affiliation:   Argonne National Laboratory
+  country:       USA
+
+- date_joined:   11/27/2019
+  contact_name:  Yan Xing
+  contact_email: yangang.xing@ntu.ac.uk
+  affiliation:   Nottingham Trent University
+  country:       UK
+
+- date_joined:   11/29/2019
+  contact_name:  Moritz Lauster
+  contact_email: drltm@viessmann.com
+  affiliation:   Viessmann Group
+  country:       Germany
+
+- date_joined:   12/8/2019
+  contact_name:  Maria del Mar Martinez Cerro
+  contact_email: mar.m.cbim@gmail.com
+  affiliation:   University of Castilla La Mancha
+  country:       Spain
+
+- date_joined:   12/13/2019
+  contact_name:  Clemens Felsmann
+  contact_email: clemens.felsmann@tu-dresden.de
+  affiliation:   Technische Universität Dresden
+  country:       Germany

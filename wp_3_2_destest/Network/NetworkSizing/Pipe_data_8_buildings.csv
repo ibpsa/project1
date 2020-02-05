@@ -1,0 +1,13 @@
+Beginning Node,Ending Node,Length [m],Inner Diameter [m],Insulation Thickness [m],Peak Load [kW],Total pressure loss [Pa/m],U-value [W/mK]
+SimpleDistrict_13,h,12,0.032,0.045,19.3472793,,0.035
+h,i,36,0.05,0.045,77.4,,0.035
+SimpleDistrict_12,g,12,0.032,0.045,19.3472793,,0.035
+d,i,36,0.05,0.045,77.4,,0.035
+g,h,24,0.04,0.045,38.7,,0.035
+SimpleDistrict_16,d,12,0.032,0.045,19.3472793,,0.035
+SimpleDistrict_9,g,12,0.032,0.045,19.3472793,,0.035
+c,d,24,0.04,0.045,38.7,,0.035
+SimpleDistrict_15,d,12,0.032,0.045,19.3472793,,0.035
+SimpleDistrict_14,h,12,0.032,0.045,19.3472793,,0.035
+SimpleDistrict_10,c,12,0.032,0.045,19.3472793,,0.035
+SimpleDistrict_11,c,12,0.032,0.045,19.3472793,,0.035
