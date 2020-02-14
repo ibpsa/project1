@@ -28,9 +28,9 @@ Attendance at the Expert Meeting is required for Organizational Participants (se
 
 For the agenda and travel information, see https://github.com/ibpsa/project1/wiki/Meetings.
 
-The meeting is kindly sponsored by the Trottier Energy Institute (http://iet.polymtl.ca/en/), who will cover all meeting costs with the exception of the group dinner. The registration fee of 60 CAD covers the group dinner.
+The meeting is kindly sponsored by the [Trottier Energy Institute](http://iet.polymtl.ca/en/), who will cover all meeting costs with the exception of the group dinner. The registration fee of 60 CAD covers the group dinner.
 
-The Trottier Energy Institute will also fund the organization of a public seminar and cocktail. The theme of the public seminar will be the applications of simulation towards the design and operation of building and community energy systems, and both local practitioners and researchers will be invited to attend. This is an important opportunity for dissemination of the work accomplished under IBPSA Project 1. If you would like to participate as a speaker, please contact massimo.cimmino@polymtl.ca. All participants are welcomed and encouraged to join.
+The Trottier Energy Institute will also fund the organization of a public seminar and cocktail. The theme of the public seminar will be the applications of simulation towards the design and operation of building and community energy systems, and both local practitioners and researchers will be invited to attend. This is an important opportunity for dissemination of the work accomplished under IBPSA Project 1. If you would like to participate as a speaker, please contact [massimo.cimmino@polymtl.ca](massimo.cimmino@polymtl.ca). All participants are welcomed and encouraged to join.
 
 See [https://ibpsa.github.io/project1/participants.html](https://ibpsa.github.io/project1/participants.html) for membership levels and
 [https://ibpsa.github.io/project1/](https://ibpsa.github.io/project1/) for tasks and work plan.
