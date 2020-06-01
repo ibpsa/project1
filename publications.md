@@ -24,6 +24,12 @@ Visit
 <h1>Journals</h1>
 <ol reversed>
 <li>
+<span class="title">A data-driven approach to optimize urban scale energy retrofit decisions for residential buildings</span>.<br><span class="author">Usman Ali, Mohammad Haris Shamsi, Mark Bohacek, Cathal Hoare, Karl Purcell, Eleni Mangina, James O'Donnell</span>.<br><i>Applied Energy</i>, Vol. 267, p. 114861, <span class="year">2020</span>.<br>[ <a href="http://www.sciencedirect.com/science/article/pii/S0306261920303731">link</a> ]
+</li>
+<li>
+<span class="title">Identification of multi-zone grey-box building models for use in model predictive control</span>.<br><span class="author">Javier Arroyo, Fred Spiessens, Lieve Helsen</span>.<br><i>Journal of Building Performance Simulation</i>, Vol. 13, p. 472-486, <span class="month">May</span>, <span class="year">2020</span>.<br>[ <a href="https://doi.org/10.1080/19401493.2020.1770861">link</a> ]
+</li>
+<li>
 <span class="title">Practical Factors of Envelope Model Setup and Their Effects on the Performance of Model Predictive Control for Building Heating, Ventilating, and Air Conditioning Systems </span>.<br><span class="author">D.H. Blum, K. Arendt, L. Rivalin, M.A. Piette, M. Wetter, C.T. Veje</span>.<br><i>Applied Energy </i>, Vol. 236, p. 410 - 425, <span class="year">2019</span>.<br>[ <a href="http://www.sciencedirect.com/science/article/pii/S0306261918318099">link</a> ]
 </li>
 <li>
@@ -40,6 +46,9 @@ Visit
 </li>
 <li>
 <span class="title">An Open Source Modeling Framework for Interdependent Energy-Transportation-Communication Infrastructure in Smart and Connected Communities</span>.<br><span class="author">Xing Lu, Kathryn Hinkelman, Yangyang Fu, Jing Wang, Wangda Zuo, Qianqian Zhang, Walid Saad</span>.<br><i>IEEE Access</i>, Vol. 7, p. 55458 - 55476, <span class="year">2019</span>.<br>[ <a href="./pubs/pdf/LuHinkelmanEtAl_2019_1.pdf">pdf</a> | <a href="https://ieeexplore.ieee.org/document/8700176">link</a> ]
+</li>
+<li>
+<span class="title">The reservoir network: A new network topology for district heating and cooling</span>.<br><span class="author">Tobias Sommer, Matthias Sulzer, Michael Wetter, Artem Sotnikov, Stefan Mennel, Christoph Stettler</span>.<br><i>Energy</i>, Vol. 199, p. 117418, <span class="year">2020</span>.<br>[ <a href="https://www.sciencedirect.com/science/article/abs/pii/S0360544220305259">link</a> ]
 </li>
 <li>
 <span class="title">An optimization platform based on coupled indoor environment and HVAC simulation and its application in optimal thermostat placement</span>.<br><span class="author">Wei Tian, Xu Han, Wangda Zuo, Qiujian Wang, Yangyang Fu, Mingang Jin</span>.<br><i>Energy and Buildings</i>, Vol. 199, p. 342 - 351, <span class="year">2019</span>.<br>[ <a href="./pubs/pdf/TianHanEtAl_2019_1.pdf">pdf</a> | <a href="http://www.sciencedirect.com/science/article/pii/S037877881931206X">link</a> ]
