@@ -189,7 +189,7 @@ def to_html(entry):
     if 'url' in entry:
         _url = entry['url']
     elif 'doi' in entry:
-        _url = 'http://dx.doi.org/{}'.format(self.doi)
+        _url = 'http://dx.doi.org/{}'.format(entry['doi'])
     else:
         _url = ''
     if 'pdf' in entry and _url:
