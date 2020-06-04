@@ -219,3 +219,75 @@
   contact_email: jessica.stershic@colorado.edu
   affiliation:   University of Colorado Boulder, SBS Lab
   country:       USA
+
+- date_joined:   9/29/2019
+  contact_name:  Laura Zabala
+  contact_email: laura.zabala@tekniker.es
+  affiliation:   Tekniker
+  country:       Spain
+
+- date_joined:   11/19/2019
+  contact_name:  Piljae Im
+  contact_email: imp1@ornl.gov
+  affiliation:   Oakridge National Laboratory
+  country:       USA
+
+- date_joined:   11/19/2019
+  contact_name:  Qi Li
+  contact_email: qi.li@anl.gov
+  affiliation:   Argonne National Laboratory
+  country:       USA
+
+- date_joined:   11/27/2019
+  contact_name:  Yan Xing
+  contact_email: yangang.xing@ntu.ac.uk
+  affiliation:   Nottingham Trent University
+  country:       UK
+
+- date_joined:   11/29/2019
+  contact_name:  Moritz Lauster
+  contact_email: drltm@viessmann.com
+  affiliation:   Viessmann Group
+  country:       Germany
+
+- date_joined:   12/8/2019
+  contact_name:  Maria del Mar Martinez Cerro
+  contact_email: mar.m.cbim@gmail.com
+  affiliation:   University of Castilla La Mancha
+  country:       Spain
+
+- date_joined:   12/13/2019
+  contact_name:  Clemens Felsmann
+  contact_email: clemens.felsmann@tu-dresden.de
+  affiliation:   Technische Universität Dresden
+  country:       Germany
+
+- date_joined:   1/14/2020
+  contact_name:  Jing Wang
+  contact_email: jing.wang@colorado.edu
+  affiliation:   University of Colorado Boulder
+  country:       USA
+
+- date_joined:   1/29/2020
+  contact_name:  Juan Gomez-Romero
+  contact_email: jgomez@decsai.ugr.es
+  affiliation:   Universidad de Granada
+  country:       Spain
+
+- date_joined:   1/30/2020
+  contact_name:  Miguel Molina-Solana
+  contact_email: miguelmolina@ugr.es
+  affiliation:   Universidad de Granada
+  country:       Spain
+
+- date_joined:   2/4/2020
+  contact_name:  Kathryn Hinkelman
+  contact_email: kathryn.hinkelman@colorado.edu
+  affiliation:   University of Colorado Boulder
+  country:       USA
+
+- date_joined:   5/11/2020
+  contact_name:  Mohamed Elagiry
+  contact_email: elagiry.it@gmail.com
+  affiliation:   Politecnico Di Milano - R2M Solution
+  country:       Italy
