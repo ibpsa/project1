@@ -24,6 +24,9 @@ Visit
 <h1>Journals</h1>
 <ol reversed>
 <li>
+<span class="title">The reservoir network: A new network topology for district heating and cooling</span>.<br><span class="author">Tobias Sommer, Matthias Sulzer, Michael Wetter, Artem Sotnikov, Stefan Mennel, Christoph Stettler</span>.<br><i>Energy</i>, Vol. 199, <span class="year">2020</span>.<br>[ <a href="http://dx.doi.org/10.1016/j.energy.2020.117418">link</a> ]
+</li>
+<li>
 <span class="title">A data-driven approach to optimize urban scale energy retrofit decisions for residential buildings</span>.<br><span class="author">Usman Ali, Mohammad Haris Shamsi, Mark Bohacek, Cathal Hoare, Karl Purcell, Eleni Mangina, James O'Donnell</span>.<br><i>Applied Energy</i>, Vol. 267, p. 114861, <span class="year">2020</span>.<br>[ <a href="http://www.sciencedirect.com/science/article/pii/S0306261920303731">link</a> ]
 </li>
 <li>
