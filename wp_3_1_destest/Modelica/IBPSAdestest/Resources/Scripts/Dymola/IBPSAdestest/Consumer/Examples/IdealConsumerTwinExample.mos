@@ -1,0 +1,4 @@
+﻿simulateModel("IBPSAdestest.Consumer.Examples.IdealConsumerTwinExample", stopTime=864000, numberOfIntervals=0, outputInterval=6, method="dassl", resultFile="IdealConsumerTwinExample");
+createPlot(id=1, position={15, 10, 999, 812}, y={"senTem.T", "con.hea.vol.T", "sou.T"}, range={0.0, 15000.0, 15.0, 55.0}, grid=true, filename="IdealConsumerTwinExample.mat", colors={{28,108,200}, {0,140,72}, {238,46,47}}, timeUnit="min", displayUnits={"degC", "degC", "degC"});
+createPlot(id=1, position={15, 10, 999, 267}, y={"con.pum.m_flow"}, range={0.0, 15000.0, -0.1, 0.30000000000000004}, grid=true, subPlot=2, colors={{28,108,200}}, timeUnit="min");
+createPlot(id=2, position={1032, 10, 927, 812}, y={"heaExtr.y", "heaDem.y[1]"}, range={0.0, 15000.0, -2000.0, 20000.0}, grid=true, filename="IdealConsumerTwinExample.mat", colors={{28,108,200}, {238,46,47}}, timeUnit="min");
