@@ -18,7 +18,7 @@ permalink: /applications
     margin: auto;
   }
   </style>
-  <link rel="stylesheet" href="http://localhost:4000/assets/css/flexbox.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/flexbox.css">
 </head>
 <body>
 
@@ -37,7 +37,7 @@ permalink: /applications
         <h4>by University of Colorado at Boulder (USA)</h4>
    </div>
    <div class="button">
-   <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="/cases/2020/08/10/case7_CUB.html"> Read more</a>
+   <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="{{ site.baseurl }}/cases/2020/08/10/case7_CUB.html"> Read more</a>
    </div>
   </div>
 
@@ -53,7 +53,7 @@ permalink: /applications
             <h4>by RWTH Aachen University (Germany)</h4>
           </div>
           <div class="button">
-             <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="/cases/2020/08/10/case9_ACH.html"> Read more</a>
+             <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="{{ site.baseurl }}/cases/2020/08/10/case9_ACH.html"> Read more</a>
           </div>
       </div>
 
@@ -61,14 +61,16 @@ permalink: /applications
         <div class="gallery-img">
           <img src="{{ site.url }}/assets/img/img_cs10a.png" alt="pic1">
         </div>
+
         <div class="title">
           <h3>5G district heating and cooling system in Køge Nord</h3>
           <h4>by Aalborg University (Denmark)</h4>
           </div>
+
           <div class="button">
-            <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="/cases/2020/08/10/case10_AAU.html"> Read more</a>
+            <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="{{ site.baseurl }}/cases/2020/08/10/case10_AAU.html"> Read more</a>
             </div>
-          </div>
+  </div>
 
           <div class="box">
            <div class="gallery-img">
@@ -79,7 +81,7 @@ permalink: /applications
                  <h4>by University of Colorado at Boulder (USA)</h4>
             </div>
             <div class="button">
-            <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="/cases/2020/08/10/case5_CUB.html"> Read more</a>
+            <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="{{ site.baseurl }}/cases/2020/08/10/case5_CUB.html"> Read more</a>
             </div>
            </div>
 
@@ -93,7 +95,7 @@ permalink: /applications
                  <h4>by University of Colorado at Boulder (USA)</h4>
             </div>
             <div class="button">
-            <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="/cases/2020/08/10/case6_CUB.html"> Read more</a>
+            <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="{{ site.baseurl }}/cases/2020/08/10/case6_CUB.html"> Read more</a>
             </div>
            </div>
 
@@ -107,7 +109,7 @@ permalink: /applications
                    <h4>by KU Leuven (Belgium)</h4>
               </div>
               <div class="button">
-              <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="/cases/2020/08/10/case1_KUL.html"> Read more</a>
+              <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="{{ site.baseurl }}/cases/2020/08/10/case1_KUL.html"> Read more</a>
               </div>
              </div>
 
@@ -120,7 +122,7 @@ permalink: /applications
                    <h4>by Southern University of Denmark (Denmark)</h4>
               </div>
               <div class="button">
-              <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="/cases/2020/08/10/case4_SDU.html"> Read more</a>
+              <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="{{ site.baseurl }}/cases/2020/08/10/case4_SDU.html"> Read more</a>
               </div>
              </div>
 
@@ -133,7 +135,7 @@ permalink: /applications
                      <h4>by University of Colorado at Boulder (USA)</h4>
                 </div>
                 <div class="button">
-                <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="/cases/2020/08/10/case8_CUB.html"> Read more</a>
+                <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="{{ site.baseurl }}/cases/2020/08/10/case8_CUB.html"> Read more</a>
                 </div>
                </div>
 
@@ -150,7 +152,7 @@ permalink: /applications
         <h4>by Southern University of Denmark (Denmark)</h4>
    </div>
    <div class="button">
-   <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="/cases/2020/08/10/case2_SDU.html"> Read more</a>
+   <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="{{ site.baseurl }}/cases/2020/08/10/case2_SDU.html"> Read more</a>
    </div>
   </div>
 
@@ -164,7 +166,7 @@ permalink: /applications
         <h4>by Southern University of Denmark (Denmark)</h4>
    </div>
    <div class="button">
-  <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="/cases/2020/08/10/case3_SDU.html"> Read more</a>
+  <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="{{ site.baseurl }}/cases/2020/08/10/case3_SDU.html"> Read more</a>
    </div>
   </div>
 
