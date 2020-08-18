@@ -19,7 +19,7 @@ For coordination meeting schedule, visit
 <table>
   {% for post in site.posts %}
   {% if post.date >= site.time %}
-  {% if post.categories contains 'presentation' or 'meeting' %}
+  {% if post.categories contains 'meeting' or post.categories contains 'presentation' %}
   <tr valign="top">
   <td width="150pt">
   <p>{{ post.date | date: '%B %d, %Y' }}</p>
@@ -51,7 +51,7 @@ For coordination meeting schedule, visit
 <table>
   {% for post in site.posts %}
   {% if post.date < site.time %}
-    {% if post.categories contains 'presentation' or 'meeting' %}
+    {% if post.categories contains 'meeting' or post.categories contains 'presentation' %}
     <tr valign="top">
     <td width="150pt">
     <p>{{ post.date | date: '%B %d, %Y' }}</p>
