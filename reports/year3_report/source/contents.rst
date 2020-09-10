@@ -70,6 +70,9 @@ D. Blum, F. Jorissen, S. Huang, Y. Chen, J. Arroyo, K. Benne, Y. Li, V. Gavan, L
 framework for simulation-based testing of advanced control strategies in buildings. In Proc. of the 16th International Conference of IBPSA, Sep 2 – 4. Rome, Italy. Available
 from http://www.ibpsa.org/building-simulation-2019
 
+Ján Drgona, Lieve Helsen, Draguna Vrabie. (2019). Stripping off the implementation complexity of physics-based model predictive control for buildings via deep learning. 
+Conference on Neural Information Processing Systems, December, 2019.
+
 D.H. Blum, K. Arendt, L. Rivalin, M.A. Piette, M. Wetter, C.T. Veje. (2019). Practical Factors of Envelope Model Setup and Their Effects on the Performance of Model Predictive
 Control for Building Heating, Ventilating, and Air Conditioning Systems. Applied Energy , Vol. 236, p. 410 - 425.
 
