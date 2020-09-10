@@ -110,7 +110,27 @@ After having identified that our target scale is the urban district (for us mean
 WP 2.2: Building Information Modeling
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the first phase of WP2.2, groundwork was set up for the collaborative development and testing of different classes of geometric algorithms for transforming building information models to building performance simulation. Various libraries were considered for reading IFC data and for processing geometric information such as IfcOpenShell, IfcPlusPlus, xBIM (IFC), OpenCascade, ParaSolid and the ACIS geometry kernel. Test runs with the IfcOpenShell library were successful for importing IFC files and extracting geometrical and semantical information from the IFC schema. The information then was used to export the building’s geometry to CAD files in the format STEP and STL using the OpenCascade library. The libraries were chosen because of their up-to-dateness, quality of documentation and support, dissemination in the building sector as well as extent, capability and suitability of the provided functions. Both libraries are distributed under a GNU Lesser General Public License. In the next working meeting, the final decision will be made which libraries to choose as basis for further developing and testing of various geometric algorithms for model transformation.
+The current work in Task 2.2 was focusing on transforming building information models towards building performance simulation. Furthermore, a common toolchain is developed for simulations in the Modelica based TEASER library and in EnergyPlus.
+
+Starting with the import of the IFC file to Python using IfcOpenShell, generic python instances of the IFC entities are created to warrant scheme- and tool-independency. The data provided by the IFC file is analyzed. Using enrichment methods based on a multistage hierarchical decision system, non-existing values are added to the python instances. The multistage hierarchical decision system comprises five steps:
+
+1.	Search for default property sets or association sets (Export Tool dependent)
+
+2.	Use predefined functions to calculate required values from existing values
+
+3.	Use statistical data enrichment by predefined templates (JSON format)
+
+4.	Ask for user input (combined user query at the end of runtime if possible)
+
+5.	Use default values (if useful)
+
+Thermal zones are generated based on IfcSpaces and linked to the corresponding building elements and space boundaries. 
+
+Based on the enriched data, simulation tool-specific preprocessing is executed. The building elements are mapped to the corresponding parameters of the simulation tools. 
+
+For building performance simulations in TEASER, a multiroom Modelica model is generated with TEASER mako templates. For the simulation in EnergyPlus, the geometry of each IfcRelSpaceBoundary is generated using OpenCascade and exported to EnergyPlus using the geomeppy library (MIT License). If no space boundaries are provided in the IFC data, a space boundary generation algorithm is applied.
+
+
 
 Task 3: Application and Dissemination
 -------------------------------------
