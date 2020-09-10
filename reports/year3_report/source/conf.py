@@ -24,8 +24,10 @@ sys.path.append(os.path.abspath('.'))
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 #extensions = ['sphinx.ext.autodoc', 'sphinx.ext.pngmath']
-extensions = ['sphinx.ext.autodoc', 'mathjax', \
-              'sphinxcontrib.bibtex', 'sphinx.ext.todo']
+extensions = ['sphinxcontrib.bibtex', \
+              'sphinx.ext.autodoc', \
+              'sphinx.ext.mathjax', \
+              'sphinxcontrib.plantuml', 'sphinx.ext.todo']
 
 # mathjax_path is based on http://www.mathjax.org/docs/2.0/start.html
 mathjax_path = "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
@@ -182,10 +184,9 @@ latex_documents = [
 ]
 
 
-##latex_elements = {'fontpkg': '\\usepackage[scaled]{helvet}',
-##                  'fontpkg': '\\renewcommand*\\familydefault{\\sfdefault}'}
-latex_elements = {'classoptions': ', openany',         # remove blank pages in PDF.
-                   'releasename': 'Release',
+##latex_elements = {'fontpkg': '\usepackage[scaled]{helvet}',
+##                  'fontpkg': '\renewcommand*\familydefault{\sfdefault}'}
+latex_elements = {'releasename': 'Release',
                   'babel': '\\usepackage[english]{babel}',
                   'pointsize': '11pt'}
 
@@ -198,68 +199,68 @@ latex_logo = '_static/IBPSA-logo-text.png'
 latex_use_parts = False
 
 # Additional stuff for the LaTeX preamble.
-latex_elements['preamble'] = '''
+latex_elements['preamble'] = r'''
 % Format of chapter fonts
-\\makeatletter
-\\ChNameVar{\\raggedleft\\sf\\bfseries\\Large} % sets the style for name
-\\ChNumVar{\\raggedleft\\sf\\bfseries\\Large} % sets the style for name
-\\ChTitleVar{\\raggedleft\\sf\\bfseries\\Large} % sets the style for name
-\\makeatother
+\makeatletter
+\ChNameVar{\raggedleft\sf\bfseries\Large} % sets the style for name
+\ChNumVar{\raggedleft\sf\bfseries\Large} % sets the style for name
+\ChTitleVar{\raggedleft\sf\bfseries\Large} % sets the style for name
+\makeatother
 
 
-\\usepackage[scaled]{helvet}
-\\usepackage[T1]{fontenc}
-\\titleformat*{\\section}{\\Large\\sffamily}
-\\titleformat*{\\subsection}{\\large\\sffamily}
+\usepackage[scaled]{helvet}
+\usepackage[T1]{fontenc}
+\titleformat*{\section}{\Large\sffamily}
+\titleformat*{\subsection}{\large\sffamily}
 
 % Reduce the list spacing
-\\usepackage{enumitem}
-\\setlist{nosep} % or \\setlist{noitemsep} to leave space around whole list
+\usepackage{enumitem}
+\setlist{nosep} % or \setlist{noitemsep} to leave space around whole list
 
 % This allows adding :cite: in the label of figures.
 % It is a work-around for https://github.com/mcmtroffaes/sphinxcontrib-bibtex/issues/92
 \usepackage{etoolbox}
 \AtBeginEnvironment{figure}{\renewcommand{\phantomsection}{}}
 
-\\renewcommand{\\thepage}{\\arabic{page}}
+\renewcommand{\thepage}{\arabic{page}}
 
-\\usepackage{fancyhdr}
-\\lhead{}
-\\rhead{\\textsf{\\nouppercase \\leftmark}}
-\\rfoot{\\textsf{\\thepage}}
-\\cfoot{}
-\\renewcommand{\\footrulewidth}{0.4pt}
+\usepackage{fancyhdr}
+\lhead{}
+\rhead{\textsf{\nouppercase \leftmark}}
+\rfoot{\textsf{\thepage}}
+\cfoot{}
+\renewcommand{\footrulewidth}{0.4pt}
 %-\setlength{\headheight}{15.2pt}
 
 % Overwrite the plain page style from sphinx.sty
 % This style is used in the first page of each chapter
-  \\fancypagestyle{plain}{
-    \\fancyhf{}
-    \\fancyfoot[LE,RO]{{\\textsf{\\thepage}}}
-    \\renewcommand{\\headrulewidth}{0pt}
-    \\renewcommand{\\footrulewidth}{0.4pt}
+  \fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[LE,RO]{{\textsf{\thepage}}}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0.4pt}
   }
 
-\\pagestyle{fancy}
+\pagestyle{fancy}
 
-\\setcounter{secnumdepth}{1}
-\\usepackage{amssymb,amsmath}
+\setcounter{secnumdepth}{1}
+\usepackage{amssymb,amsmath}
 
 % Figure and table caption in italic fonts
-\\makeatletter
-\\renewcommand{\\fnum@figure}[1]{\\small \\textit{\\figurename~\\thefigure}: \\it }
-\\renewcommand{\\fnum@table}[1]{\\small \\textit{\\tablename~\\thetable}: \\it }
-\\makeatother
+\makeatletter
+\renewcommand{\fnum@figure}[1]{\small \textit{\figurename~\thefigure}: \it }
+\renewcommand{\fnum@table}[1]{\small \textit{\tablename~\thetable}: \it }
+\makeatother
 
 % The next two lines patch the References title
-\\usepackage{etoolbox}
-\\patchcmd{\\thebibliography}{\\chapter*}{\\phantom}{}{}
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\chapter*}{\phantom}{}{}
 
 \definecolor{TitleColor}{rgb}{0 ,0 ,0} % black rathern than blue titles
 
-\\renewcommand{\Re}{{\mathbb R}}
-\\newcommand{\Na}{{\mathbb N}}
-\\newcommand{\Z}{{\mathbb Z}}
+\renewcommand{\Re}{{\mathbb R}}
+\newcommand{\Na}{{\mathbb N}}
+\newcommand{\Z}{{\mathbb Z}}
 '''
 
 # Documents to append as an appendix to all manuals.

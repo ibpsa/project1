@@ -21,7 +21,7 @@ freplace('sphinxmanual',
         'report')
 freplace('\documentclass[letterpaper,11pt, openany]{sphinxmanual}',
         '\documentclass[letterpaper,11pt,english]{report}')
-freplace('\maketitle',
+freplace('\sphinxmaketitle',
         '\input{../../source/titlepage.tex} \setcounter{page}{2}')
 freplace('\phantomsection\label{index::doc}',
         '\phantomsection\label{index::doc} \clearpage')
