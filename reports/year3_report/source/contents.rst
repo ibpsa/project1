@@ -1,9 +1,10 @@
 ﻿Introduction
 ============
 
-IBPSA Project 1 had a productive year, with the two expert meetings attended
-by around 50 people each. These meetings were similar in size than
-for the preceeding IEA EBC Annex 60 project.
+IBPSA Project 1 had a productive year, with the an expert meeting
+held in Rome in August 2019, and a virtual expert meeting held
+in May 2020.
+Both were attended by around 50 people.
 
 Each of the three tasks had several coordination meetings.
 Funding for the continued collaboration has been secured by many
@@ -13,9 +14,10 @@ of the key participants.
 Management of the Project
 =========================
 
-As of August 1, 2018,
-there are currently 27 organizational participants,
-2 sponsoring participants, and 30 individual participants.
+As of September 9, 2020,
+there are
+29 organizational participants and 49 individual participants.
+Engie Lab is a sponsoring participant.
 A full list of the participants can be found at
 https://ibpsa.github.io/project1/participation.html
 and a list of meetings with their minutes is available at
@@ -35,19 +37,33 @@ The former IEA Annex 60 library has been renamed to
 *IBPSA Library* and is posted under a BSD license at
 https://github.com/ibpsa/modelica-ibpsa
 
-The development is actively ongoing, with monthly coordination
-meeting and an upcoming release 2.0.0, to be scheduled
-for September.
+The development of the Modelica IBPSA Library,
+hosted at https://github.com/ibpsa/modelica-ibpsa,
+is actively ongoing, with monthly coordination
+meetings.
 A main addition this year are models for
- * heat pumps
- * glycol solution with user-specified mass fraction,
- * borefields (under development)
+ * borefields,
+ * pressure independent air dampers,
+ * three-way control valves with opening characteristics provided through
+   user-defined table, and
+ * BESTEST simulation for weather data.
 
-Also ongoing is the development of an I/O block
-that allows reading and overwriting signals
-through a web request. This is needed
-for the *BOPTEST* emulator that is developed
-in WP 1.2
+Improvements have been done to models for
+ * weather data (to allow user-supplied data that do not cover 1 year, and
+   to overwrite weather data with constant values for steady-state simulation), and
+ * thermal zones using a reduced order model that allows now also tracking
+   of trace substances such as CO2.
+
+Also, many icons have been refactored so that the simulation
+dynamically shows current temperatures, flow rates, sensor and actuator signals.
+
+The library is used at the core of the Modelica libraries
+
+ * AixLib, from RWTH Aachen University, Germany: https://github.com/RWTH-EBC/AixLib
+ * Buildings, from LBNL, Berkeley, CA, USA: http://simulationresearch.lbl.gov/modelica
+ * BuildingSystems, from UdK Berlin, Germany: http://www.modelica-buildingsystems.de
+ * IDEAS from KU Leuven, Belgium: https://github.com/open-ideas/IDEAS
+
 
 WP 1.2: Library for Model Predictive Control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
