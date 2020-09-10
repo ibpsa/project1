@@ -106,6 +106,12 @@ After having identified that our target scale is the urban district (for us mean
 
 5. Virtual Reality applications for 3D city models. 
 
+Publications:
+
+Avichal  Malhotra, Eric Fichter, Gerald Schweiger, Jérôme Frisch, Christoph Alban van Treeck. IBPSA Project 1: Update on city quarter and building information modelling. In Ibpsa news, Volume: 30, Issue: 1, Page(s): 31-35.
+ 
+Avichal Malhotra, Julian Bischof, James Allan, James O'Donnell, Thomas Schweiger, Joachim Benner, Gerald Schweiger (2020). A Review on country specific data availability and acquision techniques for city quarter information modelling for building energy analysis. In proceedings of the 8th German-Austrian IBPSA Conference BauSIM 2020: September 23th - September 25th / Publisher TU Graz.
+
 
 WP 2.2: Building Information Modeling
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
