@@ -68,9 +68,9 @@ The library is used at the core of the Modelica libraries
 WP 1.2: Model Predictive Control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Three main tasks were defined, i.e. Using Modelica 
+Three main tasks were defined, i.e. Using Modelica
 
-1.     To develop a framework to test and assess MPC performance 
+1.     To develop a framework to test and assess MPC performance
 
 2.     To compare and benchmark different MPC formulations
 
@@ -86,7 +86,7 @@ D. Blum, F. Jorissen, S. Huang, Y. Chen, J. Arroyo, K. Benne, Y. Li, V. Gavan, L
 framework for simulation-based testing of advanced control strategies in buildings. In Proc. of the 16th International Conference of IBPSA, Sep 2 – 4. Rome, Italy. Available
 from http://www.ibpsa.org/building-simulation-2019
 
-Ján Drgona, Lieve Helsen, Draguna Vrabie. (2019). Stripping off the implementation complexity of physics-based model predictive control for buildings via deep learning. 
+Ján Drgona, Lieve Helsen, Draguna Vrabie. (2019). Stripping off the implementation complexity of physics-based model predictive control for buildings via deep learning.
 Conference on Neural Information Processing Systems, December, 2019.
 
 D.H. Blum, K. Arendt, L. Rivalin, M.A. Piette, M. Wetter, C.T. Veje. (2019). Practical Factors of Envelope Model Setup and Their Effects on the Performance of Model Predictive
@@ -120,12 +120,12 @@ After having identified that our target scale is the urban district (for us mean
 
 4. Identification and quantification of uncertainties for district level energy simulations.
 
-5. Virtual Reality applications for 3D city models. 
+5. Virtual Reality applications for 3D city models.
 
 Publications:
 
 Avichal  Malhotra, Eric Fichter, Gerald Schweiger, Jérôme Frisch, Christoph Alban van Treeck. IBPSA Project 1: Update on city quarter and building information modelling. In Ibpsa news, Volume: 30, Issue: 1, Page(s): 31-35.
- 
+
 Avichal Malhotra, Julian Bischof, James Allan, James O'Donnell, Thomas Schweiger, Joachim Benner, Gerald Schweiger (2020). A Review on country specific data availability and acquision techniques for city quarter information modelling for building energy analysis. In proceedings of the 8th German-Austrian IBPSA Conference BauSIM 2020: September 23th - September 25th / Publisher TU Graz.
 
 
@@ -146,9 +146,9 @@ Starting with the import of the IFC file to Python using IfcOpenShell, generic p
 
 5.	Use default values (if useful)
 
-Thermal zones are generated based on IfcSpaces and linked to the corresponding building elements and space boundaries. 
+Thermal zones are generated based on IfcSpaces and linked to the corresponding building elements and space boundaries.
 
-Based on the enriched data, simulation tool-specific preprocessing is executed. The building elements are mapped to the corresponding parameters of the simulation tools. 
+Based on the enriched data, simulation tool-specific preprocessing is executed. The building elements are mapped to the corresponding parameters of the simulation tools.
 
 For building performance simulations in TEASER, a multiroom Modelica model is generated with TEASER mako templates. For the simulation in EnergyPlus, the geometry of each IfcRelSpaceBoundary is generated using OpenCascade and exported to EnergyPlus using the geomeppy library (MIT License). If no space boundaries are provided in the IFC data, a space boundary generation algorithm is applied.
 
@@ -160,22 +160,42 @@ Task 3: Application and Dissemination
 WP 3.1 Application
 ^^^^^^^^^^^^^^^^^^
 
-In this work package a District Energy Simulation Test (DESTEST) is under development. The aim is to provide a means to validate models of urban energy systems or subsystems and to define district energy cases for testing in different simulation environments.
+In this work package a District Energy Simulation Test (DESTEST) is under development.
+The aim is to provide a means to validate models of urban energy systems or subsystems and
+to define district energy cases for testing in different simulation environments.
+The work has been split up in two groups that work interactively:
+(1) the building modeling group focusses on the selection and modeling of the buildings in the district, and
+(2) the network modeling group investigates the sizing and operation of the energy network.
+The developments are actively ongoing, with regular coordination and subgroup meetings.
 
-The first ongoing steps include the selection, description and simulation of a district heating network topology that will serve as a simple first case. The work has been split up in two groups that work interactively: (1) the building modeling group focusses on the selection and modeling of the buildings in the district, (2) the network modeling group investigates the sizing and operation of the energy network.
+The main activity was focused on the continued development of the DESTEST
 
-An abstract has been submitted to the BS2019 conference to report on the progress.
+Several common exercises with increasing complexity were initiated.
+In a first common exercise 16 identical residential buildings were described.
+The increased complexity includes the definition of different occupant types,
+the definition of residential buildings with other thermal properties and the definition of an office building.
+The load of buildings served as an input to the network modeling group who made network with different layouts and number of buildings.
+The activities also were documented in text and CityGML format to allow future participants
+to easily execute the past exercises and to already prepare document writing.
+Activities also included the development of procedures to compare the results generated by the different participants.
+
+Abstracts about this work package were submitted to BS2021 Conference.
 
 WP 3.2 Dissemination
 ^^^^^^^^^^^^^^^^^^^^
 
-Project 1 will be presented at the 2018
-Building Performance Analysis Conference and SimBuild,
-which is co-organized by ASHRAE and IBPSA-USA,
-on September 26-28, 2018.
+The goal of this work package is to demonstrate capabilities enabled by the use of Modelica for building and district energy systems.
+This task is accomplished by collecting a number of case studies and describing them through
+a unified template that facilitates a systematic comparison and illustrates key findings from different applications.
 
-A journal paper about effect of model accuracy
-on the performance of MPC has been submitted to a journal.
+So far, 11 case studies have been collected, ranging from hydronic heating loops and cooling systems
+in data centers to district heating networks and multi-infrastructure smart community systems.
+All case studies have been developed using models from open-source Modelica libraries.
+
+The information gathered through the templates have been uploaded to
+the project website at https://ibpsa.github.io/project1/applications.
+Here, for each case study, it is possible to find information such as the objective of the simulation study, the energy system diagram,
+and other modeling and simulation details such as thermal zoning and computational time.
 
 
 Unforseen events
