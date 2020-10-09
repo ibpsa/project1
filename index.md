@@ -107,7 +107,7 @@ nonlinear Model Predictive Control (MPC) is being developed.
 <h3>Task 2: Building and City Quarter Models</h3>
 <h4>Work Package 2.1: City District Information Modeling</h4>
 <p>
-<b>Work Package Leader:</b> Gerald Schweiger, TU Graz, Austria.
+<b>Work Package Leader:</b> Gerald Schweiger, TU Graz, Austria and James O'Donnell, University College Dublin, Ireland.
 </p>
 <p>
 This work package addresses urban scale energy performance simulation of domestic and non-domestic buildings.
