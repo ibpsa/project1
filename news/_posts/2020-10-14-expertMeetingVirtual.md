@@ -8,7 +8,7 @@ type: workshop
 author: Michael Wetter
 ---
 
-On October 13 and 14, 2020, the IBPSA Project 1 held its 6th Expert Meeting.
+On October 13 and 14, 2020, the IBPSA Project 1 held its [6th Expert Meeting](https://github.com/ibpsa/project1/wiki/2020-10-13-Virtual-Expert-Meeting-Agenda).
 The meeting was held as a web meeting.
 It was attended by 50 people.
 
