@@ -2,7 +2,7 @@
 layout: post
 title:  Expert meeting Montreal - Postponed
 event: Expert meeting
-date:   2020-10-13
+date:   2020-08-28
 categories: news meeting
 type: workshop
 author: Michael Wetter
