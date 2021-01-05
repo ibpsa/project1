@@ -96,6 +96,20 @@ MONTHSDICT = {
     'nov': 'November',
     'dec': 'December'
 }
+MONTHSORDER = {
+    'January': 1,
+    'February': 2,
+    'March': 3,
+    'April': 4,
+    'May': 5,
+    'June': 6,
+    'July': 7,
+    'August': 8,
+    'September': 9,
+    'October': 10,
+    'November': 11,
+    'December': 12
+}
 
 # templates for entry fields
 CHAPTERFORMAT = '<span class="title">{chaptertitle}</span>.<br>'
@@ -122,6 +136,32 @@ LISTFORMAT = '''
 {listdata}
 </ol>
 '''
+
+
+def sort_entries(entries):
+    for entry in entries:
+        if 'month' in entry:
+            if entry['month'] in MONTHSDICT:
+                month = MONTHSDICT[entry['month']]
+            else:
+                month = entry['month']
+            morder = MONTHSORDER[month]
+        else:
+            morder = 0
+        entry['morder'] = morder
+    entries = sorted(
+        entries[:], 
+        key=lambda entry:(
+            -int(entry['year']), 
+            -entry['morder'], 
+            entry['ID']
+        )
+    )
+    for entry in entries:
+        del entry['morder']
+
+    return(entries)
+
 
 def to_html(entry):
     '''Return entry string in html format'''
@@ -204,12 +244,14 @@ def to_html(entry):
 
     return(out)
 
+
 def generate_md(bibfile, mdfile, title, prolog, intro, epilog):
     with open(bibfile) as f:
         database = bibtexparser.load(f)
 
     pubs = defaultdict(list)
-    for entry in database.entries:
+    print(len(database.entries))
+    for entry in sort_entries(database.entries):
         entrystr = to_html(entry)
         pubs[entry['ENTRYTYPE']].append(entrystr)
 
@@ -233,6 +275,7 @@ def generate_md(bibfile, mdfile, title, prolog, intro, epilog):
         # write epilog
         f.write(epilog)    
 
+
 def main():
     args = sys.argv[1:]
 
@@ -248,6 +291,7 @@ def main():
         mdfile = args[0]
 
     generate_md(bibfile, mdfile, TITLE, PROLOG, INTRO, EPILOG)
+
 
 if __name__ == '__main__':
     main()
