@@ -36,6 +36,9 @@ Visit
 <span class="title">A data-driven approach to optimize urban scale energy retrofit decisions for residential buildings</span>.<br><span class="author">Usman Ali, Mohammad Haris Shamsi, Mark Bohacek, Cathal Hoare, Karl Purcell, Eleni Mangina, James O'Donnell</span>.<br><i>Applied Energy</i>, Vol. 267, p. 114861, <span class="year">2020</span>.<br>[ <a href="http://www.sciencedirect.com/science/article/pii/S0306261920303731">link</a> ]
 </li>
 <li>
+<span class="title">A data-driven approach for multi-scale GIS-based building energy modeling for analysis, planning and support decision making</span>.<br><span class="author">Usman Ali, Mohammad Haris Shamsi, Mark Bohacek, Karl Purcell, Cathal Hoare, Eleni Mangina, James O'Donnell</span>.<br><i>Applied Energy</i>, Vol. 279, p. 115834, <span class="year">2020</span>.<br>[ <a href="http://www.sciencedirect.com/science/article/pii/S0306261920313106">link</a> ]
+</li>
+<li>
 <span class="title">A Methodology for Long-Term Model Predictive Control of Hybrid Geothermal Systems: The Shadow-Cost Formulation</span>.<br><span class="author">Iago Cupeiro Figueroa, Massimo Cimmino, Lieve Helsen</span>.<br><i>Energies</i>, Vol. 13, No. 23, <span class="year">2020</span>.<br>[ <a href="https://www.mdpi.com/1996-1073/13/23/6203">link</a> ]
 </li>
 <li>
