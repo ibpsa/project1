@@ -24,7 +24,16 @@ Visit
 <h1>Journals</h1>
 <ol reversed>
 <li>
+<span class="title">Review of urban building energy modeling (UBEM) approaches, methods and tools using qualitative and quantitative analysis</span>.<br><span class="author">Usman Ali, Mohammad Haris Shamsi, Cathal Hoare, Eleni Mangina, James O'Donnell</span>.<br><i>Energy and Buildings</i>, Vol. 246, p. 111073, <span class="year">2021</span>.<br>[ <a href="https://www.sciencedirect.com/science/article/pii/S0378778821003571">link</a> ]
+</li>
+<li>
 <span class="title">Fluid temperature predictions of geothermal borefields using load estimations via state observers</span>.<br><span class="author">Iago Cupeiro Figueroa, Massimo Cimmino, J&aacute;n Drgona, Lieve Helsen</span>.<br><i>Journal of Building Performance Simulation</i>, Vol. 14, No. 1, p. 1 - 19, <span class="year">2021</span>.<br>[ <a href="https://www.tandfonline.com/doi/abs/10.1080/19401493.2020.1838612">link</a> ]
+</li>
+<li>
+<span class="title">Feature assessment frameworks to evaluate reduced-order grey-box building energy models</span>.<br><span class="author">Mohammad Haris Shamsi, Usman Ali, Eleni Mangina, James O'Donnell</span>.<br><i> Applied Energy</i>, Vol. 298, p. 117174, <span class="year">2021</span>.<br>[ <a href="https://linkinghub.elsevier.com/retrieve/pii/S0306261921006012">link</a> ]
+</li>
+<li>
+<span class="title">Linking data model and formula to automate KPI calculation for building performance benchmarking</span>.<br><span class="author">Yun-Yi Zhang, Zhen-Zhong Hu, Jia-Rui Lin, Jian-Ping Zhang</span>.<br><i>Energy Reports</i>, Vol. 7, p. 1326-1337, <span class="year">2021</span>.<br>[ <a href="https://www.sciencedirect.com/science/article/pii/S2352484721001426">link</a> ]
 </li>
 <li>
 <span class="title">Identification of multi-zone grey-box building models for use in model predictive control</span>.<br><span class="author">Javier Arroyo, Fred Spiessens, Lieve Helsen</span>.<br><i>Journal of Building Performance Simulation</i>, Vol. 13, p. 472-486, <span class="month">May</span>, <span class="year">2020</span>.<br>[ <a href="https://doi.org/10.1080/19401493.2020.1770861">link</a> ]
