@@ -170,6 +170,19 @@ permalink: /applications
    </div>
   </div>
 
+  <div class="box">
+   <div class="gallery-img">
+     <img src="{{ site.url }}/assets/img/img_cs11a.png" alt="pic1">
+   </div>
+   <div class="title">
+         <h3>Quayside energy system analysis</h3>
+         <h4>by Lawrence Berkeley National Laboratory (USA)</h4>
+    </div>
+    <div class="button">
+   <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="{{ site.baseurl }}/cases/2020/08/10/case11_LBNL.html"> Read more</a>
+    </div>
+   </div>
+
 
 
 
