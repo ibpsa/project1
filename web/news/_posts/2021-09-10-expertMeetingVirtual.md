@@ -16,7 +16,7 @@ Registration is required by October 8, 2021.
 
 The meeting will be over two days, with four hours per day.
 The meetings will be spaced apart a few weeks which will allow
-implementation of work that arise from the first day of the meeting.
+implementation of work that arises from the first day of the meeting.
 
 The meeting will have overview sessions to coordinate the research in the various work packages, several breakout sessions, and a panel discussion.
 
