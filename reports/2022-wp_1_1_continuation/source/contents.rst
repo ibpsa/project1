@@ -47,7 +47,7 @@ The proposed initial slate is
 - Michael Wetter (LBNL, USA)
 - Yash Shukla (CEPT University, Ahmedabad, India)
 - Massimo Cimmino (Polytechnique Montreal, Canada)
-- Filip Jorrisen (KU Leuven, Belgium)
+- Filip Jorissen (KU Leuven, Belgium)
 - Klaas de Jonge (University of Ghent, Belgium)
 - Christian Vering (RWTH Aachen, Germany)
 - Christoph Nytsch-Geusen (UdK Berlin, Germany)
