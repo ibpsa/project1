@@ -46,6 +46,13 @@ The proposed initial slate is
 
 - Michael Wetter (LBNL, USA)
 - Yash Shukla (CEPT University, Ahmedabad, India)
+- Massimo Cimmino (Polytechnique Montreal, Canada)
+- Filip Jorrisen (KU Leuven, Belgium)
+- Klaas de Jonge (University of Ghent, Belgium)
+- Christian Vering (RWTH Aachen, Germany)
+- Christoph Nytsch-Geusen (UdK Berlin, Germany)
+- Alessandro Maccarini (Aalborg University, Denmark)
+- Hongxiang (Casper) Fu (LBNL, USA)
 
 
 *Notes*
@@ -132,4 +139,3 @@ modeling and simulation environments, both free and commercial, see https://mode
 
 
 .. bibliography:: references.bib
-
