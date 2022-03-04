@@ -45,7 +45,7 @@ The proposed start date of the committee is August 1, 2022.
 The proposed initial slate is
 
 - Michael Wetter (LBNL, USA)
-- xxx
+- Yash Shukla (CEPT University, Ahmedabad, India)
 
 
 *Notes*
