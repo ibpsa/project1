@@ -48,7 +48,7 @@ The proposed initial slate is
 - Yash Shukla (CEPT University, Ahmedabad, India)
 - Massimo Cimmino (Polytechnique Montreal, Canada)
 - Filip Jorissen (KU Leuven, Belgium)
-- Klaas de Jonge (University of Ghent, Belgium)
+- Klaas de Jonge (Ghent University, Belgium)
 - Christian Vering (RWTH Aachen, Germany)
 - Christoph Nytsch-Geusen (UdK Berlin, Germany)
 - Alessandro Maccarini (Aalborg University, Denmark)
