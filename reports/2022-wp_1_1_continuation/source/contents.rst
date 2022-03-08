@@ -53,7 +53,7 @@ The proposed initial slate is
 - Christoph Nytsch-Geusen (UdK Berlin, Germany)
 - Alessandro Maccarini (Aalborg University, Denmark)
 - Hongxiang (Casper) Fu (LBNL, USA)
-
+- Wangda Zuo (Penn State, USA)
 
 *Notes*
 
