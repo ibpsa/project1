@@ -45,10 +45,14 @@ The proposed start date of the committee is August 1, 2022.
 The proposed initial slate is
 
 - Michael Wetter (LBNL, USA)
+- Saranya Anbarasu (Penn State, USA)
 - Yash Shukla (CEPT University, Ahmedabad, India)
 - Massimo Cimmino (Polytechnique Montreal, Canada)
+- Mingzhe Liu (Penn State, USA)
+- Kathryn Hinkelman (Penn State, USA)
 - Filip Jorissen (KU Leuven, Belgium)
 - Klaas de Jonge (Ghent University, Belgium)
+- Chengnan Shi (Penn State, USA)
 - Christian Vering (RWTH Aachen, Germany)
 - Christoph Nytsch-Geusen (UdK Berlin, Germany)
 - Alessandro Maccarini (Aalborg University, Denmark)
