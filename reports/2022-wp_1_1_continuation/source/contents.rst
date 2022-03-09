@@ -46,6 +46,7 @@ The proposed initial slate is
 
 - Michael Wetter (LBNL, USA)
 - Saranya Anbarasu (Penn State, USA)
+- David Blum (LBNL, USA)
 - Yash Shukla (CEPT University, Ahmedabad, India)
 - Massimo Cimmino (Polytechnique Montreal, Canada)
 - Mingzhe Liu (Penn State, USA)
@@ -57,6 +58,7 @@ The proposed initial slate is
 - Christoph Nytsch-Geusen (UdK Berlin, Germany)
 - Alessandro Maccarini (Aalborg University, Denmark)
 - Hongxiang (Casper) Fu (LBNL, USA)
+- Baptiste Ravache (LBNL, Berkeley)
 - Wangda Zuo (Penn State, USA)
 
 *Notes*
