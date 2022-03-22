@@ -17,12 +17,12 @@ Proposal
 ========
 
 IBPSA Project 1 will finish around August 2022.
-IBPSA Project 1 lead to the Modelica IBPSA Library (https://github.com/ibpsa/modelica-ibpsa)
+IBPSA Project 1 created the Modelica IBPSA Library (https://github.com/ibpsa/modelica-ibpsa)
 which is used as the core of various Modelica libraries for building and
 district energy systems.
 To further develop and maintain the library,
 we propose that IBPSA forms a new committee called
-"Modelica Committee".
+"Modelica Committee."
 The purpose and scope of the committee includes the following:
 
    (i) Maintain and further develop the Modelica IBPSA Library.
@@ -89,7 +89,7 @@ Both projects were lead by Michael Wetter (LBNL, Berkeley, CA, USA)
 and Christoph van Treeck (RWTH Aachen, Aachen, Germany) as co-operating agents.
 
 Project 1 has 6 work packages. One of it is
-Work Package 1.1: "Modelica IBPSA Library",
+Work Package 1.1: "Modelica IBPSA Library,"
 led by Michael Wetter, and described below.
 The continuation of this work package is subject of this proposal.
 
