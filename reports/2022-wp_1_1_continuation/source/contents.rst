@@ -51,6 +51,7 @@ The proposed initial slate is
 - Massimo Cimmino (Polytechnique Montreal, Canada)
 - Mingzhe Liu (Penn State, USA)
 - Kathryn Hinkelman (Penn State, USA)
+- Jelger Jansen (KU Leuven, Belgium)
 - Filip Jorissen (KU Leuven, Belgium)
 - Klaas de Jonge (Ghent University, Belgium)
 - Chengnan Shi (Penn State, USA)
