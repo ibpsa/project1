@@ -18,6 +18,7 @@ we will conduct kick-off meetings of continuing tasks this fall.
 The meeting hosted a presentation from Prof. Luigi Vanfretti who discussed
 his experience in developing and using OpenIPSL in the power industry.
 The slides are available at [https://github.com/ibpsa/project1/blob/master/meetings/2022-03-28-expert-meeting-virtual/2022_IBPSA_OpenIPSL.pdf](https://github.com/ibpsa/project1/blob/master/meetings/2022-03-28-expert-meeting-virtual/2022_IBPSA_OpenIPSL.pdf)
+and the recording of the presentation is at [https://youtu.be/IKdECHSO9wc](https://youtu.be/IKdECHSO9wc).
 
 In fall, we will conduct kick-off meetings of the activities whose continuation are currently being organized.
 This will include work on the Modelica IBPSA Library development, on BOPTEST, and on the DESTEST District Energy Model validation.
