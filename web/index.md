@@ -25,11 +25,11 @@ All work is open-source and built on three standards:
  - [CityGML](http://www.citygml.org/) for data modeling at the district scale, and
  - [Modelica](http://www.modelica.org) for modeling the performance of building and district energy systems.
 
-<h2>Registration and Announcements</h2>
-
-To register, please visit the [registration form](https://docs.google.com/a/lbl.gov/forms/d/1tyu3Qb3ydPseACxBgtL_UTKIdQS75eKr4zX89v7T0EM/viewform).
+<h2>Announcements</h2>
 
 To receive announcements, [join the email announcement list]({{ site.url }}/participation.html).
+
+Registration is no longer possible as the project is closes to its final date.
 
 <h2>Main Research Tasks</h2>
 The main tasks, which evolved from the original
