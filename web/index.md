@@ -29,7 +29,7 @@ All work is open-source and built on three standards:
 
 To receive announcements, [join the email announcement list]({{ site.url }}/participation.html).
 
-Registration is no longer possible as the project is closes to its final date.
+Registration is no longer possible as the project ends in summer 2022.
 
 <h2>Main Research Tasks</h2>
 The main tasks, which evolved from the original
