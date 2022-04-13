@@ -1,7 +1,7 @@
 License
 =======
 
-IBPSA Project 1. Copyright (c) 1998-2020
+IBPSA Project 1. Copyright (c) 1998-2022
 International Building Performance Simulation Association (IBPSA) and
 contributors. All rights reserved.
 
