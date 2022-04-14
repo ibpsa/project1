@@ -58,7 +58,7 @@ and the other 90% can be used by the Working Group
 to cover expenses at the discretion of the Chair of the Working Group.
 When the Working Group terminates, all remaining funds will be owned by IBPSA.
 
-As the IBPSA Project 1 has excess funds of about US-$13,0000 that will flow to IBPSA when Project 1 finishes,
+As the IBPSA Project 1 has excess funds of about US-$13,000 that will flow to IBPSA when Project 1 finishes,
 IBPSA will provide initial funds to the Working Group of US-$4,000.
 
 If the Working Group's funds are depleted,
