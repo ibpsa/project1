@@ -1,0 +1,21 @@
+Meeting minutes
+	Buildings: finish defined common exercises
+		Office building description should be further fortified - Arash, Alessandro & Chengnan
+		Ventilation rate (airtightness)
+		Windows glazing
+		Shading - climate (Maybe cooling load should be assessed in a climate other than Uccle’s- Chengnan) 
+		Set-point temperature 
+		Occupancy profile (schedule)
+		Alternative one storey office buildings with adiabatic roof and floor (Shadings, glazings, location and etc.)
+		Modifications to be applied on single family dwellings - Hicham’s student
+		Considering cooling for residential dwellings
+
+Network: define next common exercises
+	Redoing the DHN common exercise - all participants working on DHN
+		DHN common exercise in a new location that needs cooling - Chengnan
+		Coming up with a suitable DHN control strategy - Jelger
+
+
+	Coupling the DHN to the building stok
+		The benefits of making more complexity by coupling the DHN to the dwellings - Tohid & Jelger
+		How to couple the DHN to the dwellings - Tohid - Jelger

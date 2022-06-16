@@ -222,8 +222,8 @@
 
 - date_joined:   9/29/2019
   contact_name:  Laura Zabala
-  contact_email: laura.zabala@tekniker.es
-  affiliation:   Tekniker
+  contact_email: laura.zabala@r2msolution.com
+  affiliation:   R2M Solution Spain SL
   country:       Spain
 
 - date_joined:   11/19/2019
@@ -303,3 +303,27 @@
   contact_email: divyanshu.sood@ucdconnect.ie
   affiliation:   University College Dublin
   country:       Ireland
+
+- date_joined:   3/29/2021
+  contact_name:  Beril Alpagut
+  contact_email: balpagut@demirenerji.com
+  affiliation:   Demir Enerji
+  country:       Turkey
+
+- date_joined:   6/24/2021
+  contact_name:  Andreas Nicolai
+  contact_email: andreas.nicolai@tu-dresden.de
+  affiliation:   TU Dresden
+  country:       Germany
+
+- date_joined:   9/9/2021
+  contact_name:  Laura Maier
+  contact_email: laura.maier@eonerc.rwth-aachen.de
+  affiliation:   RWTH Aachen
+  country:       Germany
+
+- date_joined:   9/30/2021
+  contact_name:  Arun Bhandari
+  contact_email: arbcube@gmail.com
+  affiliation:   Amity University, Delhi NCR
+  country:       India

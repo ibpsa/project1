@@ -1,6 +1,7 @@
 _site
 .sass-cache
 .jekyll-metadata
+.jekyll-cache
 /meetings/2016-10-24-gensim/tuesday/Teaser/Results
 /meetings/2016-10-24-gensim/tuesday/BuildingAndHVAC/Results
 *.bak-mo
