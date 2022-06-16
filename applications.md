@@ -170,6 +170,32 @@ permalink: /applications
    </div>
   </div>
 
+  <div class="box">
+   <div class="gallery-img">
+     <img src="{{ site.url }}/assets/img/img_cs11a.png" alt="pic1">
+   </div>
+   <div class="title">
+         <h3>Quayside energy system analysis</h3>
+         <h4>by Lawrence Berkeley National Laboratory (USA)</h4>
+    </div>
+    <div class="button">
+   <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="{{ site.baseurl }}/cases/2020/08/10/case11_LBNL.html"> Read more</a>
+    </div>
+   </div>
+
+   <div class="box">
+    <div class="gallery-img">
+      <img src="{{ site.url }}/assets/img/img_cs12a_v1.png" alt="pic1">
+    </div>
+    <div class="title">
+          <h3>Assessing and improving the control of a small-scale fully renewables-based low-temperature thermal network in the historic city center of Bruges</h3>
+          <h4>by KU Leuven (Belgium)</h4>
+     </div>
+     <div class="button">
+    <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="{{ site.baseurl }}/cases/2020/08/10/case12_KUL.html"> Read more</a>
+     </div>
+    </div>
+
 
 
 
