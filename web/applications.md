@@ -78,7 +78,7 @@ permalink: /applications
            </div>
            <div class="title">
                  <h3>Equation-Based Object-Oriented Modeling and Simulation for Data Center Cooling: A Case Study</h3>
-                 <h4>by University of Colorado at Boulder (USA)</h4>
+                 <h4>by University of Colorado Boulder (USA)</h4>
             </div>
             <div class="button">
             <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="{{ site.baseurl }}/cases/2020/08/10/case5_CUB.html"> Read more</a>
@@ -92,7 +92,7 @@ permalink: /applications
            </div>
            <div class="title">
                  <h3>Multi-Infrastructure Modeling of Smart and Connected Communities</h3>
-                 <h4>by University of Colorado at Boulder (USA)</h4>
+                 <h4>by University of Colorado Boulder (USA)</h4>
             </div>
             <div class="button">
             <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="{{ site.baseurl }}/cases/2020/08/10/case6_CUB.html"> Read more</a>
@@ -195,6 +195,33 @@ permalink: /applications
     <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="{{ site.baseurl }}/cases/2020/08/10/case12_KUL.html"> Read more</a>
      </div>
     </div>
+
+    <div class="box">
+     <div class="gallery-img">
+       <img src="{{ site.url }}/assets/img/img_cs13.png" alt="pic1">
+     </div>
+     <div class="title">
+           <h3>Investigation of HVAC operation strategies for office buildings during COVID-19 pandemic</h3>
+           <h4>by University of Colorado Boulder (USA)</h4>
+      </div>
+      <div class="button">
+     <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="{{ site.baseurl }}/cases/2020/08/10/case13_CUB.html"> Read more</a>
+      </div>
+     </div>
+
+
+     <div class="box">
+      <div class="gallery-img">
+        <img src="{{ site.url }}/assets/img/img_cs14_a.png" alt="pic1">
+      </div>
+      <div class="title">
+            <h3>District Cooling System Modeling: A Case Study with the University of Colorado Boulder</h3>
+            <h4>by University of Colorado Boulder (USA)</h4>
+       </div>
+       <div class="button">
+      <a class="btn btn-primary btn" style="color:white;text-decoration:none" href="{{ site.baseurl }}/cases/2020/08/10/case14_CUB.html"> Read more</a>
+       </div>
+      </div>
 
 
 
